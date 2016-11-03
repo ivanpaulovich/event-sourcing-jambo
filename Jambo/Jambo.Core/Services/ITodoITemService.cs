@@ -2,7 +2,7 @@
 
 namespace Jambo.Core.Services
 {
-    public interface ITodoITemService
+    public interface ITodoItemService
     {
         ITodoItem Create(ITodoItemDetails addItem);
     }
