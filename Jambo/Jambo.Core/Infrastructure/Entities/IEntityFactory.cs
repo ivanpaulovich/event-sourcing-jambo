@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace Jambo.Core.Infrastructure.Entities
 {
-    interface IEntityFactory
+    public interface IEntityFactory
     {
+        IMessageRecord CreateMessageRecord(int roomID, string authorName, string text);
+        IRoomRecord CreateRoomRecord(string name);
     }
 }

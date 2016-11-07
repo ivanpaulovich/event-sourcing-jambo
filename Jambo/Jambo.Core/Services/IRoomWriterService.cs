@@ -4,6 +4,8 @@ namespace Jambo.Core.Services
 {
     public interface ITodoItemService
     {
-        ITodoItem Create(ITodoItemDetails addItem);
+        void CreateRoom(IRoom room);
+
+        void AddMessage(IMessage message);
     }
 }
