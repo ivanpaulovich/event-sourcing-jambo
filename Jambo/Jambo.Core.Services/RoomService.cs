@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Jambo.Core.Services
 {
-    public class TodoItemService
+    public class RoomService
     {
-        public TodoItemService()
+        public RoomService()
         {
         }
     }
