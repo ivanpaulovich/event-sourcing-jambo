@@ -9,29 +9,38 @@ namespace Jambo.Infrastructure.Dapper.Repository
 {
     public class EventoReadOnlyRepository : IEventoReadOnlyRepository
     {
-        private readonly string connectionString;
+        protected readonly IRepositorySettings repositorySettings;
+
+        public EventoReadOnlyRepository(IRepositorySettings repositorySettings)
+        {
+            this.repositorySettings = repositorySettings;
+        }
 
         public IDbConnection Connection
         {
             get
             {
-                return new SqlConnection(connectionString);
+                return new SqlConnection(repositorySettings.ConnectionString);
             }
         }
 
-        public bool PossuiIngressoNoLote(Guid idEvento, Guid idLote)
+        public bool PossuiIngressoNoLote(Guid idLote)
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "SELECT Quantidade FROM Lotes "
-                           + "WHERE IdLote=@IdLote AND IdEvento=@IdEvento";
+                string sQuery =
+                    @"SELECT (Quantidade - 
+	                    (SELECT Count(*) FROM Pedidos 
+		                    WHERE IdLote=Pedidos.IDLote)) As QuantidadeDisponivel
+	                    FROM Lotes
+                    WHERE Id=@IdLote";
 
                 dbConnection.Open();
 
-                return dbConnection.Query<bool>(
+                return dbConnection.Query<int>(
                     sQuery, 
-                    new { IdLote = idLote, IdEvento = idEvento })
-                    .FirstOrDefault();
+                    new { IdLote = idLote })
+                    .FirstOrDefault() > 0;
             }
         }
     }

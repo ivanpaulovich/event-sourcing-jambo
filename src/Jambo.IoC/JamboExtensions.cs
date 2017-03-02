@@ -25,20 +25,34 @@ namespace Jambo.IoC
             this IServiceCollection services,
             string connectionString)
         {
+            // 
+            // Aggregates
+            services.AddScoped<IAggregateFactory, AggregateFactory>();
+
+            //
+            // Entities
+            services.AddScoped<IEntityFactory, EntityFactory>();
+
+            //
+            // Validation
+            services.AddScoped<IValidatorFactory, ValidatorFactory>();
+
+            //
+            // Infrastructure
             services.AddDbContext<VendasContext>(
                             options => options.UseSqlServer(connectionString,
                             p => p.UseRowNumberForPaging()));
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            services.AddScoped<IAggregateFactory, AggregateFactory>();
-            services.AddScoped<IEntityFactory, EntityFactory>();
-            services.AddScoped<IValidatorFactory, ValidatorFactory>();
-
+            //
+            // Repository
+            services.AddScoped<IRepositorySettings>(s => new RepositorySettings(connectionString));
             services.AddScoped<IEventoReadOnlyRepository, EventoReadOnlyRepository>();
             services.AddScoped<ILoteReadOnlyRepository, LoteReadOnlyRepository>();
             services.AddScoped<IPedidoWriteOnlyRepository, PedidoWriteOnlyRepository>();
 
+            //
+            // Domain
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IVendaIngressosService, VendaIngressosService>();
         }
     }

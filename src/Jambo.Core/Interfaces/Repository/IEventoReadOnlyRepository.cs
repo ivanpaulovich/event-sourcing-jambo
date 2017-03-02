@@ -7,6 +7,6 @@ namespace Jambo.Core.Interfaces.Repository
 {
     public interface IEventoReadOnlyRepository
     {
-        bool PossuiIngressoNoLote(Guid iDEvento, Guid iDLote);
+        bool PossuiIngressoNoLote(Guid iDLote);
     }
 }

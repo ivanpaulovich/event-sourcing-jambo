@@ -25,7 +25,6 @@ namespace Jambo.Core.Domain
         public void EmitirIngressoParaCliente(IPedidoIngresso pedidoIngresso, Guid idCliente)
         {
             if (eventoReadOnlyRepository.PossuiIngressoNoLote(
-                pedidoIngresso.IDEvento,
                 pedidoIngresso.IDLote))
             {
                 pedidoIngresso.Emitir(idCliente);
