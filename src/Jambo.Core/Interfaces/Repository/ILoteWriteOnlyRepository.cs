@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Jambo.Core.Interfaces.Repository
 {
-    public interface ILoteReadOnlyRepository
+    public interface ILoteWriteOnlyRepository
     {
-        ILote Consultar(Guid idLote);
-        IEnumerable<ILote> Listar();
+        void Criar(ILote lote);
+        void Atualizar(ILote lote);
     }
 }

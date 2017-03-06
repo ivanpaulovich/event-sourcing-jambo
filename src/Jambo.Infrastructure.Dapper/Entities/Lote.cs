@@ -1,8 +1,8 @@
-﻿using Jambo.Core.Interfaces.Entities;
-using System;
+﻿using System;
+using Jambo.Core.Interfaces.Entities;
 using System.Collections.Generic;
 
-namespace Jambo.Infrastructure.EF.Entities
+namespace Jambo.Infrastructure.Dapper.Entities
 {
     public class Lote : ILote
     {
@@ -10,8 +10,5 @@ namespace Jambo.Infrastructure.EF.Entities
         public Guid IDEvento { get; set; }
         public DateTime DataLimite { get; set; }
         public int Quantidade { get; set; }
-
-        public virtual Evento EventoNavigation { get; set; }
-        public virtual ICollection<Pedido> PedidosNavigation { get; set; }
     }
 }

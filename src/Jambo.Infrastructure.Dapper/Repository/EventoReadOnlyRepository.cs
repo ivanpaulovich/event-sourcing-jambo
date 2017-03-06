@@ -1,27 +1,41 @@
-﻿using System;
+﻿using Dapper;
+using Jambo.Core.Interfaces.Entities;
 using Jambo.Core.Interfaces.Repository;
+using Jambo.Infrastructure.Dapper.Entities;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using Dapper;
 using System.Linq;
 
 namespace Jambo.Infrastructure.Dapper.Repository
 {
-    public class EventoReadOnlyRepository : IEventoReadOnlyRepository
+    public class EventoReadOnlyRepository : RepositoryBase, IEventoReadOnlyRepository
     {
-        protected readonly IRepositorySettings repositorySettings;
-
-        public EventoReadOnlyRepository(IRepositorySettings repositorySettings)
+        public EventoReadOnlyRepository(
+            IRepositorySettings repositorySettings)
+            : base(repositorySettings)
         {
-            this.repositorySettings = repositorySettings;
         }
 
-        public IDbConnection Connection
+        public IEvento Consultar(Guid idEvento)
         {
-            get
+            using (IDbConnection dbConnection = Connection)
             {
-                return new SqlConnection(repositorySettings.ConnectionString);
+                string sQuery =
+                    @"SELECT * FROM Eventos
+                    WHERE Id=@IdEvento";
+
+                dbConnection.Open();
+
+                return dbConnection.Query<Evento>(
+                    sQuery,
+                    new { IdEvento = idEvento }).FirstOrDefault();
             }
+        }
+
+        public IEnumerable<IEvento> Paginar(int quantidade, int pagina)
+        {
+            throw new NotImplementedException();
         }
 
         public bool PossuiIngressoNoLote(Guid idLote)

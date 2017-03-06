@@ -2,7 +2,7 @@
 using Jambo.Core.Interfaces.Entities;
 using System.Collections.Generic;
 
-namespace Jambo.Infrastructure.EF.Entities
+namespace Jambo.Infrastructure.Dapper.Entities
 {
     public class Evento : IEvento
     {
@@ -10,7 +10,5 @@ namespace Jambo.Infrastructure.EF.Entities
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public DateTime DataRealizacao { get; set; }
-
-        public virtual ICollection<Lote> LotesNavigation { get; set; }
     }
 }
