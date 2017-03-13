@@ -1,26 +1,26 @@
 ﻿using Jambo.Core.Interfaces.Aggregates;
 using System;
+using Jambo.Core.Entities;
+using Jambo.Core.ValueTypes;
 
 namespace Jambo.Core.Aggregates
 {
     public class PedidoIngresso : IPedidoIngresso
     {
-        public Guid Identificador { get; private set; }
-        public Guid IDEvento { get; private set; }
-        public Guid IDCliente { get; private set; }
-        public Guid IDLote { get; private set; }
+        public IPedido Pedido { get; private set; }
+        public ILote Lote { get; private set; }
+        public ICliente Cliente { get; private set; }
         public DateTime DataEmissao { get; private set; }
 
-        public void Reservar(Guid idEvento, Guid idLote)
+        public void Reservar(ILote lote)
         {
-            IDEvento = idEvento;
-            IDLote = idLote;
+            Lote = lote;
         }
 
-        public void Emitir(Guid idCliente)
+        public void Emitir(ICliente cliente)
         {
-            Identificador = Guid.NewGuid();
-            IDCliente = idCliente;
+            Pedido.ID = Guid.NewGuid();
+            Cliente.ID = cliente.ID;
             DataEmissao = DateTime.Now;
         }
     }

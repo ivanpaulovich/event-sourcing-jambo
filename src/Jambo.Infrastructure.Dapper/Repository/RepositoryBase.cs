@@ -1,8 +1,8 @@
-﻿using Jambo.Core.Interfaces.Repository;
+﻿using Jambo.Core.Interfaces.Repositories;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Jambo.Infrastructure.Dapper.Repository
+namespace Jambo.Infrastructure.Dapper.Repositories
 {
     public class RepositoryBase
     {
@@ -11,7 +11,7 @@ namespace Jambo.Infrastructure.Dapper.Repository
         public RepositoryBase(
             IRepositorySettings repositorySettings)
         {
-            this.repositorySettings = repositorySettings;
+            this.RepositoriesSettings = repositorySettings;
         }
 
         protected IDbConnection Connection

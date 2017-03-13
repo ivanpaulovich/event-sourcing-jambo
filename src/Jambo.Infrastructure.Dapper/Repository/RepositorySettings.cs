@@ -1,6 +1,6 @@
-﻿using Jambo.Core.Interfaces.Repository;
+﻿using Jambo.Core.Interfaces.Repositories;
 
-namespace Jambo.Infrastructure.Dapper.Repository
+namespace Jambo.Infrastructure.Dapper.Repositories
 {
     public class RepositorySettings : IRepositorySettings
     {

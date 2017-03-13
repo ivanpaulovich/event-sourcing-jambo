@@ -1,9 +1,8 @@
-﻿using Jambo.Core.Interfaces.Domain;
-using Jambo.Core.Interfaces.Aggregates;
-using Jambo.Core.Interfaces.Entities;
+﻿using Jambo.Core.Interfaces.Aggregates;
 using Jambo.Core.Exceptions;
-using Jambo.Core.Interfaces.Repository;
 using System;
+using Jambo.Core.Entities;
+using Jambo.Core.Repositories;
 
 namespace Jambo.Core.Domain
 {
@@ -22,26 +21,14 @@ namespace Jambo.Core.Domain
                 
         }
 
-        public void EmitirIngressoParaCliente(IPedidoIngresso pedidoIngresso, Guid idCliente)
+        public void EmitirIngressoParaCliente(IPedidoIngresso pedidoIngresso)
         {
-            if (eventoReadOnlyRepository.PossuiIngressoNoLote(
-                pedidoIngresso.IDLote))
-            {
-                pedidoIngresso.Emitir(idCliente);
+            if (!eventoReadOnlyRepository.PossuiIngressoNoLote(pedidoIngresso.Lote.ID))
+                throw new DomainException(12, "Ingressos Esgotados");
 
-                IPedido pedido = entityFactory.CriarEntity<IPedido>();
+            pedidoIngresso.Emitir(pedidoIngresso.Cliente);
 
-                pedido.ID = pedidoIngresso.Identificador;
-                pedido.IDLote = pedidoIngresso.IDLote;
-                pedido.IDCliente = pedidoIngresso.IDCliente;
-                pedido.DataEmissao = pedidoIngresso.DataEmissao;
-
-                pedidoReadOnlyRepository.Incluir(pedido);
-            }
-            else
-            {
-                throw new JamboException(12, "Ingressos Esgotados");
-            }
+            pedidoReadOnlyRepository.Incluir(pedidoIngresso.Pedido);
         }
     }
 }

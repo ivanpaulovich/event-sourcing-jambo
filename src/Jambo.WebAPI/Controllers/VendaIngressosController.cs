@@ -48,7 +48,7 @@ namespace Jambo.WebAPI.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    IPedidoIngresso pedidoIngresso = aggregateFactory.CriarAggregate<IPedidoIngresso>();
+                    IPedidoIngresso pedidoIngresso = aggregateFactory.Criar<IPedidoIngresso>();
 
                     pedidoIngresso.Reservar(pedido.IDEvento, pedido.IDLote);
 
@@ -56,14 +56,14 @@ namespace Jambo.WebAPI.Controllers
                         pedidoIngresso, pedido.IDCliente);
 
                     if (unitOfWork.SaveChanges() == 0)
-                        throw new JamboException(42, "Erro de comunicação com o banco de dados");
+                        throw new DomainException(42, "Erro de comunicação com o banco de dados");
 
                     return Ok(pedidoIngresso);
                 }
                 else
                     return BadRequest("Pedido inválido.");
             }
-            catch (JamboException jamboEx)
+            catch (DomainException jamboEx)
             {
                 return BadRequest(jamboEx.Mensagem);
             }

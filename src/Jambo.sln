@@ -1,23 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jambo.Core", "Jambo.Core\Jambo.Core.xproj", "{BE0465F5-EE34-4C59-BC42-5EDE206D9BC4}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jambo.WebAPI", "Jambo.WebAPI\Jambo.WebAPI.xproj", "{F60658D2-762B-401F-80E8-2C6B563342AF}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jambo.Validation", "Jambo.Validation\Jambo.Validation.xproj", "{AD4BEC39-765C-4CAD-BA61-FFECB4D736C2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8EF7CF2F-8E8E-4F18-B6E1-544130FA817F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CFFF3492-C1B7-417A-969D-A349EA064F58}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jambo.Infrastructure.Dapper", "Jambo.Infrastructure.Dapper\Jambo.Infrastructure.Dapper.xproj", "{B7F49DD0-DEDB-4BC3-AD73-FEEC75367377}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Core", "Jambo.Core\Jambo.Core.csproj", "{BE0465F5-EE34-4C59-BC42-5EDE206D9BC4}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jambo.Infrastructure.EF", "Jambo.Infrastructure.EF\Jambo.Infrastructure.EF.xproj", "{EE3431F2-4475-4DF6-9C69-D5631A80F6E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.API", "Jambo.WebAPI\Jambo.API.csproj", "{F60658D2-762B-401F-80E8-2C6B563342AF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jambo.IoC", "Jambo.IoC\Jambo.IoC.xproj", "{6BA028C6-EBC8-46A6-B82A-9EFFDF50A92B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Validation", "Jambo.Validation\Jambo.Validation.csproj", "{AD4BEC39-765C-4CAD-BA61-FFECB4D736C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Infrastructure.Dapper", "Jambo.Infrastructure.Dapper\Jambo.Infrastructure.Dapper.csproj", "{B7F49DD0-DEDB-4BC3-AD73-FEEC75367377}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Infrastructure.EF", "Jambo.Infrastructure.EF\Jambo.Infrastructure.EF.csproj", "{EE3431F2-4475-4DF6-9C69-D5631A80F6E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.IoC", "Jambo.IoC\Jambo.IoC.csproj", "{6BA028C6-EBC8-46A6-B82A-9EFFDF50A92B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Application", "Jambo.Application\Jambo.Application.csproj", "{CCE63701-1C02-4CD5-9F74-34666ABA138C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D93E1B4B-0AE2-4FC0-A058-E5369086A988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,14 +51,18 @@ Global
 		{6BA028C6-EBC8-46A6-B82A-9EFFDF50A92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA028C6-EBC8-46A6-B82A-9EFFDF50A92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA028C6-EBC8-46A6-B82A-9EFFDF50A92B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE63701-1C02-4CD5-9F74-34666ABA138C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE63701-1C02-4CD5-9F74-34666ABA138C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE63701-1C02-4CD5-9F74-34666ABA138C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE63701-1C02-4CD5-9F74-34666ABA138C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BE0465F5-EE34-4C59-BC42-5EDE206D9BC4} = {8EF7CF2F-8E8E-4F18-B6E1-544130FA817F}
-		{AD4BEC39-765C-4CAD-BA61-FFECB4D736C2} = {8EF7CF2F-8E8E-4F18-B6E1-544130FA817F}
+		{AD4BEC39-765C-4CAD-BA61-FFECB4D736C2} = {D93E1B4B-0AE2-4FC0-A058-E5369086A988}
 		{B7F49DD0-DEDB-4BC3-AD73-FEEC75367377} = {CFFF3492-C1B7-417A-969D-A349EA064F58}
 		{EE3431F2-4475-4DF6-9C69-D5631A80F6E1} = {CFFF3492-C1B7-417A-969D-A349EA064F58}
+		{6BA028C6-EBC8-46A6-B82A-9EFFDF50A92B} = {D93E1B4B-0AE2-4FC0-A058-E5369086A988}
 	EndGlobalSection
 EndGlobal

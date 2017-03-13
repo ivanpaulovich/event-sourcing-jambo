@@ -1,4 +1,4 @@
-﻿namespace Jambo.Infrastructure.EF.Repository
+﻿namespace Jambo.Infrastructure.EF.Repositories
 {
     public class RepositoryBase
     {

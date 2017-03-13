@@ -1,9 +1,9 @@
 ﻿using System;
 using Jambo.Core.Interfaces.Entities;
-using Jambo.Core.Interfaces.Repository;
+using Jambo.Core.Interfaces.Repositories;
 using Jambo.Infrastructure.EF.Entities;
 
-namespace Jambo.Infrastructure.EF.Repository
+namespace Jambo.Infrastructure.EF.Repositories
 {
     public class PedidoWriteOnlyRepository : RepositoryBase, IPedidoWriteOnlyRepository
     {

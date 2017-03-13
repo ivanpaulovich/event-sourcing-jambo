@@ -10,7 +10,7 @@ namespace Jambo.Core.Aggregates
             { typeof(IPedidoIngresso), typeof(PedidoIngresso) }
         };
 
-        public T CriarAggregate<T>()
+        public T Criar<T>()
         {
             if (conversions.ContainsKey(typeof(T)))
             {
@@ -18,7 +18,7 @@ namespace Jambo.Core.Aggregates
             };
 
             throw new NotImplementedException(
-                string.Format("Não existe um Validador implementado para a classe {0}.", typeof(T).ToString()));
+                string.Format("Não existe um Aggregate implementado para a interface {0}.", typeof(T).ToString()));
         }
     }
 }

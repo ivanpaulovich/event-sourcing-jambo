@@ -1,9 +1,5 @@
-﻿using Jambo.Core.Interfaces.Entities;
-using Jambo.Core.Interfaces.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Jambo.Core.Entities;
+using Jambo.Core.Repositories;
 
 namespace Jambo.Core.Domain
 {

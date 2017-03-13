@@ -1,13 +1,13 @@
 ﻿using Dapper;
 using Jambo.Core.Interfaces.Entities;
-using Jambo.Core.Interfaces.Repository;
+using Jambo.Core.Interfaces.Repositories;
 using Jambo.Infrastructure.Dapper.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Jambo.Infrastructure.Dapper.Repository
+namespace Jambo.Infrastructure.Dapper.Repositories
 {
     public class LoteReadOnlyRepository : RepositoryBase, ILoteReadOnlyRepository
     {
