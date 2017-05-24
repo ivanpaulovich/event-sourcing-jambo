@@ -1,4 +1,5 @@
-﻿using Jambo.Domain.SeedWork;
+﻿using Jambo.Domain.Events;
+using Jambo.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Jambo.Domain.AggregatesModel.BuyerAggregate
 
             if (existingPayment != null)
             {
-                //AddDomainEvent(new BuyerAndPaymentMethodVerifiedDomainEvent(this, existingPayment, orderId));
+                AddDomainEvent(new BuyerAndPaymentMethodVerifiedDomainEvent(this, existingPayment, orderId));
 
                 return existingPayment;
             }
@@ -44,7 +45,7 @@ namespace Jambo.Domain.AggregatesModel.BuyerAggregate
 
                 _paymentMethods.Add(payment);
 
-                //AddDomainEvent(new BuyerAndPaymentMethodVerifiedDomainEvent(this, payment, orderId));
+                AddDomainEvent(new BuyerAndPaymentMethodVerifiedDomainEvent(this, payment, orderId));
 
                 return payment;
             }

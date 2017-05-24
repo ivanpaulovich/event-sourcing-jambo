@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using MediatR;
 
 namespace Jambo.Domain.SeedWork
 {
@@ -8,7 +10,7 @@ namespace Jambo.Domain.SeedWork
         int? _requestedHashCode;
         int _Id;
 
-        //private List<IAsyncNotification> _domainEvents;
+        private List<IRequest> _domainEvents;
 
         public virtual int Id
         {
@@ -22,18 +24,18 @@ namespace Jambo.Domain.SeedWork
             }
         }
 
-        //public List<IAsyncNotification> DomainEvents => _domainEvents;
-        //public void AddDomainEvent(IAsyncNotification eventItem)
-        //{
-        //    _domainEvents = _domainEvents ?? new List<IAsyncNotification>();
-        //    _domainEvents.Add(eventItem);
-        //}
+        public List<IRequest> DomainEvents => _domainEvents;
+        public void AddDomainEvent(IRequest eventItem)
+        {
+            _domainEvents = _domainEvents ?? new List<IRequest>();
+            _domainEvents.Add(eventItem);
+        }
 
-        //public void RemoveDomainEvent(IAsyncNotification eventItem)
-        //{
-        //    if (_domainEvents is null) return;
-        //    _domainEvents.Remove(eventItem);
-        //}
+        public void RemoveDomainEvent(IRequest eventItem)
+        {
+            if (_domainEvents is null) return;
+            _domainEvents.Remove(eventItem);
+        }
 
         public bool IsTransient()
         {
