@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MediatR;
+﻿using MediatR;
 using Jambo.Domain.AggregatesModel.BuyerAggregate;
 
 namespace Jambo.Domain.Events
 {
     public class BuyerAndPaymentMethodVerifiedDomainEvent
-        : IRequest
+        : INotification
     {
         public Buyer Buyer { get; private set; }
         public PaymentMethod Payment { get; private set; }

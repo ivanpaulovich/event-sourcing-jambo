@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.0" />
+    <PackageReference Include="MediatR" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
+    <ProjectReference Include="..\Jambo.InfrastructureDapper\Jambo.InfrastructureDapper.csproj" />
+    <ProjectReference Include="..\Jambo.InfrastructureEF\Jambo.InfrastructureEF.csproj" />
+  </ItemGroup>
+
+</Project>

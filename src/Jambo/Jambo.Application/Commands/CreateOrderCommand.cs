@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Jambo.Application.Application
+namespace Jambo.Application.Commands
 {
     [DataContract]
     public class CreateOrderCommand

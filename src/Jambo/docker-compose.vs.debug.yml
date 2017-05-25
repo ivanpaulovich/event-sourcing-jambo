@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  jambo.api:
+    image: jambo.api:dev
+    build:
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    volumes:
+      - ./Jambo.API:/app
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+      - ~/clrdbg:/clrdbg:ro
+    entrypoint: tail -f /dev/null
+    labels:
+      - "com.microsoft.visualstudio.targetoperatingsystem=linux"

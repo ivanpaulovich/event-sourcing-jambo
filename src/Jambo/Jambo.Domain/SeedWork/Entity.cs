@@ -10,7 +10,7 @@ namespace Jambo.Domain.SeedWork
         int? _requestedHashCode;
         int _Id;
 
-        private List<IRequest> _domainEvents;
+        private List<INotification> _domainEvents;
 
         public virtual int Id
         {
@@ -24,14 +24,14 @@ namespace Jambo.Domain.SeedWork
             }
         }
 
-        public List<IRequest> DomainEvents => _domainEvents;
-        public void AddDomainEvent(IRequest eventItem)
+        public List<INotification> DomainEvents => _domainEvents;
+        public void AddDomainEvent(INotification eventItem)
         {
-            _domainEvents = _domainEvents ?? new List<IRequest>();
+            _domainEvents = _domainEvents ?? new List<INotification>();
             _domainEvents.Add(eventItem);
         }
 
-        public void RemoveDomainEvent(IRequest eventItem)
+        public void RemoveDomainEvent(INotification eventItem)
         {
             if (_domainEvents is null) return;
             _domainEvents.Remove(eventItem);
