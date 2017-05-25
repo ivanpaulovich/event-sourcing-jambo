@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Autofac;
 using MediatR;
+using System.Reflection;
+using Jambo.Application.Commands;
+using System.Linq;
+using Autofac.Core;
 
 namespace Jambo.IoC
 {
@@ -19,20 +21,6 @@ namespace Jambo.IoC
                     .Where(i => i.IsClosedTypeOf(typeof(IRequestHandler<,>)))
                     .Select(i => new KeyedService("IAsyncRequestHandler", i)));
 
-            // Register all the event classes (they implement IAsyncNotificationHandler) in assembly holding the Commands
-            builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler).GetTypeInfo().Assembly)
-                .As(o => o.GetInterfaces()
-                    .Where(i => i.IsClosedTypeOf(typeof(IAsyncNotificationHandler<>)))
-                    .Select(i => new KeyedService("IAsyncNotificationHandler", i)))
-                    .AsImplementedInterfaces();
-
-
-            builder
-                .RegisterAssemblyTypes(typeof(CreateOrderCommandValidator).GetTypeInfo().Assembly)
-                .Where(t => t.IsClosedTypeOf(typeof(IValidator<>)))
-                .AsImplementedInterfaces();
-
-
             builder.Register<SingleInstanceFactory>(context =>
             {
                 var componentContext = context.Resolve<IComponentContext>();
@@ -46,17 +34,6 @@ namespace Jambo.IoC
 
                 return t => (IEnumerable<object>)componentContext.Resolve(typeof(IEnumerable<>).MakeGenericType(t));
             });
-
-
-
-            builder.RegisterGenericDecorator(typeof(LogDecorator<,>),
-                    typeof(IAsyncRequestHandler<,>),
-                    "IAsyncRequestHandler")
-                    .Keyed("handlerDecorator", typeof(IAsyncRequestHandler<,>));
-
-            builder.RegisterGenericDecorator(typeof(ValidatorDecorator<,>),
-                    typeof(IAsyncRequestHandler<,>),
-                    fromKey: "handlerDecorator");
         }
     }
 }

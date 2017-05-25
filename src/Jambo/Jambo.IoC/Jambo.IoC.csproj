@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netstandard1.6.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
     <ProjectReference Include="..\Jambo.InfrastructureDapper\Jambo.InfrastructureDapper.csproj" />
     <ProjectReference Include="..\Jambo.InfrastructureEF\Jambo.InfrastructureEF.csproj" />
