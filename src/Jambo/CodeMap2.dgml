@@ -1,0 +1,1735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="@10" Category="CodeSchema_Assembly" Bounds="330.728333333333,0,130.543333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(3525b7e5-bbd7-4f6e-9e64-9736ca558931.OutputPath)" Group="Collapsed" Label="Jambo.API.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@100" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.entityframeworkcore.relational\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Relational.dll" Group="Collapsed" Label="Microsoft.EntityFrameworkCore.Relational.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@101" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.entityframeworkcore.sqlserver\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.SqlServer.dll" Group="Collapsed" Label="Microsoft.EntityFrameworkCore.SqlServer.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@102" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.caching.abstractions\1.1.1\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.Caching.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@103" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.caching.memory\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Caching.Memory.dll" Group="Collapsed" Label="Microsoft.Extensions.Caching.Memory.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@104" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.configuration\1.1.1\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll" Group="Collapsed" Label="Microsoft.Extensions.Configuration.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@105" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.configuration.abstractions\1.1.1\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.Configuration.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@106" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.configuration.binder\1.1.1\lib\netstandard1.1\Microsoft.Extensions.Configuration.Binder.dll" Group="Collapsed" Label="Microsoft.Extensions.Configuration.Binder.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@107" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.configuration.environmentvariables\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" Group="Collapsed" Label="Microsoft.Extensions.Configuration.EnvironmentVariables.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@108" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.configuration.fileextensions\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Configuration.FileExtensions.dll" Group="Collapsed" Label="Microsoft.Extensions.Configuration.FileExtensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@109" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.configuration.json\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Configuration.Json.dll" Group="Collapsed" Label="Microsoft.Extensions.Configuration.Json.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@110" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.dependencyinjection\1.1.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll" Group="Collapsed" Label="Microsoft.Extensions.DependencyInjection.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@111" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.DependencyInjection.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@112" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.dependencymodel\1.1.1\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll" Group="Collapsed" Label="Microsoft.Extensions.DependencyModel.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@113" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.diagnosticadapter\1.0.0\lib\netstandard1.1\Microsoft.Extensions.DiagnosticAdapter.dll" Group="Collapsed" Label="Microsoft.Extensions.DiagnosticAdapter.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@114" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.fileproviders.abstractions\1.1.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.FileProviders.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@115" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.fileproviders.composite\1.1.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Composite.dll" Group="Collapsed" Label="Microsoft.Extensions.FileProviders.Composite.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@116" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.fileproviders.physical\1.1.0\lib\netstandard1.3\Microsoft.Extensions.FileProviders.Physical.dll" Group="Collapsed" Label="Microsoft.Extensions.FileProviders.Physical.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@117" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.filesystemglobbing\1.1.0\lib\netstandard1.3\Microsoft.Extensions.FileSystemGlobbing.dll" Group="Collapsed" Label="Microsoft.Extensions.FileSystemGlobbing.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@118" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.globalization.cultureinfocache\1.1.1\lib\netstandard1.1\Microsoft.Extensions.Globalization.CultureInfoCache.dll" Group="Collapsed" Label="Microsoft.Extensions.Globalization.CultureInfoCache.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@119" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.localization\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Localization.dll" Group="Collapsed" Label="Microsoft.Extensions.Localization.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@12" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Security.Principal, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Security.Principal.dll" Group="Collapsed" Label="System.Security.Principal.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@120" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.localization.abstractions\1.1.1\lib\netstandard1.0\Microsoft.Extensions.Localization.Abstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.Localization.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@121" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.logging\1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.dll" Group="Collapsed" Label="Microsoft.Extensions.Logging.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@122" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.logging.abstractions\1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.Logging.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@123" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.logging.console\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Logging.Console.dll" Group="Collapsed" Label="Microsoft.Extensions.Logging.Console.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@124" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.logging.debug\1.1.1\lib\netstandard1.3\Microsoft.Extensions.Logging.Debug.dll" Group="Collapsed" Label="Microsoft.Extensions.Logging.Debug.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@125" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.objectpool\1.1.0\lib\netstandard1.3\Microsoft.Extensions.ObjectPool.dll" Group="Collapsed" Label="Microsoft.Extensions.ObjectPool.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@126" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.options\1.1.1\lib\netstandard1.0\Microsoft.Extensions.Options.dll" Group="Collapsed" Label="Microsoft.Extensions.Options.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@127" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.options.configurationextensions\1.1.1\lib\netstandard1.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll" Group="Collapsed" Label="Microsoft.Extensions.Options.ConfigurationExtensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@128" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll" Group="Collapsed" Label="Microsoft.Extensions.PlatformAbstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@129" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.primitives\1.1.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll" Group="Collapsed" Label="Microsoft.Extensions.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@130" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.extensions.webencoders\1.1.1\lib\netstandard1.0\Microsoft.Extensions.WebEncoders.dll" Group="Collapsed" Label="Microsoft.Extensions.WebEncoders.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@131" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.net.http.headers\1.1.1\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll" Group="Collapsed" Label="Microsoft.Net.Http.Headers.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@132" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.win32.primitives\4.3.0\ref\netstandard1.3\Microsoft.Win32.Primitives.dll" Group="Collapsed" Label="Microsoft.Win32.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@133" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.win32.registry\4.3.0\ref\netstandard1.3\Microsoft.Win32.Registry.dll" Group="Collapsed" Label="Microsoft.Win32.Registry.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@134" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll" Group="Collapsed" Label="Newtonsoft.Json.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@135" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\remotion.linq\2.1.1\lib\netstandard1.0\Remotion.Linq.dll" Group="Collapsed" Label="Remotion.Linq.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@136" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.appcontext\4.3.0\ref\netstandard1.6\System.AppContext.dll" Group="Collapsed" Label="System.AppContext.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@137" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll" Group="Collapsed" Label="System.Buffers.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@138" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.collections\4.3.0\ref\netstandard1.3\System.Collections.dll" Group="Collapsed" Label="System.Collections.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@139" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.collections.concurrent\4.3.0\ref\netstandard1.3\System.Collections.Concurrent.dll" Group="Collapsed" Label="System.Collections.Concurrent.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@14" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.ComponentModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.ComponentModel.dll" Group="Collapsed" Label="System.ComponentModel.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@140" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.collections.immutable\1.3.0\lib\netstandard1.0\System.Collections.Immutable.dll" Group="Collapsed" Label="System.Collections.Immutable.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@141" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.collections.nongeneric\4.0.1\ref\netstandard1.3\System.Collections.NonGeneric.dll" Group="Collapsed" Label="System.Collections.NonGeneric.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@142" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.componentmodel.annotations\4.3.0\ref\netstandard1.4\System.ComponentModel.Annotations.dll" Group="Collapsed" Label="System.ComponentModel.Annotations.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@143" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.componentmodel.primitives\4.3.0\ref\netstandard1.0\System.ComponentModel.Primitives.dll" Group="Collapsed" Label="System.ComponentModel.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@144" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.componentmodel.typeconverter\4.3.0\ref\netstandard1.5\System.ComponentModel.TypeConverter.dll" Group="Collapsed" Label="System.ComponentModel.TypeConverter.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@145" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.console\4.3.0\ref\netstandard1.3\System.Console.dll" Group="Collapsed" Label="System.Console.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@146" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.data.common\4.3.0\ref\netstandard1.2\System.Data.Common.dll" Group="Collapsed" Label="System.Data.Common.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@147" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.data.sqlclient\4.3.1\ref\netstandard1.3\System.Data.SqlClient.dll" Group="Collapsed" Label="System.Data.SqlClient.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@148" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.diagnostics.debug\4.3.0\ref\netstandard1.3\System.Diagnostics.Debug.dll" Group="Collapsed" Label="System.Diagnostics.Debug.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@149" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.diagnostics.diagnosticsource\4.3.1\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll" Group="Collapsed" Label="System.Diagnostics.DiagnosticSource.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@150" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.diagnostics.process\4.3.0\ref\netstandard1.4\System.Diagnostics.Process.dll" Group="Collapsed" Label="System.Diagnostics.Process.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@151" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.diagnostics.stacktrace\4.3.0\ref\netstandard1.3\System.Diagnostics.StackTrace.dll" Group="Collapsed" Label="System.Diagnostics.StackTrace.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@152" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.diagnostics.tracing\4.3.0\ref\netstandard1.5\System.Diagnostics.Tracing.dll" Group="Collapsed" Label="System.Diagnostics.Tracing.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@153" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.dynamic.runtime\4.3.0\ref\netstandard1.3\System.Dynamic.Runtime.dll" Group="Collapsed" Label="System.Dynamic.Runtime.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@154" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.globalization\4.3.0\ref\netstandard1.3\System.Globalization.dll" Group="Collapsed" Label="System.Globalization.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@155" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.globalization.calendars\4.3.0\ref\netstandard1.3\System.Globalization.Calendars.dll" Group="Collapsed" Label="System.Globalization.Calendars.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@156" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.globalization.extensions\4.3.0\ref\netstandard1.3\System.Globalization.Extensions.dll" Group="Collapsed" Label="System.Globalization.Extensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@157" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.interactive.async\3.0.0\lib\netstandard1.0\System.Interactive.Async.dll" Group="Collapsed" Label="System.Interactive.Async.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@158" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io\4.3.0\ref\netstandard1.5\System.IO.dll" Group="Collapsed" Label="System.IO.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@159" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.compression\4.3.0\ref\netstandard1.3\System.IO.Compression.dll" Group="Collapsed" Label="System.IO.Compression.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@16" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Linq.Parallel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Linq.Parallel.dll" Group="Collapsed" Label="System.Linq.Parallel.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@160" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.compression.zipfile\4.3.0\ref\netstandard1.3\System.IO.Compression.ZipFile.dll" Group="Collapsed" Label="System.IO.Compression.ZipFile.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@161" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.filesystem\4.3.0\ref\netstandard1.3\System.IO.FileSystem.dll" Group="Collapsed" Label="System.IO.FileSystem.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@162" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.filesystem.primitives\4.3.0\ref\netstandard1.3\System.IO.FileSystem.Primitives.dll" Group="Collapsed" Label="System.IO.FileSystem.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@163" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.filesystem.watcher\4.3.0\ref\netstandard1.3\System.IO.FileSystem.Watcher.dll" Group="Collapsed" Label="System.IO.FileSystem.Watcher.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@164" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.memorymappedfiles\4.3.0\ref\netstandard1.3\System.IO.MemoryMappedFiles.dll" Group="Collapsed" Label="System.IO.MemoryMappedFiles.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@165" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.io.unmanagedmemorystream\4.3.0\ref\netstandard1.3\System.IO.UnmanagedMemoryStream.dll" Group="Collapsed" Label="System.IO.UnmanagedMemoryStream.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@166" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.linq\4.3.0\ref\netstandard1.6\System.Linq.dll" Group="Collapsed" Label="System.Linq.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@167" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.linq.expressions\4.3.0\ref\netstandard1.6\System.Linq.Expressions.dll" Group="Collapsed" Label="System.Linq.Expressions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@168" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.http\4.3.0\ref\netstandard1.3\System.Net.Http.dll" Group="Collapsed" Label="System.Net.Http.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@169" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.nameresolution\4.3.0\ref\netstandard1.3\System.Net.NameResolution.dll" Group="Collapsed" Label="System.Net.NameResolution.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@170" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.primitives\4.3.0\ref\netstandard1.3\System.Net.Primitives.dll" Group="Collapsed" Label="System.Net.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@171" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.requests\4.3.0\ref\netstandard1.3\System.Net.Requests.dll" Group="Collapsed" Label="System.Net.Requests.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@172" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.security\4.3.0\ref\netstandard1.3\System.Net.Security.dll" Group="Collapsed" Label="System.Net.Security.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@173" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.sockets\4.3.0\ref\netstandard1.3\System.Net.Sockets.dll" Group="Collapsed" Label="System.Net.Sockets.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@174" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.net.websockets\4.3.0\ref\netstandard1.3\System.Net.WebSockets.dll" Group="Collapsed" Label="System.Net.WebSockets.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@175" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.numerics.vectors\4.3.0\ref\netstandard1.0\System.Numerics.Vectors.dll" Group="Collapsed" Label="System.Numerics.Vectors.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@176" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.objectmodel\4.3.0\ref\netstandard1.3\System.ObjectModel.dll" Group="Collapsed" Label="System.ObjectModel.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@177" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.reflection\4.3.0\ref\netstandard1.5\System.Reflection.dll" Group="Collapsed" Label="System.Reflection.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@178" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.reflection.dispatchproxy\4.3.0\ref\netstandard1.3\System.Reflection.DispatchProxy.dll" Group="Collapsed" Label="System.Reflection.DispatchProxy.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@179" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.reflection.metadata\1.4.1\lib\netstandard1.1\System.Reflection.Metadata.dll" Group="Collapsed" Label="System.Reflection.Metadata.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@18" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Threading.Tasks.Parallel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Threading.Tasks.Parallel.dll" Group="Collapsed" Label="System.Threading.Tasks.Parallel.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@180" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.reflection.typeextensions\4.3.0\ref\netstandard1.5\System.Reflection.TypeExtensions.dll" Group="Collapsed" Label="System.Reflection.TypeExtensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@181" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.resources.reader\4.3.0\lib\netstandard1.0\System.Resources.Reader.dll" Group="Collapsed" Label="System.Resources.Reader.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@182" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime\4.3.0\ref\netstandard1.5\System.Runtime.dll" Group="Collapsed" Label="System.Runtime.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@183" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.compilerservices.unsafe\4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" Group="Collapsed" Label="System.Runtime.CompilerServices.Unsafe.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@184" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.extensions\4.3.0\ref\netstandard1.5\System.Runtime.Extensions.dll" Group="Collapsed" Label="System.Runtime.Extensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@185" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.interopservices\4.3.0\ref\netstandard1.5\System.Runtime.InteropServices.dll" Group="Collapsed" Label="System.Runtime.InteropServices.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@186" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.interopservices\4.3.0\ref\netcoreapp1.1\System.Runtime.InteropServices.dll" Group="Collapsed" Label="System.Runtime.InteropServices.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@187" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.interopservices.runtimeinformation\4.3.0\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" Group="Collapsed" Label="System.Runtime.InteropServices.RuntimeInformation.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@188" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.loader\4.3.0\ref\netstandard1.5\System.Runtime.Loader.dll" Group="Collapsed" Label="System.Runtime.Loader.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@189" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.runtime.serialization.primitives\4.3.0\ref\netstandard1.3\System.Runtime.Serialization.Primitives.dll" Group="Collapsed" Label="System.Runtime.Serialization.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@190" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.security.claims\4.3.0\ref\netstandard1.3\System.Security.Claims.dll" Group="Collapsed" Label="System.Security.Claims.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@191" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.security.cryptography.algorithms\4.3.0\ref\netstandard1.6\System.Security.Cryptography.Algorithms.dll" Group="Collapsed" Label="System.Security.Cryptography.Algorithms.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@192" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.security.cryptography.encoding\4.3.0\ref\netstandard1.3\System.Security.Cryptography.Encoding.dll" Group="Collapsed" Label="System.Security.Cryptography.Encoding.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@193" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.security.cryptography.primitives\4.3.0\ref\netstandard1.3\System.Security.Cryptography.Primitives.dll" Group="Collapsed" Label="System.Security.Cryptography.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@194" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.security.cryptography.x509certificates\4.3.0\ref\netstandard1.4\System.Security.Cryptography.X509Certificates.dll" Group="Collapsed" Label="System.Security.Cryptography.X509Certificates.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@195" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.security.principal.windows\4.3.0\ref\netstandard1.3\System.Security.Principal.Windows.dll" Group="Collapsed" Label="System.Security.Principal.Windows.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@196" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.text.encoding\4.3.0\ref\netstandard1.3\System.Text.Encoding.dll" Group="Collapsed" Label="System.Text.Encoding.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@197" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.text.encoding.extensions\4.3.0\ref\netstandard1.3\System.Text.Encoding.Extensions.dll" Group="Collapsed" Label="System.Text.Encoding.Extensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@198" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.text.encodings.web\4.3.0\lib\netstandard1.0\System.Text.Encodings.Web.dll" Group="Collapsed" Label="System.Text.Encodings.Web.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@199" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.text.regularexpressions\4.3.0\ref\netstandard1.6\System.Text.RegularExpressions.dll" Group="Collapsed" Label="System.Text.RegularExpressions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@2" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\Microsoft.VisualBasic.dll" Group="Collapsed" Label="Microsoft.VisualBasic.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@20" Category="CodeSchema_Assembly" Bounds="189.763333333333,165,154.473333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(c86e10a8-096f-41e6-87f5-828a5af2ef23.OutputPath)" Group="Collapsed" Label="Jambo.Domain.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@200" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.text.regularexpressions\4.3.0\ref\netcoreapp1.1\System.Text.RegularExpressions.dll" Group="Collapsed" Label="System.Text.RegularExpressions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@201" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.threading\4.3.0\ref\netstandard1.3\System.Threading.dll" Group="Collapsed" Label="System.Threading.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@202" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.threading.tasks\4.3.0\ref\netstandard1.3\System.Threading.Tasks.dll" Group="Collapsed" Label="System.Threading.Tasks.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@203" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.threading.tasks.dataflow\4.7.0\lib\netstandard1.1\System.Threading.Tasks.Dataflow.dll" Group="Collapsed" Label="System.Threading.Tasks.Dataflow.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@204" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.threading.tasks.extensions\4.3.0\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll" Group="Collapsed" Label="System.Threading.Tasks.Extensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@205" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.threading.thread\4.3.0\ref\netstandard1.3\System.Threading.Thread.dll" Group="Collapsed" Label="System.Threading.Thread.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@206" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.threading.threadpool\4.3.0\ref\netstandard1.3\System.Threading.ThreadPool.dll" Group="Collapsed" Label="System.Threading.ThreadPool.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@207" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.xml.readerwriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll" Group="Collapsed" Label="System.Xml.ReaderWriter.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@208" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.xml.xdocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll" Group="Collapsed" Label="System.Xml.XDocument.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@209" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\system.xml.xmldocument\4.0.1\ref\netstandard1.3\System.Xml.XmlDocument.dll" Group="Collapsed" Label="System.Xml.XmlDocument.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@22" Category="CodeSchema_Assembly" Bounds="63.5033333333333,110,172.993333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(c7766aee-dc38-441d-a55c-b0f4a49e4f47.OutputPath)" Group="Collapsed" Label="Jambo.Application.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@24" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Reflection.Emit.ILGeneration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Reflection.Emit.ILGeneration.dll" Group="Collapsed" Label="System.Reflection.Emit.ILGeneration.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@26" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Net.WebHeaderCollection, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Net.WebHeaderCollection.dll" Group="Collapsed" Label="System.Net.WebHeaderCollection.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@28" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\Microsoft.CSharp.dll" Group="Collapsed" Label="Microsoft.CSharp.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@30" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Resources.ResourceManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Resources.ResourceManager.dll" Group="Collapsed" Label="System.Resources.ResourceManager.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@32" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Threading.Timer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Threading.Timer.dll" Group="Collapsed" Label="System.Threading.Timer.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@34" Category="CodeSchema_Assembly" Bounds="524.52,110,222.96,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(58053cd1-549b-47fb-a7ea-60a4c8c89143.OutputPath)" Group="Collapsed" Label="Jambo.InfrastructureDapper.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@36" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Runtime.Numerics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Runtime.Numerics.dll" Group="Collapsed" Label="System.Runtime.Numerics.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@38" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Runtime.Handles, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Runtime.Handles.dll" Group="Collapsed" Label="System.Runtime.Handles.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@4" Category="CodeSchema_Assembly" Bounds="201.728333333333,55,130.543333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(5a9b4d18-80ab-487d-a3a2-7529d5303b0d.OutputPath)" Group="Collapsed" Label="Jambo.IoC.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@40" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Reflection.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Reflection.Primitives.dll" Group="Collapsed" Label="System.Reflection.Primitives.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@42" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Diagnostics.Tools, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Diagnostics.Tools.dll" Group="Collapsed" Label="System.Diagnostics.Tools.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@44" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Reflection.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Reflection.Extensions.dll" Group="Collapsed" Label="System.Reflection.Extensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@46" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Diagnostics.Contracts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Diagnostics.Contracts.dll" Group="Collapsed" Label="System.Diagnostics.Contracts.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@48" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Reflection.Emit.Lightweight, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Reflection.Emit.Lightweight.dll" Group="Collapsed" Label="System.Reflection.Emit.Lightweight.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@50" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Reflection.Emit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Reflection.Emit.dll" Group="Collapsed" Label="System.Reflection.Emit.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@51" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\autofac\4.6.0\lib\netstandard1.1\Autofac.dll" Group="Collapsed" Label="Autofac.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@52" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\autofac.extensions.dependencyinjection\4.1.0\lib\netstandard1.1\Autofac.Extensions.DependencyInjection.dll" Group="Collapsed" Label="Autofac.Extensions.DependencyInjection.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@53" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\dapper\1.50.2\lib\netstandard1.3\Dapper.dll" Group="Collapsed" Label="Dapper.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@54" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\mediatr\3.0.1\lib\netstandard1.1\MediatR.dll" Group="Collapsed" Label="MediatR.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@55" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.applicationinsights\2.2.0\lib\netstandard1.5\Microsoft.ApplicationInsights.dll" Group="Collapsed" Label="Microsoft.ApplicationInsights.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@56" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.applicationinsights.aspnetcore\2.0.0\lib\netstandard1.6\Microsoft.ApplicationInsights.AspNetCore.dll" Group="Collapsed" Label="Microsoft.ApplicationInsights.AspNetCore.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@57" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.antiforgery\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Antiforgery.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@58" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.authorization\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Authorization.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@59" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.cors\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Cors.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@6" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Linq.Queryable, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(Fx)\System.Linq.Queryable.dll" Group="Collapsed" Label="System.Linq.Queryable.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@60" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.cryptography.internal\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Cryptography.Internal.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Cryptography.Internal.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@61" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.dataprotection\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.DataProtection.dll" Group="Collapsed" Label="Microsoft.AspNetCore.DataProtection.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@62" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.dataprotection.abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.DataProtection.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.DataProtection.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@63" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.diagnostics\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Diagnostics.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Diagnostics.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@64" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.diagnostics.abstractions\1.1.1\lib\netstandard1.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Diagnostics.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@65" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.hosting\1.1.1\lib\netstandard1.5\Microsoft.AspNetCore.Hosting.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Hosting.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@66" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.hosting.abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Hosting.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@67" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.hosting.server.abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@68" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.html.abstractions\1.1.1\lib\netstandard1.0\Microsoft.AspNetCore.Html.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Html.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@69" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.http\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Http.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Http.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@70" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.http.abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Http.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Http.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@71" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.http.extensions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Http.Extensions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Http.Extensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@72" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.http.features\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Http.Features.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Http.Features.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@73" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.httpoverrides\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.HttpOverrides.dll" Group="Collapsed" Label="Microsoft.AspNetCore.HttpOverrides.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@74" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.jsonpatch\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.JsonPatch.dll" Group="Collapsed" Label="Microsoft.AspNetCore.JsonPatch.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@75" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.localization\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Localization.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Localization.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@76" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@77" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.abstractions\1.1.2\lib\netstandard1.3\Microsoft.AspNetCore.Mvc.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@78" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.apiexplorer\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ApiExplorer.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.ApiExplorer.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@79" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.core\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Core.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Core.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@8" Category="CodeSchema_Assembly" Bounds="298.093333333333,110,195.813333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(cbafd2de-e9db-43e6-a2e7-2b203e14ed98.OutputPath)" Group="Collapsed" Label="Jambo.InfrastructureEF.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@80" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.cors\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Cors.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Cors.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@81" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.dataannotations\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.DataAnnotations.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.DataAnnotations.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@82" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.formatters.json\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Formatters.Json.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Formatters.Json.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@83" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.localization\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Localization.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Localization.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@84" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.razor\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Razor.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Razor.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@85" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.razor.host\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Razor.Host.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.Razor.Host.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@86" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.taghelpers\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.TagHelpers.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.TagHelpers.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@87" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.mvc.viewfeatures\1.1.2\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Mvc.ViewFeatures.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@88" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.razor\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Razor.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Razor.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@89" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.razor.runtime\1.1.1\lib\netstandard1.5\Microsoft.AspNetCore.Razor.Runtime.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Razor.Runtime.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@90" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.responsecaching.abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.ResponseCaching.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@91" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.routing\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Routing.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Routing.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@92" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.routing.abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Routing.Abstractions.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Routing.Abstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@93" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.server.iisintegration\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Server.IISIntegration.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Server.IISIntegration.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@94" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.server.kestrel\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Server.Kestrel.dll" Group="Collapsed" Label="Microsoft.AspNetCore.Server.Kestrel.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@95" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.aspnetcore.webutilities\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.WebUtilities.dll" Group="Collapsed" Label="Microsoft.AspNetCore.WebUtilities.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@96" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.codeanalysis.common\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll" Group="Collapsed" Label="Microsoft.CodeAnalysis.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@97" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.codeanalysis.csharp\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll" Group="Collapsed" Label="Microsoft.CodeAnalysis.CSharp.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@98" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.dotnet.platformabstractions\1.1.1\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll" Group="Collapsed" Label="Microsoft.DotNet.PlatformAbstractions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@99" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" DelayedChildNodesState="NotFetched" FilePath="C:\Users\ivanp\.nuget\packages\microsoft.entityframeworkcore\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.dll" Group="Collapsed" Label="Microsoft.EntityFrameworkCore.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="_standardGraphExternalsGroup" Category="Externals" Bounds="352.505,220,86.99,25" Group="Collapsed" Label="Externals" LayoutSettings="List" />
+    <Node Id="docker-compose.dcproj" Category="CodeMap_Project" Bounds="1.4210854715202E-14,275,109.216666666667,25.96" Label="docker-compose" />
+  </Nodes>
+  <Links>
+    <Link Source="@10" Target="@100" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@101" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@102" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@103" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@104" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@105" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@106" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@107" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@108" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@109" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@110" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@111" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@112" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@113" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@114" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@115" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@116" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@117" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@118" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@119" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@12" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@120" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@121" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@122" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@123" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@124" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@125" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@126" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@127" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@128" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@129" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@130" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@131" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@132" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@133" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@134" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@135" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@136" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@137" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@138" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@139" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@14" Category="CodeMap_ExternalReference" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@10" Target="@140" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@141" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@142" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@143" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@144" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@145" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@146" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@147" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@148" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@149" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@150" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@151" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@152" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@153" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@154" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@155" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@156" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@157" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@158" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@159" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@160" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@161" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@162" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@163" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@164" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@165" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@166" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@167" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@168" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@169" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@170" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@171" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@172" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@173" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@174" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@175" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@176" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@177" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@178" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@179" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@18" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@180" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@181" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@182" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@183" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@184" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@186" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@187" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@188" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@189" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@190" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@191" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@192" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@193" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@194" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@195" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@196" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@197" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@198" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@2" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@20" Category="CodeMap_ExternalReference" Bounds="1,21.5539817810059,329.975952148438,141.678623199463" />
+    <Link Source="@10" Target="@200" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@201" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@202" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@203" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@204" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@205" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@206" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@207" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@208" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@209" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@22" Category="CodeMap_ProjectReference" Bounds="157.983047485352,24.0292377471924,174.784683227539,77.5627956390381" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@10" Target="@24" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@26" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@28" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@34" Category="CodeMap_ExternalReference" Bounds="423.272735595703,25,177.272979736328,81.2501068115234" />
+    <Link Source="@10" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@4" Category="CodeMap_ProjectReference" Bounds="304.597106933594,25,62.084716796875,26.4702224731445" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@10" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@46" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@50" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@51" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@53" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@55" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@56" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@57" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@59" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@6" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@60" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@61" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@63" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@64" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@65" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@66" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@67" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@68" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@69" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@70" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@71" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@72" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@73" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@74" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@75" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@76" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@77" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@78" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@79" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@8" Category="CodeMap_ExternalReference" Bounds="396,25,0,76" />
+    <Link Source="@10" Target="@80" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@81" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@82" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@83" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@84" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@85" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@86" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@87" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@88" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@89" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@90" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@91" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@92" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@93" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@94" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@95" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@96" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@97" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@98" Category="CodeMap_ExternalReference" />
+    <Link Source="@10" Target="@99" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@132" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@136" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@138" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@139" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@145" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@148" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@152" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@154" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@155" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@158" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@159" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@160" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@161" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@162" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@166" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@167" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@168" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@170" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@173" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@176" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@177" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@182" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@184" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@185" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@187" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@191" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@192" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@193" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@194" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@196" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@197" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@199" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@201" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@202" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@207" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@208" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@132" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@136" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@138" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@139" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@145" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@148" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@152" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@154" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@155" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@158" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@159" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@160" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@161" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@162" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@166" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@167" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@168" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@170" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@173" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@176" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@177" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@182" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@184" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@185" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@187" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@189" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@191" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@192" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@193" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@194" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@196" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@197" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@199" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@20" Category="CodeMap_ProjectReference" Bounds="176.590911865234,135,55.6732330322266,26.1711730957031" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@22" Target="@201" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@202" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@207" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@208" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@132" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@136" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@138" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@139" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@141" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@145" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@146" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@147" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@148" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@152" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@153" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@154" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@155" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@158" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@159" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@160" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@161" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@162" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@166" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@167" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@168" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@170" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@173" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@176" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@177" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@180" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@182" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@184" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@185" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@187" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@191" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@192" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@193" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@194" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@196" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@197" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@199" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@20" Category="CodeMap_ProjectReference" Bounds="351.435882568359,135,200.700469970703,29.9147033691406" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="Implements" />
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@34" Target="@201" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@202" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@207" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@208" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@209" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@24" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@50" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@53" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@100" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@101" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@102" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@103" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@110" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@111" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@121" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@122" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@126" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@129" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@132" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@135" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@136" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@138" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@139" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@14" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@140" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@141" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@142" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@145" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@146" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@147" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@148" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@149" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@152" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@153" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@154" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@155" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@157" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@158" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@159" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@160" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@161" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@162" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@166" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@167" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@168" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@170" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@173" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@176" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@177" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@180" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@182" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@183" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@184" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@185" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@187" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@189" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@191" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@192" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@193" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@194" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@196" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@197" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@199" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@20" Category="CodeMap_ProjectReference" Bounds="267,80,0,76" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@4" Target="@201" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@202" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@205" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@207" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@208" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@209" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@22" Category="CodeMap_ProjectReference" Bounds="184.735855102539,80,55.6732330322266,26.1711807250977" />
+    <Link Source="@4" Target="@24" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@28" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@34" Category="CodeMap_ProjectReference" Bounds="331.782958984375,77.1559982299805,211.451721191406,31.5171966552734" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@4" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@50" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@51" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@53" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@6" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@8" Category="CodeMap_ProjectReference" Bounds="296.318176269531,80,62.084716796875,26.4702224731445" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@4" Target="@99" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@100" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@101" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@102" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@103" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@110" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@111" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@121" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@122" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@126" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@129" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@132" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@135" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@136" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@138" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@139" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@14" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@140" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@142" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@145" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@146" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@147" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@148" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@149" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@152" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@153" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@154" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@155" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@157" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@158" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@159" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@160" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@161" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@162" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@166" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@167" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@168" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@170" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@173" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@176" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@177" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@182" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@183" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@184" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@185" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@187" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@191" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@192" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@193" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@194" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@196" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@197" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@199" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@20" Category="CodeMap_ProjectReference" Bounds="304.597106933594,135,62.084716796875,26.4702301025391" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="94">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="Implements" />
+      <Category Ref="References" />
+    </Link>
+    <Link Source="@8" Target="@201" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@202" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@205" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@207" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@208" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@28" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@8" Target="@6" Category="CodeMap_ExternalReference" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@8" Target="@99" Category="CodeMap_ExternalReference" />
+    <Link Source="_standardGraphExternalsGroup" Target="@100" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@101" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@102" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@103" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@104" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@105" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@106" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@107" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@108" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@109" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@110" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@111" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@112" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@113" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@114" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@115" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@116" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@117" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@118" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@119" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@12" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@120" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@121" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@122" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@123" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@124" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@125" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@126" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@127" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@128" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@129" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@130" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@131" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@132" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@133" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@134" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@135" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@136" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@137" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@138" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@139" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@14" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@140" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@141" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@142" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@143" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@144" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@145" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@146" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@147" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@148" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@149" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@150" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@151" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@152" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@153" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@154" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@155" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@156" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@157" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@158" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@159" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@16" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@160" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@161" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@162" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@163" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@164" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@165" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@166" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@167" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@168" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@169" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@170" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@171" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@172" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@173" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@174" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@175" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@176" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@177" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@178" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@179" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@18" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@180" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@181" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@182" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@183" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@184" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@185" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@186" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@187" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@188" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@189" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@190" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@191" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@192" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@193" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@194" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@195" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@196" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@197" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@198" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@199" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@2" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@200" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@201" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@202" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@203" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@204" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@205" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@206" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@207" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@208" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@209" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@24" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@26" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@28" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@30" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@32" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@36" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@38" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@40" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@42" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@44" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@46" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@48" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@50" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@51" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@52" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@53" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@54" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@55" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@56" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@57" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@58" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@59" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@6" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@60" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@61" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@62" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@63" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@64" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@65" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@66" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@67" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@68" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@69" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@70" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@71" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@72" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@73" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@74" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@75" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@76" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@77" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@78" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@79" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@80" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@81" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@82" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@83" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@84" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@85" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@86" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@87" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@88" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@89" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@90" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@91" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@92" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@93" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@94" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@95" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@96" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@97" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@98" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@99" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="CodeMap_ExternalReference" Label="External Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+    <Category Id="CodeMap_Project" Label="Non Assembly Project" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Non Assembly Projects" />
+    <Category Id="CodeMap_ProjectReference" Label="Project Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+    <Category Id="CodeSchema_Assembly" Label="Assembly" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="Assemblies" />
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
+    <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="Externals" Label="Externals" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Externals" />
+    <Category Id="File" Label="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="Files" />
+    <Category Id="FileSystem.Category.FileOfType.dll" BasedOn="CodeSchema_Assembly" CanBeDataDriven="True" IsProviderRoot="False" />
+    <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsExternal" Label="Is External" Description="Flag indicating whether this node is considered external" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_StrongName" Label="StrongName" Description="StrongName" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FilePath" Label="File Path" Description="File Path" DataType="System.String" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="LayoutSettings" DataType="Microsoft.VisualStudio.Diagrams.View.GroupLayoutStyle" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+    <Property Id="Weight" Label="Weight" Description="Weight" DataType="System.Double" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="StrongName" Label="Strong Name" ValueType="System.String" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(FxUri)/Microsoft.VisualBasic.dll" />
+    <Alias n="2" Id="(@1)" />
+    <Alias n="3" Uri="Assembly=$(5a9b4d18-80ab-487d-a3a2-7529d5303b0d.OutputPathUri)" />
+    <Alias n="4" Id="(@3)" />
+    <Alias n="5" Uri="Assembly=$(FxUri)/System.Linq.Queryable.dll" />
+    <Alias n="6" Id="(@5)" />
+    <Alias n="7" Uri="Assembly=$(cbafd2de-e9db-43e6-a2e7-2b203e14ed98.OutputPathUri)" />
+    <Alias n="8" Id="(@7)" />
+    <Alias n="9" Uri="Assembly=$(3525b7e5-bbd7-4f6e-9e64-9736ca558931.OutputPathUri)" />
+    <Alias n="10" Id="(@9)" />
+    <Alias n="11" Uri="Assembly=$(FxUri)/System.Security.Principal.dll" />
+    <Alias n="12" Id="(@11)" />
+    <Alias n="13" Uri="Assembly=$(FxUri)/System.ComponentModel.dll" />
+    <Alias n="14" Id="(@13)" />
+    <Alias n="15" Uri="Assembly=$(FxUri)/System.Linq.Parallel.dll" />
+    <Alias n="16" Id="(@15)" />
+    <Alias n="17" Uri="Assembly=$(FxUri)/System.Threading.Tasks.Parallel.dll" />
+    <Alias n="18" Id="(@17)" />
+    <Alias n="19" Uri="Assembly=$(c86e10a8-096f-41e6-87f5-828a5af2ef23.OutputPathUri)" />
+    <Alias n="20" Id="(@19)" />
+    <Alias n="21" Uri="Assembly=$(c7766aee-dc38-441d-a55c-b0f4a49e4f47.OutputPathUri)" />
+    <Alias n="22" Id="(@21)" />
+    <Alias n="23" Uri="Assembly=$(FxUri)/System.Reflection.Emit.ILGeneration.dll" />
+    <Alias n="24" Id="(@23)" />
+    <Alias n="25" Uri="Assembly=$(FxUri)/System.Net.WebHeaderCollection.dll" />
+    <Alias n="26" Id="(@25)" />
+    <Alias n="27" Uri="Assembly=$(FxUri)/Microsoft.CSharp.dll" />
+    <Alias n="28" Id="(@27)" />
+    <Alias n="29" Uri="Assembly=$(FxUri)/System.Resources.ResourceManager.dll" />
+    <Alias n="30" Id="(@29)" />
+    <Alias n="31" Uri="Assembly=$(FxUri)/System.Threading.Timer.dll" />
+    <Alias n="32" Id="(@31)" />
+    <Alias n="33" Uri="Assembly=$(58053cd1-549b-47fb-a7ea-60a4c8c89143.OutputPathUri)" />
+    <Alias n="34" Id="(@33)" />
+    <Alias n="35" Uri="Assembly=$(FxUri)/System.Runtime.Numerics.dll" />
+    <Alias n="36" Id="(@35)" />
+    <Alias n="37" Uri="Assembly=$(FxUri)/System.Runtime.Handles.dll" />
+    <Alias n="38" Id="(@37)" />
+    <Alias n="39" Uri="Assembly=$(FxUri)/System.Reflection.Primitives.dll" />
+    <Alias n="40" Id="(@39)" />
+    <Alias n="41" Uri="Assembly=$(FxUri)/System.Diagnostics.Tools.dll" />
+    <Alias n="42" Id="(@41)" />
+    <Alias n="43" Uri="Assembly=$(FxUri)/System.Reflection.Extensions.dll" />
+    <Alias n="44" Id="(@43)" />
+    <Alias n="45" Uri="Assembly=$(FxUri)/System.Diagnostics.Contracts.dll" />
+    <Alias n="46" Id="(@45)" />
+    <Alias n="47" Uri="Assembly=$(FxUri)/System.Reflection.Emit.Lightweight.dll" />
+    <Alias n="48" Id="(@47)" />
+    <Alias n="49" Uri="Assembly=$(FxUri)/System.Reflection.Emit.dll" />
+    <Alias n="50" Id="(@49)" />
+    <Alias n="51" Id="(StrongName=&quot;Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da&quot;)" />
+    <Alias n="52" Id="(StrongName=&quot;Autofac.Extensions.DependencyInjection, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da&quot;)" />
+    <Alias n="53" Id="(StrongName=&quot;Dapper, Version=1.50.2.0, Culture=neutral, PublicKeyToken=null&quot;)" />
+    <Alias n="54" Id="(StrongName=&quot;MediatR, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null&quot;)" />
+    <Alias n="55" Id="(StrongName=&quot;Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&quot;)" />
+    <Alias n="56" Id="(StrongName=&quot;Microsoft.ApplicationInsights.AspNetCore, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&quot;)" />
+    <Alias n="57" Id="(StrongName=&quot;Microsoft.AspNetCore.Antiforgery, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="58" Id="(StrongName=&quot;Microsoft.AspNetCore.Authorization, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="59" Id="(StrongName=&quot;Microsoft.AspNetCore.Cors, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="60" Id="(StrongName=&quot;Microsoft.AspNetCore.Cryptography.Internal, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="61" Id="(StrongName=&quot;Microsoft.AspNetCore.DataProtection, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="62" Id="(StrongName=&quot;Microsoft.AspNetCore.DataProtection.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="63" Id="(StrongName=&quot;Microsoft.AspNetCore.Diagnostics, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="64" Id="(StrongName=&quot;Microsoft.AspNetCore.Diagnostics.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="65" Id="(StrongName=&quot;Microsoft.AspNetCore.Hosting, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="66" Id="(StrongName=&quot;Microsoft.AspNetCore.Hosting.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="67" Id="(StrongName=&quot;Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="68" Id="(StrongName=&quot;Microsoft.AspNetCore.Html.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="69" Id="(StrongName=&quot;Microsoft.AspNetCore.Http, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="70" Id="(StrongName=&quot;Microsoft.AspNetCore.Http.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="71" Id="(StrongName=&quot;Microsoft.AspNetCore.Http.Extensions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="72" Id="(StrongName=&quot;Microsoft.AspNetCore.Http.Features, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="73" Id="(StrongName=&quot;Microsoft.AspNetCore.HttpOverrides, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="74" Id="(StrongName=&quot;Microsoft.AspNetCore.JsonPatch, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="75" Id="(StrongName=&quot;Microsoft.AspNetCore.Localization, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="76" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="77" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="78" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.ApiExplorer, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="79" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Core, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="80" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Cors, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="81" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.DataAnnotations, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="82" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Formatters.Json, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="83" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Localization, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="84" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Razor, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="85" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.Razor.Host, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="86" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.TagHelpers, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="87" Id="(StrongName=&quot;Microsoft.AspNetCore.Mvc.ViewFeatures, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="88" Id="(StrongName=&quot;Microsoft.AspNetCore.Razor, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="89" Id="(StrongName=&quot;Microsoft.AspNetCore.Razor.Runtime, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="90" Id="(StrongName=&quot;Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="91" Id="(StrongName=&quot;Microsoft.AspNetCore.Routing, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="92" Id="(StrongName=&quot;Microsoft.AspNetCore.Routing.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="93" Id="(StrongName=&quot;Microsoft.AspNetCore.Server.IISIntegration, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="94" Id="(StrongName=&quot;Microsoft.AspNetCore.Server.Kestrel, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="95" Id="(StrongName=&quot;Microsoft.AspNetCore.WebUtilities, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="96" Id="(StrongName=&quot;Microsoft.CodeAnalysis, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&quot;)" />
+    <Alias n="97" Id="(StrongName=&quot;Microsoft.CodeAnalysis.CSharp, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&quot;)" />
+    <Alias n="98" Id="(StrongName=&quot;Microsoft.DotNet.PlatformAbstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="99" Id="(StrongName=&quot;Microsoft.EntityFrameworkCore, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="100" Id="(StrongName=&quot;Microsoft.EntityFrameworkCore.Relational, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="101" Id="(StrongName=&quot;Microsoft.EntityFrameworkCore.SqlServer, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="102" Id="(StrongName=&quot;Microsoft.Extensions.Caching.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="103" Id="(StrongName=&quot;Microsoft.Extensions.Caching.Memory, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="104" Id="(StrongName=&quot;Microsoft.Extensions.Configuration, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="105" Id="(StrongName=&quot;Microsoft.Extensions.Configuration.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="106" Id="(StrongName=&quot;Microsoft.Extensions.Configuration.Binder, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="107" Id="(StrongName=&quot;Microsoft.Extensions.Configuration.EnvironmentVariables, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="108" Id="(StrongName=&quot;Microsoft.Extensions.Configuration.FileExtensions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="109" Id="(StrongName=&quot;Microsoft.Extensions.Configuration.Json, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="110" Id="(StrongName=&quot;Microsoft.Extensions.DependencyInjection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="111" Id="(StrongName=&quot;Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="112" Id="(StrongName=&quot;Microsoft.Extensions.DependencyModel, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="113" Id="(StrongName=&quot;Microsoft.Extensions.DiagnosticAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="114" Id="(StrongName=&quot;Microsoft.Extensions.FileProviders.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="115" Id="(StrongName=&quot;Microsoft.Extensions.FileProviders.Composite, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="116" Id="(StrongName=&quot;Microsoft.Extensions.FileProviders.Physical, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="117" Id="(StrongName=&quot;Microsoft.Extensions.FileSystemGlobbing, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="118" Id="(StrongName=&quot;Microsoft.Extensions.Globalization.CultureInfoCache, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="119" Id="(StrongName=&quot;Microsoft.Extensions.Localization, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="120" Id="(StrongName=&quot;Microsoft.Extensions.Localization.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="121" Id="(StrongName=&quot;Microsoft.Extensions.Logging, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="122" Id="(StrongName=&quot;Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="123" Id="(StrongName=&quot;Microsoft.Extensions.Logging.Console, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="124" Id="(StrongName=&quot;Microsoft.Extensions.Logging.Debug, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="125" Id="(StrongName=&quot;Microsoft.Extensions.ObjectPool, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="126" Id="(StrongName=&quot;Microsoft.Extensions.Options, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="127" Id="(StrongName=&quot;Microsoft.Extensions.Options.ConfigurationExtensions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="128" Id="(StrongName=&quot;Microsoft.Extensions.PlatformAbstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="129" Id="(StrongName=&quot;Microsoft.Extensions.Primitives, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="130" Id="(StrongName=&quot;Microsoft.Extensions.WebEncoders, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="131" Id="(StrongName=&quot;Microsoft.Net.Http.Headers, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;)" />
+    <Alias n="132" Id="(StrongName=&quot;Microsoft.Win32.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="133" Id="(StrongName=&quot;Microsoft.Win32.Registry, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="134" Id="(StrongName=&quot;Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed&quot;)" />
+    <Alias n="135" Id="(StrongName=&quot;Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b&quot;)" />
+    <Alias n="136" Id="(StrongName=&quot;System.AppContext, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="137" Id="(StrongName=&quot;System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51&quot;)" />
+    <Alias n="138" Id="(StrongName=&quot;System.Collections, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="139" Id="(StrongName=&quot;System.Collections.Concurrent, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="140" Id="(StrongName=&quot;System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="141" Id="(StrongName=&quot;System.Collections.NonGeneric, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="142" Id="(StrongName=&quot;System.ComponentModel.Annotations, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="143" Id="(StrongName=&quot;System.ComponentModel.Primitives, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="144" Id="(StrongName=&quot;System.ComponentModel.TypeConverter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="145" Id="(StrongName=&quot;System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="146" Id="(StrongName=&quot;System.Data.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="147" Id="(StrongName=&quot;System.Data.SqlClient, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="148" Id="(StrongName=&quot;System.Diagnostics.Debug, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="149" Id="(StrongName=&quot;System.Diagnostics.DiagnosticSource, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51&quot;)" />
+    <Alias n="150" Id="(StrongName=&quot;System.Diagnostics.Process, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="151" Id="(StrongName=&quot;System.Diagnostics.StackTrace, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="152" Id="(StrongName=&quot;System.Diagnostics.Tracing, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="153" Id="(StrongName=&quot;System.Dynamic.Runtime, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="154" Id="(StrongName=&quot;System.Globalization, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="155" Id="(StrongName=&quot;System.Globalization.Calendars, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="156" Id="(StrongName=&quot;System.Globalization.Extensions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="157" Id="(StrongName=&quot;System.Interactive.Async, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263&quot;)" />
+    <Alias n="158" Id="(StrongName=&quot;System.IO, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="159" Id="(StrongName=&quot;System.IO.Compression, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;)" />
+    <Alias n="160" Id="(StrongName=&quot;System.IO.Compression.ZipFile, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;)" />
+    <Alias n="161" Id="(StrongName=&quot;System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="162" Id="(StrongName=&quot;System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="163" Id="(StrongName=&quot;System.IO.FileSystem.Watcher, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="164" Id="(StrongName=&quot;System.IO.MemoryMappedFiles, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="165" Id="(StrongName=&quot;System.IO.UnmanagedMemoryStream, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="166" Id="(StrongName=&quot;System.Linq, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="167" Id="(StrongName=&quot;System.Linq.Expressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="168" Id="(StrongName=&quot;System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="169" Id="(StrongName=&quot;System.Net.NameResolution, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="170" Id="(StrongName=&quot;System.Net.Primitives, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="171" Id="(StrongName=&quot;System.Net.Requests, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="172" Id="(StrongName=&quot;System.Net.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="173" Id="(StrongName=&quot;System.Net.Sockets, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="174" Id="(StrongName=&quot;System.Net.WebSockets, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="175" Id="(StrongName=&quot;System.Numerics.Vectors, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="176" Id="(StrongName=&quot;System.ObjectModel, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="177" Id="(StrongName=&quot;System.Reflection, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="178" Id="(StrongName=&quot;System.Reflection.DispatchProxy, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="179" Id="(StrongName=&quot;System.Reflection.Metadata, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="180" Id="(StrongName=&quot;System.Reflection.TypeExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="181" Id="(StrongName=&quot;System.Resources.Reader, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="182" Id="(StrongName=&quot;System.Runtime, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="183" Id="(StrongName=&quot;System.Runtime.CompilerServices.Unsafe, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="184" Id="(StrongName=&quot;System.Runtime.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="185" Id="(StrongName=&quot;System.Runtime.InteropServices, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="186" Id="(StrongName=&quot;System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="187" Id="(StrongName=&quot;System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="188" Id="(StrongName=&quot;System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="189" Id="(StrongName=&quot;System.Runtime.Serialization.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="190" Id="(StrongName=&quot;System.Security.Claims, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="191" Id="(StrongName=&quot;System.Security.Cryptography.Algorithms, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="192" Id="(StrongName=&quot;System.Security.Cryptography.Encoding, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="193" Id="(StrongName=&quot;System.Security.Cryptography.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="194" Id="(StrongName=&quot;System.Security.Cryptography.X509Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="195" Id="(StrongName=&quot;System.Security.Principal.Windows, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="196" Id="(StrongName=&quot;System.Text.Encoding, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="197" Id="(StrongName=&quot;System.Text.Encoding.Extensions, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="198" Id="(StrongName=&quot;System.Text.Encodings.Web, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51&quot;)" />
+    <Alias n="199" Id="(StrongName=&quot;System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="200" Id="(StrongName=&quot;System.Text.RegularExpressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="201" Id="(StrongName=&quot;System.Threading, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="202" Id="(StrongName=&quot;System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="203" Id="(StrongName=&quot;System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="204" Id="(StrongName=&quot;System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51&quot;)" />
+    <Alias n="205" Id="(StrongName=&quot;System.Threading.Thread, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="206" Id="(StrongName=&quot;System.Threading.ThreadPool, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="207" Id="(StrongName=&quot;System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="208" Id="(StrongName=&quot;System.Xml.XDocument, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+    <Alias n="209" Id="(StrongName=&quot;System.Xml.XmlDocument, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Test Project" ValueLabel="Test Project">
+      <Condition Expression="HasCategory('CodeMap_TestProject')" />
+      <Setter Property="Icon" Value="CodeMap_TestProject" />
+      <Setter Property="Background" Value="#FF307A69" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Web Project" ValueLabel="Web Project">
+      <Condition Expression="HasCategory('CodeMap_WebProject')" />
+      <Setter Property="Icon" Value="CodeMap_WebProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Windows Store Project" ValueLabel="Windows Store Project">
+      <Condition Expression="HasCategory('CodeMap_WindowsStoreProject')" />
+      <Setter Property="Icon" Value="CodeMap_WindowsStoreProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Phone Project" ValueLabel="Phone Project">
+      <Condition Expression="HasCategory('CodeMap_PhoneProject')" />
+      <Setter Property="Icon" Value="CodeMap_PhoneProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Portable Library" ValueLabel="Portable Library">
+      <Condition Expression="HasCategory('CodeMap_PortableLibraryProject')" />
+      <Setter Property="Icon" Value="CodeMap_PortableLibraryProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="WPF Project" ValueLabel="WPF Project">
+      <Condition Expression="HasCategory('CodeMap_WpfProject')" />
+      <Setter Property="Icon" Value="CodeMap_WpfProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="VSIX Project" ValueLabel="VSIX Project">
+      <Condition Expression="HasCategory('CodeMap_VsixProject')" />
+      <Setter Property="Icon" Value="CodeMap_VsixProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Modeling Project" ValueLabel="Modeling Project">
+      <Condition Expression="HasCategory('CodeMap_ModelingProject')" />
+      <Setter Property="Icon" Value="CodeMap_ModelingProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Interface" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Struct" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enumeration" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Delegate" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Class" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Event" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out Parameter" ValueLabel="Has category">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Parameter" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Local Variable" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Externals" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True">
+      <Condition Expression="HasCategory('InheritsFrom')" />
+      <Setter Property="Stroke" Value="#FF00A600" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True">
+      <Condition Expression="HasCategory('Implements')" />
+      <Setter Property="Stroke" Value="#8000A600" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Calls" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Calls')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Function Pointer" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Read" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Write" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldWrite')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="DrawArrow" Value="true" />
+      <Setter Property="IsHidden" Value="false" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Return" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_ReturnTypeLink')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="References" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('References')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Uses Attribute" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_AttributeUse')" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Solution Folder" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeMap_SolutionFolder')" />
+      <Setter Property="Background" Value="#FFDEBA83" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Project Reference" ValueLabel="Project Reference">
+      <Condition Expression="HasCategory('CodeMap_ProjectReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="External Reference" ValueLabel="External Reference">
+      <Condition Expression="HasCategory('CodeMap_ExternalReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="3525b7e5-bbd7-4f6e-9e64-9736ca558931.OutputPath" Value="D:\git\jambo\src\Jambo\Jambo.API\bin\Debug\netcoreapp1.1\Jambo.API.dll" />
+    <Path Id="3525b7e5-bbd7-4f6e-9e64-9736ca558931.OutputPathUri" Value="file:///D:/git/jambo/src/Jambo/Jambo.API/bin/Debug/netcoreapp1.1/Jambo.API.dll" />
+    <Path Id="58053cd1-549b-47fb-a7ea-60a4c8c89143.OutputPath" Value="D:\git\jambo\src\Jambo\Jambo.InfrastructureDapper\bin\Debug\netstandard1.6.1\Jambo.InfrastructureDapper.dll" />
+    <Path Id="58053cd1-549b-47fb-a7ea-60a4c8c89143.OutputPathUri" Value="file:///D:/git/jambo/src/Jambo/Jambo.InfrastructureDapper/bin/Debug/netstandard1.6.1/Jambo.InfrastructureDapper.dll" />
+    <Path Id="5a9b4d18-80ab-487d-a3a2-7529d5303b0d.OutputPath" Value="D:\git\jambo\src\Jambo\Jambo.IoC\bin\Debug\netstandard1.6.1\Jambo.IoC.dll" />
+    <Path Id="5a9b4d18-80ab-487d-a3a2-7529d5303b0d.OutputPathUri" Value="file:///D:/git/jambo/src/Jambo/Jambo.IoC/bin/Debug/netstandard1.6.1/Jambo.IoC.dll" />
+    <Path Id="c7766aee-dc38-441d-a55c-b0f4a49e4f47.OutputPath" Value="D:\git\jambo\src\Jambo\Jambo.Application\bin\Debug\netstandard1.6.1\Jambo.Application.dll" />
+    <Path Id="c7766aee-dc38-441d-a55c-b0f4a49e4f47.OutputPathUri" Value="file:///D:/git/jambo/src/Jambo/Jambo.Application/bin/Debug/netstandard1.6.1/Jambo.Application.dll" />
+    <Path Id="c86e10a8-096f-41e6-87f5-828a5af2ef23.OutputPath" Value="D:\git\jambo\src\Jambo\Jambo.Domain\bin\Debug\netstandard1.6.1\Jambo.Domain.dll" />
+    <Path Id="c86e10a8-096f-41e6-87f5-828a5af2ef23.OutputPathUri" Value="file:///D:/git/jambo/src/Jambo/Jambo.Domain/bin/Debug/netstandard1.6.1/Jambo.Domain.dll" />
+    <Path Id="cbafd2de-e9db-43e6-a2e7-2b203e14ed98.OutputPath" Value="D:\git\jambo\src\Jambo\Jambo.InfrastructureEF\bin\Debug\netstandard1.6.1\Jambo.InfrastructureEF.dll" />
+    <Path Id="cbafd2de-e9db-43e6-a2e7-2b203e14ed98.OutputPathUri" Value="file:///D:/git/jambo/src/Jambo/Jambo.InfrastructureEF/bin/Debug/netstandard1.6.1/Jambo.InfrastructureEF.dll" />
+    <Path Id="Fx" Value="C:\Windows\Microsoft.NET\Framework\v4.0.30319" />
+    <Path Id="FxUri" Value="file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319" />
+  </Paths>
+</DirectedGraph>

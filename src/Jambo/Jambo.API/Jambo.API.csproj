@@ -21,7 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
-    <ProjectReference Include="..\Jambo.IoC\Jambo.IoC.csproj" />
   </ItemGroup>
 
 </Project>
