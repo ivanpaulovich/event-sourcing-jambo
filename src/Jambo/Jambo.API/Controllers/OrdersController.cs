@@ -20,7 +20,6 @@ namespace Jambo.API.Controllers
         }
 
         [Route("new")]
-        [HttpPost]
         public async Task<IActionResult> CreateOrder()//[FromBody]CreateOrderCommand command, [FromHeader(Name = "x-requestid")] string requestId)
         {
             CreateOrderCommand command = new CreateOrderCommand();

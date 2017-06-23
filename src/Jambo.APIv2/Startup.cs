@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Autofac;
-using Autofac.Extensions.DependencyInjection;
 using Jambo.Infrastructure;
-using Microsoft.AspNetCore.Http;
-using System.Reflection;
-using MediatR;
+using Autofac.Extensions.DependencyInjection;
 
-namespace Jambo.API
+namespace Jambo.APIv2
 {
     public class Startup
     {
@@ -32,38 +32,18 @@ namespace Jambo.API
         {
             // Add framework services.
             services.AddMvc();
-            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-
 
             var container = new ContainerBuilder();
             container.Populate(services);
 
-            //container.RegisterModule(new MediatorModule());
-            //container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
+            container.RegisterModule(new MediatorModule());
+            container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
 
             return new AutofacServiceProvider(container.Build());
-            //return services.BuildServiceProvider();
         }
 
-
-            //{
-            //    // Add framework services.
-            //    services.AddMvc();
-            //    services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-
-
-            //    var container = new ContainerBuilder();
-            //    container.Populate(services);
-
-            //    //container.RegisterModule(new MediatorModule());
-            //    //container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
-
-            //    //return new AutofacServiceProvider(container.Build());
-            //    return services.BuildServiceProvider();
-            //}
-
-            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-            public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();

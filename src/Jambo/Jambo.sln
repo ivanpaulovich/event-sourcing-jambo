@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Domain", "Jambo.Domain\Jambo.Domain.csproj", "{C86E10A8-096F-41E6-87F5-828A5AF2EF23}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Interface", "User Interface", "{64D31E35-4CF6-4BD7-8B02-B4066C11F5ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9705EC34-40B3-4AA9-A143-04084F6B0205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.APIv2", "..\Jambo.APIv2\Jambo.APIv2.csproj", "{DFAC74E2-F89D-42AD-B74C-13BDBFC5ED79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.APIv3", "Jambo.APIv3\Jambo.APIv3.csproj", "{893CB9F1-7199-4316-9660-306C9402E945}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,14 @@ Global
 		{AAB4DD88-01A8-4F6C-90A3-F35EB94F984A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAB4DD88-01A8-4F6C-90A3-F35EB94F984A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAB4DD88-01A8-4F6C-90A3-F35EB94F984A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAC74E2-F89D-42AD-B74C-13BDBFC5ED79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAC74E2-F89D-42AD-B74C-13BDBFC5ED79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAC74E2-F89D-42AD-B74C-13BDBFC5ED79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAC74E2-F89D-42AD-B74C-13BDBFC5ED79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893CB9F1-7199-4316-9660-306C9402E945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893CB9F1-7199-4316-9660-306C9402E945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893CB9F1-7199-4316-9660-306C9402E945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893CB9F1-7199-4316-9660-306C9402E945}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +83,7 @@ Global
 		{B1EEF127-0928-42D8-A805-54067623190B} = {7400C04C-F9AF-432B-B8C2-094E69286899}
 		{77600376-3B08-4A4E-B048-72A3D3566093} = {7400C04C-F9AF-432B-B8C2-094E69286899}
 		{AAB4DD88-01A8-4F6C-90A3-F35EB94F984A} = {9705EC34-40B3-4AA9-A143-04084F6B0205}
+		{DFAC74E2-F89D-42AD-B74C-13BDBFC5ED79} = {64D31E35-4CF6-4BD7-8B02-B4066C11F5ED}
+		{893CB9F1-7199-4316-9660-306C9402E945} = {64D31E35-4CF6-4BD7-8B02-B4066C11F5ED}
 	EndGlobalSection
 EndGlobal
