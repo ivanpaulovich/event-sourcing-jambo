@@ -14,26 +14,6 @@ namespace Jambo.Infrastructure
         {
             builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
                 .AsImplementedInterfaces();
-
-            // Register all the Command classes (they implement IAsyncRequestHandler) in assembly holding the Commands
-            builder.RegisterAssemblyTypes(typeof(CreateOrderCommand).GetTypeInfo().Assembly)
-                .As(o => o.GetInterfaces()
-                    .Where(i => i.IsClosedTypeOf(typeof(IRequestHandler<,>)))
-                    .Select(i => new KeyedService("IRequestHandler", i)));
-
-            builder.Register<SingleInstanceFactory>(context =>
-            {
-                var componentContext = context.Resolve<IComponentContext>();
-
-                return t => componentContext.Resolve(t);
-            });
-
-            builder.Register<MultiInstanceFactory>(context =>
-            {
-                var componentContext = context.Resolve<IComponentContext>();
-
-                return t => (IEnumerable<object>)componentContext.Resolve(typeof(IEnumerable<>).MakeGenericType(t));
-            });
         }
     }
 }

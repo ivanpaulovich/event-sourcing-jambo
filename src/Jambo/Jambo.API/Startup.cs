@@ -32,17 +32,42 @@ namespace Jambo.API
         {
             // Add framework services.
             services.AddMvc();
+<<<<<<< HEAD
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
+=======
+
+            //services.AddSwaggerGen();
+            //services.ConfigureSwaggerGen(options =>
+            //{
+            //    options.DescribeAllEnumsAsStrings();
+            //    options.SingleApiVersion(new Swashbuckle.Swagger.Model.Info()
+            //    {
+            //        Title = "Ordering HTTP API",
+            //        Version = "v1",
+            //        Description = "The Ordering Service HTTP API",
+            //        TermsOfService = "Terms Of Service"
+            //    });
+            //});
+>>>>>>> 099be64974c6460c11d9bb9b75fc9da35c27ce6e
 
 
             var container = new ContainerBuilder();
             container.Populate(services);
 
+<<<<<<< HEAD
             //container.RegisterModule(new MediatorModule());
             //container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
 
             return new AutofacServiceProvider(container.Build());
             //return services.BuildServiceProvider();
+=======
+            container.RegisterModule(new MediatorModule());
+            //container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
+
+            IServiceProvider prov = new AutofacServiceProvider(container.Build());
+
+            return prov;
+>>>>>>> 099be64974c6460c11d9bb9b75fc9da35c27ce6e
         }
 
 
