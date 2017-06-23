@@ -15,8 +15,12 @@ namespace Jambo.API.Controllers
 
         public OrdersController(IMediator mediator)
         {
-
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        }
+
+        public string Index()
+        {
+            return DateTime.Now.ToString();
         }
     }
 }

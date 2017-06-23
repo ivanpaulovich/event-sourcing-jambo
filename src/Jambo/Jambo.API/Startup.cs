@@ -32,33 +32,17 @@ namespace Jambo.API
         {
             // Add framework services.
             services.AddMvc();
-
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
 
-            var container = new ContainerBuilder();
+            ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
+
+            container.RegisterModule(new MediatorModule());
+
             return new AutofacServiceProvider(container.Build());
         }
 
-
-            //{
-            //    // Add framework services.
-            //    services.AddMvc();
-            //    services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-
-
-            //    var container = new ContainerBuilder();
-            //    container.Populate(services);
-
-            //    //container.RegisterModule(new MediatorModule());
-            //    //container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
-
-            //    //return new AutofacServiceProvider(container.Build());
-            //    return services.BuildServiceProvider();
-            //}
-
-            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-            public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();

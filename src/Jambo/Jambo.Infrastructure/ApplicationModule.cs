@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Jambo.Domain.AggregatesModel.BuyerAggregate;
-using Jambo.Data.Dapper.Repositories;
 using Jambo.Data.EF.Repositories;
 
 namespace Jambo.Infrastructure
@@ -21,10 +20,6 @@ namespace Jambo.Infrastructure
         {
             builder.RegisterType<BuyerWriteOnlyRepository>()
                 .As<IBuyerWriteOnlyRepository>()
-                .InstancePerLifetimeScope();
-
-            builder.RegisterType<BuyerReadOnlyRepository>()
-                .As<IBuyerReadOnlyRepository>()
                 .InstancePerLifetimeScope();
         }
     }

@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Jambo.Data.Dapper\Jambo.Data.Dapper.csproj" />
     <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
     <ProjectReference Include="..\Jambo.Data.EF\Jambo.Data.EF.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
