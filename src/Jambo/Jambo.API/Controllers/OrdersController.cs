@@ -19,16 +19,16 @@ namespace Jambo.API.Controllers
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [Route("new")]
-        [HttpPost]
-        public async Task<IActionResult> CreateOrder()//[FromBody]CreateOrderCommand command, [FromHeader(Name = "x-requestid")] string requestId)
-        {
-            CreateOrderCommand command = new CreateOrderCommand();
+        //[Route("new")]
+        //[HttpPost]
+        //public async Task<IActionResult> CreateOrder()//[FromBody]CreateOrderCommand command, [FromHeader(Name = "x-requestid")] string requestId)
+        //{
+        //    CreateOrderCommand command = new CreateOrderCommand();
 
-            bool commandResult = await _mediator.Send(command);
+        //    bool commandResult = await _mediator.Send(command);
 
-            return commandResult ? (IActionResult)Ok() : (IActionResult)BadRequest();
+        //    return commandResult ? (IActionResult)Ok() : (IActionResult)BadRequest();
 
-        }
+        //}
     }
 }

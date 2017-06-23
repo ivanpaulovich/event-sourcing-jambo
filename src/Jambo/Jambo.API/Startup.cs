@@ -29,30 +29,31 @@ namespace Jambo.API
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc().AddControllersAsServices();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddMvc();
 
-            services.AddSwaggerGen();
-            services.ConfigureSwaggerGen(options =>
-            {
-                options.DescribeAllEnumsAsStrings();
-                options.SingleApiVersion(new Swashbuckle.Swagger.Model.Info()
-                {
-                    Title = "Ordering HTTP API",
-                    Version = "v1",
-                    Description = "The Ordering Service HTTP API",
-                    TermsOfService = "Terms Of Service"
-                });
-            });
+            //services.AddSwaggerGen();
+            //services.ConfigureSwaggerGen(options =>
+            //{
+            //    options.DescribeAllEnumsAsStrings();
+            //    options.SingleApiVersion(new Swashbuckle.Swagger.Model.Info()
+            //    {
+            //        Title = "Ordering HTTP API",
+            //        Version = "v1",
+            //        Description = "The Ordering Service HTTP API",
+            //        TermsOfService = "Terms Of Service"
+            //    });
+            //});
 
 
             var container = new ContainerBuilder();
             container.Populate(services);
 
             container.RegisterModule(new MediatorModule());
-            container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
+            //container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
 
-            return new AutofacServiceProvider(container.Build());
+            IServiceProvider prov = new AutofacServiceProvider(container.Build());
+
+            return prov;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
