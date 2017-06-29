@@ -10,6 +10,8 @@ using Jambo.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using System.Reflection;
 using MediatR;
+using Jambo.Data.EF;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jambo.API
 {
@@ -34,6 +36,20 @@ namespace Jambo.API
             services.AddMvc();
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
 
+            services.AddEntityFrameworkSqlServer()
+                    .AddDbContext<OrderingContext>(options =>
+                    {
+                        options.UseSqlServer(Configuration["ConnectionString"],
+                            sqlServerOptionsAction: sqlOptions =>
+                            {
+                                sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+                                sqlOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                            });
+                    },
+                        ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
+                    );
+
+
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
 
@@ -44,6 +60,8 @@ namespace Jambo.API
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseDeveloperExceptionPage();
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 

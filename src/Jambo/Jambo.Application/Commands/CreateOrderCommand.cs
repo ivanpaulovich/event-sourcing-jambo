@@ -69,6 +69,8 @@ namespace Jambo.Application.Commands
             ZipCode = zipcode;
             CardNumber = cardNumber;
             CardHolderName = cardHolderName;
+
+
             CardExpiration = cardExpiration;
             CardSecurityNumber = cardSecurityNumber;
             CardTypeId = cardTypeId;

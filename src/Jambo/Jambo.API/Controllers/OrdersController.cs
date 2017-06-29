@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
@@ -18,8 +16,11 @@ namespace Jambo.API.Controllers
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public string Index()
+        public async Task<string> Index()
         {
+            CreateOrderCommand command = new CreateOrderCommand();
+            bool commandResult = await _mediator.Send(command);
+
             return DateTime.Now.ToString();
         }
     }

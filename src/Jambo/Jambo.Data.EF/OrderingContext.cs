@@ -1,5 +1,6 @@
 ﻿using Jambo.Domain.AggregatesModel.BuyerAggregate;
 using Jambo.Domain.SeedWork;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -21,11 +22,11 @@ namespace Jambo.Data.EF
 
         public DbSet<CardType> CardTypes { get; set; }
 
-        //private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
-        public OrderingContext(DbContextOptions options /*, IMediator mediator*/) : base(options)
+        public OrderingContext(DbContextOptions options, IMediator mediator) : base(options)
         {
-            //_mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,7 +42,7 @@ namespace Jambo.Data.EF
 
             buyerConfiguration.HasKey(b => b.Id);
 
-            //buyerConfiguration.Ignore(b => b.DomainEvents);
+            buyerConfiguration.Ignore(b => b.DomainEvents);
 
             buyerConfiguration.Property(b => b.Id)
                 .ForSqlServerUseSequenceHiLo("buyerseq", DEFAULT_SCHEMA);
@@ -69,7 +70,7 @@ namespace Jambo.Data.EF
 
             paymentConfiguration.HasKey(b => b.Id);
 
-            //paymentConfiguration.Ignore(b => b.DomainEvents);
+            paymentConfiguration.Ignore(b => b.DomainEvents);
 
             paymentConfiguration.Property(b => b.Id)
                 .ForSqlServerUseSequenceHiLo("paymentseq", DEFAULT_SCHEMA);
