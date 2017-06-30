@@ -18,7 +18,7 @@ namespace Jambo.Application.Commands
 
         public bool Handle(CreateOrderCommand message)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

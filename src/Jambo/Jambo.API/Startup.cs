@@ -34,17 +34,12 @@ namespace Jambo.API
         {
             // Add framework services.
             services.AddMvc();
-            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(Jambo.Application.Commands.CreateOrderCommand).GetTypeInfo().Assembly);
 
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<OrderingContext>(options =>
                     {
-                        options.UseSqlServer(Configuration["ConnectionString"],
-                            sqlServerOptionsAction: sqlOptions =>
-                            {
-                                sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
-                                sqlOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
-                            });
+                        options.UseSqlServer(Configuration["ConnectionString"]);
                     },
                         ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
                     );
@@ -53,6 +48,7 @@ namespace Jambo.API
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
 
+            container.RegisterModule(new ApplicationModule());
             container.RegisterModule(new MediatorModule());
 
             return new AutofacServiceProvider(container.Build());
