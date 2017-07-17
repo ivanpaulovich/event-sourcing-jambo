@@ -4,6 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using Jambo.Application.Commands;
+using Jambo.Application.DomainEventHandlers.BlogCriado;
+using System.Linq;
+using Autofac.Core;
 
 namespace Jambo.API.IoC
 {
@@ -21,7 +25,7 @@ namespace Jambo.API.IoC
                     .Select(i => new KeyedService("IAsyncRequestHandler", i)));
 
             // Register all the event classes (they implement IAsyncNotificationHandler) in assembly holding the Commands
-            builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler).GetTypeInfo().Assembly)
+            builder.RegisterAssemblyTypes(typeof(BlogCriadoDomainEventHandler).GetTypeInfo().Assembly)
                 .As(o => o.GetInterfaces()
                     .Where(i => i.IsClosedTypeOf(typeof(IAsyncNotificationHandler<>)))
                     .Select(i => new KeyedService("IAsyncNotificationHandler", i)))
