@@ -12,18 +12,18 @@ namespace Jambo.Application.DomainEventHandlers.BlogCriado
     public class BlogCriadoDomainEventHandler
         : IAsyncNotificationHandler<BlogCriadoDomainEvent>
     {
-        private readonly IBlogWriteOnlyRepository _orderRepository;
+        private readonly IBlogWriteOnlyRepository _blogRepository;
         private readonly IMediator _mediator;
 
-        public BlogCriadoDomainEventHandler(IMediator mediator, IBlogWriteOnlyRepository orderRepository)
+        public BlogCriadoDomainEventHandler(IMediator mediator, IBlogWriteOnlyRepository blogRepository)
         {
-            _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+            _blogRepository = blogRepository ?? throw new ArgumentNullException(nameof(blogRepository));
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public Task Handle(BlogCriadoDomainEvent notification)
+        public async Task Handle(BlogCriadoDomainEvent notification)
         {
-            throw new NotImplementedException();
+            await Task.Delay(100);
         }
     }
 }

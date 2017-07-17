@@ -1,8 +1,6 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jambo.Application.Commands
@@ -21,6 +19,9 @@ namespace Jambo.Application.Commands
 
         public async Task<bool> Handle(CriarBlogCommand message)
         {
+            var blog = new Blog(message.Url, message.Rating);
+
+            _blogRepository.Add(blog);
 
             return await _blogRepository.UnitOfWork
                 .SaveEntitiesAsync();
