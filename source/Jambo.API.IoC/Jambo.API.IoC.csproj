@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.0" />
+    <PackageReference Include="MediatR" Version="3.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
+    <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
+    <ProjectReference Include="..\Jambo.Infrastructure\Jambo.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
