@@ -3,24 +3,27 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Jambo.Application.Commands
 {
     public class CriarBlogCommandHandler
-        : IRequestHandler<CriarBlogCommand, bool>
+        : IAsyncRequestHandler<CriarBlogCommand, bool>
     {
-        private readonly IBlogWriteOnlyRepository _orderRepository;
+        private readonly IBlogWriteOnlyRepository _blogRepository;
         private readonly IMediator _mediator;
 
         public CriarBlogCommandHandler(IMediator mediator, IBlogWriteOnlyRepository blogRepository)
         {
-            _orderRepository = blogRepository ?? throw new ArgumentNullException(nameof(blogRepository));
+            _blogRepository = blogRepository ?? throw new ArgumentNullException(nameof(blogRepository));
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public bool Handle(CriarBlogCommand message)
+        public async Task<bool> Handle(CriarBlogCommand message)
         {
-            return false;
+
+            return await _blogRepository.UnitOfWork
+                .SaveEntitiesAsync();
         }
     }
 }

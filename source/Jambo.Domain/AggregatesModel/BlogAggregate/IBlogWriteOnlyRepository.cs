@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Jambo.Domain.SeedWork;
 
 namespace Jambo.Domain.AggregatesModel.BlogAggregate
 {
-    public interface IBlogWriteOnlyRepository
+    public interface IBlogWriteOnlyRepository : IRepository<Blog>
     {
         Blog Add(Blog buyer);
         Blog Update(Blog buyer);

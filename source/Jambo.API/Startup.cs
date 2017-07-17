@@ -8,6 +8,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MediatR;
+using Autofac;
+using Jambo.API.IoC;
+using Autofac.Extensions.DependencyInjection;
+using Jambo.Application.Commands;
+using System.Reflection;
+using Jambo.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jambo.API
 {
@@ -30,7 +37,15 @@ namespace Jambo.API
         {
             // Add framework services.
             services.AddMvc();
-            services.AddMediatR(typeof(Jambo.Application.Commands.CreateOrderCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CriarBlogCommand).GetTypeInfo().Assembly);
+
+            services.AddEntityFrameworkSqlServer()
+                    .AddDbContext<BloggingContext>(options =>
+                    {
+                        options.UseSqlServer(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;");
+                    },
+                        ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
+                    );
 
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);

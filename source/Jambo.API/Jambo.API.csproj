@@ -8,9 +8,12 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.1.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
   </ItemGroup>
   <ItemGroup>
@@ -18,6 +21,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jambo.API.IoC\Jambo.API.IoC.csproj" />
+    <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
+    <ProjectReference Include="..\Jambo.Infrastructure\Jambo.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

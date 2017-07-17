@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Jambo.Domain.Events
 {
-    class PostCriadoDomainEvent
+    public class PostCriadoDomainEvent: INotification
     {
+        public Post Post { get; private set; }
+
+        public PostCriadoDomainEvent(Post post)
+        {
+            Post = post;
+        }
     }
 }

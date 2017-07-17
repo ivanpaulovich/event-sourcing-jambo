@@ -41,16 +41,12 @@ namespace Jambo.Infrastructure
             return true;
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;");
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Blog>(ConfigureBlogs);
             modelBuilder.Entity<Post>(ConfigurePosts);
         }
+
         private void ConfigureBlogs(EntityTypeBuilder<Blog> requestConfiguration)
         {
             requestConfiguration.ToTable("Blog");

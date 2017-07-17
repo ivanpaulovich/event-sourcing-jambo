@@ -14,6 +14,10 @@ namespace Jambo.API.IoC
             builder.RegisterType<BlogWriteOnlyRepository>()
                 .As<IBlogWriteOnlyRepository>()
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<BlogReadOnlyRepository>()
+                .As<IBlogReadOnlyRepository>()
+                .InstancePerLifetimeScope();
         }
     }
 }

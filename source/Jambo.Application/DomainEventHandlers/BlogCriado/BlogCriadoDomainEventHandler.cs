@@ -1,14 +1,16 @@
 ﻿using Jambo.Application.Commands;
 using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.Domain.Events;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Jambo.Application.DomainEventHandlers.BlogCriado
 {
     public class BlogCriadoDomainEventHandler
-        : IRequestHandler<CriarBlogCommand, bool>
+        : IAsyncNotificationHandler<BlogCriadoDomainEvent>
     {
         private readonly IBlogWriteOnlyRepository _orderRepository;
         private readonly IMediator _mediator;
@@ -19,9 +21,9 @@ namespace Jambo.Application.DomainEventHandlers.BlogCriado
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public bool Handle(CriarBlogCommand message)
+        public Task Handle(BlogCriadoDomainEvent notification)
         {
-            return false;
+            throw new NotImplementedException();
         }
     }
 }
