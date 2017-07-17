@@ -1,4 +1,5 @@
-﻿using Jambo.Domain.SeedWork;
+﻿using Jambo.Domain.Events;
+using Jambo.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,8 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
         {
             this.Url = url;
             this.Rating = rating;
+
+            AddDomainEvent(new BlogCriadoDomainEvent(this));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.Domain.Events;
 using Jambo.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,6 @@ namespace Jambo.Infrastructure.Repositories
             {
                 return buyer;
             }
-
         }
 
         public Blog Update(Blog buyer)
