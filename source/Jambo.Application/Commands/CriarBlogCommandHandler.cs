@@ -19,7 +19,7 @@ namespace Jambo.Application.Commands
 
         public async Task<bool> Handle(CriarBlogCommand message)
         {
-            var blog = new Blog(message.Url, message.Rating);
+            Blog blog = new Blog(message.Url, message.Rating);
 
             _blogRepository.Add(blog);
 

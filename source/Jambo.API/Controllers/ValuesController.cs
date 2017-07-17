@@ -22,7 +22,7 @@ namespace Jambo.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<string>> Get()
         {
-            CriarBlogCommand command = new CriarBlogCommand();
+            CriarBlogCommand command = new CriarBlogCommand(Guid.NewGuid().ToString(), 42);
             bool commandResult = await _mediator.Send(command);
 
             return new string[] { "value1", "value2" };

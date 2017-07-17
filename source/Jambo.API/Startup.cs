@@ -42,7 +42,7 @@ namespace Jambo.API
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<BloggingContext>(options =>
                     {
-                        options.UseSqlServer(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;");
+                        options.UseSqlServer(@"Server=Localhost\SQLEXPRESS;Database=Jambo;Trusted_Connection=True;");
                     },
                         ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
                     );
