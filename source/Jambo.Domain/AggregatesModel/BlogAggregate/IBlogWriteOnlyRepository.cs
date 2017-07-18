@@ -4,7 +4,8 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
 {
     public interface IBlogWriteOnlyRepository : IRepository<Blog>
     {
-        Blog Add(Blog buyer);
-        Blog Update(Blog buyer);
+        Blog Add(Blog blog);
+        Blog Update(Blog blog);
+        void Delete(Blog blog);
     }
 }

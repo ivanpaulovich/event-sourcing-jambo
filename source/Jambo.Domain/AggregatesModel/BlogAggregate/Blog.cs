@@ -14,6 +14,8 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
 
         protected Blog() { }
 
+        public Blog(int id) { this.Id = id; }
+
         public Blog(string url, int rating)
         {
             this.Url = url;

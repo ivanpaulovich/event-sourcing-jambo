@@ -47,6 +47,18 @@ namespace Jambo.API
                         ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
                     );
 
+            services.AddSwaggerGen(options =>
+            {
+                options.DescribeAllEnumsAsStrings();
+                options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Title = "Ordering HTTP API",
+                    Version = "v1",
+                    Description = "The Ordering Service HTTP API",
+                    TermsOfService = "Terms Of Service"
+                });
+            });
+
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
 
@@ -64,6 +76,12 @@ namespace Jambo.API
 
             app.UseDeveloperExceptionPage();
             app.UseMvc();
+
+            app.UseSwagger()
+               .UseSwaggerUI(c =>
+               {
+                   c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+               });
         }
     }
 }
