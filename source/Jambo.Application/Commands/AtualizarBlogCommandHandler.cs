@@ -1,6 +1,9 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using MediatR;
 using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Jambo.Application.Commands
@@ -19,9 +22,9 @@ namespace Jambo.Application.Commands
 
         public async Task<bool> Handle(AtualizarBlogCommand message)
         {
-            Blog blog = new Blog(message.Url, message.Rating);
+            Blog blog = new Blog(message.Id);
 
-            _blogRepository.Add(blog);
+            _blogRepository.Update(blog);
 
             return await _blogRepository.UnitOfWork
                 .SaveEntitiesAsync();

@@ -36,11 +36,17 @@ namespace Jambo.Infrastructure.Repositories
             }
         }
 
-        public Blog Update(Blog buyer)
+        public Blog Update(Blog blog)
         {
             return _context.Blogs
-                    .Update(buyer)
+                    .Update(blog)
                     .Entity;
+        }
+
+        public void Delete(Blog blog)
+        {
+            _context.Blogs.Attach(blog);
+            _context.Blogs.Remove(blog);
         }
     }
 }

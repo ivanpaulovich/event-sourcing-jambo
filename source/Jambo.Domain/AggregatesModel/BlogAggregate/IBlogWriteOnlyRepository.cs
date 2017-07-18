@@ -6,5 +6,6 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
     {
         Blog Add(Blog blog);
         Blog Update(Blog blog);
+        void Delete(Blog blog);
     }
 }

@@ -1,6 +1,9 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using MediatR;
 using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Jambo.Application.Commands
@@ -21,7 +24,7 @@ namespace Jambo.Application.Commands
         {
             Blog blog = new Blog(message.Id);
 
-            _blogRepository.Add(blog);
+            _blogRepository.Delete(blog);
 
             return await _blogRepository.UnitOfWork
                 .SaveEntitiesAsync();

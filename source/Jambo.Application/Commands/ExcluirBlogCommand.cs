@@ -1,10 +1,14 @@
 ﻿using MediatR;
+using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Jambo.Application.Commands
 {
     [DataContract]
-    public class ExcluirBlogCommand : IRequest<bool>
+    public class ExcluirBlogCommand
+        : IRequest<bool>
     {
         [DataMember]
         public int Id { get; private set; }
@@ -12,6 +16,11 @@ namespace Jambo.Application.Commands
         public ExcluirBlogCommand()
         {
 
+        }
+
+        public ExcluirBlogCommand(int id) : this()
+        {
+            Id = id;
         }
     }
 }
