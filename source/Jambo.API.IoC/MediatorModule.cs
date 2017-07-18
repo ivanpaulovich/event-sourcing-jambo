@@ -1,13 +1,10 @@
 ﻿using Autofac;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+using Autofac.Core;
 using Jambo.Application.Commands;
 using Jambo.Application.DomainEventHandlers.BlogCriado;
+using MediatR;
 using System.Linq;
-using Autofac.Core;
+using System.Reflection;
 
 namespace Jambo.API.IoC
 {

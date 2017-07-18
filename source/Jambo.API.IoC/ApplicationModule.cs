@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
-using Jambo.Infrastructure.Repositories;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Autofac;
 using Jambo.Application.Queries;
+using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.Infrastructure.Repositories;
 
 namespace Jambo.API.IoC
 {
@@ -19,7 +16,6 @@ namespace Jambo.API.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-
             builder.Register(c => new BlogQueries(QueriesConnectionString))
                 .As<IBlogQueries>();
 

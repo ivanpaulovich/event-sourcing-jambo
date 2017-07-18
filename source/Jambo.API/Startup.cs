@@ -25,8 +25,15 @@ namespace Jambo.API
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets(typeof(Startup).GetTypeInfo().Assembly);
+            }
+
+            builder.AddEnvironmentVariables();
+
             Configuration = builder.Build();
         }
 
@@ -42,7 +49,7 @@ namespace Jambo.API
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<BloggingContext>(options =>
                     {
-                        options.UseSqlServer(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;");
+                        options.UseSqlServer(Configuration["ConnectionString"]);
                     },
                         ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
                     );
@@ -52,9 +59,9 @@ namespace Jambo.API
                 options.DescribeAllEnumsAsStrings();
                 options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
                 {
-                    Title = "Ordering HTTP API",
+                    Title = "Blogging HTTP API",
                     Version = "v1",
-                    Description = "The Ordering Service HTTP API",
+                    Description = "The Blogging Service HTTP API",
                     TermsOfService = "Terms Of Service"
                 });
             });
@@ -63,7 +70,7 @@ namespace Jambo.API
             container.Populate(services);
 
             container.RegisterModule(new MediatorModule());
-            container.RegisterModule(new ApplicationModule(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;"));
+            container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
 
             return new AutofacServiceProvider(container.Build());
         }

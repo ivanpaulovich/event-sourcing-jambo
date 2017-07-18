@@ -56,7 +56,7 @@ namespace Jambo.API.Controllers
             bool commandResult = await _mediator.Send(command);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public async void Delete([FromBody]ExcluirBlogCommand command)
         {
             bool commandResult = await _mediator.Send(command);

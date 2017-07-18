@@ -23,12 +23,12 @@ namespace Jambo.Application.Queries
                 connection.Open();
 
                 var result = await connection.QueryAsync<dynamic>(
-                   @"SELECT * FROM BLOG WHERE Id=@id", new { id });
+                   @"SELECT id, url, rating FROM BLOG WHERE Id=@id", new { id });
 
                 if (result.AsList().Count == 0)
                     throw new KeyNotFoundException();
 
-                return MapBlogItems(result);
+                return result;
             }
         }
 
@@ -38,18 +38,8 @@ namespace Jambo.Application.Queries
             {
                 connection.Open();
 
-                return await connection.QueryAsync<dynamic>(@"SELECT * FROM BLOG");
+                return await connection.QueryAsync<dynamic>(@"SELECT id, url, rating FROM BLOG");
             }
-        }
-
-        private dynamic MapBlogItems(dynamic result)
-        {
-            dynamic blog = new ExpandoObject();
-
-            blog.url = result[0].url;
-            blog.rating = result[0].rating;
-
-            return blog;
         }
     }
 }
