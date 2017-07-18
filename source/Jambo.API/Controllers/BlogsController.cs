@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using MediatR;
-using Jambo.Application.Commands;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Application.Commands;
 using Jambo.Application.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jambo.API.Controllers
 {
@@ -22,18 +20,14 @@ namespace Jambo.API.Controllers
             _blogQueries = blogQueries ?? throw new ArgumentNullException(nameof(blogQueries));
         }
 
-        // GET api/values
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var blogTask = _blogQueries.GetBlogsAsync();
-
-            var blogs = await blogTask;
+            var blogs = await _blogQueries.GetBlogsAsync();
 
             return Ok(blogs);
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -49,7 +43,6 @@ namespace Jambo.API.Controllers
             }
         }
 
-        // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CriarBlogCommand command)
         {
@@ -57,17 +50,16 @@ namespace Jambo.API.Controllers
             return commandResult ? (IActionResult)Ok() : (IActionResult)BadRequest();
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public async void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public async void Put([FromBody]AtualizarBlogCommand command)
         {
             bool commandResult = await _mediator.Send(command);
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async void Delete([FromBody]ExcluirBlogCommand command)
         {
+            bool commandResult = await _mediator.Send(command);
         }
     }
 }
