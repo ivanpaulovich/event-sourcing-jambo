@@ -42,7 +42,7 @@ namespace Jambo.API
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<BloggingContext>(options =>
                     {
-                        options.UseSqlServer(@"Server=Localhost\SQLEXPRESS;Database=Jambo;Trusted_Connection=True;");
+                        options.UseSqlServer(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;");
                     },
                         ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
                     );
@@ -50,8 +50,8 @@ namespace Jambo.API
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
 
-            container.RegisterModule(new ApplicationModule());
             container.RegisterModule(new MediatorModule());
+            container.RegisterModule(new ApplicationModule(@"Server=DESKTOP-2FNT1PQ;Database=Jambo;Trusted_Connection=True;"));
 
             return new AutofacServiceProvider(container.Build());
         }
@@ -62,6 +62,7 @@ namespace Jambo.API
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseDeveloperExceptionPage();
             app.UseMvc();
         }
     }

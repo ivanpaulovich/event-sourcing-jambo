@@ -7,13 +7,13 @@ using System.Collections.Generic;
 
 namespace Jambo.Application.Queries
 {
-    public class BlogQueries
+    public class BlogQueries : IBlogQueries
     {
         private string _connectionString = string.Empty;
 
-        public BlogQueries(string constr)
+        public BlogQueries(string connectionString)
         {
-            _connectionString = !string.IsNullOrWhiteSpace(constr) ? constr : throw new ArgumentNullException(nameof(constr));
+            _connectionString = !string.IsNullOrWhiteSpace(connectionString) ? connectionString : throw new ArgumentNullException(nameof(connectionString));
         }
 
         public async Task<dynamic> GetBlogAsync(int id)
