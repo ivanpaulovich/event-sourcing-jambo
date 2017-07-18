@@ -1,7 +1,4 @@
 ﻿using Jambo.Domain.SeedWork;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Jambo.Domain.AggregatesModel.BlogAggregate
 {

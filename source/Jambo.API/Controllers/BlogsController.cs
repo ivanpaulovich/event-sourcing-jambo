@@ -59,8 +59,9 @@ namespace Jambo.API.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async void Put(int id, [FromBody]string value)
         {
+            bool commandResult = await _mediator.Send(command);
         }
 
         // DELETE api/values/5

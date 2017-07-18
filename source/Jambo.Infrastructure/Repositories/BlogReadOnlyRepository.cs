@@ -1,9 +1,6 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.SeedWork;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using System.Linq;
 
 namespace Jambo.Infrastructure.Repositories

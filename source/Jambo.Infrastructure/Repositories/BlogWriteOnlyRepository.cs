@@ -1,9 +1,6 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.Events;
 using Jambo.Domain.SeedWork;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Jambo.Infrastructure.Repositories
 {
@@ -24,18 +21,18 @@ namespace Jambo.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public Blog Add(Blog buyer)
+        public Blog Add(Blog blog)
         {
-            if (buyer.IsTransient())
+            if (blog.IsTransient())
             {
                 //TODO: when migrating to ef core 1.1.1 change Add by AddAsync-. A bug in ef core 1.1.0 does not allow to do it https://github.com/aspnet/EntityFramework/issues/7298 
                 return _context.Blogs
-                    .Add(buyer)
+                    .Add(blog)
                     .Entity;
             }
             else
             {
-                return buyer;
+                return blog;
             }
         }
 
