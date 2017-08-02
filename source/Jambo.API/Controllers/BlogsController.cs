@@ -46,8 +46,8 @@ namespace Jambo.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CriarBlogCommand command)
         {
-            bool commandResult = await _mediator.Send(command);
-            return commandResult ? (IActionResult)Ok() : (IActionResult)BadRequest();
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpPut]

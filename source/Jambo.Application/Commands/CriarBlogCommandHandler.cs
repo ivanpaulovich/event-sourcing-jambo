@@ -1,30 +1,27 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Application.IntegrationEvents.Events;
+using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.KafkaBus;
 using MediatR;
 using System;
 using System.Threading.Tasks;
 
 namespace Jambo.Application.Commands
 {
-    public class CriarBlogCommandHandler
-        : IAsyncRequestHandler<CriarBlogCommand, bool>
+    public class CriarBlogCommandHandler : IAsyncRequestHandler<CriarBlogCommand>
     {
-        private readonly IBlogWriteOnlyRepository _blogRepository;
-        private readonly IMediator _mediator;
+        private readonly IEventBus _eventBus;
 
-        public CriarBlogCommandHandler(IMediator mediator, IBlogWriteOnlyRepository blogRepository)
+        public CriarBlogCommandHandler(IEventBus eventBus)
         {
-            _blogRepository = blogRepository ?? throw new ArgumentNullException(nameof(blogRepository));
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
         }
 
-        public async Task<bool> Handle(CriarBlogCommand message)
+        public async Task Handle(CriarBlogCommand message)
         {
-            Blog blog = new Blog(message.Url, message.Rating);
+            Blog blog = new Blog(message.Url);
 
-            _blogRepository.Add(blog);
-
-            return await _blogRepository.UnitOfWork
-                .SaveEntitiesAsync();
+            IntegrationEvent evento = new BlogCriadoIntegrationEvent(blog.Url); 
+            await _eventBus.Publish(evento);
         }
     }
 }

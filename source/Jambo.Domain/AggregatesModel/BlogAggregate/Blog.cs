@@ -16,10 +16,10 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
 
         public Blog(int id) { this.Id = id; }
 
-        public Blog(string url, int rating)
+        public Blog(string url)
         {
             this.Url = url;
-            this.Rating = rating;
+            this.Rating = 0;
 
             AddDomainEvent(new BlogCriadoDomainEvent(this));
         }

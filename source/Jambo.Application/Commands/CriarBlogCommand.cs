@@ -4,23 +4,19 @@ using System.Runtime.Serialization;
 namespace Jambo.Application.Commands
 {
     [DataContract]
-    public class CriarBlogCommand: IRequest<bool>
+    public class CriarBlogCommand: IRequest
     {
         [DataMember]
         public string Url { get; private set; }
-
-        [DataMember]
-        public int Rating { get; private set; }
 
         public CriarBlogCommand()
         {
 
         }
 
-        public CriarBlogCommand(string url, int rating) : this()
+        public CriarBlogCommand(string url) : this()
         {
             Url = url;
-            Rating = rating;
         }
     }
 }

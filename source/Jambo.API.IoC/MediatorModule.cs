@@ -21,6 +21,11 @@ namespace Jambo.API.IoC
                     .Where(i => i.IsClosedTypeOf(typeof(IAsyncRequestHandler<,>)))
                     .Select(i => new KeyedService("IAsyncRequestHandler", i)));
 
+            builder.RegisterAssemblyTypes(typeof(CriarBlogCommand).GetTypeInfo().Assembly)
+                .As(o => o.GetInterfaces()
+                    .Where(i => i.IsClosedTypeOf(typeof(IRequestHandler<>)))
+                    .Select(i => new KeyedService("IAsyncRequestHandler", i)));
+
             // Register all the event classes (they implement IAsyncNotificationHandler) in assembly holding the Commands
             builder.RegisterAssemblyTypes(typeof(BlogCriadoDomainEventHandler).GetTypeInfo().Assembly)
                 .As(o => o.GetInterfaces()
