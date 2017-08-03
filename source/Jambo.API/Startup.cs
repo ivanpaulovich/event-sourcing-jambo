@@ -15,6 +15,7 @@ using Jambo.Application.Commands;
 using System.Reflection;
 using Jambo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting.Internal;
 
 namespace Jambo.API
 {
@@ -33,7 +34,6 @@ namespace Jambo.API
             }
 
             builder.AddEnvironmentVariables();
-
             Configuration = builder.Build();
         }
 
