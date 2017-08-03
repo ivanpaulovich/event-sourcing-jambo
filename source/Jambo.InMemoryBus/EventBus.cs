@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Jambo.InMemoryBus
 {
@@ -23,12 +24,11 @@ namespace Jambo.InMemoryBus
         {
             while (true)
             {
-                //if (_messageQueue.Count() == 0)
-                //    Task.
+                if (_messageQueue.Count() == 0)
+                    Task.Delay(1000);
 
-                //IntegrationEvent @event = _messageQueue.Dequeue();
-
-
+                IntegrationEvent @event = _messageQueue.Dequeue(); 
+                
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using Jambo.Application.IntegrationEvents.Events;
 using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.SeedWork;
-using Jambo.KafkaBus;
 using MediatR;
 using System;
 using System.Threading.Tasks;

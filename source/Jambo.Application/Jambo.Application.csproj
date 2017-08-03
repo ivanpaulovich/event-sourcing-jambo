@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jambo.Infrastructure\Jambo.Infrastructure.csproj" />
-    <ProjectReference Include="..\Jambo.KafkaBus\Jambo.KafkaBus.csproj" />
   </ItemGroup>
 
 </Project>
