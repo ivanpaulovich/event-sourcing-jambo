@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using Confluent.Kafka.Serialization;
+using Jambo.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
 using System.Text;

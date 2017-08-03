@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Jambo.KafkaBus
+namespace Jambo.Domain.SeedWork
 {
     public interface IEventBus
     {

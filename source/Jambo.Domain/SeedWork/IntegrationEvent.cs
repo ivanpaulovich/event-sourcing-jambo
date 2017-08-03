@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Jambo.KafkaBus
+namespace Jambo.Domain.SeedWork
 {
     public class IntegrationEvent
     {
