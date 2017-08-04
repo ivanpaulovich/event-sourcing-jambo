@@ -14,6 +14,7 @@
     <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
     <ProjectReference Include="..\Jambo.Infrastructure\Jambo.Infrastructure.csproj" />
+    <ProjectReference Include="..\Jambo.InMemoryBus\Jambo.InMemoryBus.csproj" />
   </ItemGroup>
 
 </Project>

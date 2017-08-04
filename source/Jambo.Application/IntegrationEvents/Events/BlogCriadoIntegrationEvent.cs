@@ -1,5 +1,4 @@
 ﻿using Jambo.Domain.SeedWork;
-using Jambo.KafkaBus;
 using MediatR;
 using System;
 using System.Collections.Generic;

@@ -5,5 +5,6 @@ namespace Jambo.Domain.SeedWork
     public interface IEventBus
     {
         Task Publish(IntegrationEvent @event);
+        Task Listen();
     }
 }

@@ -32,6 +32,11 @@ namespace Jambo.KafkaBus
             Task.Run(() => ReadMessages());
         }
 
+        public Task Listen()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task Publish(IntegrationEvent @event)
         {
             var deliveryReport = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + @event.ToString());

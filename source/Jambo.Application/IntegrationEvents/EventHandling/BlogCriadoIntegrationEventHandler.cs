@@ -9,18 +9,22 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.IntegrationEvents.EventHandling
 {
-    public class BlogCriadoIntegrationEventHandler : IRequestHandler<BlogCriadoIntegrationEvent>
+    public class BlogCriadoIntegrationEventHandler : IAsyncRequestHandler<BlogCriadoIntegrationEvent>
     {
         private readonly IBlogWriteOnlyRepository _blogRepository;
 
-        public BlogCriadoIntegrationEventHandler()
+        public BlogCriadoIntegrationEventHandler(IBlogWriteOnlyRepository blogRepository)
         {
-
+            _blogRepository = blogRepository ?? throw new ArgumentNullException(nameof(blogRepository));
         }
 
-        public void Handle(BlogCriadoIntegrationEvent message)
+        public async Task Handle(BlogCriadoIntegrationEvent message)
         {
-            throw new NotImplementedException();
+            var blog = new Blog(message.Url);
+
+            _blogRepository.Add(blog);
+
+            await _blogRepository.UnitOfWork.SaveEntitiesAsync();
         }
     }
 }

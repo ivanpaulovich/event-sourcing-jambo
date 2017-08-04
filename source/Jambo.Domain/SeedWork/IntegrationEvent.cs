@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MediatR;
+using System;
 
 namespace Jambo.Domain.SeedWork
 {
-    public class IntegrationEvent
+    public class IntegrationEvent : IRequest
     {
         public IntegrationEvent()
         {
