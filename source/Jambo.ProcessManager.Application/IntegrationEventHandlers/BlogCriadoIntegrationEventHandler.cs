@@ -1,13 +1,10 @@
-﻿using Jambo.Application.IntegrationEvents.Events;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.Events;
+﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.ProcessManager.Application.Events;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Jambo.Application.IntegrationEvents.EventHandling
+namespace Jambo.ProcessManager.Application.IntegrationEventHandlers
 {
     public class BlogCriadoIntegrationEventHandler : IAsyncRequestHandler<BlogCriadoIntegrationEvent>
     {
@@ -24,7 +21,7 @@ namespace Jambo.Application.IntegrationEvents.EventHandling
 
             _blogRepository.Add(blog);
 
-            await _blogRepository.UnitOfWork.SaveEntitiesAsync();
+            await _blogRepository.UnitOfWork.SaveChangesAsync();
         }
     }
 }

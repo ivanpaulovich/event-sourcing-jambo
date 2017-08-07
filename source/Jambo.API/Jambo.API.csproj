@@ -25,7 +25,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Jambo.API.IoC\Jambo.API.IoC.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-    <ProjectReference Include="..\Jambo.Infrastructure\Jambo.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

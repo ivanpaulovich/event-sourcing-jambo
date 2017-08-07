@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.KafkaBus
 {
-    public class EventBus : IEventBus
+    public class EventBus : IServiceBus
     {
         private readonly string _topicName;
         private readonly Producer<Null, string> _producer;

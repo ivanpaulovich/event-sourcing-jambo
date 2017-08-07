@@ -5,15 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.6.0" />
     <PackageReference Include="MediatR" Version="3.0.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-    <ProjectReference Include="..\Jambo.InMemoryBus\Jambo.InMemoryBus.csproj" />
   </ItemGroup>
-
+  
 </Project>

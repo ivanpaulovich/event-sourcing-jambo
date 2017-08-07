@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using System.Runtime.Serialization;
+using Jambo.Application.Commands;
 
 namespace Jambo.Application.Commands
 {

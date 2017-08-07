@@ -7,14 +7,14 @@ using MediatR;
 
 namespace Jambo.InMemoryBus
 {
-    public class EventBus : IEventBus
+    public class EventBus : IServiceBus
     {
-        private readonly Queue<IntegrationEvent> _messageQueue;
+        private readonly Queue<INotification> _messageQueue;
         private readonly IMediator _mediator;
 
         public EventBus(IMediator mediator)
         {
-            _messageQueue = new Queue<IntegrationEvent>();
+            _messageQueue = new Queue<INotification>();
             _mediator = mediator;
 
             Task.Run(() => Listen());
@@ -28,14 +28,14 @@ namespace Jambo.InMemoryBus
                     await Task.Delay(1000);
                 else
                 {
-                    IntegrationEvent @event = _messageQueue.Dequeue();
+                    INotification @event = _messageQueue.Dequeue();
 
-                    await _mediator.Send(@event);
+                    await _mediator.Send(null);
                 }
             }
         }
 
-        public async Task Publish(IntegrationEvent @event)
+        public async Task Publish(INotification @event)
         {
             await Task.Run(() => _messageQueue.Enqueue(@event));
         }

@@ -19,7 +19,7 @@ namespace Jambo.API.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<EventBus>().As<IEventBus>().SingleInstance();
+            builder.RegisterType<EventBus>().As<IServiceBus>().SingleInstance();
             //builder.Register(c => new EventBus("10.17.12.46:32774", "blogs")).As<IEventBus>().SingleInstance();
         }
     }
