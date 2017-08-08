@@ -5,42 +5,20 @@ namespace Jambo.Domain.SeedWork
 {
     public abstract class Entity : IEntity
     {
-        private List<IEvent> _domainEvents;
-        private List<IServiceBus> _observers = new List<IServiceBus>();
+        private List<IEvent> _events;
 
-        public void AddDomainEvent(IEvent _event)
+        public void AddEvent(IEvent _event)
         {
-            _domainEvents = _domainEvents ?? new List<IEvent>();
-            _domainEvents.Add(_event);
+            _events = _events ?? new List<IEvent>();
+            _events.Add(_event);
         }
 
-        public void RemoveDomainEvent(IEvent _event)
+        public void RemoveEvent(IEvent _event)
         {
-            if (_domainEvents is null)
+            if (_events is null)
                 return;
 
-            _domainEvents.Remove(_event);
-        }
-
-        public void Attach(IServiceBus observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void Detach(IServiceBus observer)
-        {
-            _observers.Remove(observer);
-        }
-
-        public void Notify()
-        {
-            foreach (IServiceBus _serviceBus in _observers)
-            {
-                foreach(IEvent _event in _domainEvents)
-                {
-                    _serviceBus.Add(_event);
-                }
-            }
+            _events.Remove(_event);
         }
     }
 }

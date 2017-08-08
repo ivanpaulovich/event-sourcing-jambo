@@ -21,7 +21,7 @@ namespace Jambo.ProcessManager.Application.IntegrationEventHandlers
 
             _blogRepository.Add(blog);
 
-            await _blogRepository.UnitOfWork.SaveChangesAsync();
+            await _blogRepository.ServiceBus.SaveChangesAsync();
         }
     }
 }

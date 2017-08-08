@@ -10,18 +10,21 @@ namespace Jambo.KafkaBus
 {
     public class ServiceBus : IServiceBus
     {
+        private List<IEntity> _entities = new List<IEntity>();
+
+        public void Attach(IEntity entity)
+        {
+            _entities.Add(entity);
+        }
+
+        public void Detach(IEntity entity)
+        {
+            _entities.Remove(entity);
+        }
+
         private readonly string _topicName;
         private readonly Producer<Null, string> _producer;
         private readonly Consumer<Null, string> _consumer;
-
-        private Queue<IEvent> _domainEvents;
-        public Queue<IEvent> DomainEvents => _domainEvents;
-
-        public void Add(IEvent _event)
-        {
-            _domainEvents = _domainEvents ?? new Queue<IEvent>();
-            _domainEvents.Enqueue(_event);
-        }
 
         public ServiceBus(string brokerList, string topicName)
         {

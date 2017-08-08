@@ -1,15 +1,14 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.SeedWork;
+﻿using Jambo.Domain.SeedWork;
 
 namespace Jambo.Domain.Events
 {
     public class BlogCriadoDomainEvent : IEvent
     {
-        public Blog Blog { get; private set; }
+        public string Url { get; set; }
 
-        public BlogCriadoDomainEvent(Blog blog)
+        public BlogCriadoDomainEvent(string url)
         {
-            Blog = blog;
+            Url = url;
         }
     }
 }

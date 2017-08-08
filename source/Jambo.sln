@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.ProcessManager.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.ProcessManager.Infrastructure", "Jambo.ProcessManager.Infrastructure\Jambo.ProcessManager.Infrastructure.csproj", "{65DBB79F-CFCE-413B-8258-60541983DEAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.SQLServerBus", "Jambo.SQLServerBus\Jambo.SQLServerBus.csproj", "{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{65DBB79F-CFCE-413B-8258-60541983DEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65DBB79F-CFCE-413B-8258-60541983DEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65DBB79F-CFCE-413B-8258-60541983DEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +95,6 @@ Global
 		{A60B524F-6E38-4C95-8B08-93DD9324F4A6} = {BAB82901-05FD-44F6-AFB7-CC7A7050BA10}
 		{4DDE307B-8301-4EE7-B841-C77731476C90} = {BAB82901-05FD-44F6-AFB7-CC7A7050BA10}
 		{65DBB79F-CFCE-413B-8258-60541983DEAF} = {BAB82901-05FD-44F6-AFB7-CC7A7050BA10}
+		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60} = {98B1FF4B-38DA-4711-8748-DD1254B50878}
 	EndGlobalSection
 EndGlobal

@@ -20,9 +20,9 @@ namespace Jambo.Application.CommandHandlers
 
         public async Task Handle(CriarBlogCommand message)
         {
-            Blog blog = _entityFactory.Create<Blog>();
-            blog.DefinirUrl(message.Url);
+            Blog blog = new Blog(message.Url);
 
+            blog.Attach(_serviceBus);
             blog.Notify();
 
             await _serviceBus.Publish();

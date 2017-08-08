@@ -24,6 +24,8 @@ namespace Jambo.Application.CommandHandlers
 
             blog.DefinirUrl(message.Url);
 
+            blog.Notify();
+
             await _serviceBus.Publish();
         }
     }

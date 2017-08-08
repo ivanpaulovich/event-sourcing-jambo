@@ -5,11 +5,15 @@ namespace Jambo.Domain.Events
 {
     public class PostCriadoDomainEvent: IEvent
     {
-        public Post Post { get; private set; }
+        public int BlogId { get; private set; }
+        public string Title { get; private set; }
+        public string Content { get; private set; }
 
-        public PostCriadoDomainEvent(Post post)
+        public PostCriadoDomainEvent(int blogId, string title, string content)
         {
-            Post = post;
+            BlogId = blogId;
+            Title = title;
+            Content = content;
         }
     }
 }
