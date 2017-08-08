@@ -1,39 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using MediatR;
-
-namespace Jambo.Domain.SeedWork
+﻿namespace Jambo.Domain.SeedWork
 {
-    public abstract class Entity
+    public abstract class Entity : IEntity
     {
-        int _Id;
+        private IServiceBus _serviceBus;
 
-        private List<INotification> _domainEvents;
-
-        public virtual int Id
+        internal Entity(IServiceBus serviceBus)
         {
-            get
-            {
-                return _Id;
-            }
-            protected set
-            {
-                _Id = value;
-            }
+            _serviceBus = serviceBus;
         }
 
-        public List<INotification> DomainEvents => _domainEvents;
-
-        public void AddDomainEvent(INotification eventItem)
+        public void AddDomainEvent(IEvent _event)
         {
-            _domainEvents = _domainEvents ?? new List<INotification>();
-            _domainEvents.Add(eventItem);
-        }
-
-        public void RemoveDomainEvent(INotification eventItem)
-        {
-            if (_domainEvents is null) return;
-            _domainEvents.Remove(eventItem);
+            _serviceBus.Add(_event);
         }
     }
 }

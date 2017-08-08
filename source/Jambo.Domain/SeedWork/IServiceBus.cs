@@ -1,11 +1,11 @@
-﻿using MediatR;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Jambo.Domain.SeedWork
 {
     public interface IServiceBus
     {
-        Task Publish(INotification @event);
+        void Add(IEvent _event);
+        Task Publish();
         Task Listen();
     }
 }

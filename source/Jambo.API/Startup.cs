@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -13,9 +10,7 @@ using Jambo.API.IoC;
 using Autofac.Extensions.DependencyInjection;
 using Jambo.Application.Commands;
 using System.Reflection;
-using Jambo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Hosting.Internal;
 
 namespace Jambo.API
 {
@@ -46,14 +41,6 @@ namespace Jambo.API
             services.AddMvc();
             services.AddMediatR(typeof(CriarBlogCommand).GetTypeInfo().Assembly);
 
-            services.AddEntityFrameworkSqlServer()
-                    .AddDbContext<BloggingContext>(options =>
-                    {
-                        options.UseSqlServer(Configuration["ConnectionString"]);
-                    },
-                        ServiceLifetime.Scoped  //Showing explicitly that the DbContext is shared across the HTTP request scope (graph of objects started in the HTTP request)
-                    );
-
             services.AddSwaggerGen(options =>
             {
                 options.DescribeAllEnumsAsStrings();
@@ -71,7 +58,7 @@ namespace Jambo.API
 
             container.RegisterModule(new MediatorModule());
             container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
-            container.RegisterModule(new BusModule(Configuration["ConnectionString"]));
+            container.RegisterModule(new ServiceBusModule(Configuration["ConnectionString"], Configuration["Topic"]));
 
             return new AutofacServiceProvider(container.Build());
         }

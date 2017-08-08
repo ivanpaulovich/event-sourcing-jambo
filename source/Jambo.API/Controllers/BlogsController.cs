@@ -51,15 +51,17 @@ namespace Jambo.API.Controllers
         }
 
         [HttpPut]
-        public async void Put([FromBody]AtualizarBlogCommand command)
+        public async Task<IActionResult> Put([FromBody]AtualizarBlogCommand command)
         {
-            bool commandResult = await _mediator.Send(command);
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpDelete]
-        public async void Delete([FromBody]ExcluirBlogCommand command)
+        public async Task<IActionResult> Delete([FromBody]ExcluirBlogCommand command)
         {
-            bool commandResult = await _mediator.Send(command);
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
     }
 }

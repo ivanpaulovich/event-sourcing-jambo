@@ -1,15 +1,10 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
-using Jambo.Application.Commands;
 
 namespace Jambo.Application.Commands
 {
     [DataContract]
-    public class AtualizarBlogCommand
-        : IRequest<bool>
+    public class AtualizarBlogCommand : IRequest
     {
         [DataMember]
         public int Id { get; private set; }

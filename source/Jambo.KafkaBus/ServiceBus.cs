@@ -8,13 +8,22 @@ using System.Threading.Tasks;
 
 namespace Jambo.KafkaBus
 {
-    public class EventBus : IServiceBus
+    public class ServiceBus : IServiceBus
     {
         private readonly string _topicName;
         private readonly Producer<Null, string> _producer;
         private readonly Consumer<Null, string> _consumer;
 
-        public EventBus(string brokerList, string topicName)
+        private Queue<IEvent> _domainEvents;
+        public Queue<IEvent> DomainEvents => _domainEvents;
+
+        public void Add(IEvent _event)
+        {
+            _domainEvents = _domainEvents ?? new Queue<IEvent>();
+            _domainEvents.Enqueue(_event);
+        }
+
+        public ServiceBus(string brokerList, string topicName)
         {
             _topicName = topicName;
 
@@ -26,33 +35,35 @@ namespace Jambo.KafkaBus
             _consumer = new Consumer<Null, string>(
                 new Dictionary<string, object>() {
                 { "group.id", "simple-csharp-consumer" },
-                { "bootstrap.servers", brokerList }}, 
+                { "bootstrap.servers", brokerList }},
                 null, new StringDeserializer(Encoding.UTF8));
-
-            Task.Run(() => ReadMessages());
         }
 
         public Task Listen()
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task Publish(IntegrationEvent @event)
-        {
-            var deliveryReport = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + @event.ToString());
-        }
-
-        public void ReadMessages()
-        {
-            _consumer.Assign(new List<TopicPartitionOffset> { new TopicPartitionOffset(_topicName, 0, 0) });
+            _consumer.Assign(new List<TopicPartitionOffset>
+            {
+                new TopicPartitionOffset(_topicName, 0, 0)
+            });
 
             while (true)
             {
                 Message<Null, string> msg;
+
                 if (_consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
                 {
                     Console.WriteLine($"Topic: {msg.Topic} Partition: {msg.Partition} Offset: {msg.Offset} {msg.Value}");
                 }
+            }
+        }
+
+        public async Task Publish()
+        {
+            while (_domainEvents.Count > 0)
+            {
+                IEvent _event = _domainEvents.Dequeue();
+
+                Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
             }
         }
     }

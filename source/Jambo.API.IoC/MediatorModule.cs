@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Core;
 using Jambo.Application.Commands;
-using Jambo.Application.DomainEventHandlers.BlogCriado;
 using MediatR;
 using System.Linq;
 using System.Reflection;
@@ -25,13 +24,6 @@ namespace Jambo.API.IoC
                 .As(o => o.GetInterfaces()
                     .Where(i => i.IsClosedTypeOf(typeof(IRequestHandler<>)))
                     .Select(i => new KeyedService("IAsyncRequestHandler", i)));
-
-            // Register all the event classes (they implement IAsyncNotificationHandler) in assembly holding the Commands
-            builder.RegisterAssemblyTypes(typeof(BlogCriadoDomainEventHandler).GetTypeInfo().Assembly)
-                .As(o => o.GetInterfaces()
-                    .Where(i => i.IsClosedTypeOf(typeof(IAsyncNotificationHandler<>)))
-                    .Select(i => new KeyedService("IAsyncNotificationHandler", i)))
-                    .AsImplementedInterfaces();
         }
     }
 }

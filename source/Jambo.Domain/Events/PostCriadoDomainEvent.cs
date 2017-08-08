@@ -1,9 +1,9 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
-using MediatR;
+using Jambo.Domain.SeedWork;
 
 namespace Jambo.Domain.Events
 {
-    public class PostCriadoDomainEvent: INotification
+    public class PostCriadoDomainEvent: IEvent
     {
         public Post Post { get; private set; }
 

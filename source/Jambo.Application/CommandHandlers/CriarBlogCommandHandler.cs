@@ -9,21 +9,21 @@ namespace Jambo.Application.CommandHandlers
 {
     public class CriarBlogCommandHandler : IAsyncRequestHandler<CriarBlogCommand>
     {
+        private readonly IEntityFactory _entityFactory;
         private readonly IServiceBus _serviceBus;
 
-        public CriarBlogCommandHandler(IServiceBus serviceBus)
+        public CriarBlogCommandHandler(IServiceBus serviceBus, IEntityFactory entityFactory)
         {
             _serviceBus = serviceBus ?? throw new ArgumentNullException(nameof(serviceBus));
+            _entityFactory = entityFactory ?? throw new ArgumentNullException(nameof(serviceBus));
         }
 
         public async Task Handle(CriarBlogCommand message)
         {
-            Blog blog = new Blog(message.Url);
+            Blog blog = _entityFactory.Create<Blog>();
+            blog.DefinirUrl(message.Url);
 
-            foreach (var domainEvent in blog.DomainEvents)
-            {
-                await _serviceBus.Publish(domainEvent);
-            }
+            await _serviceBus.Publish();
         }
     }
 }

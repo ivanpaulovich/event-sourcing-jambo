@@ -8,18 +8,17 @@ using Jambo.Application.Commands;
 namespace Jambo.Application.Commands
 {
     [DataContract]
-    public class ExcluirBlogCommand
-        : IRequest<bool>
+    public class ExcluirBlogCommand : IRequest
     {
         [DataMember]
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         public ExcluirBlogCommand()
         {
 
         }
 
-        public ExcluirBlogCommand(int id) : this()
+        public ExcluirBlogCommand(Guid id) : this()
         {
             Id = id;
         }

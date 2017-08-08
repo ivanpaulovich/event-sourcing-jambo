@@ -1,27 +1,30 @@
 ﻿using Jambo.Domain.Events;
 using Jambo.Domain.SeedWork;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System;
 
 namespace Jambo.Domain.AggregatesModel.BlogAggregate
 {
     public class Blog : Entity, IAggregateRoot
     {
+        public Guid Id { get; set; }
         public string Url { get; set; }
         public int Rating { get; set; }
         public List<Post> Posts { get; set; }
 
-        protected Blog() { }
-
-        public Blog(int id) { this.Id = id; }
-
-        public Blog(string url)
+        public Blog(IServiceBus serviceBus) : base(serviceBus)
         {
-            this.Url = url;
-            this.Rating = 0;
-
             AddDomainEvent(new BlogCriadoDomainEvent(this));
+        }
+
+        public void DefinirUrl(string url)
+        {
+            Url = url;
+        }
+
+        public void DefinirId(Guid id)
+        {
+            Id = id;
         }
     }
 }

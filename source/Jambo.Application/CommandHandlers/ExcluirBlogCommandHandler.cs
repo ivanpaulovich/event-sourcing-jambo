@@ -1,4 +1,6 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Application.Commands;
+using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.Domain.SeedWork;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,26 +10,24 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.CommandHandlers
 {
-    public class ExcluirBlogCommandHandler
-        : IAsyncRequestHandler<ExcluirBlogCommand, bool>
+    public class ExcluirBlogCommandHandler : IAsyncRequestHandler<ExcluirBlogCommand>
     {
-        private readonly IBlogWriteOnlyRepository _blogRepository;
-        private readonly IMediator _mediator;
+        private readonly IEntityFactory _entityFactory;
+        private readonly IServiceBus _serviceBus;
 
-        public ExcluirBlogCommandHandler(IMediator mediator, IBlogWriteOnlyRepository blogRepository)
+        public ExcluirBlogCommandHandler(IServiceBus serviceBus, IEntityFactory entityFactory)
         {
-            _blogRepository = blogRepository ?? throw new ArgumentNullException(nameof(blogRepository));
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            _serviceBus = serviceBus ?? throw new ArgumentNullException(nameof(serviceBus));
+            _entityFactory = entityFactory ?? throw new ArgumentNullException(nameof(serviceBus));
         }
 
-        public async Task<bool> Handle(ExcluirBlogCommand message)
+        public async Task Handle(ExcluirBlogCommand message)
         {
-            Blog blog = new Blog(message.Id);
+            Blog blog = _entityFactory.Create<Blog>();
 
-            _blogRepository.Delete(blog);
+            blog.DefinirId(message.Id);
 
-            return await _blogRepository.UnitOfWork
-                .SaveEntitiesAsync();
+            await _serviceBus.Publish();
         }
     }
 }
