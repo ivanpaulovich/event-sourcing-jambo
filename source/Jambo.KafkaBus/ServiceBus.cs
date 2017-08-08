@@ -63,7 +63,8 @@ namespace Jambo.KafkaBus
             {
                 IEvent _event = _domainEvents.Dequeue();
 
-                Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
+                await Task.Run(() => Console.WriteLine(_event.ToString()));
+                //Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
             }
         }
     }

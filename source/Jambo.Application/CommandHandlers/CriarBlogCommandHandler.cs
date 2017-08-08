@@ -23,6 +23,8 @@ namespace Jambo.Application.CommandHandlers
             Blog blog = _entityFactory.Create<Blog>();
             blog.DefinirUrl(message.Url);
 
+            blog.Notify();
+
             await _serviceBus.Publish();
         }
     }

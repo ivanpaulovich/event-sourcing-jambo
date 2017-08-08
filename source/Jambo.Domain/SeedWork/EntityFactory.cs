@@ -13,7 +13,9 @@ namespace Jambo.Domain.SeedWork
 
         public T Create<T>() where T: IEntity
         {
-            T entity = (T)Activator.CreateInstance(typeof(T), _serviceBus);
+            T entity = Activator.CreateInstance<T>();
+            entity.Attach(_serviceBus);
+
             return entity;
         }
     }

@@ -12,7 +12,7 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
         public int Rating { get; set; }
         public List<Post> Posts { get; set; }
 
-        public Blog(IServiceBus serviceBus) : base(serviceBus)
+        public Blog()
         {
             AddDomainEvent(new BlogCriadoDomainEvent(this));
         }
