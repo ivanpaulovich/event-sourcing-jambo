@@ -19,6 +19,8 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
 
         public Blog(string url)
         {
+            this.Url = url;
+
             AddEvent(new BlogCriadoDomainEvent(Url));
         }
 

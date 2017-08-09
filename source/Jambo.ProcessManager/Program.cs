@@ -9,6 +9,8 @@ namespace Jambo.ProcessManager
         static void Main(string[] args)
         {
             IServiceBus serviceBus = new ServiceBus("10.17.12.46:32774", "blogs");
+
+
             serviceBus.Listen();
         }
     }
