@@ -1,6 +1,9 @@
 ﻿using Autofac;
 using Jambo.Application.Queries;
+using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.SeedWork;
+using Jambo.Infrastructure;
+using Jambo.Infrastructure.Repositories;
 
 namespace Jambo.API.IoC
 {
@@ -18,8 +21,9 @@ namespace Jambo.API.IoC
             builder.Register(c => new BlogQueries(QueriesConnectionString))
                 .As<IBlogQueries>();
 
-            builder.RegisterType<EntityFactory>()
-                .As<IEntityFactory>().AsImplementedInterfaces();
+            builder.RegisterType<BlogWriteOnlyRepository>()
+                .As<IBlogWriteOnlyRepository>()
+                .InstancePerLifetimeScope();
         }
     }
 }

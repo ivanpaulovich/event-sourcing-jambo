@@ -5,6 +5,7 @@ namespace Jambo.Domain.SeedWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        Task<int> SaveChanges();
+        void Add(IEvent _event);
+        Task SaveChanges();
     }
 }

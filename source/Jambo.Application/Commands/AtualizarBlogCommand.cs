@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using System;
 using System.Runtime.Serialization;
 
 namespace Jambo.Application.Commands
@@ -7,7 +8,7 @@ namespace Jambo.Application.Commands
     public class AtualizarBlogCommand : IRequest
     {
         [DataMember]
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         [DataMember]
         public string Url { get; private set; }
@@ -20,7 +21,7 @@ namespace Jambo.Application.Commands
 
         }
 
-        public AtualizarBlogCommand(int id, string url, int rating) : this()
+        public AtualizarBlogCommand(Guid id, string url, int rating) : this()
         {
             Id = id;
             Url = url;

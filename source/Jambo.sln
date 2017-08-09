@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Domain", "Jambo.Domain\Jambo.Domain.csproj", "{ED9F252F-10E5-4A65-ADA0-122D61D655A4}"
 EndProject
@@ -30,6 +30,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.ProcessManager.Infrastructure", "Jambo.ProcessManager.Infrastructure\Jambo.ProcessManager.Infrastructure.csproj", "{65DBB79F-CFCE-413B-8258-60541983DEAF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.SQLServerBus", "Jambo.SQLServerBus\Jambo.SQLServerBus.csproj", "{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Infrastructure", "Jambo.Infrastructure\Jambo.Infrastructure.csproj", "{A713A828-712D-4F6B-AC93-C9D5EFF8F085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +102,6 @@ Global
 		{4DDE307B-8301-4EE7-B841-C77731476C90} = {BAB82901-05FD-44F6-AFB7-CC7A7050BA10}
 		{65DBB79F-CFCE-413B-8258-60541983DEAF} = {BAB82901-05FD-44F6-AFB7-CC7A7050BA10}
 		{7E16527D-205A-4C7C-A2E2-AA1C97FAAA60} = {98B1FF4B-38DA-4711-8748-DD1254B50878}
+		{A713A828-712D-4F6B-AC93-C9D5EFF8F085} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
 	EndGlobalSection
 EndGlobal

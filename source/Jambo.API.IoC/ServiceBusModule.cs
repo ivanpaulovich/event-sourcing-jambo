@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Jambo.Domain.SeedWork;
+using Jambo.Infrastructure;
 using Jambo.KafkaBus;
 
 namespace Jambo.API.IoC
@@ -17,7 +18,10 @@ namespace Jambo.API.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new ServiceBus(_connectionString, _topic)).As<IServiceBus>().SingleInstance();
+            IServiceBus serviceBus = new ServiceBus(_connectionString, _topic);
+
+            builder.Register(c => serviceBus).As<IServiceBus>().SingleInstance();
+            builder.Register(c => new MessagingContext(serviceBus)).As<MessagingContext>().SingleInstance();
         }
     }
 }

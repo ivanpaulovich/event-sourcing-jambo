@@ -1,6 +1,5 @@
 ﻿using Jambo.Application.Commands;
 using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.SeedWork;
 using MediatR;
 using System;
 using System.Threading.Tasks;
@@ -9,23 +8,23 @@ namespace Jambo.Application.CommandHandlers
 {
     public class CriarBlogCommandHandler : IAsyncRequestHandler<CriarBlogCommand>
     {
-        private readonly IEntityFactory _entityFactory;
-        private readonly IServiceBus _serviceBus;
+        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
 
-        public CriarBlogCommandHandler(IServiceBus serviceBus, IEntityFactory entityFactory)
+        public CriarBlogCommandHandler(IBlogWriteOnlyRepository blogWriteOnlyRepository)
         {
-            _serviceBus = serviceBus ?? throw new ArgumentNullException(nameof(serviceBus));
-            _entityFactory = entityFactory ?? throw new ArgumentNullException(nameof(serviceBus));
+            _blogWriteOnlyRepository = blogWriteOnlyRepository ?? 
+                throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
 
         public async Task Handle(CriarBlogCommand message)
         {
             Blog blog = new Blog(message.Url);
 
-            blog.Attach(_serviceBus);
-            blog.Notify();
+            _blogWriteOnlyRepository.PublishEvents(blog);
 
-            await _serviceBus.Publish();
+            await _blogWriteOnlyRepository
+                .UnitOfWork
+                .SaveChanges();
         }
     }
 }

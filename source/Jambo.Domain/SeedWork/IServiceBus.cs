@@ -1,13 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Jambo.Domain.SeedWork
 {
-    public interface IServiceBus
+    public interface IServiceBus : IDisposable
     {
-        void Attach(IEntity entity);
-        void Detach(IEntity entity);
-
-        Task Publish();
+        Task Publish(IEvent _event);
         Task Listen();
     }
 }

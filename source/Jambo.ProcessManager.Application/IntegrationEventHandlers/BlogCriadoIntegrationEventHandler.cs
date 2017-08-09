@@ -19,7 +19,7 @@ namespace Jambo.ProcessManager.Application.IntegrationEventHandlers
         {
             var blog = new Blog(message.Url);
 
-            _blogRepository.Add(blog);
+            _blogRepository.PublishEvents(blog);
 
             await _blogRepository.ServiceBus.SaveChangesAsync();
         }

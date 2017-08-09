@@ -12,6 +12,11 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
         public int Rating { get; private set; }
         public List<Post> Posts { get; private set; }
 
+        public Blog(Guid id)
+        {
+            Id = id;
+        }
+
         public Blog(string url)
         {
             AddEvent(new BlogCriadoDomainEvent(Url));
@@ -25,6 +30,11 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
         public void DefinirId(Guid id)
         {
             Id = id;
+        }
+
+        public void Disable()
+        {
+            throw new NotImplementedException();
         }
     }
 }

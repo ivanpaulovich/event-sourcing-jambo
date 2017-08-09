@@ -6,7 +6,7 @@ namespace Jambo.Infrastructure.Repositories
 {
     public class BlogWriteOnlyRepository : IBlogWriteOnlyRepository
     {
-        private readonly BloggingContext _context;
+        private readonly MessagingContext _context;
 
         public IUnitOfWork UnitOfWork
         {
@@ -16,37 +16,17 @@ namespace Jambo.Infrastructure.Repositories
             }
         }
 
-        public BlogWriteOnlyRepository(BloggingContext context)
+        public BlogWriteOnlyRepository(MessagingContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public Blog Add(Blog blog)
+        public void PublishEvents(Blog blog)
         {
-            if (blog.IsTransient())
+            foreach (var item in blog.Events)
             {
-                //TODO: when migrating to ef core 1.1.1 change Add by AddAsync-. A bug in ef core 1.1.0 does not allow to do it https://github.com/aspnet/EntityFramework/issues/7298 
-                return _context.Blogs
-                    .Add(blog)
-                    .Entity;
+                _context.Add(item);
             }
-            else
-            {
-                return blog;
-            }
-        }
-
-        public Blog Update(Blog blog)
-        {
-            return _context.Blogs
-                    .Update(blog)
-                    .Entity;
-        }
-
-        public void Delete(Blog blog)
-        {
-            _context.Blogs.Attach(blog);
-            _context.Blogs.Remove(blog);
         }
     }
 }

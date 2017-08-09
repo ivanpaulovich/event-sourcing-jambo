@@ -6,6 +6,7 @@ namespace Jambo.Domain.SeedWork
     public abstract class Entity : IEntity
     {
         private List<IEvent> _events;
+        public IReadOnlyCollection<IEvent> Events => _events;
 
         public void AddEvent(IEvent _event)
         {

@@ -10,18 +10,6 @@ namespace Jambo.KafkaBus
 {
     public class ServiceBus : IServiceBus
     {
-        private List<IEntity> _entities = new List<IEntity>();
-
-        public void Attach(IEntity entity)
-        {
-            _entities.Add(entity);
-        }
-
-        public void Detach(IEntity entity)
-        {
-            _entities.Remove(entity);
-        }
-
         private readonly string _topicName;
         private readonly Producer<Null, string> _producer;
         private readonly Consumer<Null, string> _consumer;
@@ -42,6 +30,12 @@ namespace Jambo.KafkaBus
                 null, new StringDeserializer(Encoding.UTF8));
         }
 
+        public async Task Publish(IEvent _event)
+        {
+            await Task.Run(() => Console.WriteLine(_event.ToString()));
+            //Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
+        }
+
         public Task Listen()
         {
             _consumer.Assign(new List<TopicPartitionOffset>
@@ -60,15 +54,10 @@ namespace Jambo.KafkaBus
             }
         }
 
-        public async Task Publish()
+        public void Dispose()
         {
-            while (_domainEvents.Count > 0)
-            {
-                IEvent _event = _domainEvents.Dequeue();
-
-                await Task.Run(() => Console.WriteLine(_event.ToString()));
-                //Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
-            }
+            _producer.Dispose();
+            _consumer.Dispose();
         }
     }
 }
