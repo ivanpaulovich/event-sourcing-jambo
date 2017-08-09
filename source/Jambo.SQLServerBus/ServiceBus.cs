@@ -16,7 +16,7 @@ namespace Jambo.SQLServerBus
             _domainEvents.Enqueue(_event);
         }
 
-        public ServiceBus(string brokerList, string topicName)
+        public ServiceBus(string connecionString)
         {
 
         }
@@ -26,9 +26,14 @@ namespace Jambo.SQLServerBus
             await Task.Delay(100);
         }
 
-        public async Task Publish()
+        public Task Publish(IEvent _event)
         {
-            await Task.Delay(100);
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }
