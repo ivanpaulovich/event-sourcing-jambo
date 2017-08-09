@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Jambo.Domain.SeedWork;
+using Jambo.KafkaBus;
+using System;
 
 namespace Jambo.ProcessManager
 {
@@ -6,7 +8,8 @@ namespace Jambo.ProcessManager
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IServiceBus serviceBus = new ServiceBus("10.17.12.46:32774", "blogs");
+            serviceBus.Listen();
         }
     }
 }

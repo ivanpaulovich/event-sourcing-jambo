@@ -32,8 +32,8 @@ namespace Jambo.KafkaBus
 
         public async Task Publish(IEvent _event)
         {
-            await Task.Run(() => Console.WriteLine(_event.ToString()));
-            //Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
+            //await Task.Run(() => Console.WriteLine(_event.ToString()));
+            Message<Null, string> message = await _producer.ProduceAsync(_topicName, null, DateTime.Now.ToString() + _event.ToString());
         }
 
         public Task Listen()
