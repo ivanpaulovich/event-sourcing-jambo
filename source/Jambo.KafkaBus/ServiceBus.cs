@@ -19,6 +19,13 @@ namespace Jambo.KafkaBus
 
         private IList<ProcessDomainEventDelegate> _subscribers;
 
+        private ProcessDomainEventDelegate onReceive;
+        public ProcessDomainEventDelegate OnReceive => onReceive;
+
+        ProcessDomainEventDelegate IServiceBus.OnReceive {
+            get => onReceive;
+            set => onReceive = value; }
+
         public ServiceBus(string brokerList, string topicName)
         {
             _topicName = topicName;
@@ -34,12 +41,6 @@ namespace Jambo.KafkaBus
                 {{ "group.id", "simple-csharp-consumer" },
                     { "bootstrap.servers", brokerList }},
                 new StringDeserializer(Encoding.UTF8), new StringDeserializer(Encoding.UTF8));
-        }
-
-        public void AddSubscriber(ProcessDomainEventDelegate subscriber)
-        {
-            _subscribers = _subscribers ?? new List<ProcessDomainEventDelegate>();
-            _subscribers.Add(subscriber);
         }
 
         public async Task Publish(IEvent _event)

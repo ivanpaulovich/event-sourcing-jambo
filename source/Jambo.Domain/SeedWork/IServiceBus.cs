@@ -7,7 +7,7 @@ namespace Jambo.Domain.SeedWork
     public interface IServiceBus : IDisposable
     {
         Task Publish(IEvent _event);
-        void AddSubscriber(ProcessDomainEventDelegate subscriber);
+        ProcessDomainEventDelegate OnReceive { get; set; }
         Task Listen();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using System;
+using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.Events;
 using Jambo.ProcessManager.Application.Events;
 using MediatR;
@@ -22,9 +23,13 @@ namespace Jambo.ProcessManager.Application.IntegrationEventHandlers
 
         //    await _blogRepository.ServiceBus.SaveChangesAsync();
         //}
+        //public void Handle(IEventRequest<BlogCriadoDomainEvent> message)
+        //{
+        //    message.Event
+        //}
         public void Handle(IEventRequest<BlogCriadoDomainEvent> message)
         {
-            message.Event
+            throw new NotImplementedException();
         }
     }
 }
