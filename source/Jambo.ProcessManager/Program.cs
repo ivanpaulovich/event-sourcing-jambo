@@ -8,7 +8,7 @@ namespace Jambo.ProcessManager
     {
         static void Main(string[] args)
         {
-            IServiceBus serviceBus = new ServiceBus("10.17.12.46:32774", "blogs");
+            IServiceBus serviceBus = new ServiceBus("192.168.99.100:9092", "blogsv1");
 
             serviceBus.OnReceive += ProcessDomainEventDelegate;
 
@@ -20,7 +20,7 @@ namespace Jambo.ProcessManager
 
         static void ProcessDomainEventDelegate(string topic, int partition, long offSet, string value)
         {
-            Console.WriteLine(DateTime.Now);
+            Console.WriteLine($"{topic} {partition} {offSet} {value}");
         }
     }
 }

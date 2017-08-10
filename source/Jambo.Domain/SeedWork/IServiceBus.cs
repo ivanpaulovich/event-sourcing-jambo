@@ -8,6 +8,6 @@ namespace Jambo.Domain.SeedWork
     {
         Task Publish(IEvent _event);
         ProcessDomainEventDelegate OnReceive { get; set; }
-        Task Listen();
+        void Listen();
     }
 }

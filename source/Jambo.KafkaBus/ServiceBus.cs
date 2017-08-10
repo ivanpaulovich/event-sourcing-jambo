@@ -17,8 +17,6 @@ namespace Jambo.KafkaBus
         private readonly Producer<string, string> _producer;
         private readonly Consumer<string, string> _consumer;
 
-        private IList<ProcessDomainEventDelegate> _subscribers;
-
         private ProcessDomainEventDelegate onReceive;
         public ProcessDomainEventDelegate OnReceive => onReceive;
 
@@ -51,9 +49,9 @@ namespace Jambo.KafkaBus
                 _topicName, _event.ToString(), data);
         }
 
-        public async Task Listen()
+        public void Listen()
         {
-            await Task.Run(() =>
+            Task.Run(() =>
             {
                 _consumer.Assign(new List<TopicPartitionOffset>
                 {
@@ -66,10 +64,7 @@ namespace Jambo.KafkaBus
 
                     if (_consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
                     {
-                        foreach (ProcessDomainEventDelegate eventDelegate in _subscribers)
-                        {
-                            eventDelegate(msg.Topic, msg.Partition, msg.Offset.Value, msg.Value);
-                        }
+                        onReceive(msg.Topic, msg.Partition, msg.Offset.Value, msg.Value);
                     }
                 }
             });
