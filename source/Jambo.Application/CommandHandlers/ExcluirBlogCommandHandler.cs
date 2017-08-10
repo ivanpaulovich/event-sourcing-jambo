@@ -12,12 +12,12 @@ namespace Jambo.Application.CommandHandlers
 {
     public class ExcluirBlogCommandHandler : IAsyncRequestHandler<ExcluirBlogCommand>
     {
-        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
+        private readonly IBlogEventRepository _blogEventRepository;
 
-        public ExcluirBlogCommandHandler(IBlogWriteOnlyRepository blogWriteOnlyRepository)
+        public ExcluirBlogCommandHandler(IBlogEventRepository blogEventRepository)
         {
-            _blogWriteOnlyRepository = blogWriteOnlyRepository ??
-                throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
+            _blogEventRepository = blogEventRepository ??
+                throw new ArgumentNullException(nameof(blogEventRepository));
         }
 
         public async Task Handle(ExcluirBlogCommand message)
@@ -26,9 +26,9 @@ namespace Jambo.Application.CommandHandlers
 
             blog.Disable();
 
-            _blogWriteOnlyRepository.PublishEvents(blog);
+            await _blogEventRepository.PublishEvents(blog);
 
-            await _blogWriteOnlyRepository
+            await _blogEventRepository
                 .UnitOfWork
                 .SaveChanges();
         }

@@ -21,8 +21,8 @@ namespace Jambo.API.IoC
             builder.Register(c => new BlogQueries(QueriesConnectionString))
                 .As<IBlogQueries>();
 
-            builder.RegisterType<BlogWriteOnlyRepository>()
-                .As<IBlogWriteOnlyRepository>()
+            builder.RegisterType<BlogEventRepository>()
+                .As<IBlogEventRepository>()
                 .InstancePerLifetimeScope();
         }
     }

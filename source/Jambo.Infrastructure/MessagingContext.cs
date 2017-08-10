@@ -15,9 +15,9 @@ namespace Jambo.Infrastructure
             _domainEvents = new Queue<IEvent>();
         }
 
-        public void Add(IEvent _event)
+        public async Task Add(IEvent _event)
         {
-            _domainEvents.Enqueue(_event);
+            await Task.Run(() => _domainEvents.Enqueue(_event));
         }
 
         public async Task SaveChanges()

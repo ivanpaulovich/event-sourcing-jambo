@@ -8,21 +8,21 @@ namespace Jambo.Application.CommandHandlers
 {
     public class CriarBlogCommandHandler : IAsyncRequestHandler<CriarBlogCommand>
     {
-        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
+        private readonly IBlogEventRepository _blogEventRepository;
 
-        public CriarBlogCommandHandler(IBlogWriteOnlyRepository blogWriteOnlyRepository)
+        public CriarBlogCommandHandler(IBlogEventRepository blogEventRepository)
         {
-            _blogWriteOnlyRepository = blogWriteOnlyRepository ?? 
-                throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
+            _blogEventRepository = blogEventRepository ?? 
+                throw new ArgumentNullException(nameof(blogEventRepository));
         }
 
         public async Task Handle(CriarBlogCommand message)
         {
             Blog blog = new Blog(message.Url);
 
-            _blogWriteOnlyRepository.PublishEvents(blog);
+            await _blogEventRepository.PublishEvents(blog);
 
-            await _blogWriteOnlyRepository
+            await _blogEventRepository
                 .UnitOfWork
                 .SaveChanges();
         }

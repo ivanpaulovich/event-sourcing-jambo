@@ -1,9 +1,11 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.SeedWork;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Jambo.ProcessManager.Infrastructure.Repositories
 {
@@ -15,14 +17,14 @@ namespace Jambo.ProcessManager.Infrastructure.Repositories
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
-        public Blog FindAsync(int id)
+        public async Task<IEnumerable<Blog>> GetAllBlogs()
         {
-            var buyer = _context.Blogs
-                .Where(b => b.Id == id)
-                .SingleOrDefault();
+            return await _context.Blogs.Find(e => true).ToListAsync();
+        }
 
-            return buyer;
+        public async Task<Blog> FindAsync(Guid id)
+        {
+            return await _context.Blogs.Find(e => e.Id == id).SingleOrDefaultAsync();
         }
     }
 }

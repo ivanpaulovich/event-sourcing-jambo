@@ -8,9 +8,9 @@ namespace Jambo.Application.CommandHandlers
 {
     public class AtualizarBlogCommandHandler : IAsyncRequestHandler<AtualizarBlogCommand>
     {
-        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
+        private readonly IBlogEventRepository _blogWriteOnlyRepository;
 
-        public AtualizarBlogCommandHandler(IBlogWriteOnlyRepository blogWriteOnlyRepository)
+        public AtualizarBlogCommandHandler(IBlogEventRepository blogWriteOnlyRepository)
         {
             _blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
@@ -22,7 +22,7 @@ namespace Jambo.Application.CommandHandlers
 
             blog.DefinirUrl(message.Url);
 
-            _blogWriteOnlyRepository.PublishEvents(blog);
+            await _blogWriteOnlyRepository.PublishEvents(blog);
 
             await _blogWriteOnlyRepository
                 .UnitOfWork

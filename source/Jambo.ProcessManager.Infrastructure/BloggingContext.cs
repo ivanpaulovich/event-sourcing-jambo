@@ -1,49 +1,48 @@
 ﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.SeedWork;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MongoDB.Driver;
 using System.Threading;
 using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 
 namespace Jambo.ProcessManager.Infrastructure
 {
-    public class BloggingContext : DbContext, IUnitOfWork
+    public class BloggingContext : IUnitOfWork
     {
-        public DbSet<Blog> Blogs { get; set; }
-        public DbSet<Post> Posts { get; set; }
+        private readonly IMongoDatabase _database;
+        public IMongoCollection<Blog> Blogs { get; set; }
+        public IMongoCollection<Post> Posts { get; set; }
 
-        public BloggingContext(DbContextOptions options) : base(options)
+        private readonly Queue<IEvent> _domainEvents;
+        private readonly IServiceBus _serviceBus;
+
+        public BloggingContext(string connectionString, string database, IServiceBus serviceBus)
         {
+            MongoClient mongoClient = new MongoClient(connectionString);
+            _database = mongoClient.GetDatabase(database);
+
+            _serviceBus = serviceBus;
+            _domainEvents = new Queue<IEvent>();
         }
 
-        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task Add(IEvent _event)
         {
-            int result = await base.SaveChangesAsync();
-
-            return true;
+            await Task.Run(() => _domainEvents.Enqueue(_event));
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public async Task SaveChanges()
         {
-            modelBuilder.Entity<Blog>(ConfigureBlogs);
-            modelBuilder.Entity<Post>(ConfigurePosts);
+            while (_domainEvents.Count > 0)
+            {
+                IEvent _event = _domainEvents.Dequeue();
+                await _serviceBus.Publish(_event);
+            }
         }
 
-        private void ConfigureBlogs(EntityTypeBuilder<Blog> requestConfiguration)
+        public void Dispose()
         {
-            requestConfiguration.ToTable("Blog");
-            requestConfiguration.HasKey(cr => cr.Id);
-            requestConfiguration.Property(cr => cr.Url).IsRequired();
-            requestConfiguration.Property(cr => cr.Rating).IsRequired();
-        }
-
-        private void ConfigurePosts(EntityTypeBuilder<Post> requestConfiguration)
-        {
-            requestConfiguration.ToTable("Post");
-            requestConfiguration.HasKey(cr => cr.Id);
-            requestConfiguration.Property(cr => cr.Title).IsRequired();
-            requestConfiguration.Property(cr => cr.Content).IsRequired();
-            requestConfiguration.Property(cr => cr.BlogId).IsRequired();
+            _serviceBus.Dispose();
         }
     }
 }
