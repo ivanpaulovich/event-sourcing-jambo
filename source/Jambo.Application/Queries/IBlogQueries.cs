@@ -7,7 +7,7 @@ namespace Jambo.Application.Queries
 {
     public interface IBlogQueries
     {
-        Task<dynamic> GetBlogAsync(int id);
+        Task<dynamic> GetBlogAsync(Guid id);
 
         Task<IEnumerable<dynamic>> GetBlogsAsync();
     }

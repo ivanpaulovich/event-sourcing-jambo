@@ -57,7 +57,7 @@ namespace Jambo.API
             container.Populate(services);
 
             container.RegisterModule(new MediatorModule());
-            container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"]));
+            container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"], Configuration["Database"]));
             container.RegisterModule(new ServiceBusModule(Configuration["ServiceBus"], Configuration["Topic"]));
 
             return new AutofacServiceProvider(container.Build());

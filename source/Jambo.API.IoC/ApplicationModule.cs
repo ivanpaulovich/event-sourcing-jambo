@@ -9,16 +9,18 @@ namespace Jambo.API.IoC
 {
     public class ApplicationModule : Module
     {
-        public string QueriesConnectionString { get; }
+        public readonly string _connectionString;
+        public readonly string _database;
 
-        public ApplicationModule(string qconstr)
+        public ApplicationModule(string connectionString, string database)
         {
-            QueriesConnectionString = qconstr;
+            _connectionString = connectionString;
+            _database = database;
         }
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new BlogQueries(QueriesConnectionString))
+            builder.Register(c => new BlogQueries(_connectionString, _database))
                 .As<IBlogQueries>();
 
             builder.RegisterType<BlogEventRepository>()
