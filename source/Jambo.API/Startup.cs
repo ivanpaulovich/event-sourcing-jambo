@@ -57,8 +57,14 @@ namespace Jambo.API
             container.Populate(services);
 
             container.RegisterModule(new MediatorModule());
-            container.RegisterModule(new ApplicationModule(Configuration["ConnectionString"], Configuration["Database"]));
-            container.RegisterModule(new ServiceBusModule(Configuration["ServiceBus"], Configuration["Topic"]));
+
+            container.RegisterModule(new ApplicationModule(
+                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
+                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
+
+            container.RegisterModule(new ServiceBusModule(
+                Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
+                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
 
             return new AutofacServiceProvider(container.Build());
         }

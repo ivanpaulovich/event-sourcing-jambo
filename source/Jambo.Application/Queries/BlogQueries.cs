@@ -9,8 +9,21 @@ namespace Jambo.Application.Queries
     public class BlogQueries : IBlogQueries
     {
         private readonly IMongoDatabase _database;
-        public IMongoCollection<Blog> Blogs { get; set; }
-        public IMongoCollection<Post> Posts { get; set; }
+        public IMongoCollection<Blog> Blogs
+        {
+            get
+            {
+                return _database.GetCollection<Blog>("Blogs");
+            }
+        }
+
+        public IMongoCollection<Post> Posts
+        {
+            get
+            {
+                return _database.GetCollection<Post>("Posts");
+            }
+        }
 
         public BlogQueries(string connectionString, string database)
         {
