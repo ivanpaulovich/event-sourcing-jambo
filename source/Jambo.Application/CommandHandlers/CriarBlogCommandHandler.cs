@@ -18,7 +18,8 @@ namespace Jambo.Application.CommandHandlers
 
         public async Task Handle(CriarBlogCommand message)
         {
-            Blog blog = new Blog(message.Url);
+            Blog blog = new Blog();
+            blog.DefinirUrl(message.Url);
 
             await _blogEventRepository.PublishEvents(blog);
 

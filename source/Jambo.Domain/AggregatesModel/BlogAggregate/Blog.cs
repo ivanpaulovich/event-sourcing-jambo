@@ -11,6 +11,14 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
         public string Url { get; private set; }
         public int Rating { get; private set; }
         public List<Post> Posts { get; private set; }
+        public int Version { get; private set; }
+
+        public Blog()
+        {
+            Version = 0;
+
+            AddEvent(new BlogCriadoDomainEvent(Url));
+        }
 
         public Blog(Guid id)
         {
@@ -20,8 +28,6 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
         public Blog(string url)
         {
             this.Url = url;
-
-            AddEvent(new BlogCriadoDomainEvent(Url));
         }
 
         public void DefinirUrl(string url)
