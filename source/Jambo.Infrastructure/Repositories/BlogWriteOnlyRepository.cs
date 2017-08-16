@@ -9,9 +9,6 @@ namespace Jambo.Infrastructure.Repositories
     public class BlogWriteOnlyRepository : IBlogWriteOnlyRepository
     {
         private readonly MongoContext _mongoContext;
-
-        public IUnitOfWork UnitOfWork => throw new NotImplementedException();
-
         public BlogWriteOnlyRepository(MongoContext mongoContext)
         {
             _mongoContext = mongoContext;
@@ -24,6 +21,7 @@ namespace Jambo.Infrastructure.Repositories
 
         public async Task Update(Blog blog)
         {
+            blog.Version += 1;
             await _mongoContext.Blogs.ReplaceOneAsync(e => e.Id == blog.Id, blog);
         }
     }

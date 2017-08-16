@@ -80,11 +80,8 @@ namespace Jambo.KafkaBus
 
         public async Task Publish(IEnumerable<IEvent> _event)
         {
-            List<Task> Tasks = new List<Task>();
             foreach (var s in _event)
-                Tasks.Add(Task.Run(() => Publish(s)));
-
-            await Task.WhenAll(Tasks);
+                await Publish(s);
         }
     }
 }

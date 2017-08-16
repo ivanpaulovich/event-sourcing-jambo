@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.DomainEventHandlers
 {
-    public class BlogCriadoEventHandler : INotificationHandler<BlogCriadoDomainEvent>
+    public class UrlDefinidaEventHandler : INotificationHandler<UrlDefinidaDomainEvent>
     {
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
         private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
 
-        public BlogCriadoEventHandler(
+        public UrlDefinidaEventHandler(
             IBlogReadOnlyRepository blogReadOnlyRepository,
             IBlogWriteOnlyRepository blogWriteOnlyRepository)
         {
@@ -20,11 +20,15 @@ namespace Jambo.Application.DomainEventHandlers
             _blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public void Handle(BlogCriadoDomainEvent message)
+        public void Handle(UrlDefinidaDomainEvent message)
         {
-            Blog blog = new Blog(message.AggregateRootId);
+            Blog blog = _blogReadOnlyRepository.FindAsync(message.AggregateRootId).Result;
 
-            _blogWriteOnlyRepository.Add(blog).ConfigureAwait(true);
+            if (blog.Version == message.Version)
+            {
+                blog.DefinirUrl(message.Url);
+                _blogWriteOnlyRepository.Update(blog).ConfigureAwait(true);
+            }
         }
     }
 }

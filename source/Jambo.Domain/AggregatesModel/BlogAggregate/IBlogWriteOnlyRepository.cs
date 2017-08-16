@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Domain.AggregatesModel.BlogAggregate
 {
-    public interface IBlogWriteOnlyRepository : IRepository<Blog>
+    public interface IBlogWriteOnlyRepository
     {
         Task Add(Blog blog);
         Task Update(Blog blog);

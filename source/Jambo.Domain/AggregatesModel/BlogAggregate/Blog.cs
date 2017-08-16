@@ -20,9 +20,11 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
             :base(id)
         {
         }
+
         public void DefinirUrl(string url)
         {
             Url = url;
+            AddEvent(new UrlDefinidaDomainEvent(Id, Version, Url));
         }
 
         public void Disable()
