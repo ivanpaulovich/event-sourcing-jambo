@@ -23,8 +23,15 @@ namespace Jambo.API.IoC
             builder.Register(c => new BlogQueries(_connectionString, _database))
                 .As<IBlogQueries>();
 
-            builder.RegisterType<BlogEventRepository>()
-                .As<IBlogEventRepository>()
+            builder.Register(c => new MongoContext(_connectionString, _database))
+                .As<MongoContext>().SingleInstance();
+
+            builder.RegisterType<BlogReadOnlyRepository>()
+                .As<IBlogReadOnlyRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<BlogWriteOnlyRepository>()
+                .As<IBlogWriteOnlyRepository>()
                 .InstancePerLifetimeScope();
         }
     }

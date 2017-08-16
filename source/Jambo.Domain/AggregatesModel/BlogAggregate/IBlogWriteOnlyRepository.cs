@@ -7,6 +7,5 @@ namespace Jambo.Domain.AggregatesModel.BlogAggregate
     {
         Task Add(Blog blog);
         Task Update(Blog blog);
-        Task Delete(Blog blog);
     }
 }

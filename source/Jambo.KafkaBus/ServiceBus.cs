@@ -12,6 +12,7 @@ namespace Jambo.KafkaBus
 {
     public class ServiceBus : IServiceBus
     {
+        private readonly string _brokerList;
         private readonly string _topicName;
 
         private readonly Producer<string, string> _producer;
@@ -26,6 +27,7 @@ namespace Jambo.KafkaBus
 
         public ServiceBus(string brokerList, string topicName)
         {
+            _brokerList = brokerList;
             _topicName = topicName;
 
             _producer = new Producer<string, string>(
@@ -46,7 +48,7 @@ namespace Jambo.KafkaBus
             string data = JsonConvert.SerializeObject(_event);
 
             Message<string, string> message = await _producer.ProduceAsync(
-                _topicName, _event.ToString(), data);
+                _topicName, _event.GetType().AssemblyQualifiedName, data);
         }
 
         public void Listen()
@@ -64,7 +66,7 @@ namespace Jambo.KafkaBus
 
                     if (_consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
                     {
-                        onReceive(msg.Topic, msg.Partition, msg.Offset.Value, msg.Value);
+                        onReceive(msg.Topic, msg.Key, msg.Value);
                     }
                 }
             });
@@ -74,6 +76,15 @@ namespace Jambo.KafkaBus
         {
             _producer.Dispose();
             _consumer.Dispose();
+        }
+
+        public async Task Publish(IEnumerable<IEvent> _event)
+        {
+            List<Task> Tasks = new List<Task>();
+            foreach (var s in _event)
+                Tasks.Add(Task.Run(() => Publish(s)));
+
+            await Task.WhenAll(Tasks);
         }
     }
 }

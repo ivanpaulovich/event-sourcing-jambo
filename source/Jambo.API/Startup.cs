@@ -11,6 +11,8 @@ using Autofac.Extensions.DependencyInjection;
 using Jambo.Application.Commands;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Jambo.Domain.Events;
+using Newtonsoft.Json;
 
 namespace Jambo.API
 {
@@ -33,6 +35,8 @@ namespace Jambo.API
         }
 
         public IConfigurationRoot Configuration { get; }
+
+        IServiceProvider serviceProvider;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -64,9 +68,20 @@ namespace Jambo.API
 
             container.RegisterModule(new ServiceBusModule(
                 Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
+                Configuration.GetSection("ServiceBus").GetValue<string>("Topic"),
+                ProcessDomainEventDelegate));
 
-            return new AutofacServiceProvider(container.Build());
+            serviceProvider = new AutofacServiceProvider(container.Build());
+
+            return serviceProvider;
+        }
+
+        private void ProcessDomainEventDelegate(string topic, string key, string value)
+        {
+            Type eventType = Type.GetType(key);
+            DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(value, eventType);
+
+            serviceProvider.GetService<IMediator>().Publish(domainEvent);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

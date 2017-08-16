@@ -1,12 +1,12 @@
-﻿using System;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.Events;
-using Jambo.ProcessManager.Application.Events;
 using MediatR;
+using System;
+using System.Threading.Tasks;
 
-namespace Jambo.ProcessManager.Application.IntegrationEventHandlers
+namespace Jambo.Application.DomainEventHandlers
 {
-    public class BlogCriadoEventHandler : IRequestHandler<IEventRequest<BlogCriadoDomainEvent>>
+    public class BlogCriadoEventHandler : IAsyncNotificationHandler<BlogCriadoDomainEvent>
     {
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
         private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
@@ -20,10 +20,10 @@ namespace Jambo.ProcessManager.Application.IntegrationEventHandlers
             _blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public async void Handle(IEventRequest<BlogCriadoDomainEvent> message)
+        public async Task Handle(BlogCriadoDomainEvent message)
         {
-            Blog blog = new Blog(message.Event.AggregateRootId);
-            blog.Version = message.Event.Version;
+            Blog blog = new Blog(message.AggregateRootId);
+            blog.Version = message.Version;
 
             await _blogWriteOnlyRepository.Add(blog);
 

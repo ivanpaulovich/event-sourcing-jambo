@@ -5,39 +5,24 @@ using System;
 
 namespace Jambo.Domain.AggregatesModel.BlogAggregate
 {
-    public class Blog : Entity, IAggregateRoot
+    public class Blog : AggregateRoot
     {
-        public Guid Id { get; private set; }
         public string Url { get; private set; }
         public int Rating { get; private set; }
         public List<Post> Posts { get; private set; }
-        public int Version { get; private set; }
 
         public Blog()
         {
-            Version = 0;
-
-            AddEvent(new BlogCriadoDomainEvent(Url));
+            AddEvent(new BlogCriadoDomainEvent(Id));
         }
 
         public Blog(Guid id)
+            :base(id)
         {
-            Id = id;
         }
-
-        public Blog(string url)
-        {
-            this.Url = url;
-        }
-
         public void DefinirUrl(string url)
         {
             Url = url;
-        }
-
-        public void DefinirId(Guid id)
-        {
-            Id = id;
         }
 
         public void Disable()

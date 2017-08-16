@@ -1,17 +1,17 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.SeedWork;
+﻿using System;
 
 namespace Jambo.Domain.Events
 {
-    public class PostCriadoDomainEvent: IEvent
+    public class PostCriadoDomainEvent: DomainEvent
     {
-        public int BlogId { get; private set; }
-        public string Title { get; private set; }
-        public string Content { get; private set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
 
-        public PostCriadoDomainEvent(int blogId, string title, string content)
+        public PostCriadoDomainEvent(Guid aggregateRootId, int version, 
+            string title, string content)
+            : base(aggregateRootId, version)
         {
-            BlogId = blogId;
+            AggregateRootId = aggregateRootId;
             Title = title;
             Content = content;
         }

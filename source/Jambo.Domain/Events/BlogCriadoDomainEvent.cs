@@ -1,14 +1,12 @@
-﻿using Jambo.Domain.SeedWork;
+﻿using System;
 
 namespace Jambo.Domain.Events
 {
-    public class BlogCriadoDomainEvent : IEvent
+    public class BlogCriadoDomainEvent : DomainEvent
     {
-        public string Url { get; set; }
-
-        public BlogCriadoDomainEvent(string url)
+        public BlogCriadoDomainEvent(Guid aggregateRootId)
+            :base(aggregateRootId, 0)
         {
-            Url = url;
         }
     }
 }

@@ -5,21 +5,16 @@ namespace Jambo.Domain.SeedWork
 {
     public abstract class Entity : IEntity
     {
-        private List<IEvent> _events;
-        public IReadOnlyCollection<IEvent> Events => _events;
+        public Guid Id { get; private set; }
 
-        public void AddEvent(IEvent _event)
+        public Entity()
         {
-            _events = _events ?? new List<IEvent>();
-            _events.Add(_event);
+            Id = Guid.NewGuid();
         }
 
-        public void RemoveEvent(IEvent _event)
+        public Entity(Guid id)
         {
-            if (_events is null)
-                return;
-
-            _events.Remove(_event);
+            Id = id;
         }
     }
 }

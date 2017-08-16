@@ -3,30 +3,32 @@ using MediatR;
 using System;
 using System.Threading.Tasks;
 using Jambo.Application.Commands;
+using Jambo.Domain.SeedWork;
 
 namespace Jambo.Application.CommandHandlers
 {
     public class AtualizarBlogCommandHandler : IAsyncRequestHandler<AtualizarBlogCommand>
     {
-        private readonly IBlogEventRepository _blogWriteOnlyRepository;
+        private readonly IServiceBus _serviceBus;
+        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
 
-        public AtualizarBlogCommandHandler(IBlogEventRepository blogWriteOnlyRepository)
+        public AtualizarBlogCommandHandler(
+            IServiceBus serviceBus,
+            IBlogReadOnlyRepository blogReadOnlyRepository)
         {
-            _blogWriteOnlyRepository = blogWriteOnlyRepository ??
-                throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
+            _serviceBus = serviceBus ??
+                throw new ArgumentNullException(nameof(serviceBus));
+            _blogReadOnlyRepository = blogReadOnlyRepository ??
+                throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
         public async Task Handle(AtualizarBlogCommand message)
         {
-            Blog blog = new Blog(message.Id);
+            Blog blog = await _blogReadOnlyRepository.FindAsync(message.Id);
 
             blog.DefinirUrl(message.Url);
 
-            await _blogWriteOnlyRepository.PublishEvents(blog);
-
-            await _blogWriteOnlyRepository
-                .UnitOfWork
-                .SaveChanges();
+            await _serviceBus.Publish(blog.GetEvents());
         }
     }
 }

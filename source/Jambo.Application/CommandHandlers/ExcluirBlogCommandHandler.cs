@@ -3,34 +3,32 @@ using Jambo.Domain.AggregatesModel.BlogAggregate;
 using Jambo.Domain.SeedWork;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jambo.Application.CommandHandlers
 {
     public class ExcluirBlogCommandHandler : IAsyncRequestHandler<ExcluirBlogCommand>
     {
-        private readonly IBlogEventRepository _blogEventRepository;
+        private readonly IServiceBus _serviceBus;
+        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
 
-        public ExcluirBlogCommandHandler(IBlogEventRepository blogEventRepository)
+        public ExcluirBlogCommandHandler(
+            IServiceBus serviceBus,
+            IBlogReadOnlyRepository blogReadOnlyRepository)
         {
-            _blogEventRepository = blogEventRepository ??
-                throw new ArgumentNullException(nameof(blogEventRepository));
+            _serviceBus = serviceBus ??
+                throw new ArgumentNullException(nameof(serviceBus));
+            _blogReadOnlyRepository = blogReadOnlyRepository ??
+                throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
         public async Task Handle(ExcluirBlogCommand message)
         {
-            Blog blog = new Blog(message.Id);
+            Blog blog = await _blogReadOnlyRepository.FindAsync(message.Id);
 
             blog.Disable();
 
-            await _blogEventRepository.PublishEvents(blog);
-
-            await _blogEventRepository
-                .UnitOfWork
-                .SaveChanges();
+            await _serviceBus.Publish(blog.GetEvents());
         }
     }
 }

@@ -12,19 +12,8 @@ namespace Jambo.API.IoC
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
-                .AsImplementedInterfaces();
-
-            // Register all the Command classes (they implement IAsyncRequestHandler) in assembly holding the Commands
-            builder.RegisterAssemblyTypes(typeof(CriarBlogCommandHandler).GetTypeInfo().Assembly)
-                .As(o => o.GetInterfaces()
-                    .Where(i => i.IsClosedTypeOf(typeof(IAsyncRequestHandler<,>)))
-                    .Select(i => new KeyedService("IAsyncRequestHandler", i)));
-
-            builder.RegisterAssemblyTypes(typeof(CriarBlogCommandHandler).GetTypeInfo().Assembly)
-                .As(o => o.GetInterfaces()
-                    .Where(i => i.IsClosedTypeOf(typeof(IRequestHandler<>)))
-                    .Select(i => new KeyedService("IAsyncRequestHandler", i)));
+            //builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
+            //    .AsImplementedInterfaces();
         }
     }
 }

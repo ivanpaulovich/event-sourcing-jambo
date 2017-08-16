@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
   </ItemGroup>
 

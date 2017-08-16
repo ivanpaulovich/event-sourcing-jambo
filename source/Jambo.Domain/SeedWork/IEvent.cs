@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
+using System;
 
 namespace Jambo.Domain.SeedWork
 {
-    public interface IEvent
+    public interface IEvent : INotification
     {
+        Guid AggregateRootId { get; set; }
+        int Version { get; set; }
     }
 }
