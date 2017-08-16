@@ -1,6 +1,6 @@
 ﻿using Jambo.Application.Commands;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.SeedWork;
+using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.ServiceBus;
 using MediatR;
 using System;
 using System.Threading.Tasks;
@@ -24,7 +24,7 @@ namespace Jambo.Application.CommandHandlers
 
         public async Task Handle(ExcluirBlogCommand message)
         {
-            Blog blog = await _blogReadOnlyRepository.FindAsync(message.Id);
+            Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
 
             blog.Disable();
 

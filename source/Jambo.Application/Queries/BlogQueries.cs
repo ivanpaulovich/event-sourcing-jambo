@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using MongoDB.Driver;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
+using Jambo.Domain.Aggregates.Blogs;
 
 namespace Jambo.Application.Queries
 {

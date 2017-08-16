@@ -1,9 +1,9 @@
-﻿using Jambo.Domain.SeedWork;
+﻿using MediatR;
 using System;
 
-namespace Jambo.Domain.Events
+namespace Jambo.Domain.ServiceBus
 {
-    public abstract class DomainEvent : IEvent
+    public abstract class DomainEvent : INotification
     {
         public Guid AggregateRootId { get; set; }
         public int Version { get; set; }

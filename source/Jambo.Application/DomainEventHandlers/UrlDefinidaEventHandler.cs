@@ -1,12 +1,12 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.Events;
+﻿using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.Aggregates.Blogs.Events;
 using MediatR;
 using System;
 using System.Threading.Tasks;
 
 namespace Jambo.Application.DomainEventHandlers
 {
-    public class UrlDefinidaEventHandler : INotificationHandler<UrlDefinidaDomainEvent>
+    public class UrlDefinidaEventHandler : IAsyncNotificationHandler<BlogUrlUpdatedDomainEvent>
     {
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
         private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
@@ -20,14 +20,14 @@ namespace Jambo.Application.DomainEventHandlers
             _blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public void Handle(UrlDefinidaDomainEvent message)
+        public async Task Handle(BlogUrlUpdatedDomainEvent message)
         {
-            Blog blog = _blogReadOnlyRepository.FindAsync(message.AggregateRootId).Result;
+            Blog blog = await _blogReadOnlyRepository.GetBlog(message.AggregateRootId);
 
             if (blog.Version == message.Version)
             {
-                blog.DefinirUrl(message.Url);
-                _blogWriteOnlyRepository.Update(blog).ConfigureAwait(true);
+                blog.UpdateUrl(message.Url);
+                await _blogWriteOnlyRepository.UpdateBlog(blog);
             }
         }
     }

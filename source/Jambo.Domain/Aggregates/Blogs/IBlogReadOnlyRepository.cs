@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Jambo.Domain.AggregatesModel.BlogAggregate
+namespace Jambo.Domain.Aggregates.Blogs
 {
     public interface IBlogReadOnlyRepository
     {
         Task<IEnumerable<Blog>> GetAllBlogs();
-        Task<Blog> FindAsync(Guid id);
+        Task<Blog> GetBlog(Guid id);
     }
 }

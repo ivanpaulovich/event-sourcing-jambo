@@ -1,4 +1,4 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Domain.Aggregates.Blogs;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace Jambo.Infrastructure.Repositories
             return await _mongoContext.Blogs.Find(e => true).ToListAsync();
         }
 
-        public async Task<Blog> FindAsync(Guid id)
+        public async Task<Blog> GetBlog(Guid id)
         {
             return await _mongoContext.Blogs.Find(e => e.Id == id).SingleOrDefaultAsync();
         }

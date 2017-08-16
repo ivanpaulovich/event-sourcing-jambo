@@ -10,9 +10,8 @@ using Jambo.API.IoC;
 using Autofac.Extensions.DependencyInjection;
 using Jambo.Application.Commands;
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
-using Jambo.Domain.Events;
 using Newtonsoft.Json;
+using Jambo.Domain.ServiceBus;
 
 namespace Jambo.API
 {

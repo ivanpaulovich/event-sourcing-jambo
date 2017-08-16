@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Jambo.Domain.SeedWork;
+using Jambo.Domain.ServiceBus;
 using Jambo.Infrastructure;
 using Jambo.KafkaBus;
 

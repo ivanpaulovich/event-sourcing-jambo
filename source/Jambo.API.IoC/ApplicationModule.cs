@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Jambo.Application.Queries;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.SeedWork;
+using Jambo.Domain.Aggregates.Blogs;
 using Jambo.Infrastructure;
 using Jambo.Infrastructure.Repositories;
 

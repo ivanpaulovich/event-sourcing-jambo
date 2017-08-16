@@ -1,14 +1,13 @@
-﻿using Jambo.Domain.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Jambo.Domain.SeedWork
+namespace Jambo.Domain.ServiceBus
 {
     public interface IServiceBus : IDisposable
     {
-        Task Publish(IEvent _event);
-        Task Publish(IEnumerable<IEvent> _event);
+        Task Publish(DomainEvent _event);
+        Task Publish(IEnumerable<DomainEvent> events);
         ProcessDomainEventDelegate OnReceive { get; set; }
         void Listen();
     }

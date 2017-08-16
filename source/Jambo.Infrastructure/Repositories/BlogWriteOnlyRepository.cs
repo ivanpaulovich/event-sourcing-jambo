@@ -1,8 +1,7 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Domain.Aggregates.Blogs;
 using MongoDB.Driver;
 using System;
 using System.Threading.Tasks;
-using Jambo.Domain.SeedWork;
 
 namespace Jambo.Infrastructure.Repositories
 {
@@ -14,12 +13,12 @@ namespace Jambo.Infrastructure.Repositories
             _mongoContext = mongoContext;
         }
 
-        public async Task Add(Blog blog)
+        public async Task AddBlog(Blog blog)
         {
             await _mongoContext.Blogs.InsertOneAsync(blog);
         }
 
-        public async Task Update(Blog blog)
+        public async Task UpdateBlog(Blog blog)
         {
             blog.Version += 1;
             await _mongoContext.Blogs.ReplaceOneAsync(e => e.Id == blog.Id, blog);

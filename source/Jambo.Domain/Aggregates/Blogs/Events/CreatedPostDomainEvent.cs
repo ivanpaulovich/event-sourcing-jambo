@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Jambo.Domain.ServiceBus;
+using System;
 
-namespace Jambo.Domain.Events
+namespace Jambo.Domain.Aggregates.Blogs.Events
 {
-    public class PostCriadoDomainEvent: DomainEvent
+    public class CreatedPostDomainEvent: DomainEvent
     {
         public string Title { get; set; }
         public string Content { get; set; }
 
-        public PostCriadoDomainEvent(Guid aggregateRootId, int version, 
+        public CreatedPostDomainEvent(Guid aggregateRootId, int version, 
             string title, string content)
             : base(aggregateRootId, version)
         {

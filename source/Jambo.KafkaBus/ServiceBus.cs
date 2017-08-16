@@ -1,7 +1,6 @@
 ﻿using Confluent.Kafka;
 using Confluent.Kafka.Serialization;
-using Jambo.Domain.Events;
-using Jambo.Domain.SeedWork;
+using Jambo.Domain.ServiceBus;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -43,12 +42,12 @@ namespace Jambo.KafkaBus
                 new StringDeserializer(Encoding.UTF8), new StringDeserializer(Encoding.UTF8));
         }
 
-        public async Task Publish(IEvent _event)
+        public async Task Publish(DomainEvent domainEvent)
         {
-            string data = JsonConvert.SerializeObject(_event);
+            string data = JsonConvert.SerializeObject(domainEvent);
 
             Message<string, string> message = await _producer.ProduceAsync(
-                _topicName, _event.GetType().AssemblyQualifiedName, data);
+                _topicName, domainEvent.GetType().AssemblyQualifiedName, data);
         }
 
         public void Listen()
@@ -78,10 +77,10 @@ namespace Jambo.KafkaBus
             _consumer.Dispose();
         }
 
-        public async Task Publish(IEnumerable<IEvent> _event)
+        public async Task Publish(IEnumerable<DomainEvent> domainEvents)
         {
-            foreach (var s in _event)
-                await Publish(s);
+            foreach (var domainEvent in domainEvents)
+                await Publish(domainEvent);
         }
     }
 }

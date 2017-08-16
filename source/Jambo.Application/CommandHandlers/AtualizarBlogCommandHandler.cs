@@ -1,9 +1,9 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Threading.Tasks;
 using Jambo.Application.Commands;
-using Jambo.Domain.SeedWork;
+using Jambo.Domain.ServiceBus;
+using Jambo.Domain.Aggregates.Blogs;
 
 namespace Jambo.Application.CommandHandlers
 {
@@ -24,9 +24,8 @@ namespace Jambo.Application.CommandHandlers
 
         public async Task Handle(AtualizarBlogCommand message)
         {
-            Blog blog = await _blogReadOnlyRepository.FindAsync(message.Id);
-
-            blog.DefinirUrl(message.Url);
+            Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
+            blog.UpdateUrl(message.Url);
 
             await _serviceBus.Publish(blog.GetEvents());
         }

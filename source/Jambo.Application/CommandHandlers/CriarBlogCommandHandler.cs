@@ -1,6 +1,6 @@
 ﻿using Jambo.Application.Commands;
-using Jambo.Domain.AggregatesModel.BlogAggregate;
-using Jambo.Domain.SeedWork;
+using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.ServiceBus;
 using MediatR;
 using System;
 using System.Threading.Tasks;
@@ -20,7 +20,7 @@ namespace Jambo.Application.CommandHandlers
         public async Task Handle(CriarBlogCommand message)
         {
             Blog blog = new Blog();
-            blog.DefinirUrl(message.Url);
+            blog.UpdateUrl(message.Url);
 
             await _serviceBus.Publish(blog.GetEvents());
         }

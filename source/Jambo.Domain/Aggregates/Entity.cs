@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace Jambo.Domain.SeedWork
+namespace Jambo.Domain.Aggregates
 {
-    public abstract class Entity : IEntity
+    public abstract class Entity
     {
         public Guid Id { get; private set; }
 

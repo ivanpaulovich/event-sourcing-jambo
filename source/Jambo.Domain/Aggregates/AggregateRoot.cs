@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Jambo.Domain.ServiceBus;
+using System;
 using System.Collections.Generic;
 
-namespace Jambo.Domain.SeedWork
+namespace Jambo.Domain.Aggregates
 {
-    public class AggregateRoot : Entity, IAggregateRoot
+    public abstract class AggregateRoot : Entity
     {
         public int Version { get; set; }
 
@@ -18,15 +19,15 @@ namespace Jambo.Domain.SeedWork
 
         }
 
-        private List<IEvent> _events;
+        private List<DomainEvent> _events;
 
-        public void AddEvent(IEvent _event)
+        public void AddEvent(DomainEvent _event)
         {
-            _events = _events ?? new List<IEvent>();
+            _events = _events ?? new List<DomainEvent>();
             _events.Add(_event);
         }
 
-        public IReadOnlyCollection<IEvent> GetEvents()
+        public IReadOnlyCollection<DomainEvent> GetEvents()
         {
             return _events;
         }

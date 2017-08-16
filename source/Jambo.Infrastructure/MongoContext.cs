@@ -1,4 +1,4 @@
-﻿using Jambo.Domain.AggregatesModel.BlogAggregate;
+﻿using Jambo.Domain.Aggregates.Blogs;
 using MongoDB.Driver;
 
 namespace Jambo.Infrastructure
