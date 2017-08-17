@@ -42,7 +42,7 @@ namespace Jambo.API
         {
             // Add framework services.
             services.AddMvc();
-            services.AddMediatR(typeof(CriarBlogCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CreateBlogCommand).GetTypeInfo().Assembly);
 
             services.AddSwaggerGen(options =>
             {

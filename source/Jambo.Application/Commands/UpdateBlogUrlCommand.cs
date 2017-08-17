@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Jambo.Application.Commands
 {
     [DataContract]
-    public class AtualizarBlogCommand : IRequest
+    public class UpdateBlogUrlCommand : IRequest
     {
         [DataMember]
         public Guid Id { get; private set; }
@@ -16,12 +16,12 @@ namespace Jambo.Application.Commands
         [DataMember]
         public int Rating { get; private set; }
 
-        public AtualizarBlogCommand()
+        public UpdateBlogUrlCommand()
         {
 
         }
 
-        public AtualizarBlogCommand(Guid id, string url, int rating) : this()
+        public UpdateBlogUrlCommand(Guid id, string url, int rating) : this()
         {
             Id = id;
             Url = url;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.CommandHandlers
 {
-    public class ExcluirBlogCommandHandler : IAsyncRequestHandler<ExcluirBlogCommand>
+    public class ExcluirBlogCommandHandler : IAsyncRequestHandler<DisableBlogCommand>
     {
         private readonly IServiceBus _serviceBus;
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
@@ -22,7 +22,7 @@ namespace Jambo.Application.CommandHandlers
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task Handle(ExcluirBlogCommand message)
+        public async Task Handle(DisableBlogCommand message)
         {
             Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
 

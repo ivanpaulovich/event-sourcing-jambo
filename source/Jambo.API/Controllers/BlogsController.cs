@@ -44,21 +44,21 @@ namespace Jambo.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]CriarBlogCommand command)
+        public async Task<IActionResult> Post([FromBody]CreateBlogCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody]AtualizarBlogCommand command)
+        public async Task<IActionResult> Put([FromBody]UpdateBlogUrlCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete([FromBody]ExcluirBlogCommand command)
+        public async Task<IActionResult> Delete([FromBody]DisableBlogCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.CommandHandlers
 {
-    public class CriarBlogCommandHandler : IAsyncRequestHandler<CriarBlogCommand>
+    public class CriarBlogCommandHandler : IAsyncRequestHandler<CreateBlogCommand>
     {
         private readonly IServiceBus _serviceBus;
 
@@ -17,7 +17,7 @@ namespace Jambo.Application.CommandHandlers
                 throw new ArgumentNullException(nameof(serviceBus));
         }
 
-        public async Task Handle(CriarBlogCommand message)
+        public async Task Handle(CreateBlogCommand message)
         {
             Blog blog = new Blog();
             blog.UpdateUrl(message.Url);

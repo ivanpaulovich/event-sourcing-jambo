@@ -7,7 +7,7 @@ using Jambo.Domain.Aggregates.Blogs;
 
 namespace Jambo.Application.CommandHandlers
 {
-    public class AtualizarBlogCommandHandler : IAsyncRequestHandler<AtualizarBlogCommand>
+    public class AtualizarBlogCommandHandler : IAsyncRequestHandler<UpdateBlogUrlCommand>
     {
         private readonly IServiceBus _serviceBus;
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
@@ -22,7 +22,7 @@ namespace Jambo.Application.CommandHandlers
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task Handle(AtualizarBlogCommand message)
+        public async Task Handle(UpdateBlogUrlCommand message)
         {
             Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
             blog.UpdateUrl(message.Url);
