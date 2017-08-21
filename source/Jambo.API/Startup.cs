@@ -12,6 +12,7 @@ using Jambo.Application.Commands;
 using System.Reflection;
 using Newtonsoft.Json;
 using Jambo.Domain.ServiceBus;
+using Jambo.Application.Commands.Blogs;
 
 namespace Jambo.API
 {

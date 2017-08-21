@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Jambo.Application.Commands;
 using Jambo.Domain.ServiceBus;
 using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Application.Commands.Blogs;
 
 namespace Jambo.Application.CommandHandlers
 {

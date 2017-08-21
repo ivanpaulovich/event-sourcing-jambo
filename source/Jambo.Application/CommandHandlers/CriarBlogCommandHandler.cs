@@ -1,4 +1,5 @@
 ﻿using Jambo.Application.Commands;
+using Jambo.Application.Commands.Blogs;
 using Jambo.Domain.Aggregates.Blogs;
 using Jambo.Domain.ServiceBus;
 using MediatR;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.CommandHandlers
 {
-    public class CriarBlogCommandHandler : IAsyncRequestHandler<CreateBlogCommand>
+    public class CriarBlogCommandHandler : IAsyncRequestHandler<CreateBlogCommand, Guid>
     {
         private readonly IServiceBus _serviceBus;
 
@@ -17,12 +18,14 @@ namespace Jambo.Application.CommandHandlers
                 throw new ArgumentNullException(nameof(serviceBus));
         }
 
-        public async Task Handle(CreateBlogCommand message)
+        public async Task<Guid> Handle(CreateBlogCommand message)
         {
             Blog blog = new Blog();
             blog.UpdateUrl(message.Url);
 
             await _serviceBus.Publish(blog.GetEvents());
+
+            return blog.Id;
         }
     }
 }

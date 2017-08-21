@@ -1,21 +1,22 @@
 ﻿using MediatR;
 using System.Runtime.Serialization;
 using Jambo.Application.Commands;
+using System;
 
-namespace Jambo.Application.Commands
+namespace Jambo.Application.Commands.Posts
 {
     [DataContract]
-    public class UpdatePostCommand : IRequest
+    public class CreatePostCommand : IRequest<Guid>
     {
         [DataMember]
         public string Url { get; private set; }
 
-        public UpdatePostCommand()
+        public CreatePostCommand()
         {
 
         }
 
-        public UpdatePostCommand(string url) : this()
+        public CreatePostCommand(string url) : this()
         {
             Url = url;
         }

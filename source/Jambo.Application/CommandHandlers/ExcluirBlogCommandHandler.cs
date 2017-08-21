@@ -1,4 +1,5 @@
 ﻿using Jambo.Application.Commands;
+using Jambo.Application.Commands.Blogs;
 using Jambo.Domain.Aggregates.Blogs;
 using Jambo.Domain.ServiceBus;
 using MediatR;

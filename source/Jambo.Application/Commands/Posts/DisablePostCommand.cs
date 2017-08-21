@@ -2,20 +2,20 @@
 using System.Runtime.Serialization;
 using Jambo.Application.Commands;
 
-namespace Jambo.Application.Commands
+namespace Jambo.Application.Commands.Posts
 {
     [DataContract]
-    public class PublishPostCommand : IRequest
+    public class DisablePostCommand : IRequest
     {
         [DataMember]
         public string Url { get; private set; }
 
-        public PublishPostCommand()
+        public DisablePostCommand()
         {
 
         }
 
-        public PublishPostCommand(string url) : this()
+        public DisablePostCommand(string url) : this()
         {
             Url = url;
         }

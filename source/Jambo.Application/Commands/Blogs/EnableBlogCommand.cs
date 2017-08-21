@@ -5,20 +5,20 @@ using System.Runtime.Serialization;
 using System.Text;
 using Jambo.Application.Commands;
 
-namespace Jambo.Application.Commands
+namespace Jambo.Application.Commands.Blogs
 {
     [DataContract]
-    public class DisableBlogCommand : IRequest
+    public class EnableBlogCommand : IRequest
     {
         [DataMember]
         public Guid Id { get; private set; }
 
-        public DisableBlogCommand()
+        public EnableBlogCommand()
         {
 
         }
 
-        public DisableBlogCommand(Guid id) : this()
+        public EnableBlogCommand(Guid id) : this()
         {
             Id = id;
         }

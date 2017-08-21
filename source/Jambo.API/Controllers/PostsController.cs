@@ -1,5 +1,5 @@
 ﻿using Jambo.Application.Commands;
-using Jambo.Application.Commands.Blogs;
+using Jambo.Application.Commands.Posts;
 using Jambo.Application.Queries;
 using Jambo.Domain.Aggregates.Blogs;
 using MediatR;
@@ -13,12 +13,12 @@ using System.Threading.Tasks;
 namespace Jambo.API.Controllers
 {
     [Route("api/[controller]")]
-    public class BlogsController : Controller
+    public class PostsController : Controller
     {
         private readonly IMediator _mediator;
         private readonly IBlogQueries _blogQueries;
 
-        public BlogsController(IMediator mediator, IBlogQueries blogQueries)
+        public PostsController(IMediator mediator, IBlogQueries blogQueries)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _blogQueries = blogQueries ?? throw new ArgumentNullException(nameof(blogQueries));
@@ -48,29 +48,30 @@ namespace Jambo.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]CreateBlogCommand command)
+        public async Task<IActionResult> Post([FromBody]CreatePostCommand command)
         {
             Guid id = await _mediator.Send(command);
 
             return CreatedAtRoute("Get", new { id = id }, id);
         }
 
-        [HttpPatch("Enable")]
-        public async Task<IActionResult> Put([FromBody]UpdateBlogUrlCommand command)
+
+        [HttpPatch("Publish")]
+        public async Task<IActionResult> Publish([FromBody]PublishPostCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();
         }
 
-        [HttpPatch("Disable")]
-        public async Task<IActionResult> Disable([FromBody]DisableBlogCommand command)
+        [HttpPatch("Hide")]
+        public async Task<IActionResult> Hide([FromBody]HidePostCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();
         }
 
-        [HttpPatch("UpdateUrl")]
-        public async Task<IActionResult> UpdateUrl([FromBody]UpdateBlogUrlCommand command)
+        [HttpPatch("UpdateContent")]
+        public async Task<IActionResult> UpdateContent([FromBody]UpdateContentCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();

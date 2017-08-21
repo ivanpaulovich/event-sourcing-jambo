@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace Jambo.Application.Commands
+namespace Jambo.Application.Commands.Blogs
 {
     [DataContract]
     public class UpdateBlogUrlCommand : IRequest

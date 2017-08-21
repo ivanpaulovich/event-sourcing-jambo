@@ -1,21 +1,22 @@
 ﻿using MediatR;
 using System.Runtime.Serialization;
 using Jambo.Application.Commands;
+using System;
 
-namespace Jambo.Application.Commands
+namespace Jambo.Application.Commands.Blogs
 {
     [DataContract]
-    public class DisablePostCommand : IRequest
+    public class CreateBlogCommand: IRequest<Guid>
     {
         [DataMember]
         public string Url { get; private set; }
 
-        public DisablePostCommand()
+        public CreateBlogCommand()
         {
 
         }
 
-        public DisablePostCommand(string url) : this()
+        public CreateBlogCommand(string url) : this()
         {
             Url = url;
         }

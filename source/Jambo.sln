@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Domain", "Jambo.Domain\Jambo.Domain.csproj", "{ED9F252F-10E5-4A65-ADA0-122D61D655A4}"
 EndProject
@@ -59,5 +59,8 @@ Global
 		{61673AF2-91EF-40A5-8617-ADE4C5A049D7} = {C4330A47-85B8-4250-AD82-373F99D5166E}
 		{9B438152-A906-4DB9-AC1D-E942150FC60B} = {C4330A47-85B8-4250-AD82-373F99D5166E}
 		{A713A828-712D-4F6B-AC93-C9D5EFF8F085} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54AE4BA0-6081-4892-A9B9-3F8D15D994C8}
 	EndGlobalSection
 EndGlobal
