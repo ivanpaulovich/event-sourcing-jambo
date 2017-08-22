@@ -56,7 +56,7 @@ namespace Jambo.API.Controllers
         }
 
         [HttpPatch("Enable")]
-        public async Task<IActionResult> Enable([FromBody]UpdateBlogUrlCommand command)
+        public async Task<IActionResult> Enable([FromBody]EnableBlogCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();

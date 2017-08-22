@@ -13,19 +13,15 @@ namespace Jambo.Application.Commands.Blogs
         [DataMember]
         public string Url { get; private set; }
 
-        [DataMember]
-        public int Rating { get; private set; }
-
         public UpdateBlogUrlCommand()
         {
 
         }
 
-        public UpdateBlogUrlCommand(Guid id, string url, int rating) : this()
+        public UpdateBlogUrlCommand(Guid id, string url) : this()
         {
             Id = id;
             Url = url;
-            Rating = rating;
         }
     }
 }

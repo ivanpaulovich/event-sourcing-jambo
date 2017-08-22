@@ -6,17 +6,17 @@ using System;
 namespace Jambo.Application.Commands.Posts
 {
     [DataContract]
-    public class DisablePostCommand : IRequest
+    public class EnablePostCommand : IRequest
     {
         [DataMember]
         public Guid Id { get; private set; }
 
-        public DisablePostCommand()
+        public EnablePostCommand()
         {
 
         }
 
-        public DisablePostCommand(Guid id) : this()
+        public EnablePostCommand(Guid id) : this()
         {
             Id = id;
         }

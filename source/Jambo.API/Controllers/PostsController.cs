@@ -32,7 +32,7 @@ namespace Jambo.API.Controllers
             return Ok(blogs);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetPost")]
         public async Task<IActionResult> Get(Guid id)
         {
             try
@@ -52,9 +52,22 @@ namespace Jambo.API.Controllers
         {
             Guid id = await _mediator.Send(command);
 
-            return CreatedAtRoute("Get", new { id = id }, id);
+            return CreatedAtRoute("GetPost", new { id = id }, id);
         }
 
+        [HttpPatch("Enable")]
+        public async Task<IActionResult> Enable([FromBody]EnablePostCommand command)
+        {
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
+        }
+
+        [HttpPatch("Disable")]
+        public async Task<IActionResult> Disable([FromBody]DisablePostCommand command)
+        {
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
+        }
 
         [HttpPatch("Publish")]
         public async Task<IActionResult> Publish([FromBody]PublishPostCommand command)
@@ -71,7 +84,7 @@ namespace Jambo.API.Controllers
         }
 
         [HttpPatch("UpdateContent")]
-        public async Task<IActionResult> UpdateContent([FromBody]UpdateContentCommand command)
+        public async Task<IActionResult> UpdateContent([FromBody]UpdatePostContentCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();

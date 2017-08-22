@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using System.Runtime.Serialization;
 using Jambo.Application.Commands;
+using System;
 
 namespace Jambo.Application.Commands.Posts
 {
@@ -8,16 +9,16 @@ namespace Jambo.Application.Commands.Posts
     public class HidePostCommand : IRequest
     {
         [DataMember]
-        public string Url { get; private set; }
+        public Guid Id { get; private set; }
 
         public HidePostCommand()
         {
 
         }
 
-        public HidePostCommand(string url) : this()
+        public HidePostCommand(Guid id) : this()
         {
-            Url = url;
+            Id = id;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Jambo.Domain.Aggregates.Blogs.Events;
+using Jambo.Domain.Aggregates.Posts;
 using System;
 using System.Collections.Generic;
 
@@ -8,11 +9,10 @@ namespace Jambo.Domain.Aggregates.Blogs
     {
         public string Url { get; private set; }
         public int Rating { get; private set; }
-        public List<Post> Posts { get; private set; }
 
         public Blog()
         {
-            AddEvent(new CreatedBlogDomainEvent(Id));
+            AddEvent(new BlogCreatedDomainEvent(Id));
         }
 
         public Blog(Guid id)
@@ -28,12 +28,12 @@ namespace Jambo.Domain.Aggregates.Blogs
 
         public void Disable()
         {
-            AddEvent(new DisabledBlogDomainEvent(Id, Version));
+            AddEvent(new BlogDisabledDomainEvent(Id, Version));
         }
 
         public void Enable()
         {
-            AddEvent(new EnabledBlogDomainEvent(Id, Version));
+            AddEvent(new BlogEnabledDomainEvent(Id, Version));
         }
     }
 }

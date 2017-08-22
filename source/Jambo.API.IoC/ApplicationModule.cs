@@ -26,7 +26,7 @@ namespace Jambo.API.IoC
                 .As<MongoContext>().SingleInstance();
 
             builder.RegisterType<BlogReadOnlyRepository>()
-                .As<IBlogReadOnlyRepository>()
+                .As<IPostReadOnlyRepository>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<BlogWriteOnlyRepository>()
