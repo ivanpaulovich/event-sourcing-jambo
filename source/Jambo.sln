@@ -19,6 +19,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Infrastructure", "Jam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{C4330A47-85B8-4250-AD82-373F99D5166E}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{662A00BF-AAA6-442D-9D56-F357D63A4C8B}"
+	ProjectSection(SolutionItems) = preProject
+		Setup\mongo.txt = Setup\mongo.txt
+		Setup\spotify-docker-kafka.txt = Setup\spotify-docker-kafka.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +57,10 @@ Global
 		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A713A828-712D-4F6B-AC93-C9D5EFF8F085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

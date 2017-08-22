@@ -32,7 +32,7 @@ namespace Jambo.API.Controllers
             return Ok(blogs);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetBlog")]
         public async Task<IActionResult> Get(Guid id)
         {
             try
@@ -52,11 +52,11 @@ namespace Jambo.API.Controllers
         {
             Guid id = await _mediator.Send(command);
 
-            return CreatedAtRoute("Get", new { id = id }, id);
+            return CreatedAtRoute("GetBlog", new { id = id }, id);
         }
 
         [HttpPatch("Enable")]
-        public async Task<IActionResult> Put([FromBody]UpdateBlogUrlCommand command)
+        public async Task<IActionResult> Enable([FromBody]UpdateBlogUrlCommand command)
         {
             await _mediator.Send(command);
             return (IActionResult)Ok();
