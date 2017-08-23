@@ -2,6 +2,7 @@
 using Jambo.Application.Commands.Posts;
 using Jambo.Application.Queries;
 using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -58,36 +59,71 @@ namespace Jambo.API.Controllers
         [HttpPatch("Enable")]
         public async Task<IActionResult> Enable([FromBody]EnablePostCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("Disable")]
         public async Task<IActionResult> Disable([FromBody]DisablePostCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("Publish")]
         public async Task<IActionResult> Publish([FromBody]PublishPostCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("Hide")]
         public async Task<IActionResult> Hide([FromBody]HidePostCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("UpdateContent")]
         public async Task<IActionResult> UpdateContent([FromBody]UpdatePostContentCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

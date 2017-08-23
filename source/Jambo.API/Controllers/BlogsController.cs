@@ -2,6 +2,7 @@
 using Jambo.Application.Commands.Blogs;
 using Jambo.Application.Queries;
 using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -58,22 +59,43 @@ namespace Jambo.API.Controllers
         [HttpPatch("Enable")]
         public async Task<IActionResult> Enable([FromBody]EnableBlogCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("Disable")]
         public async Task<IActionResult> Disable([FromBody]DisableBlogCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("UpdateUrl")]
         public async Task<IActionResult> UpdateUrl([FromBody]UpdateBlogUrlCommand command)
         {
-            await _mediator.Send(command);
-            return (IActionResult)Ok();
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
