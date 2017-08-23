@@ -10,7 +10,7 @@ using Jambo.Application.Commands.Posts;
 
 namespace Jambo.Application.CommandHandlers.Blogs
 {
-    public class EnableBlogCommandHandler : IAsyncRequestHandler<HidePostCommand>
+    public class EnableBlogCommandHandler : IAsyncRequestHandler<EnableBlogCommand>
     {
         private readonly IServiceBus _serviceBus;
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
@@ -25,7 +25,7 @@ namespace Jambo.Application.CommandHandlers.Blogs
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task Handle(HidePostCommand message)
+        public async Task Handle(EnableBlogCommand message)
         {
             Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
             blog.Enable();
