@@ -25,6 +25,9 @@ namespace Jambo.API.IoC
             builder.Register(c => new BlogQueries(_connectionString, _database))
                 .As<IBlogQueries>();
 
+            builder.Register(c => new PostQueries(_connectionString, _database))
+                .As<IPostQueries>();
+
             builder.Register(c => new MongoContext(_connectionString, _database))
                 .As<MongoContext>().SingleInstance();
 

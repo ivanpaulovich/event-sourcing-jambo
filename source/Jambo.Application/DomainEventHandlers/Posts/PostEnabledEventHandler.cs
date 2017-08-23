@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.DomainEventHandlers.Posts
 {
-    public class PostEnabledEventHandler : IAsyncNotificationHandler<PostEnabledDomainEvent>
+    public class PostEnabledEventHandler : INotificationHandler<PostEnabledDomainEvent>
     {
         private readonly IPostReadOnlyRepository _postReadOnlyRepository;
         private readonly IPostWriteOnlyRepository _postWriteOnlyRepository;
@@ -22,14 +22,14 @@ namespace Jambo.Application.DomainEventHandlers.Posts
                 throw new ArgumentNullException(nameof(postWriteOnlyRepository));
         }
 
-        public async Task Handle(PostEnabledDomainEvent message)
+        public void Handle(PostEnabledDomainEvent message)
         {
-            Post post = await _postReadOnlyRepository.GetPost(message.AggregateRootId);
+            Post post = _postReadOnlyRepository.GetPost(message.AggregateRootId).Result;
 
             if (post.Version == message.Version)
             {
                 post.Enable();
-                await _postWriteOnlyRepository.UpdatePost(post);
+                _postWriteOnlyRepository.UpdatePost(post).Wait();
             }
         }
     }

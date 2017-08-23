@@ -17,20 +17,20 @@ namespace Jambo.API.Controllers
     public class PostsController : Controller
     {
         private readonly IMediator _mediator;
-        private readonly IBlogQueries _blogQueries;
+        private readonly IPostQueries _postQueries;
 
-        public PostsController(IMediator mediator, IBlogQueries blogQueries)
+        public PostsController(IMediator mediator, IPostQueries postQueries)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _blogQueries = blogQueries ?? throw new ArgumentNullException(nameof(blogQueries));
+            _postQueries = postQueries ?? throw new ArgumentNullException(nameof(postQueries));
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetPosts(Guid blogId)
         {
-            var blogs = await _blogQueries.GetBlogsAsync();
+            var posts = await _postQueries.GetPostsAsync(blogId);
 
-            return Ok(blogs);
+            return Ok(posts);
         }
 
         [HttpGet("{id}", Name = "GetPost")]
@@ -38,9 +38,9 @@ namespace Jambo.API.Controllers
         {
             try
             {
-                var blog = await _blogQueries.GetBlogAsync(id);
+                var post = await _postQueries.GetPostAsync(id);
 
-                return Ok(blog);
+                return Ok(post);
             }
             catch (KeyNotFoundException)
             {

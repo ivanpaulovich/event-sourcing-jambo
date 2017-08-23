@@ -1,13 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.Aggregates.Posts;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using MongoDB.Driver;
-using Jambo.Domain.Aggregates.Blogs;
-using Jambo.Domain.Aggregates.Posts;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Jambo.Application.Queries
 {
-    public class BlogQueries : IBlogQueries
+    public class PostQueries : IPostQueries
     {
         private readonly IMongoDatabase _database;
         public IMongoCollection<Blog> Blogs
@@ -26,21 +27,20 @@ namespace Jambo.Application.Queries
             }
         }
 
-        public BlogQueries(string connectionString, string database)
+        public PostQueries(string connectionString, string database)
         {
             MongoClient mongoClient = new MongoClient(connectionString);
             _database = mongoClient.GetDatabase(database);
         }
 
-
-        public async Task<IEnumerable<dynamic>> GetBlogsAsync()
+        public async Task<dynamic> GetPostAsync(Guid id)
         {
-            return await Blogs.Find(e => true).ToListAsync();
+            return await Posts.Find(e => e.Id == id).SingleAsync();
         }
 
-        public async Task<dynamic> GetBlogAsync(Guid id)
+        public async Task<IEnumerable<dynamic>> GetPostsAsync(Guid blogId)
         {
-            return await Blogs.Find(e => e.Id == id).SingleAsync();
+            return await Posts.Find(e => e.BlogId == blogId).ToListAsync();
         }
     }
 }

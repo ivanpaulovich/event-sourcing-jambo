@@ -28,7 +28,7 @@ namespace Jambo.Application.CommandHandlers.Posts
         public async Task<Guid> Handle(CreatePostCommand message)
         {
             Post post = new Post();
-            post.SetBlogId(message.BlogId);
+            post.Start(message.BlogId);            
             post.UpdateContent(message.Title, message.Content);
 
             await _serviceBus.Publish(post.GetEvents());

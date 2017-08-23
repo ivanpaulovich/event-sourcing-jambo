@@ -5,9 +5,11 @@ namespace Jambo.Domain.Aggregates.Blogs.Events
 {
     public class PostCreatedDomainEvent : DomainEvent
     {
-        public PostCreatedDomainEvent(Guid aggregateRootId)
-            :base(aggregateRootId, 0)
+        public Guid BlogId { get; set; }
+        public PostCreatedDomainEvent(Guid aggregateRootId, Guid blogId)
+            : base(aggregateRootId, 0)
         {
+            BlogId = blogId;
         }
     }
 }
