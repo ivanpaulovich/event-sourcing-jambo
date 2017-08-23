@@ -12,12 +12,16 @@ namespace Jambo.Domain.Aggregates.Blogs
 
         public Blog()
         {
-            AddEvent(new BlogCreatedDomainEvent(Id));
         }
 
         public Blog(Guid id)
             :base(id)
         {
+        }
+
+        public void Start()
+        {
+            AddEvent(new BlogCreatedDomainEvent(Id));
         }
 
         public void UpdateUrl(string url)

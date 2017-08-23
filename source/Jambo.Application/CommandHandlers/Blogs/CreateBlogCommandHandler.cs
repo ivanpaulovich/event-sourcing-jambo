@@ -21,6 +21,7 @@ namespace Jambo.Application.CommandHandlers.Blogs
         public async Task<Guid> Handle(CreateBlogCommand message)
         {
             Blog blog = new Blog();
+            blog.Start();
             blog.UpdateUrl(message.Url);
 
             await _serviceBus.Publish(blog.GetEvents());
