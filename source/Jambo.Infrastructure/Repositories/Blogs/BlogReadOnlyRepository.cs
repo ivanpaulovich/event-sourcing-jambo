@@ -23,7 +23,7 @@ namespace Jambo.Infrastructure.Repositories.Blogs
 
         public async Task<Blog> GetBlog(Guid id)
         {
-            return await _mongoContext.Blogs.Find(e => e.Id == id).SingleOrDefaultAsync();
+            return await _mongoContext.Blogs.Find(e => e.Id == id).SingleAsync();
         }
     }
 }
