@@ -3,6 +3,7 @@ using Jambo.Application.Queries;
 using Jambo.Domain.Aggregates.Blogs;
 using Jambo.Infrastructure;
 using Jambo.Infrastructure.Repositories;
+using Jambo.Infrastructure.Repositories.Blogs;
 
 namespace Jambo.API.IoC
 {
@@ -26,7 +27,7 @@ namespace Jambo.API.IoC
                 .As<MongoContext>().SingleInstance();
 
             builder.RegisterType<BlogReadOnlyRepository>()
-                .As<IPostReadOnlyRepository>()
+                .As<IBlogReadOnlyRepository>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<BlogWriteOnlyRepository>()

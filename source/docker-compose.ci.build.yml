@@ -7,3 +7,4 @@ services:
       - .:/src
     working_dir: /src
     command: /bin/bash -c "dotnet restore ./Jambo.sln && dotnet publish ./Jambo.sln -c Release -o ./obj/Docker/publish"
+    
