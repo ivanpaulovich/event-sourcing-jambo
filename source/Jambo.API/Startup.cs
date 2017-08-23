@@ -13,6 +13,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Jambo.Domain.ServiceBus;
 using Jambo.Application.Commands.Blogs;
+using System.Threading.Tasks;
 
 namespace Jambo.API
 {
@@ -70,7 +71,7 @@ namespace Jambo.API
             Type eventType = Type.GetType(key);
             DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(value, eventType);
 
-            serviceProvider.GetService<IMediator>().Publish(domainEvent);
+            serviceProvider.GetService<IMediator>().Publish(domainEvent).Wait();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

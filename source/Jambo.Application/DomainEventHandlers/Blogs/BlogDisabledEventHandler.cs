@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Application.DomainEventHandlers.Blogs
 {
-    public class BlogDisabledEventHandler : IAsyncNotificationHandler<BlogDisabledDomainEvent>
+    public class BlogDisabledEventHandler : INotificationHandler<BlogDisabledDomainEvent>
     {
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
         private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
@@ -20,14 +20,14 @@ namespace Jambo.Application.DomainEventHandlers.Blogs
             _blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public async Task Handle(BlogDisabledDomainEvent message)
+        public void Handle(BlogDisabledDomainEvent message)
         {
-            Blog blog = await _blogReadOnlyRepository.GetBlog(message.AggregateRootId);
+            Blog blog = _blogReadOnlyRepository.GetBlog(message.AggregateRootId).Result;
 
             if (blog.Version == message.Version)
             {
                 blog.Disable();
-                await _blogWriteOnlyRepository.UpdateBlog(blog);
+                _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
             }
         }
     }
