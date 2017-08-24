@@ -25,11 +25,21 @@ namespace Jambo.Domain.Aggregates.Blogs
 
         public void Enable()
         {
+            if (Enabled == true)
+            {
+                throw new BlogDomainException("The blog is already enabled.");
+            }
+
             Apply(AddEvent(new BlogEnabledDomainEvent(Id, Version)));
         }
 
         public void Disable()
         {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The blog is already disabled.");
+            }
+
             Apply(AddEvent(new BlogDisabledDomainEvent(Id, Version)));
         }
 
@@ -45,21 +55,11 @@ namespace Jambo.Domain.Aggregates.Blogs
 
         public void Apply(BlogDisabledDomainEvent @event)
         {
-            if (Enabled == false)
-            {
-                throw new BlogDomainException("The blog is already disabled.");
-            }
-
             Enabled = false;
         }
 
         public void Apply(BlogEnabledDomainEvent @event)
         {
-            if (Enabled == true)
-            {
-                throw new BlogDomainException("The blog is already enabled.");
-            }
-
             Enabled = true;
         }
     }

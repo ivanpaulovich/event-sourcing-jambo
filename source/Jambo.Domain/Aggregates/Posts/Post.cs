@@ -19,16 +19,31 @@ namespace Jambo.Domain.Aggregates.Posts
 
         public void Disable()
         {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The post is already disabled.");
+            }
+
             Apply(AddEvent(new PostDisabledDomainEvent(Id, Version)));
         }
 
         public void Hide()
         {
+            if (Published == false)
+            {
+                throw new BlogDomainException("The post is already hidden.");
+            }
+
             Apply(AddEvent(new PostHiddenDomainEvent(Id, Version)));
         }
 
         public void Enable()
         {
+            if (Enabled == true)
+            {
+                throw new BlogDomainException("The post is already enabled.");
+            }
+
             Apply(AddEvent(new PostEnabledDomainEvent(Id, Version)));
         }
 
@@ -39,6 +54,11 @@ namespace Jambo.Domain.Aggregates.Posts
 
         public void Publish()
         {
+            if (Published == true)
+            {
+                throw new BlogDomainException("The post is already published.");
+            }
+
             Apply(AddEvent(new PostPublishedDomainEvent(Id, Version)));
         }
 
@@ -56,41 +76,21 @@ namespace Jambo.Domain.Aggregates.Posts
 
         public void Apply(PostDisabledDomainEvent @event)
         {
-            if (Enabled == false)
-            {
-                throw new BlogDomainException("The post is already disabled.");
-            }
-
             Enabled = false;
         }
 
         public void Apply(PostEnabledDomainEvent @event)
         {
-            if (Enabled == true)
-            {
-                throw new BlogDomainException("The post is already enabled.");
-            }
-
             Enabled = true;
         }
 
         public void Apply(PostHiddenDomainEvent @event)
         {
-            if (Published == false)
-            {
-                throw new BlogDomainException("The post is already hidden.");
-            }
-
             Published = false;
         }
 
         public void Apply(PostPublishedDomainEvent @event)
         {
-            if (Published == true)
-            {
-                throw new BlogDomainException("The post is already published.");
-            }
-
             Published = true;
         }
     }
