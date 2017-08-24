@@ -1,0 +1,11 @@
+﻿@page
+@inject Jambo.Application.Queries.IPostQueries queries
+@using Microsoft.AspNetCore.Mvc.RazorPages
+
+<ul>
+    @foreach (dynamic post in queries.GetPostsAsync(Guid.Parse(Request.Query["id"])).Result)
+    {
+        <li><a href="/Posts?id=@post.Id">@post.Title</a></li>
+        <li>@post.Content</li>
+    }
+</ul>

@@ -1,0 +1,10 @@
+﻿@page
+@inject Jambo.Application.Queries.IBlogQueries blogQueries
+@using Microsoft.AspNetCore.Mvc.RazorPages
+
+<ul>
+    @foreach (dynamic blog in blogQueries.GetBlogsAsync().Result)
+    {
+        <li><a href="/Posts?id=@blog.Id">@blog.Url (@blog.Rating)</a></li>
+    }
+</ul>
