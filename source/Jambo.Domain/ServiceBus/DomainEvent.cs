@@ -7,6 +7,7 @@ namespace Jambo.Domain.ServiceBus
     {
         public Guid AggregateRootId { get; set; }
         public int Version { get; set; }
+        public DateTime Date { get; set; }
 
         public DomainEvent(Guid aggregateRootId)
         {
@@ -17,6 +18,7 @@ namespace Jambo.Domain.ServiceBus
             :this(aggregateRootId)
         {
             Version = version;
+            Date = DateTime.Now;
         }
     }
 }
