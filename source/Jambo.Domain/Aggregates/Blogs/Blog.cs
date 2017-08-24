@@ -20,6 +20,11 @@ namespace Jambo.Domain.Aggregates.Blogs
 
         public void UpdateUrl(string url)
         {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+            }
+
             Apply(AddEvent(new BlogUrlUpdatedDomainEvent(Id, Version, url)));
         }
 

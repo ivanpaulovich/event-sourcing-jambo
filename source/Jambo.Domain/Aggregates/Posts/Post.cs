@@ -29,6 +29,11 @@ namespace Jambo.Domain.Aggregates.Posts
 
         public void Hide()
         {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The post is disabled. Enable this before making any changes.");
+            }
+
             if (Published == false)
             {
                 throw new BlogDomainException("The post is already hidden.");
@@ -49,11 +54,21 @@ namespace Jambo.Domain.Aggregates.Posts
 
         public void UpdateContent(string title, string content)
         {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+            }
+
             Apply(AddEvent(new PostContentUpdatedDomainEvent(Id, Version, title, content)));
         }
 
         public void Publish()
         {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+            }
+
             if (Published == true)
             {
                 throw new BlogDomainException("The post is already published.");
