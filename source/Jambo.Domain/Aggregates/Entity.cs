@@ -2,18 +2,8 @@
 
 namespace Jambo.Domain.Aggregates
 {
-    public abstract class Entity
+    public interface IEntity
     {
-        public Guid Id { get; private set; }
-
-        public Entity()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        public Entity(Guid id)
-        {
-            Id = id;
-        }
+        Guid Id { get; }
     }
 }

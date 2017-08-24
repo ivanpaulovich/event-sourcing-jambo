@@ -22,8 +22,8 @@ namespace Jambo.Application.DomainEventHandlers.Blogs
         }
         public void Handle(BlogCreatedDomainEvent message)
         {
-            Blog blog = new Blog(message.AggregateRootId);
-
+            Blog blog = new Blog();
+            blog.Apply(message);
             _blogWriteOnlyRepository.AddBlog(blog).Wait();
         }
     }

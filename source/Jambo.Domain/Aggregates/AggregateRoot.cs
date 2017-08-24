@@ -4,27 +4,26 @@ using System.Collections.Generic;
 
 namespace Jambo.Domain.Aggregates
 {
-    public abstract class AggregateRoot : Entity
+    public abstract class AggregateRoot : IEntity
     {
         public int Version { get; set; }
+
+        public Guid Id { get; set; }
 
         public AggregateRoot()
         {
             Version = 0;
         }
 
-        public AggregateRoot(Guid guid)
-            :base(guid)
-        {
-
-        }
-
         private List<DomainEvent> _events;
 
-        public void AddEvent(DomainEvent _event)
+        public T AddEvent<T>(T _event) 
+            where T : DomainEvent
         {
             _events = _events ?? new List<DomainEvent>();
             _events.Add(_event);
+
+            return _event;
         }
 
         public IReadOnlyCollection<DomainEvent> GetEvents()

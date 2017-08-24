@@ -1,9 +1,7 @@
-﻿using Jambo.Domain.Aggregates.Blogs;
-using Jambo.Domain.Aggregates.Blogs.Events;
-using Jambo.Domain.Aggregates.Posts;
+﻿using Jambo.Domain.Aggregates.Posts;
+using Jambo.Domain.Aggregates.Posts.Events;
 using MediatR;
 using System;
-using System.Threading.Tasks;
 
 namespace Jambo.Application.DomainEventHandlers.Posts
 {
@@ -27,7 +25,7 @@ namespace Jambo.Application.DomainEventHandlers.Posts
 
             if (post.Version == message.Version)
             {
-                post.UpdateContent(message.Title, message.Content);
+                post.Apply(message);
                 _postWriteOnlyRepository.UpdatePost(post).Wait();
             }
         }

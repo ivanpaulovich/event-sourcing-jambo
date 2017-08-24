@@ -18,7 +18,7 @@ namespace Jambo.Infrastructure.Repositories.Posts
 
         public async Task<IEnumerable<Post>> GetBlogPosts(Guid blogId)
         {
-            throw new NotImplementedException();
+            return await _mongoContext.Posts.Find(e => e.BlogId == blogId).ToListAsync();
         }
 
         public async Task<Post> GetPost(Guid id)

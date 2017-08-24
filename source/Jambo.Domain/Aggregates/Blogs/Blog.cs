@@ -1,6 +1,7 @@
 ﻿using Jambo.Domain.Aggregates.Blogs.Events;
 using Jambo.Domain.Aggregates.Posts;
 using Jambo.Domain.Exceptions;
+using Jambo.Domain.ServiceBus;
 using System;
 using System.Collections.Generic;
 
@@ -12,28 +13,37 @@ namespace Jambo.Domain.Aggregates.Blogs
         public int Rating { get; private set; }
         public bool Enabled { get; private set; }
 
-        public Blog()
-        {
-        }
-
-        public Blog(Guid id)
-            :base(id)
-        {
-        }
-
         public void Start()
         {
-            AddEvent(new BlogCreatedDomainEvent(Id));
+            Apply(AddEvent(new BlogCreatedDomainEvent(Guid.NewGuid())));
         }
 
         public void UpdateUrl(string url)
         {
-            Url = url;
+            Apply(AddEvent(new BlogUrlUpdatedDomainEvent(Id, Version, url)));
+        }
 
-            AddEvent(new BlogUrlUpdatedDomainEvent(Id, Version, Url));
+        public void Enable()
+        {
+            Apply(AddEvent(new BlogEnabledDomainEvent(Id, Version)));
         }
 
         public void Disable()
+        {
+            Apply(AddEvent(new BlogDisabledDomainEvent(Id, Version)));
+        }
+
+        public void Apply(BlogCreatedDomainEvent @event)
+        {
+            Id = @event.AggregateRootId;
+        }
+
+        public void Apply(BlogUrlUpdatedDomainEvent @event)
+        {
+            Url = @event.Url;
+        }
+
+        public void Apply(BlogDisabledDomainEvent @event)
         {
             if (Enabled == false)
             {
@@ -41,11 +51,9 @@ namespace Jambo.Domain.Aggregates.Blogs
             }
 
             Enabled = false;
-
-            AddEvent(new BlogDisabledDomainEvent(Id, Version));
         }
 
-        public void Enable()
+        public void Apply(BlogEnabledDomainEvent @event)
         {
             if (Enabled == true)
             {
@@ -53,8 +61,6 @@ namespace Jambo.Domain.Aggregates.Blogs
             }
 
             Enabled = true;
-
-            AddEvent(new BlogEnabledDomainEvent(Id, Version));
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Jambo.Domain.Aggregates.Blogs.Events;
+﻿using Jambo.Domain.Aggregates.Posts.Events;
 using Jambo.Domain.Exceptions;
 using System;
 
@@ -12,21 +12,49 @@ namespace Jambo.Domain.Aggregates.Posts
         public bool Enabled { get; private set; }
         public bool Published { get; private set; }
 
-        public Post()
+        public void Start(Guid blogId)
         {
-        }
-
-        public Post(Guid id)
-            :base(id)
-        {
-        }
-
-        public void Start()
-        {
-
+            Apply(AddEvent(new PostCreatedDomainEvent(Guid.NewGuid(), blogId)));
         }
 
         public void Disable()
+        {
+            Apply(AddEvent(new PostDisabledDomainEvent(Id, Version)));
+        }
+
+        public void Hide()
+        {
+            Apply(AddEvent(new PostHiddenDomainEvent(Id, Version)));
+        }
+
+        public void Enable()
+        {
+            Apply(AddEvent(new PostEnabledDomainEvent(Id, Version)));
+        }
+
+        public void UpdateContent(string title, string content)
+        {
+            Apply(AddEvent(new PostContentUpdatedDomainEvent(Id, Version, title, content)));
+        }
+
+        public void Publish()
+        {
+            Apply(AddEvent(new PostPublishedDomainEvent(Id, Version)));
+        }
+
+        public void Apply(PostCreatedDomainEvent @event)
+        {
+            Id = @event.AggregateRootId;
+            BlogId = @event.BlogId;
+        }
+
+        public void Apply(PostContentUpdatedDomainEvent @event)
+        {
+            Title = @event.Title;
+            Content = @event.Content;
+        }
+
+        public void Apply(PostDisabledDomainEvent @event)
         {
             if (Enabled == false)
             {
@@ -34,30 +62,9 @@ namespace Jambo.Domain.Aggregates.Posts
             }
 
             Enabled = false;
-
-            AddEvent(new PostDisabledDomainEvent(Id, Version));
         }
 
-        public void Hide()
-        {
-            if (Published == false)
-            {
-                throw new BlogDomainException("The post is already hidden.");
-            }
-
-            Published = false;
-
-            AddEvent(new PostHiddenDomainEvent(Id, Version));
-        }
-
-        public void Start(Guid blogId)
-        {
-            BlogId = blogId;
-
-            AddEvent(new PostCreatedDomainEvent(Id, BlogId));
-        }
-
-        public void Enable()
+        public void Apply(PostEnabledDomainEvent @event)
         {
             if (Enabled == true)
             {
@@ -65,19 +72,19 @@ namespace Jambo.Domain.Aggregates.Posts
             }
 
             Enabled = true;
-
-            AddEvent(new PostEnabledDomainEvent(Id, Version));
         }
 
-        public void UpdateContent(string title, string content)
+        public void Apply(PostHiddenDomainEvent @event)
         {
-            Title = title;
-            Content = content;
+            if (Published == false)
+            {
+                throw new BlogDomainException("The post is already hidden.");
+            }
 
-            AddEvent(new PostContentUpdatedDomainEvent(Id, Version, Title, Content));
+            Published = false;
         }
 
-        public void Publish()
+        public void Apply(PostPublishedDomainEvent @event)
         {
             if (Published == true)
             {
@@ -85,8 +92,6 @@ namespace Jambo.Domain.Aggregates.Posts
             }
 
             Published = true;
-
-            AddEvent(new PostPublishedDomainEvent(Id, Version));
         }
     }
 }

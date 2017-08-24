@@ -26,7 +26,7 @@ namespace Jambo.Application.DomainEventHandlers.Blogs
 
             if (blog.Version == message.Version)
             {
-                blog.UpdateUrl(message.Url);
+                blog.Apply(message);
                 _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
             }
         }
