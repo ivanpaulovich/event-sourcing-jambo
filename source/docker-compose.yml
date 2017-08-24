@@ -25,3 +25,8 @@ services:
         - 9092:9092
     environment:
       - ADV_HOST=10.0.75.1
+  jambo.web:
+    image: jambo.web
+    build:
+      context: ./../Jambo.Web
+      dockerfile: Dockerfile
