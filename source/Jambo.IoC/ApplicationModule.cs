@@ -7,7 +7,7 @@ using Jambo.Infrastructure.Repositories;
 using Jambo.Infrastructure.Repositories.Blogs;
 using Jambo.Infrastructure.Repositories.Posts;
 
-namespace Jambo.API.IoC
+namespace Jambo.IoC
 {
     public class ApplicationModule : Module
     {

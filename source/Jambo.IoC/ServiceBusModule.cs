@@ -3,7 +3,7 @@ using Jambo.Domain.ServiceBus;
 using Jambo.Infrastructure;
 using Jambo.KafkaBus;
 
-namespace Jambo.API.IoC
+namespace Jambo.IoC
 {
     public class ServiceBusModule : Module
     {

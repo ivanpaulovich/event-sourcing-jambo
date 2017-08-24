@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 using MediatR;
 using Jambo.Application.Commands.Blogs;
 using Autofac;
-using Jambo.API.IoC;
+using Jambo.IoC;
 using Autofac.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -51,8 +51,6 @@ namespace Jambo.Web
 
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
-
-            container.RegisterModule(new MediatorModule());
 
             container.RegisterModule(new ApplicationModule(
                 Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),

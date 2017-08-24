@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  jambo.api:
-    image: jambo.api
+  jambo.web:
+    image: jambo.web
     build:
-      context: ./Jambo.API
+      context: ./Jambo.Web
       dockerfile: Dockerfile
     links:
       - "mongodb:mongo"
@@ -25,8 +25,3 @@ services:
         - 9092:9092
     environment:
       - ADV_HOST=10.0.75.1
-  jambo.web:
-    image: jambo.web
-    build:
-      context: ./../Jambo.Web
-      dockerfile: Dockerfile
