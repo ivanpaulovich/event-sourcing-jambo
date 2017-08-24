@@ -17,12 +17,12 @@
 
         public void OnGet()
         {
-            Blog = _blogQueries.GetBlogAsync(Guid.Parse(Request.Query["blogId"])).Result;
-            Posts = _postQueries.GetPostsAsync(Guid.Parse(Request.Query["blogId"])).Result;
+            Post = _postQueries.GetPostAsync(Guid.Parse(Request.Query["Id"])).Result;
+            Blog = _blogQueries.GetBlogAsync(Post.BlogId).Result;
         }
 
         public dynamic Blog { get; private set; }
-        public IEnumerable<dynamic> Posts { get; private set; }
+        public dynamic Post { get; private set; }
     }
 }
 
@@ -31,12 +31,9 @@
     <h2><a href="/Posts?blogId=@Model.Blog.Id">@Model.Blog.Url</a></h2>    
 </div>
 
+
 <div>
-    @foreach (dynamic post in Model.Posts)
-    {
-        <div>
-            <h3><a href="/Posts/Single?id=@post.Id">@post.Title</a></h3>
-            <p>@post.Content</p>
-        </div>
-    }
+    <h3><a href="/Posts?id=@Model.Post.Id">@Model.Post.Title</a></h3>
+    <p>@Model.Post.Content</p>
 </div>
+
