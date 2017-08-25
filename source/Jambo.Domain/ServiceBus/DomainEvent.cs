@@ -8,6 +8,7 @@ namespace Jambo.Domain.ServiceBus
         public Guid AggregateRootId { get; set; }
         public int Version { get; set; }
         public DateTime Date { get; set; }
+        public Guid CorrelationId { get; set; }
 
         public DomainEvent(Guid aggregateRootId)
         {

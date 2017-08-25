@@ -1,6 +1,7 @@
 ﻿using Jambo.Domain.Aggregates.Posts.Events;
 using Jambo.Domain.Exceptions;
 using System;
+using System.Collections.Generic;
 
 namespace Jambo.Domain.Aggregates.Posts
 {
@@ -12,6 +13,7 @@ namespace Jambo.Domain.Aggregates.Posts
         public int BlogVersion { get; private set; }
         public bool Enabled { get; private set; }
         public bool Published { get; private set; }
+        public List<Comment> Comments { get; set; }
 
         public void Start(Guid blogId, int blogVersion)
         {
@@ -76,6 +78,29 @@ namespace Jambo.Domain.Aggregates.Posts
             }
 
             Apply(AddEvent(new PostPublishedDomainEvent(Id, Version)));
+        }
+
+        public void Comment(Comment comment)
+        {
+            if (Enabled == false)
+            {
+                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+            }
+
+            if (Published == true)
+            {
+                throw new BlogDomainException("The post is already hidden.");
+            }
+
+            Apply(AddEvent(new CommentCreatedDomainEvent(Id, comment.Id, comment.Message)));
+        }
+
+        public void Apply(CommentCreatedDomainEvent commentCreatedDomainEvent)
+        {
+            Comments = Comments ?? new List<Comment>();
+            Comment comment = new Comment(commentCreatedDomainEvent.Message);
+
+            Comments.Add(comment);
         }
 
         public void Apply(PostCreatedDomainEvent @event)

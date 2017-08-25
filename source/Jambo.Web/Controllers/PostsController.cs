@@ -58,6 +58,20 @@ namespace Jambo.Web.Controllers
             }
         }
 
+        [HttpPatch("Comment")]
+        public async Task<IActionResult> Comment([FromBody]CreateCommentCommand command)
+        {
+            try
+            {
+                await _mediator.Send(command);
+                return (IActionResult)Ok();
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPatch("Enable")]
         public async Task<IActionResult> Enable([FromBody]EnablePostCommand command)
         {

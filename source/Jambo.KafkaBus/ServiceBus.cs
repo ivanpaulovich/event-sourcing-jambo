@@ -79,8 +79,13 @@ namespace Jambo.KafkaBus
 
         public async Task Publish(IEnumerable<DomainEvent> domainEvents)
         {
+            Guid correlationId = Guid.NewGuid();
+
             foreach (var domainEvent in domainEvents)
+            {
+                domainEvent.CorrelationId = correlationId;
                 await Publish(domainEvent);
+            }
         }
     }
 }
