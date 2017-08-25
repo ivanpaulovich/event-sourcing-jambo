@@ -9,12 +9,13 @@ namespace Jambo.Domain.Aggregates.Posts
         public string Title { get; private set; }
         public string Content { get; private set; }
         public Guid BlogId { get; private set; }
+        public int BlogVersion { get; private set; }
         public bool Enabled { get; private set; }
         public bool Published { get; private set; }
 
-        public void Start(Guid blogId)
+        public void Start(Guid blogId, int blogVersion)
         {
-            Apply(AddEvent(new PostCreatedDomainEvent(Guid.NewGuid(), blogId)));
+            Apply(AddEvent(new PostCreatedDomainEvent(Guid.NewGuid(), blogId, blogVersion)));
         }
 
         public void Disable()
@@ -81,6 +82,7 @@ namespace Jambo.Domain.Aggregates.Posts
         {
             Id = @event.AggregateRootId;
             BlogId = @event.BlogId;
+            Enabled = true;
         }
 
         public void Apply(PostContentUpdatedDomainEvent @event)

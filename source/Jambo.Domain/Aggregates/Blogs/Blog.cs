@@ -1,5 +1,6 @@
 ﻿using Jambo.Domain.Aggregates.Blogs.Events;
 using Jambo.Domain.Aggregates.Posts;
+using Jambo.Domain.Aggregates.Posts.Events;
 using Jambo.Domain.Exceptions;
 using Jambo.Domain.ServiceBus;
 using System;
@@ -51,6 +52,7 @@ namespace Jambo.Domain.Aggregates.Blogs
         public void Apply(BlogCreatedDomainEvent @event)
         {
             Id = @event.AggregateRootId;
+            Enabled = true;
         }
 
         public void Apply(BlogUrlUpdatedDomainEvent @event)
@@ -66,6 +68,11 @@ namespace Jambo.Domain.Aggregates.Blogs
         public void Apply(BlogEnabledDomainEvent @event)
         {
             Enabled = true;
+        }
+
+        public void Apply(PostCreatedDomainEvent @event)
+        {
+            Rating += 1;
         }
     }
 }

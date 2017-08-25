@@ -36,24 +36,25 @@ namespace Jambo.Web.Controllers
         [HttpGet("{id}", Name = "GetBlog")]
         public async Task<IActionResult> Get(Guid id)
         {
-            try
-            {
-                var blog = await _blogQueries.GetBlogAsync(id);
 
-                return Ok(blog);
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
+            var blog = await _blogQueries.GetBlogAsync(id);
+
+            return Ok(blog);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CreateBlogCommand command)
         {
-            Guid id = await _mediator.Send(command);
+            try
+            {
+                Guid id = await _mediator.Send(command);
 
-            return CreatedAtRoute("GetBlog", new { id = id }, id);
+                return CreatedAtRoute("GetBlog", new { id = id }, id);
+            }
+            catch (BlogDomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPatch("Enable")]
