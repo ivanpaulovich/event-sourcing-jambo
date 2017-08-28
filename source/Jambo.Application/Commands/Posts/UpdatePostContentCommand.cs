@@ -2,18 +2,24 @@
 using System.Runtime.Serialization;
 using Jambo.Application.Commands;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jambo.Application.Commands.Posts
 {
     [DataContract]
     public class UpdatePostContentCommand : IRequest
     {
+        [Required]
         [DataMember]
         public Guid Id { get; private set; }
 
+        [StringLength(100, MinimumLength = 10)]
+        [Required]
         [DataMember]
         public string Title { get; private set; }
 
+        [StringLength(100, MinimumLength = 10)]
+        [Required]
         [DataMember]
         public string Content { get; private set; }
 

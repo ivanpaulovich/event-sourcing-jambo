@@ -48,13 +48,17 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 Guid id = await _mediator.Send(command);
 
                 return CreatedAtRoute("GetPost", new { id = id }, id);
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
 
@@ -63,12 +67,16 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 await _mediator.Send(command);
                 return (IActionResult)Ok();
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
 
@@ -77,12 +85,16 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 await _mediator.Send(command);
                 return (IActionResult)Ok();
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
 
@@ -91,12 +103,16 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 await _mediator.Send(command);
                 return (IActionResult)Ok();
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
 
@@ -105,12 +121,16 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 await _mediator.Send(command);
                 return (IActionResult)Ok();
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
 
@@ -119,12 +139,16 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 await _mediator.Send(command);
                 return (IActionResult)Ok();
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
 
@@ -133,12 +157,16 @@ namespace Jambo.Web.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 await _mediator.Send(command);
                 return (IActionResult)Ok();
             }
             catch (BlogDomainException ex)
             {
-                return BadRequest(ex.Message);
+                ModelState.AddModelError("DomainException", ex.Message);
+                return BadRequest(ModelState);
             }
         }
     }

@@ -2,12 +2,14 @@
 using System.Runtime.Serialization;
 using Jambo.Application.Commands;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jambo.Application.Commands.Posts
 {
     [DataContract]
     public class PublishPostCommand : IRequest
     {
+        [Required]
         [DataMember]
         public Guid Id { get; private set; }
 
