@@ -46,128 +46,72 @@ namespace Jambo.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CreatePostCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                Guid id = await _mediator.Send(command);
-
-                return CreatedAtRoute("GetPost", new { id = id }, id);
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            Guid id = await _mediator.Send(command);
+
+            return CreatedAtRoute("GetPost", new { id = id }, id);
         }
 
         [HttpPatch("Comment")]
         public async Task<IActionResult> Comment([FromBody]CreateCommentCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                await _mediator.Send(command);
-                return (IActionResult)Ok();
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpPatch("Enable")]
         public async Task<IActionResult> Enable([FromBody]EnablePostCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                await _mediator.Send(command);
-                return (IActionResult)Ok();
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpPatch("Disable")]
         public async Task<IActionResult> Disable([FromBody]DisablePostCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                await _mediator.Send(command);
-                return (IActionResult)Ok();
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpPatch("Publish")]
         public async Task<IActionResult> Publish([FromBody]PublishPostCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                await _mediator.Send(command);
-                return (IActionResult)Ok();
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpPatch("Hide")]
         public async Task<IActionResult> Hide([FromBody]HidePostCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                await _mediator.Send(command);
-                return (IActionResult)Ok();
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
 
         [HttpPatch("UpdateContent")]
         public async Task<IActionResult> UpdateContent([FromBody]UpdatePostContentCommand command)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                await _mediator.Send(command);
-                return (IActionResult)Ok();
-            }
-            catch (BlogDomainException ex)
-            {
-                ModelState.AddModelError("DomainException", ex.Message);
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
+
+            await _mediator.Send(command);
+            return (IActionResult)Ok();
         }
     }
 }

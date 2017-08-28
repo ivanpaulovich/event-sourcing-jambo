@@ -16,6 +16,7 @@ using Autofac;
 using Jambo.IoC;
 using Autofac.Extensions.DependencyInjection;
 using System.Reflection;
+using Jambo.Web.Filters;
 
 namespace Jambo.Web
 {
@@ -34,7 +35,12 @@ namespace Jambo.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(DomainExceptionFilter));
+                options.Filters.Add(typeof(ValidateModelAttribute));
+            });
+
             services.AddMediatR(typeof(CreateBlogCommand).GetTypeInfo().Assembly);
 
             services.AddSwaggerGen(options =>
