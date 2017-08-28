@@ -77,10 +77,8 @@ namespace Jambo.KafkaBus
             _consumer.Dispose();
         }
 
-        public async Task Publish(IEnumerable<DomainEvent> domainEvents)
+        public async Task Publish(IEnumerable<DomainEvent> domainEvents, Guid correlationId)
         {
-            Guid correlationId = Guid.NewGuid();
-
             foreach (var domainEvent in domainEvents)
             {
                 domainEvent.CorrelationId = correlationId;

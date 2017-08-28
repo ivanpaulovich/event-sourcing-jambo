@@ -39,6 +39,7 @@ namespace Jambo.Web
             {
                 options.Filters.Add(typeof(DomainExceptionFilter));
                 options.Filters.Add(typeof(ValidateModelAttribute));
+                options.Filters.Add(typeof(CorrelationFilter));
             });
 
             services.AddMediatR(typeof(CreateBlogCommand).GetTypeInfo().Assembly);

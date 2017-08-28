@@ -24,7 +24,7 @@ namespace Jambo.Application.CommandHandlers.Blogs
             blog.Start();
             blog.UpdateUrl(message.Url);
 
-            await _serviceBus.Publish(blog.GetEvents());
+            await _serviceBus.Publish(blog.GetEvents(), message.CorrelationId);
 
             return blog.Id;
         }

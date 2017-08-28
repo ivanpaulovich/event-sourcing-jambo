@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Jambo.Application.Commands.Blogs
 {
     [DataContract]
-    public class CreateBlogCommand: IRequest<Guid>
+    public class CreateBlogCommand : CommandBase, IRequest<Guid>
     {
         [StringLength(100, MinimumLength = 10)]
         [Required]

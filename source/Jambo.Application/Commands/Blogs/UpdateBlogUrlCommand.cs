@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace Jambo.Application.Commands.Blogs
 {
     [DataContract]
-    public class UpdateBlogUrlCommand : IRequest
+    public class UpdateBlogUrlCommand : CommandBase, IRequest
     {
         [Required]
         [DataMember]

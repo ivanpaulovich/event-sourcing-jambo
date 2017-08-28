@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Jambo.Application.Commands.Blogs
 {
     [DataContract]
-    public class DisableBlogCommand : IRequest
+    public class DisableBlogCommand : CommandBase, IRequest
     {
         [Required]
         [DataMember]

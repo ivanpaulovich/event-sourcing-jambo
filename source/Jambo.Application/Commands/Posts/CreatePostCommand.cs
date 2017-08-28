@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Jambo.Application.Commands.Posts
 {
     [DataContract]
-    public class CreatePostCommand : IRequest<Guid>
+    public class CreatePostCommand : CommandBase, IRequest<Guid>
     {
         [Required]
         [DataMember]

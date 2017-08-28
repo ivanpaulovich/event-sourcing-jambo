@@ -36,7 +36,7 @@ namespace Jambo.Application.CommandHandlers.Posts
             Comment comment = new Comment(message.Comment);
             post.Comment(comment);
 
-            await _serviceBus.Publish(post.GetEvents());
+            await _serviceBus.Publish(post.GetEvents(), message.CorrelationId);
 
             return comment.Id;
         }

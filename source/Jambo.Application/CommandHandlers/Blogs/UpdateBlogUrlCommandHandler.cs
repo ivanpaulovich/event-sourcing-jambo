@@ -28,7 +28,7 @@ namespace Jambo.Application.CommandHandlers.Blogs
             Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
             blog.UpdateUrl(message.Url);
 
-            await _serviceBus.Publish(blog.GetEvents());
+            await _serviceBus.Publish(blog.GetEvents(), message.CorrelationId);
         }
     }
 }
