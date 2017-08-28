@@ -21,7 +21,6 @@ namespace Jambo.Infrastructure.Repositories.Posts
 
         public async Task UpdatePost(Post post)
         {
-            post.Version += 1;
             await _mongoContext.Posts.ReplaceOneAsync(e => e.Id == post.Id, post);
         }
     }

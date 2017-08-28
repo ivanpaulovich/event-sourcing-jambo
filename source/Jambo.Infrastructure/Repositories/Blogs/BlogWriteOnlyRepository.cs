@@ -20,7 +20,6 @@ namespace Jambo.Infrastructure.Repositories.Blogs
 
         public async Task UpdateBlog(Blog blog)
         {
-            blog.Version += 1;
             await _mongoContext.Blogs.ReplaceOneAsync(e => e.Id == blog.Id, blog);
         }
     }

@@ -14,9 +14,18 @@ namespace Jambo.Domain.Aggregates.Blogs
         public int Rating { get; private set; }
         public bool Enabled { get; private set; }
 
+        public Blog()
+        {
+            Register<BlogCreatedDomainEvent>(When);
+            Register<BlogUrlUpdatedDomainEvent>(When);
+            Register<BlogEnabledDomainEvent>(When);
+            Register<BlogDisabledDomainEvent>(When);
+            Register<PostCreatedDomainEvent>(When);
+        }
+
         public void Start()
         {
-            Apply(AddEvent(new BlogCreatedDomainEvent(Guid.NewGuid())));
+            Raise(new BlogCreatedDomainEvent(Guid.NewGuid()));
         }
 
         public void UpdateUrl(string url)
@@ -26,7 +35,7 @@ namespace Jambo.Domain.Aggregates.Blogs
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
 
-            Apply(AddEvent(new BlogUrlUpdatedDomainEvent(Id, Version, url)));
+            Raise(new BlogUrlUpdatedDomainEvent(Id, Version, url));
         }
 
         public void Enable()
@@ -36,7 +45,7 @@ namespace Jambo.Domain.Aggregates.Blogs
                 throw new BlogDomainException("The blog is already enabled.");
             }
 
-            Apply(AddEvent(new BlogEnabledDomainEvent(Id, Version)));
+            Raise(new BlogEnabledDomainEvent(Id, Version));
         }
 
         public void Disable()
@@ -46,31 +55,31 @@ namespace Jambo.Domain.Aggregates.Blogs
                 throw new BlogDomainException("The blog is already disabled.");
             }
 
-            Apply(AddEvent(new BlogDisabledDomainEvent(Id, Version)));
+            Raise(new BlogDisabledDomainEvent(Id, Version));
         }
 
-        public void Apply(BlogCreatedDomainEvent @event)
+        public void When(BlogCreatedDomainEvent @event)
         {
             Id = @event.AggregateRootId;
             Enabled = true;
         }
 
-        public void Apply(BlogUrlUpdatedDomainEvent @event)
+        public void When(BlogUrlUpdatedDomainEvent @event)
         {
             Url = @event.Url;
         }
 
-        public void Apply(BlogDisabledDomainEvent @event)
+        public void When(BlogDisabledDomainEvent @event)
         {
             Enabled = false;
         }
 
-        public void Apply(BlogEnabledDomainEvent @event)
+        public void When(BlogEnabledDomainEvent @event)
         {
             Enabled = true;
         }
 
-        public void Apply(PostCreatedDomainEvent @event)
+        public void When(PostCreatedDomainEvent @event)
         {
             Rating += 1;
         }
