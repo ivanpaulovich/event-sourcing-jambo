@@ -10,7 +10,6 @@ namespace Jambo.Domain.Aggregates.Posts
         public string Title { get; private set; }
         public string Content { get; private set; }
         public Guid BlogId { get; private set; }
-        public int BlogVersion { get; private set; }
         public bool Enabled { get; private set; }
         public bool Published { get; private set; }
         public List<Comment> Comments { get; set; }

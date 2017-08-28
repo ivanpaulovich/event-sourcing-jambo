@@ -19,8 +19,9 @@ namespace Jambo.Domain.Aggregates
 
         protected void Raise(DomainEvent _event)
         {
-            _handlers[_event.GetType()](_event);
             _events.Add(_event);
+            _handlers[_event.GetType()](_event);
+            Version++;
         }
 
         public IReadOnlyCollection<DomainEvent> GetEvents()
@@ -33,9 +34,9 @@ namespace Jambo.Domain.Aggregates
             _events.Clear();
         }
 
-        public void Apply(DomainEvent e)
+        public void Apply(DomainEvent _event)
         {
-            Raise(e);
+            _handlers[_event.GetType()](_event);
             Version++;
         }
     }
