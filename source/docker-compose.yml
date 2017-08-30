@@ -10,6 +10,17 @@ services:
       - "mongodb:mongo"
     depends_on:
       - mongodb
+    environment:
+      - ASPNETCORE_URLS=http://*:80
+  jambo.consumer:
+    image: jambo.consumer
+    build:
+      context: ./Jambo.Consumer
+      dockerfile: Dockerfile
+    links:
+      - "mongodb:mongo"
+    depends_on:
+      - mongodb
   mongodb:
     image: mongo
     container_name: "mongodb"

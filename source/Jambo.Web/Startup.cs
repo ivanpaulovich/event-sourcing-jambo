@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Jambo.Domain.ServiceBus;
-using Newtonsoft.Json;
 using MediatR;
 using Jambo.Application.Commands.Blogs;
 using Autofac;
@@ -65,21 +58,11 @@ namespace Jambo.Web
 
             container.RegisterModule(new ServiceBusModule(
                 Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic"),
-                ProcessDomainEventDelegate));
+                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
 
             serviceProvider = new AutofacServiceProvider(container.Build());
 
             return serviceProvider;
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        private void ProcessDomainEventDelegate(string topic, string key, string value)
-        {
-            Type eventType = Type.GetType(key);
-            DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(value, eventType);
-
-            serviceProvider.GetService<IMediator>().Publish(domainEvent).Wait();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

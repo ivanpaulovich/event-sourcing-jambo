@@ -44,7 +44,7 @@ namespace Jambo.KafkaBus
 
         public async Task Publish(DomainEvent domainEvent)
         {
-            string data = JsonConvert.SerializeObject(domainEvent);
+            string data = JsonConvert.SerializeObject(domainEvent, Formatting.Indented);
 
             Message<string, string> message = await _producer.ProduceAsync(
                 _topicName, domainEvent.GetType().AssemblyQualifiedName, data);
