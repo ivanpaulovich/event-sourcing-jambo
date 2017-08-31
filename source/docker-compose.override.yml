@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  jambo.web:
+  jambo.producer.webapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:

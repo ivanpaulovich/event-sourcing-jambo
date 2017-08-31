@@ -1,8 +1,8 @@
 ﻿using Jambo.Application.Commands;
 using Jambo.Application.Commands.Blogs;
 using Jambo.Application.Commands.Posts;
-using Jambo.Domain.Aggregates.Blogs;
-using Jambo.Domain.Aggregates.Posts;
+using Jambo.Domain.Model.Blogs;
+using Jambo.Domain.Model.Posts;
 using Jambo.Domain.ServiceBus;
 using MediatR;
 using System;
@@ -12,11 +12,11 @@ namespace Jambo.Application.CommandHandlers.Posts
 {
     public class EnablePostCommandHandler : IAsyncRequestHandler<EnablePostCommand>
     {
-        private readonly IServiceBus _serviceBus;
+        private readonly IBusWriter _serviceBus;
         private readonly IPostReadOnlyRepository _postReadOnlyRepository;
 
         public EnablePostCommandHandler(
-            IServiceBus serviceBus,
+            IBusWriter serviceBus,
             IPostReadOnlyRepository postReadOnlyRepository)
         {
             _serviceBus = serviceBus ??

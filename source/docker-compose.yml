@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  jambo.web:
-    image: jambo.web
+  jambo.producer.webapi:
+    image: jambo.producer.webapi
     build:
-      context: ./Jambo.Web
+      context: ./Jambo.Producer.WebAPI
       dockerfile: Dockerfile
     links:
       - "mongodb:mongo"
@@ -12,10 +12,10 @@ services:
       - mongodb
     environment:
       - ASPNETCORE_URLS=http://*:80
-  jambo.consumer:
-    image: jambo.consumer
+  jambo.consumer.console:
+    image: jambo.consumer.console
     build:
-      context: ./Jambo.Consumer
+      context: ./Jambo.Consumer.Console
       dockerfile: Dockerfile
     links:
       - "mongodb:mongo"

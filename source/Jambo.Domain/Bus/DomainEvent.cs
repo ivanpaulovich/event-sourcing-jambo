@@ -1,4 +1,4 @@
-﻿using Jambo.Domain.Aggregates;
+﻿using Jambo.Domain.Model;
 using MediatR;
 using System;
 

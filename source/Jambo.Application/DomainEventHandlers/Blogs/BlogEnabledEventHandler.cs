@@ -1,5 +1,5 @@
-﻿using Jambo.Domain.Aggregates.Blogs;
-using Jambo.Domain.Aggregates.Blogs.Events;
+﻿using Jambo.Domain.Model.Blogs;
+using Jambo.Domain.Model.Blogs.Events;
 using MediatR;
 using System;
 using System.Threading.Tasks;

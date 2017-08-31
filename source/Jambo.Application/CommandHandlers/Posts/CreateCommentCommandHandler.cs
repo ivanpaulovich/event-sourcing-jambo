@@ -1,6 +1,6 @@
 ﻿using Jambo.Application.Commands.Posts;
-using Jambo.Domain.Aggregates.Blogs;
-using Jambo.Domain.Aggregates.Posts;
+using Jambo.Domain.Model.Blogs;
+using Jambo.Domain.Model.Posts;
 using Jambo.Domain.ServiceBus;
 using MediatR;
 using System;
@@ -12,12 +12,12 @@ namespace Jambo.Application.CommandHandlers.Posts
 {
     public class CreateCommentCommandHandler : IAsyncRequestHandler<CreateCommentCommand, Guid>
     {
-        private readonly IServiceBus _serviceBus;
+        private readonly IBusWriter _serviceBus;
         private readonly IPostReadOnlyRepository _postReadOnlyRepository;
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
 
         public CreateCommentCommandHandler(
-            IServiceBus serviceBus,
+            IBusWriter serviceBus,
             IPostReadOnlyRepository postReadOnlyRepository,
             IBlogReadOnlyRepository blogReadOnlyRepository)
         {

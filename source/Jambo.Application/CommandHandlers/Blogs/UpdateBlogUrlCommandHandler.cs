@@ -3,18 +3,18 @@ using System;
 using System.Threading.Tasks;
 using Jambo.Application.Commands;
 using Jambo.Domain.ServiceBus;
-using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.Model.Blogs;
 using Jambo.Application.Commands.Blogs;
 
 namespace Jambo.Application.CommandHandlers.Blogs
 {
     public class UpdateBlogUrlCommandHandler : IAsyncRequestHandler<UpdateBlogUrlCommand>
     {
-        private readonly IServiceBus _serviceBus;
+        private readonly IBusWriter _serviceBus;
         private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
 
         public UpdateBlogUrlCommandHandler(
-            IServiceBus serviceBus,
+            IBusWriter serviceBus,
             IBlogReadOnlyRepository blogReadOnlyRepository)
         {
             _serviceBus = serviceBus ??

@@ -1,4 +1,4 @@
-﻿using Jambo.Domain.Aggregates.Blogs;
+﻿using Jambo.Domain.Model.Blogs;
 using MongoDB.Driver;
 using System;
 using System.Threading.Tasks;

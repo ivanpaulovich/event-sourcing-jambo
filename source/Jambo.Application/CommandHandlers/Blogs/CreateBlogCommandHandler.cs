@@ -1,6 +1,6 @@
 ﻿using Jambo.Application.Commands;
 using Jambo.Application.Commands.Blogs;
-using Jambo.Domain.Aggregates.Blogs;
+using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.ServiceBus;
 using MediatR;
 using System;
@@ -10,9 +10,9 @@ namespace Jambo.Application.CommandHandlers.Blogs
 {
     public class CreatePostCommandHandler : IAsyncRequestHandler<CreateBlogCommand, Guid>
     {
-        private readonly IServiceBus _serviceBus;
+        private readonly IBusWriter _serviceBus;
 
-        public CreatePostCommandHandler(IServiceBus serviceBus)
+        public CreatePostCommandHandler(IBusWriter serviceBus)
         {
             _serviceBus = serviceBus ?? 
                 throw new ArgumentNullException(nameof(serviceBus));

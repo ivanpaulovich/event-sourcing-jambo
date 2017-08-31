@@ -1,6 +1,6 @@
-﻿using Jambo.Domain.Aggregates.Blogs;
-using Jambo.Domain.Aggregates.Posts;
-using Jambo.Domain.Aggregates.Posts.Events;
+﻿using Jambo.Domain.Model.Blogs;
+using Jambo.Domain.Model.Posts;
+using Jambo.Domain.Model.Posts.Events;
 using MediatR;
 using System;
 

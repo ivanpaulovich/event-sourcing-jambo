@@ -6,7 +6,7 @@
     <ProjectGuid>d86c75f8-4dff-4a5d-ac97-30a84c4704a1</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>jambo.web</DockerServiceName>
+    <DockerServiceName>jambo.producer.webapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.ci.build.yml" />
