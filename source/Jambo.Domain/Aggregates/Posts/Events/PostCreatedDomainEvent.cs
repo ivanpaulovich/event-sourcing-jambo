@@ -8,8 +8,13 @@ namespace Jambo.Domain.Aggregates.Posts.Events
         public Guid BlogId { get; set; }
         public int BlogVersion { get; set; }
 
-        public PostCreatedDomainEvent(Guid aggregateRootId, Guid blogId, int blogVersion)
-            : base(aggregateRootId, 0)
+        public PostCreatedDomainEvent()
+        {
+
+        }
+
+        public PostCreatedDomainEvent(AggregateRoot aggregateRoot, Guid blogId, int blogVersion)
+            : base(aggregateRoot)
         {
             BlogId = blogId;
             BlogVersion = blogVersion;

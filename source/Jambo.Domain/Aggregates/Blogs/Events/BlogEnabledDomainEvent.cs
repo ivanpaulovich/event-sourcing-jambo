@@ -5,8 +5,13 @@ namespace Jambo.Domain.Aggregates.Blogs.Events
 {
     public class BlogEnabledDomainEvent : DomainEvent
     {
-        public BlogEnabledDomainEvent(Guid aggregateRootId, int version)
-            :base(aggregateRootId, version)
+        public BlogEnabledDomainEvent()
+        {
+
+        }
+
+        public BlogEnabledDomainEvent(AggregateRoot aggregateRoot)
+            : base(aggregateRoot)
         {
         }
     }

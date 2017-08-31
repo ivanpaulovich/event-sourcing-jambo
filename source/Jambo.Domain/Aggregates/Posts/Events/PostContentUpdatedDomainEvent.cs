@@ -8,9 +8,14 @@ namespace Jambo.Domain.Aggregates.Posts.Events
         public string Title { get; set; }
         public string Content { get; set; }
 
-        public PostContentUpdatedDomainEvent(Guid aggregateRootId, int version, 
+        public PostContentUpdatedDomainEvent()
+        {
+
+        }
+
+        public PostContentUpdatedDomainEvent(AggregateRoot aggregateRoot,
             string title, string content)
-            : base(aggregateRootId, version)
+            : base(aggregateRoot)
         {
             Title = title;
             Content = content;

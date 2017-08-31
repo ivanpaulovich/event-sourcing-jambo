@@ -5,8 +5,13 @@ namespace Jambo.Domain.Aggregates.Posts.Events
 {
     public class PostDisabledDomainEvent : DomainEvent
     {
-        public PostDisabledDomainEvent(Guid aggregateRootId, int version)
-            : base(aggregateRootId, version)
+        public PostDisabledDomainEvent()
+        {
+
+        }
+
+        public PostDisabledDomainEvent(AggregateRoot aggregateRoot)
+            : base(aggregateRoot)
         {
 
         }

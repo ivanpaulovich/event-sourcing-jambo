@@ -27,7 +27,7 @@ namespace Jambo.Domain.Aggregates.Posts
 
         public void Start(Guid blogId, int blogVersion)
         {
-            Raise(new PostCreatedDomainEvent(Guid.NewGuid(), blogId, blogVersion));
+            Raise(new PostCreatedDomainEvent(this, blogId, blogVersion));
         }
 
         public void Disable()
@@ -37,7 +37,7 @@ namespace Jambo.Domain.Aggregates.Posts
                 throw new BlogDomainException("The post is already disabled.");
             }
 
-            Raise(new PostDisabledDomainEvent(Id, Version));
+            Raise(new PostDisabledDomainEvent(this));
         }
 
         public void Hide()
@@ -52,7 +52,7 @@ namespace Jambo.Domain.Aggregates.Posts
                 throw new BlogDomainException("The post is already hidden.");
             }
 
-            Raise(new PostHiddenDomainEvent(Id, Version));
+            Raise(new PostHiddenDomainEvent(this));
         }
 
         public void Enable()
@@ -62,7 +62,7 @@ namespace Jambo.Domain.Aggregates.Posts
                 throw new BlogDomainException("The post is already enabled.");
             }
 
-            Raise(new PostEnabledDomainEvent(Id, Version));
+            Raise(new PostEnabledDomainEvent(this));
         }
 
         public void UpdateContent(string title, string content)
@@ -72,7 +72,7 @@ namespace Jambo.Domain.Aggregates.Posts
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
 
-            Raise(new PostContentUpdatedDomainEvent(Id, Version, title, content));
+            Raise(new PostContentUpdatedDomainEvent(this, title, content));
         }
 
         public void Publish()
@@ -87,7 +87,7 @@ namespace Jambo.Domain.Aggregates.Posts
                 throw new BlogDomainException("The post is already published.");
             }
 
-            Raise(new PostPublishedDomainEvent(Id, Version));
+            Raise(new PostPublishedDomainEvent(this));
         }
 
         public void Comment(Comment comment)
@@ -102,7 +102,7 @@ namespace Jambo.Domain.Aggregates.Posts
                 throw new BlogDomainException("The post is already hidden.");
             }
 
-            Raise(new CommentCreatedDomainEvent(Id, comment.Id, comment.Message));
+            Raise(new CommentCreatedDomainEvent(this, comment.Id, comment.Message));
         }
 
         public void When(CommentCreatedDomainEvent commentCreatedDomainEvent)

@@ -25,7 +25,7 @@ namespace Jambo.Domain.Aggregates.Blogs
 
         public void Start()
         {
-            Raise(new BlogCreatedDomainEvent(Guid.NewGuid()));
+            Raise(new BlogCreatedDomainEvent(this));
         }
 
         public void UpdateUrl(string url)
@@ -35,7 +35,7 @@ namespace Jambo.Domain.Aggregates.Blogs
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
 
-            Raise(new BlogUrlUpdatedDomainEvent(Id, Version, url));
+            Raise(new BlogUrlUpdatedDomainEvent(this, url));
         }
 
         public void Enable()
@@ -45,7 +45,7 @@ namespace Jambo.Domain.Aggregates.Blogs
                 throw new BlogDomainException("The blog is already enabled.");
             }
 
-            Raise(new BlogEnabledDomainEvent(Id, Version));
+            Raise(new BlogEnabledDomainEvent(this));
         }
 
         public void Disable()
@@ -55,7 +55,7 @@ namespace Jambo.Domain.Aggregates.Blogs
                 throw new BlogDomainException("The blog is already disabled.");
             }
 
-            Raise(new BlogDisabledDomainEvent(Id, Version));
+            Raise(new BlogDisabledDomainEvent(this));
         }
 
         public void When(BlogCreatedDomainEvent @event)

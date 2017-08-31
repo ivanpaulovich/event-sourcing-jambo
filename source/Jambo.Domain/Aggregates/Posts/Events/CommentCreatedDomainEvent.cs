@@ -8,8 +8,14 @@ namespace Jambo.Domain.Aggregates.Posts.Events
         public Guid CommentId { get; set; }
         public string Message { get; set; }
 
-        public CommentCreatedDomainEvent(Guid postId, Guid commentId, string message)
-            : base(postId, 0)
+        public CommentCreatedDomainEvent()
+        {
+
+        }
+
+        public CommentCreatedDomainEvent(AggregateRoot aggregateRoot,
+            Guid commentId, string message)
+            : base(aggregateRoot)
         {
             CommentId = commentId;
             Message = message;
