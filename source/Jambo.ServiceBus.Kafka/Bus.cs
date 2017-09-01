@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using Confluent.Kafka.Serialization;
+using Jambo.Domain.Exceptions;
 using Jambo.Domain.Model;
 using MediatR;
 using Newtonsoft.Json;
@@ -16,8 +17,6 @@ namespace Jambo.ServiceBus.Kafka
 
         private readonly Producer<string, string> _producer;
         private readonly Consumer<string, string> _consumer;
-
-        private readonly IMediator mediator;
 
         public Bus(Config config)
         {
@@ -36,12 +35,6 @@ namespace Jambo.ServiceBus.Kafka
                 new StringDeserializer(Encoding.UTF8), new StringDeserializer(Encoding.UTF8));
         }
 
-        public Bus(Config config, IMediator mediator)
-            : this(config)
-        {
-            this.mediator = mediator;
-        }
-
         public async Task Publish(DomainEvent domainEvent)
         {
             string data = JsonConvert.SerializeObject(domainEvent, Formatting.Indented);
@@ -50,7 +43,7 @@ namespace Jambo.ServiceBus.Kafka
                 config.TopicName, domainEvent.GetType().AssemblyQualifiedName, data);
         }
 
-        public void Listen()
+        public void Listen(IMediator mediator)
         {
             Task.Run(() =>
             {
@@ -65,10 +58,25 @@ namespace Jambo.ServiceBus.Kafka
 
                     if (_consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
                     {
-                        Type eventType = Type.GetType(msg.Key);
-                        DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
+                        try
+                        {
+                            Type eventType = Type.GetType(msg.Key);
+                            DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
 
-                        mediator.Send(domainEvent).Wait();
+                            mediator.Send(domainEvent).Wait();
+                        }
+                        catch (BlogDomainException ex)
+                        {
+                            Console.WriteLine(ex.BusinessMessage);
+                        }
+                        catch (TransactionConflictException ex)
+                        {
+                            Console.WriteLine(ex.AggregateRoot.ToString() + ex.DomainEvent.ToString());
+                        }
+                        catch (JamboException ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
                 }
             });

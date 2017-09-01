@@ -50,7 +50,10 @@ namespace Jambo.Consumer.Console
 
         public void Run()
         {
-            serviceProvider.GetService<ISubscriber>().Listen();
+            IMediator mediator = serviceProvider.GetService<IMediator>();
+            ISubscriber subscriber = serviceProvider.GetService<ISubscriber>();
+
+            subscriber.Listen(mediator);
 
             while (true)
             {
