@@ -6,8 +6,8 @@ namespace Jambo.Domain.Model.Posts
 {
     public class Comment : IEntity
     {
-        public Guid Id { get; set; }
-        public string Message { get; set; }
+        public Guid Id { get; private set; }
+        public string Message { get; private set; }
 
         public Comment()
         {

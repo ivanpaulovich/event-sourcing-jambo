@@ -12,7 +12,7 @@ namespace Jambo.Domain.Model.Posts
         public Guid BlogId { get; private set; }
         public bool Enabled { get; private set; }
         public bool Published { get; private set; }
-        public List<Comment> Comments { get; set; }
+        public List<Comment> Comments { get; private set; }
 
         public Post()
         {
