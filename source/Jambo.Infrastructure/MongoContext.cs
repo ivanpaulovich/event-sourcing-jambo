@@ -6,20 +6,20 @@ namespace Jambo.Infrastructure
 {
     public class MongoContext
     {
-        private readonly IMongoDatabase _database;
+        private readonly IMongoDatabase database;
 
         public MongoContext(string connectionString, string database)
         {
             MongoClient mongoClient = new MongoClient(connectionString);
             mongoClient.DropDatabase(database);
-            _database = mongoClient.GetDatabase(database);
+            this.database = mongoClient.GetDatabase(database);
         }
 
         public IMongoCollection<Blog> Blogs
         {
             get
             {
-                return _database.GetCollection<Blog>("Blogs");
+                return database.GetCollection<Blog>("Blogs");
             }
         }
 
@@ -27,7 +27,7 @@ namespace Jambo.Infrastructure
         {
             get
             {
-                return _database.GetCollection<Post>("Posts");
+                return database.GetCollection<Post>("Posts");
             }
         }
     }

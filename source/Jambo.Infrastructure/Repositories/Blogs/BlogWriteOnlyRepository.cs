@@ -7,20 +7,20 @@ namespace Jambo.Infrastructure.Repositories.Blogs
 {
     public class BlogWriteOnlyRepository : IBlogWriteOnlyRepository
     {
-        private readonly MongoContext _mongoContext;
+        private readonly MongoContext mongoContext;
         public BlogWriteOnlyRepository(MongoContext mongoContext)
         {
-            _mongoContext = mongoContext;
+            this.mongoContext = mongoContext;
         }
 
         public async Task AddBlog(Blog blog)
         {
-            await _mongoContext.Blogs.InsertOneAsync(blog);
+            await mongoContext.Blogs.InsertOneAsync(blog);
         }
 
         public async Task UpdateBlog(Blog blog)
         {
-            await _mongoContext.Blogs.ReplaceOneAsync(e => e.Id == blog.Id, blog);
+            await mongoContext.Blogs.ReplaceOneAsync(e => e.Id == blog.Id, blog);
         }
     }
 }
