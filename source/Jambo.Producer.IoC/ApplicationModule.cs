@@ -1,11 +1,11 @@
 ﻿using Autofac;
-using Jambo.Application.Queries;
+using Jambo.Producer.Application.Queries;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
-using Jambo.Infrastructure;
-using Jambo.Infrastructure.Repositories;
-using Jambo.Infrastructure.Repositories.Blogs;
-using Jambo.Infrastructure.Repositories.Posts;
+using Jambo.Producer.Infrastructure;
+using Jambo.Producer.Infrastructure.Repositories;
+using Jambo.Producer.Infrastructure.Repositories.Blogs;
+using Jambo.Producer.Infrastructure.Repositories.Posts;
 
 namespace Jambo.Producer.IoC
 {
@@ -35,16 +35,8 @@ namespace Jambo.Producer.IoC
                 .As<IBlogReadOnlyRepository>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<BlogWriteOnlyRepository>()
-                .As<IBlogWriteOnlyRepository>()
-                .InstancePerLifetimeScope();
-
             builder.RegisterType<PostReadOnlyRepository>()
                 .As<IPostReadOnlyRepository>()
-                .InstancePerLifetimeScope();
-
-            builder.RegisterType<PostWriteOnlyRepository>()
-                .As<IPostWriteOnlyRepository>()
                 .InstancePerLifetimeScope();
         }
     }

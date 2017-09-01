@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using Jambo.Domain.ServiceBus;
-using Jambo.Infrastructure;
-using Jambo.Bus.Kafka;
+using Jambo.ServiceBus;
+using Jambo.Producer.Infrastructure;
+using Jambo.ServiceBus.Kafka;
 
 namespace Jambo.Producer.IoC
 {
@@ -18,7 +18,7 @@ namespace Jambo.Producer.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-            IBusWriter serviceBus = new Jambo.Bus.Kafka.Bus(_connectionString, _topic);
+            IBusWriter serviceBus = new Bus(_connectionString, _topic);
             builder.Register(c => serviceBus).As<IBusWriter>().SingleInstance();
         }
     }

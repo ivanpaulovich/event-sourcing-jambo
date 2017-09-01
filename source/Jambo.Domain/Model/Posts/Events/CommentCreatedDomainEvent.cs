@@ -1,5 +1,4 @@
-﻿using Jambo.Domain.ServiceBus;
-using System;
+﻿using System;
 
 namespace Jambo.Domain.Model.Posts.Events
 {

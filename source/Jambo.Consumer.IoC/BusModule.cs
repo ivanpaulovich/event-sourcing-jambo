@@ -1,6 +1,7 @@
 ﻿using Autofac;
-using Jambo.Domain.ServiceBus;
-using Jambo.Infrastructure;
+using Jambo.ServiceBus;
+using Jambo.Consumer.Infrastructure;
+using Jambo.ServiceBus.Kafka;
 
 namespace Jambo.Consumer.IoC
 {
@@ -19,7 +20,7 @@ namespace Jambo.Consumer.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-            IBusReader serviceBus = new Jambo.Bus.Kafka.Bus(_connectionString, _topic);
+            IBusReader serviceBus = new Bus(_connectionString, _topic);
             serviceBus.OnEventReceived = _proccessDomainEvent;
             serviceBus.Listen();
 

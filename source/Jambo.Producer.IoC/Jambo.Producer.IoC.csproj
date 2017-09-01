@@ -15,10 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
-    <ProjectReference Include="..\Jambo.Bus.Kafka\Jambo.Bus.Kafka.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-    <ProjectReference Include="..\Jambo.Infrastructure\Jambo.Infrastructure.csproj" />
+    <ProjectReference Include="..\Jambo.Producer.Application\Jambo.Producer.Application.csproj" />
+    <ProjectReference Include="..\Jambo.Producer.Infrastructure\Jambo.Producer.Infrastructure.csproj" />
+    <ProjectReference Include="..\Jambo.ServiceBus.Kafka\Jambo.ServiceBus.Kafka.csproj" />
+    <ProjectReference Include="..\Jambo.ServiceBus\Jambo.ServiceBus.csproj" />
   </ItemGroup>
 
 </Project>

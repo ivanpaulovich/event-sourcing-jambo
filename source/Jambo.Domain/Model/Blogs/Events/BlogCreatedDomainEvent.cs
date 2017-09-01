@@ -1,7 +1,4 @@
-﻿using Jambo.Domain.ServiceBus;
-using System;
-
-namespace Jambo.Domain.Model.Blogs.Events
+﻿namespace Jambo.Domain.Model.Blogs.Events
 {
     public class BlogCreatedDomainEvent : DomainEvent
     {

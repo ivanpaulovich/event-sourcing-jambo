@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
-using Jambo.Application.Commands.Blogs;
+using Jambo.Producer.Application.Commands.Blogs;
 using Autofac;
 using Jambo.Producer.IoC;
 using Autofac.Extensions.DependencyInjection;

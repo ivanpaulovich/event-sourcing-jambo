@@ -1,4 +1,4 @@
-﻿using Jambo.Application.Commands;
+﻿using Jambo.Producer.Application.Commands;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;

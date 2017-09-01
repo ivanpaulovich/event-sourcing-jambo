@@ -1,5 +1,4 @@
-﻿using Jambo.Domain.ServiceBus;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Jambo.Domain.Model

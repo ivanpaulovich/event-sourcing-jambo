@@ -1,7 +1,4 @@
-﻿using Jambo.Domain.ServiceBus;
-using System;
-
-namespace Jambo.Domain.Model.Posts.Events
+﻿namespace Jambo.Domain.Model.Posts.Events
 {
     public class PostContentUpdatedDomainEvent : DomainEvent
     {

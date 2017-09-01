@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using Jambo.Domain.ServiceBus;
+using Jambo.ServiceBus;
 using Newtonsoft.Json;
 using MediatR;
 using System.Reflection;
 using Autofac;
 using Microsoft.Extensions.DependencyInjection;
-using Jambo.Application.Commands.Blogs;
 using Autofac.Extensions.DependencyInjection;
 using Jambo.Consumer.IoC;
 using System.Threading;
+using Jambo.Consumer.Application.DomainEventHandlers.Blogs;
+using Jambo.Domain.Model;
 
 namespace Jambo.Consumer.Console
 {
@@ -29,7 +30,7 @@ namespace Jambo.Consumer.Console
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMediatR(typeof(CreateBlogCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(BlogCreatedEventHandler).GetTypeInfo().Assembly);
 
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
@@ -55,7 +56,7 @@ namespace Jambo.Consumer.Console
             Type eventType = Type.GetType(key);
             DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(value, eventType);
 
-            serviceProvider.GetService<IMediator>().Publish(domainEvent).Wait();
+            serviceProvider.GetService<IMediator>().Send(domainEvent).Wait();
         }
 
         public void Run()

@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jambo.Application\Jambo.Application.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
+    <ProjectReference Include="..\Jambo.Producer.Application\Jambo.Producer.Application.csproj" />
     <ProjectReference Include="..\Jambo.Producer.IoC\Jambo.Producer.IoC.csproj" />
   </ItemGroup>
 

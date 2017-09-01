@@ -1,10 +1,6 @@
 ﻿using Jambo.Domain.Model.Blogs.Events;
-using Jambo.Domain.Model.Posts;
 using Jambo.Domain.Model.Posts.Events;
 using Jambo.Domain.Exceptions;
-using Jambo.Domain.ServiceBus;
-using System;
-using System.Collections.Generic;
 
 namespace Jambo.Domain.Model.Blogs
 {

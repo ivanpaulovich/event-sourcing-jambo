@@ -1,6 +1,6 @@
-﻿using Jambo.Application.Commands;
-using Jambo.Application.Commands.Blogs;
-using Jambo.Application.Queries;
+﻿using Jambo.Producer.Application.Commands;
+using Jambo.Producer.Application.Commands.Blogs;
+using Jambo.Producer.Application.Queries;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Exceptions;
 using MediatR;
