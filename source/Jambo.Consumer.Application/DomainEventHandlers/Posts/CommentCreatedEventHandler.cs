@@ -1,4 +1,5 @@
-﻿using Jambo.Domain.Model.Blogs;
+﻿using Jambo.Domain.Exceptions;
+using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
 using Jambo.Domain.Model.Posts.Events;
 using MediatR;
@@ -32,6 +33,9 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Posts
         public void Handle(CommentCreatedDomainEvent message)
         {
             Post post = _postReadOnlyRepository.GetPost(message.AggregateRootId).Result;
+
+            if (post.Version != message.Version)
+                throw new TransactionConflictException(post, message);
 
             post.Apply(message);
             _postWriteOnlyRepository.UpdatePost(post).Wait();

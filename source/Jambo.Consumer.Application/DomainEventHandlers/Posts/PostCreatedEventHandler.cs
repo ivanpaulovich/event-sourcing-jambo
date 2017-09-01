@@ -1,4 +1,5 @@
-﻿using Jambo.Domain.Model.Blogs;
+﻿using Jambo.Domain.Exceptions;
+using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
 using Jambo.Domain.Model.Posts.Events;
 using MediatR;
@@ -31,19 +32,18 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Posts
         }
         public void Handle(PostCreatedDomainEvent message)
         {
-
             Blog blog = _blogReadOnlyRepository.GetBlog(message.BlogId).Result;
 
-            if (blog.Version == message.BlogVersion)
-            {
-                Post post = new Post();
-                post.Apply(message);
+            if (blog.Version != message.Version)
+                throw new TransactionConflictException(blog, message);
 
-                _postWriteOnlyRepository.AddPost(post).Wait();
+            Post post = new Post();
+            post.Apply(message);
 
-                blog.Apply(message);
-                _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
-            }
+            _postWriteOnlyRepository.AddPost(post).Wait();
+
+            blog.Apply(message);
+            _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
         }
     }
 }

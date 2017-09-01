@@ -1,8 +1,8 @@
-﻿using Jambo.Domain.Model.Blogs;
+﻿using Jambo.Domain.Exceptions;
+using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Blogs.Events;
 using MediatR;
 using System;
-using System.Threading.Tasks;
 
 namespace Jambo.Consumer.Application.DomainEventHandlers.Blogs
 {
@@ -24,11 +24,11 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Blogs
         {
             Blog blog = _blogReadOnlyRepository.GetBlog(message.AggregateRootId).Result;
 
-            if (blog.Version == message.Version)
-            {
-                blog.Apply(message);
-                _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
-            }
+            if (blog.Version != message.Version)
+                throw new TransactionConflictException(blog, message);
+
+            blog.Apply(message);
+            _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
         }
     }
 }

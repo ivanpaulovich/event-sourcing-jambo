@@ -2,7 +2,7 @@
 
 namespace Jambo.Domain.Exceptions
 {
-    public class BlogDomainException : Exception
+    public class BlogDomainException : JamboException
     {
         public BlogDomainException()
         { }
