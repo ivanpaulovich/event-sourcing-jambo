@@ -1,6 +1,0 @@
-docker run --name some-mongo -d -p 27017:27017 mongo
-
-docker stop some-mongo
-docker rm some-mongo
-
-docker start some-mongo
