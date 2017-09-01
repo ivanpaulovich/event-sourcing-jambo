@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Jambo.ServiceBus;
-using Jambo.Consumer.Infrastructure;
+using Jambo.Infrastructure;
 using Jambo.ServiceBus.Kafka;
 
 namespace Jambo.Consumer.IoC

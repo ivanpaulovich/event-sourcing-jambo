@@ -1,10 +1,10 @@
 ﻿using Autofac;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
-using Jambo.Consumer.Infrastructure;
-using Jambo.Consumer.Infrastructure.Repositories;
-using Jambo.Consumer.Infrastructure.Repositories.Blogs;
-using Jambo.Consumer.Infrastructure.Repositories.Posts;
+using Jambo.Infrastructure;
+using Jambo.Infrastructure.Repositories;
+using Jambo.Infrastructure.Repositories.Blogs;
+using Jambo.Infrastructure.Repositories.Posts;
 
 namespace Jambo.Consumer.IoC
 {

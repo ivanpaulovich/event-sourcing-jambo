@@ -23,20 +23,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Consumer.Console", "J
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Consumer.Application", "Jambo.Consumer.Application\Jambo.Consumer.Application.csproj", "{601F90B1-4BE4-462E-8595-AAAA49B80405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Producer.Application", "Jambo.Producer.Application\Jambo.Producer.Application.csproj", "{9E73933B-2008-4D46-A92C-CC8D79A53CF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Producer.Application", "Jambo.Producer.Application\Jambo.Producer.Application.csproj", "{9E73933B-2008-4D46-A92C-CC8D79A53CF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Consumer.Infrastructure", "Jambo.Consumer.Infrastructure\Jambo.Consumer.Infrastructure.csproj", "{C4407292-BF94-43E1-95C0-3A6B327508AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.ServiceBus", "Jambo.ServiceBus\Jambo.ServiceBus.csproj", "{F964438C-7924-4ED2-971F-C2DC16F671F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Producer.Infrastructure", "Jambo.Producer.Infrastructure\Jambo.Producer.Infrastructure.csproj", "{1717EC5E-D387-4124-89DA-D2AF04CCB393}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.ServiceBus", "Jambo.ServiceBus\Jambo.ServiceBus.csproj", "{F964438C-7924-4ED2-971F-C2DC16F671F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.ServiceBus.Kafka", "Jambo.ServiceBus.Kafka\Jambo.ServiceBus.Kafka.csproj", "{5CC72803-CAC5-4F29-B518-143B4994CDF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.ServiceBus.Kafka", "Jambo.ServiceBus.Kafka\Jambo.ServiceBus.Kafka.csproj", "{5CC72803-CAC5-4F29-B518-143B4994CDF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36DA50DF-8BE7-4044-9131-1920E39E3EEB}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.txt = Readme.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Infrastructure", "Jambo.Infrastructure\Jambo.Infrastructure.csproj", "{D9B6CDC1-6CB4-463F-9D5B-A2F7B71BE7E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{04236BAA-E232-4DB1-9A3F-4DD09FAD360C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,14 +76,6 @@ Global
 		{9E73933B-2008-4D46-A92C-CC8D79A53CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E73933B-2008-4D46-A92C-CC8D79A53CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E73933B-2008-4D46-A92C-CC8D79A53CF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4407292-BF94-43E1-95C0-3A6B327508AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4407292-BF94-43E1-95C0-3A6B327508AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4407292-BF94-43E1-95C0-3A6B327508AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4407292-BF94-43E1-95C0-3A6B327508AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1717EC5E-D387-4124-89DA-D2AF04CCB393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1717EC5E-D387-4124-89DA-D2AF04CCB393}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1717EC5E-D387-4124-89DA-D2AF04CCB393}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1717EC5E-D387-4124-89DA-D2AF04CCB393}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F964438C-7924-4ED2-971F-C2DC16F671F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F964438C-7924-4ED2-971F-C2DC16F671F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F964438C-7924-4ED2-971F-C2DC16F671F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -92,6 +84,10 @@ Global
 		{5CC72803-CAC5-4F29-B518-143B4994CDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CC72803-CAC5-4F29-B518-143B4994CDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC72803-CAC5-4F29-B518-143B4994CDF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B6CDC1-6CB4-463F-9D5B-A2F7B71BE7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B6CDC1-6CB4-463F-9D5B-A2F7B71BE7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B6CDC1-6CB4-463F-9D5B-A2F7B71BE7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B6CDC1-6CB4-463F-9D5B-A2F7B71BE7E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,8 +99,6 @@ Global
 		{3C12BE49-8411-432E-8489-3ADE75AAC5B6} = {33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}
 		{601F90B1-4BE4-462E-8595-AAAA49B80405} = {33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}
 		{9E73933B-2008-4D46-A92C-CC8D79A53CF7} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
-		{C4407292-BF94-43E1-95C0-3A6B327508AC} = {33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}
-		{1717EC5E-D387-4124-89DA-D2AF04CCB393} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
 		{F964438C-7924-4ED2-971F-C2DC16F671F7} = {C4330A47-85B8-4250-AD82-373F99D5166E}
 		{5CC72803-CAC5-4F29-B518-143B4994CDF3} = {C4330A47-85B8-4250-AD82-373F99D5166E}
 	EndGlobalSection
