@@ -17,8 +17,8 @@ namespace Jambo.Producer.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-            IBusWriter serviceBus = new Bus(connectionString, topic);
-            builder.Register(c => serviceBus).As<IBusWriter>().SingleInstance();
+            builder.Register(c => new Config(connectionString, topic)).As<Config>().SingleInstance();
+            builder.RegisterType<Bus>().As<IPublisher>().SingleInstance();
         }
     }
 }

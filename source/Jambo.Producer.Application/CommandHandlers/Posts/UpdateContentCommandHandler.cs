@@ -12,25 +12,25 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
 {
     public class UpdateContentCommandHandler : IAsyncRequestHandler<UpdatePostContentCommand>
     {
-        private readonly IBusWriter _serviceBus;
-        private readonly IPostReadOnlyRepository _postReadOnlyRepository;
+        private readonly IPublisher bus;
+        private readonly IPostReadOnlyRepository postReadOnlyRepository;
 
         public UpdateContentCommandHandler(
-            IBusWriter serviceBus,
+            IPublisher bus,
             IPostReadOnlyRepository postReadOnlyRepository)
         {
-            _serviceBus = serviceBus ??
-                throw new ArgumentNullException(nameof(serviceBus));
-            _postReadOnlyRepository = postReadOnlyRepository ??
+            this.bus = bus ??
+                throw new ArgumentNullException(nameof(bus));
+            this.postReadOnlyRepository = postReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(postReadOnlyRepository));
         }
 
         public async Task Handle(UpdatePostContentCommand message)
         {
-            Post post = await _postReadOnlyRepository.GetPost(message.Id);
+            Post post = await postReadOnlyRepository.GetPost(message.Id);
             post.UpdateContent(message.Title, message.Content);
 
-            await _serviceBus.Publish(post.GetEvents(), message.CorrelationId);
+            await bus.Publish(post.GetEvents(), message.CorrelationId);
         }
     }
 }

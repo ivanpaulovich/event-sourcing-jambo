@@ -10,12 +10,12 @@ namespace Jambo.Producer.Application.Queries
 {
     public class PostQueries : IPostQueries
     {
-        private readonly IMongoDatabase _database;
+        private readonly IMongoDatabase database;
         public IMongoCollection<Blog> Blogs
         {
             get
             {
-                return _database.GetCollection<Blog>("Blogs");
+                return database.GetCollection<Blog>("Blogs");
             }
         }
 
@@ -23,14 +23,14 @@ namespace Jambo.Producer.Application.Queries
         {
             get
             {
-                return _database.GetCollection<Post>("Posts");
+                return database.GetCollection<Post>("Posts");
             }
         }
 
         public PostQueries(string connectionString, string database)
         {
             MongoClient mongoClient = new MongoClient(connectionString);
-            _database = mongoClient.GetDatabase(database);
+            this.database = mongoClient.GetDatabase(database);
         }
 
         public async Task<dynamic> GetPostAsync(Guid id)

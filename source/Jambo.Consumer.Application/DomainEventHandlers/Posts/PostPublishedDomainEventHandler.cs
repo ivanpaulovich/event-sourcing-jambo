@@ -8,27 +8,27 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Posts
 {
     public class PostPublishedDomainEventHandler : IRequestHandler<PostPublishedDomainEvent>
     {
-        private readonly IPostReadOnlyRepository _postReadOnlyRepository;
-        private readonly IPostWriteOnlyRepository _postWriteOnlyRepository;
+        private readonly IPostReadOnlyRepository postReadOnlyRepository;
+        private readonly IPostWriteOnlyRepository postWriteOnlyRepository;
 
         public PostPublishedDomainEventHandler(
             IPostReadOnlyRepository postReadOnlyRepository,
             IPostWriteOnlyRepository postWriteOnlyRepository)
         {
-            _postReadOnlyRepository = postReadOnlyRepository ??
+            this.postReadOnlyRepository = postReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(postReadOnlyRepository));
-            _postWriteOnlyRepository = postWriteOnlyRepository ??
+            this.postWriteOnlyRepository = postWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(postWriteOnlyRepository));
         }
-        public void Handle(PostPublishedDomainEvent message)
+        public void Handle(PostPublishedDomainEvent domainEvent)
         {
-            Post post = _postReadOnlyRepository.GetPost(message.AggregateRootId).Result;
+            Post post = postReadOnlyRepository.GetPost(domainEvent.AggregateRootId).Result;
 
-            if (post.Version != message.Version)
-                throw new TransactionConflictException(post, message);
+            if (post.Version != domainEvent.Version)
+                throw new TransactionConflictException(post, domainEvent);
 
-            post.Apply(message);
-            _postWriteOnlyRepository.UpdatePost(post).Wait();
+            post.Apply(domainEvent);
+            postWriteOnlyRepository.UpdatePost(post).Wait();
         }
     }
 }

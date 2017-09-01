@@ -10,21 +10,20 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
 {
     public class CreatePostCommandHandler : IAsyncRequestHandler<CreateBlogCommand, Guid>
     {
-        private readonly IBusWriter _serviceBus;
+        private readonly IPublisher bus;
 
-        public CreatePostCommandHandler(IBusWriter serviceBus)
+        public CreatePostCommandHandler(IPublisher bus)
         {
-            _serviceBus = serviceBus ?? 
-                throw new ArgumentNullException(nameof(serviceBus));
+            this.bus = bus ?? throw new ArgumentNullException(nameof(bus));
         }
 
-        public async Task<Guid> Handle(CreateBlogCommand message)
+        public async Task<Guid> Handle(CreateBlogCommand command)
         {
             Blog blog = new Blog();
             blog.Start();
-            blog.UpdateUrl(message.Url);
+            blog.UpdateUrl(command.Url);
 
-            await _serviceBus.Publish(blog.GetEvents(), message.CorrelationId);
+            await bus.Publish(blog.GetEvents(), command.CorrelationId);
 
             return blog.Id;
         }

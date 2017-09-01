@@ -18,19 +18,19 @@ namespace Jambo.Producer.WebAPI.Controllers
     [Route("api/[controller]")]
     public class PostsController : Controller
     {
-        private readonly IMediator _mediator;
-        private readonly IPostQueries _postQueries;
+        private readonly IMediator mediator;
+        private readonly IPostQueries postQueries;
 
         public PostsController(IMediator mediator, IPostQueries postQueries)
         {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _postQueries = postQueries ?? throw new ArgumentNullException(nameof(postQueries));
+            this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            this.postQueries = postQueries ?? throw new ArgumentNullException(nameof(postQueries));
         }
 
         [HttpGet]
         public async Task<IActionResult> GetPosts(Guid blogId)
         {
-            var posts = await _postQueries.GetPostsAsync(blogId);
+            var posts = await postQueries.GetPostsAsync(blogId);
 
             return Ok(posts);
         }
@@ -38,7 +38,7 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetPost")]
         public async Task<IActionResult> Get(Guid id)
         {
-            var post = await _postQueries.GetPostAsync(id);
+            var post = await postQueries.GetPostAsync(id);
 
             return Ok(post);
         }
@@ -49,7 +49,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            Guid id = await _mediator.Send(command);
+            Guid id = await mediator.Send(command);
 
             return CreatedAtRoute("GetPost", new { id = id }, id);
         }
@@ -60,7 +60,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
@@ -70,7 +70,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
@@ -80,7 +80,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
@@ -90,7 +90,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
@@ -100,7 +100,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
@@ -110,7 +110,7 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
     }

@@ -10,10 +10,10 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Posts
 {
     public class PostCreatedEventHandler : IRequestHandler<PostCreatedDomainEvent>
     {
-        private readonly IPostReadOnlyRepository _postReadOnlyRepository;
-        private readonly IPostWriteOnlyRepository _postWriteOnlyRepository;
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
-        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
+        private readonly IPostReadOnlyRepository postReadOnlyRepository;
+        private readonly IPostWriteOnlyRepository postWriteOnlyRepository;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
+        private readonly IBlogWriteOnlyRepository blogWriteOnlyRepository;
 
         public PostCreatedEventHandler(
             IPostReadOnlyRepository postReadOnlyRepository,
@@ -21,29 +21,29 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Posts
             IBlogReadOnlyRepository blogReadOnlyRepository,
             IBlogWriteOnlyRepository blogWriteOnlyRepository)
         {
-            _postReadOnlyRepository = postReadOnlyRepository ??
+            this.postReadOnlyRepository = postReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(postReadOnlyRepository));
-            _postWriteOnlyRepository = postWriteOnlyRepository ??
+            this.postWriteOnlyRepository = postWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(postWriteOnlyRepository));
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
-            _blogWriteOnlyRepository = blogWriteOnlyRepository ??
+            this.blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public void Handle(PostCreatedDomainEvent message)
+        public void Handle(PostCreatedDomainEvent domainEvent)
         {
-            Blog blog = _blogReadOnlyRepository.GetBlog(message.BlogId).Result;
+            Blog blog = blogReadOnlyRepository.GetBlog(domainEvent.BlogId).Result;
 
-            if (blog.Version != message.Version)
-                throw new TransactionConflictException(blog, message);
+            if (blog.Version != domainEvent.Version)
+                throw new TransactionConflictException(blog, domainEvent);
 
             Post post = new Post();
-            post.Apply(message);
+            post.Apply(domainEvent);
 
-            _postWriteOnlyRepository.AddPost(post).Wait();
+            postWriteOnlyRepository.AddPost(post).Wait();
 
-            blog.Apply(message);
-            _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
+            blog.Apply(domainEvent);
+            blogWriteOnlyRepository.UpdateBlog(blog).Wait();
         }
     }
 }

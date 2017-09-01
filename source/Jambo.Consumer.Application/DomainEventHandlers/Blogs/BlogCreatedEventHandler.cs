@@ -2,29 +2,28 @@
 using Jambo.Domain.Model.Blogs.Events;
 using MediatR;
 using System;
-using System.Threading.Tasks;
 
 namespace Jambo.Consumer.Application.DomainEventHandlers.Blogs
 {
     public class BlogCreatedEventHandler : IRequestHandler<BlogCreatedDomainEvent>
     {
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
-        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
+        private readonly IBlogWriteOnlyRepository blogWriteOnlyRepository;
 
         public BlogCreatedEventHandler(
             IBlogReadOnlyRepository blogReadOnlyRepository,
             IBlogWriteOnlyRepository blogWriteOnlyRepository)
         {
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
-            _blogWriteOnlyRepository = blogWriteOnlyRepository ??
+            this.blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public void Handle(BlogCreatedDomainEvent message)
+        public void Handle(BlogCreatedDomainEvent domainEvent)
         {
             Blog blog = new Blog();
-            blog.Apply(message);
-            _blogWriteOnlyRepository.AddBlog(blog).Wait();
+            blog.Apply(domainEvent);
+            blogWriteOnlyRepository.AddBlog(blog).Wait();
         }
     }
 }

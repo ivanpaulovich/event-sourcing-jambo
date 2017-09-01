@@ -1,9 +1,7 @@
 ﻿using MediatR;
 using System;
 using System.Threading.Tasks;
-using Jambo.Producer.Application.Commands;
 using Jambo.Producer.Application.Commands.Blogs;
-using Jambo.Producer.Application.Commands.Posts;
 using Jambo.Domain.Model.Blogs;
 using Jambo.ServiceBus;
 
@@ -11,25 +9,25 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
 {
     public class EnableBlogCommandHandler : IAsyncRequestHandler<EnableBlogCommand>
     {
-        private readonly IBusWriter _serviceBus;
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
+        private readonly IPublisher bus;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
 
         public EnableBlogCommandHandler(
-            IBusWriter serviceBus,
+            IPublisher serviceBus,
             IBlogReadOnlyRepository blogReadOnlyRepository)
         {
-            _serviceBus = serviceBus ??
+            bus = serviceBus ??
                 throw new ArgumentNullException(nameof(serviceBus));
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task Handle(EnableBlogCommand message)
+        public async Task Handle(EnableBlogCommand command)
         {
-            Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
+            Blog blog = await blogReadOnlyRepository.GetBlog(command.Id);
             blog.Enable();
 
-            await _serviceBus.Publish(blog.GetEvents(), message.CorrelationId);
+            await bus.Publish(blog.GetEvents(), command.CorrelationId);
         }
     }
 }

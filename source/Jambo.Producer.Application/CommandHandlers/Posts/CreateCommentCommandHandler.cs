@@ -4,39 +4,37 @@ using Jambo.Domain.Model.Posts;
 using Jambo.ServiceBus;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jambo.Producer.Application.CommandHandlers.Posts
 {
     public class CreateCommentCommandHandler : IAsyncRequestHandler<CreateCommentCommand, Guid>
     {
-        private readonly IBusWriter _serviceBus;
-        private readonly IPostReadOnlyRepository _postReadOnlyRepository;
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
+        private readonly IPublisher bus;
+        private readonly IPostReadOnlyRepository postReadOnlyRepository;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
 
         public CreateCommentCommandHandler(
-            IBusWriter serviceBus,
+            IPublisher bus,
             IPostReadOnlyRepository postReadOnlyRepository,
             IBlogReadOnlyRepository blogReadOnlyRepository)
         {
-            _serviceBus = serviceBus ??
-                throw new ArgumentNullException(nameof(serviceBus));
-            _postReadOnlyRepository = postReadOnlyRepository ??
+            this.bus = bus ??
+                throw new ArgumentNullException(nameof(bus));
+            this.postReadOnlyRepository = postReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(postReadOnlyRepository));
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task<Guid> Handle(CreateCommentCommand message)
+        public async Task<Guid> Handle(CreateCommentCommand command)
         {
-            Post post = await _postReadOnlyRepository.GetPost(message.PostId);
+            Post post = await postReadOnlyRepository.GetPost(command.PostId);
 
-            Comment comment = new Comment(message.Comment);
+            Comment comment = new Comment(command.Comment);
             post.Comment(comment);
 
-            await _serviceBus.Publish(post.GetEvents(), message.CorrelationId);
+            await bus.Publish(post.GetEvents(), command.CorrelationId);
 
             return comment.Id;
         }

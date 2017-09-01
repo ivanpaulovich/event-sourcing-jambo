@@ -2,29 +2,25 @@
 using Jambo.ServiceBus;
 using Jambo.Infrastructure;
 using Jambo.ServiceBus.Kafka;
+using MediatR;
 
 namespace Jambo.Consumer.IoC
 {
     public class BusModule : Module
     {
-        private readonly string _connectionString;
-        private readonly string _topic;
-        private readonly EventReceivedDelegate _proccessDomainEvent;
+        private readonly string connectionString;
+        private readonly string topic;
 
-        public BusModule(string connectionString, string topic, EventReceivedDelegate proccessDomainEvent)
+        public BusModule(string connectionString, string topic)
         {
-            _connectionString = connectionString;
-            _topic = topic;
-            _proccessDomainEvent = proccessDomainEvent;
+            this.connectionString = connectionString;
+            this.topic = topic;
         }
 
         protected override void Load(ContainerBuilder builder)
         {
-            IBusReader serviceBus = new Bus(_connectionString, _topic);
-            serviceBus.OnEventReceived = _proccessDomainEvent;
-            serviceBus.Listen();
-
-            builder.Register(c => serviceBus).As<IBusReader>().SingleInstance();
+            builder.Register(c => new Config(connectionString, topic)).As<Config>().SingleInstance();
+            builder.RegisterType<Bus>().As<ISubscriber>().SingleInstance();
         }
     }
 }

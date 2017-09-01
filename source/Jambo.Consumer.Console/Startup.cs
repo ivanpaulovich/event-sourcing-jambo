@@ -41,26 +41,17 @@ namespace Jambo.Consumer.Console
 
             container.RegisterModule(new BusModule(
                 Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic"),
-                ProcessDomainEventDelegate));
+                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
 
             serviceProvider = new AutofacServiceProvider(container.Build());
 
             return serviceProvider;
         }
 
-        private void ProcessDomainEventDelegate(string topic, string key, string value)
-        {
-            System.Console.WriteLine($"{topic} {key} {value}");
-
-            Type eventType = Type.GetType(key);
-            DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(value, eventType);
-
-            serviceProvider.GetService<IMediator>().Send(domainEvent).Wait();
-        }
-
         public void Run()
         {
+            serviceProvider.GetService<ISubscriber>().Listen();
+
             while (true)
             {
                 Thread.Sleep(1000 * 60);

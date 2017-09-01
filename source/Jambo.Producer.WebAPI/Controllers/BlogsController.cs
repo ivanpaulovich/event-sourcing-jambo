@@ -16,19 +16,19 @@ namespace Jambo.Producer.WebAPI.Controllers
     [Route("api/[controller]")]
     public class BlogsController : Controller
     {
-        private readonly IMediator _mediator;
-        private readonly IBlogQueries _blogQueries;
+        private readonly IMediator mediator;
+        private readonly IBlogQueries blogQueries;
 
         public BlogsController(IMediator mediator, IBlogQueries blogQueries)
         {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _blogQueries = blogQueries ?? throw new ArgumentNullException(nameof(blogQueries));
+            this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            this.blogQueries = blogQueries ?? throw new ArgumentNullException(nameof(blogQueries));
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var blogs = await _blogQueries.GetBlogsAsync();
+            var blogs = await blogQueries.GetBlogsAsync();
 
             return Ok(blogs);
         }
@@ -36,7 +36,7 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetBlog")]
         public async Task<IActionResult> Get(Guid id)
         {
-            var blog = await _blogQueries.GetBlogAsync(id);
+            var blog = await blogQueries.GetBlogAsync(id);
 
             return Ok(blog);
         }
@@ -44,7 +44,7 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CreateBlogCommand command)
         {
-            Guid id = await _mediator.Send(command);
+            Guid id = await mediator.Send(command);
 
             return CreatedAtRoute("GetBlog", new { id = id }, id);
         }
@@ -55,21 +55,21 @@ namespace Jambo.Producer.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
         [HttpPatch("Disable")]
         public async Task<IActionResult> Disable([FromBody]DisableBlogCommand command)
         {
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
 
         [HttpPatch("UpdateUrl")]
         public async Task<IActionResult> UpdateUrl([FromBody]UpdateBlogUrlCommand command)
         {
-            await _mediator.Send(command);
+            await mediator.Send(command);
             return (IActionResult)Ok();
         }
     }

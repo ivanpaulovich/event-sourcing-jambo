@@ -1,18 +1,12 @@
-﻿using System;
-
-namespace Jambo.Domain.Exceptions
+﻿namespace Jambo.Domain.Exceptions
 {
     public class BlogDomainException : JamboException
     {
-        public BlogDomainException()
-        { }
+        public string BusinessMessage { get; set; }
 
-        public BlogDomainException(string message)
-            : base(message)
-        { }
-
-        public BlogDomainException(string message, Exception innerException)
-            : base(message, innerException)
-        { }
+        public BlogDomainException(string businessMessage)
+        {
+            BusinessMessage = businessMessage;
+        }
     }
 }

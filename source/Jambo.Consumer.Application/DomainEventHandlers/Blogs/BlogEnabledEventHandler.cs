@@ -9,27 +9,27 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Blogs
 {
     public class BlogEnabledEventHandler : IRequestHandler<BlogEnabledDomainEvent>
     {
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
-        private readonly IBlogWriteOnlyRepository _blogWriteOnlyRepository;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
+        private readonly IBlogWriteOnlyRepository blogWriteOnlyRepository;
 
         public BlogEnabledEventHandler(
             IBlogReadOnlyRepository blogReadOnlyRepository,
             IBlogWriteOnlyRepository blogWriteOnlyRepository)
         {
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
-            _blogWriteOnlyRepository = blogWriteOnlyRepository ??
+            this.blogWriteOnlyRepository = blogWriteOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogWriteOnlyRepository));
         }
-        public void Handle(BlogEnabledDomainEvent message)
+        public void Handle(BlogEnabledDomainEvent domainEvent)
         {
-            Blog blog = _blogReadOnlyRepository.GetBlog(message.AggregateRootId).Result;
+            Blog blog = blogReadOnlyRepository.GetBlog(domainEvent.AggregateRootId).Result;
 
-            if (blog.Version != message.Version)
-                throw new TransactionConflictException(blog, message);
+            if (blog.Version != domainEvent.Version)
+                throw new TransactionConflictException(blog, domainEvent);
 
-            blog.Apply(message);
-            _blogWriteOnlyRepository.UpdateBlog(blog).Wait();
+            blog.Apply(domainEvent);
+            blogWriteOnlyRepository.UpdateBlog(blog).Wait();
         }
     }
 }

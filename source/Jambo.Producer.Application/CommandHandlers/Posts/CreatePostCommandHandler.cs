@@ -12,32 +12,32 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
 {
     public class CreatePostCommandHandler : IAsyncRequestHandler<CreatePostCommand, Guid>
     {
-        private readonly IBusWriter _serviceBus;
-        private readonly IPostReadOnlyRepository _postReadOnlyRepository;
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
+        private readonly IPublisher bus;
+        private readonly IPostReadOnlyRepository postReadOnlyRepository;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
 
         public CreatePostCommandHandler(
-            IBusWriter serviceBus,
+            IPublisher bus,
             IPostReadOnlyRepository postReadOnlyRepository,
             IBlogReadOnlyRepository blogReadOnlyRepository)
         {
-            _serviceBus = serviceBus ??
-                throw new ArgumentNullException(nameof(serviceBus));
-            _postReadOnlyRepository = postReadOnlyRepository ??
+            this.bus = bus ??
+                throw new ArgumentNullException(nameof(bus));
+            this.postReadOnlyRepository = postReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(postReadOnlyRepository));
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task<Guid> Handle(CreatePostCommand message)
+        public async Task<Guid> Handle(CreatePostCommand command)
         {
-            Blog blog = await _blogReadOnlyRepository.GetBlog(message.BlogId);
+            Blog blog = await blogReadOnlyRepository.GetBlog(command.BlogId);
 
             Post post = new Post();
-            post.Start(message.BlogId, blog.Version);            
-            post.UpdateContent(message.Title, message.Content);
+            post.Start(command.BlogId, blog.Version);            
+            post.UpdateContent(command.Title, command.Content);
 
-            await _serviceBus.Publish(post.GetEvents(), message.CorrelationId);
+            await bus.Publish(post.GetEvents(), command.CorrelationId);
 
             return post.Id;
         }

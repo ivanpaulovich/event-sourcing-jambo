@@ -1,7 +1,5 @@
-﻿using Jambo.Producer.Application.Commands;
-using Jambo.Producer.Application.Commands.Blogs;
+﻿using Jambo.Producer.Application.Commands.Blogs;
 using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Model.Posts;
 using MediatR;
 using System;
 using System.Threading.Tasks;
@@ -11,25 +9,24 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
 {
     public class DisableBlogCommandHandler : IAsyncRequestHandler<DisableBlogCommand>
     {
-        private readonly IBusWriter _serviceBus;
-        private readonly IBlogReadOnlyRepository _blogReadOnlyRepository;
+        private readonly IPublisher bus;
+        private readonly IBlogReadOnlyRepository blogReadOnlyRepository;
 
         public DisableBlogCommandHandler(
-            IBusWriter serviceBus,
+            IPublisher bus,
             IBlogReadOnlyRepository blogReadOnlyRepository)
         {
-            _serviceBus = serviceBus ??
-                throw new ArgumentNullException(nameof(serviceBus));
-            _blogReadOnlyRepository = blogReadOnlyRepository ??
+            this.bus = bus ?? throw new ArgumentNullException(nameof(bus));
+            this.blogReadOnlyRepository = blogReadOnlyRepository ??
                 throw new ArgumentNullException(nameof(blogReadOnlyRepository));
         }
 
-        public async Task Handle(DisableBlogCommand message)
+        public async Task Handle(DisableBlogCommand command)
         {
-            Blog blog = await _blogReadOnlyRepository.GetBlog(message.Id);
+            Blog blog = await blogReadOnlyRepository.GetBlog(command.Id);
             blog.Disable();
 
-            await _serviceBus.Publish(blog.GetEvents(), message.CorrelationId);
+            await bus.Publish(blog.GetEvents(), command.CorrelationId);
         }
     }
 }
