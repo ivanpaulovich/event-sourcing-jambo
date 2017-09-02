@@ -46,20 +46,13 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]CreatePostCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             Guid id = await mediator.Send(command);
-
             return CreatedAtRoute("GetPost", new { id = id }, id);
         }
 
         [HttpPatch("Comment")]
         public async Task<IActionResult> Comment([FromBody]CreateCommentCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }
@@ -67,9 +60,6 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPatch("Enable")]
         public async Task<IActionResult> Enable([FromBody]EnablePostCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }
@@ -77,9 +67,6 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPatch("Disable")]
         public async Task<IActionResult> Disable([FromBody]DisablePostCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }
@@ -87,9 +74,6 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPatch("Publish")]
         public async Task<IActionResult> Publish([FromBody]PublishPostCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }
@@ -97,9 +81,6 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPatch("Hide")]
         public async Task<IActionResult> Hide([FromBody]HidePostCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }
@@ -107,9 +88,6 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPatch("UpdateContent")]
         public async Task<IActionResult> UpdateContent([FromBody]UpdatePostContentCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }

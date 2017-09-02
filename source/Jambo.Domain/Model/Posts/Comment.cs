@@ -9,7 +9,7 @@ namespace Jambo.Domain.Model.Posts
         public Guid Id { get; private set; }
         public string Message { get; private set; }
 
-        public Comment()
+        private Comment()
         {
 
         }

@@ -19,7 +19,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
 
         public async Task<Guid> Handle(CreateBlogCommand command)
         {
-            Blog blog = new Blog();
+            Blog blog = Blog.Create();
             blog.Start();
             blog.UpdateUrl(command.Url);
 
