@@ -63,12 +63,12 @@ namespace Jambo.ServiceBus.Kafka
                             Type eventType = Type.GetType(msg.Key);
                             DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
 
-                            Console.WriteLine($"CorrelationId: {domainEvent.CorrelationId}");
+                            Console.WriteLine($"CorrelationId: {domainEvent.Header.CorrelationId}");
+                            Console.WriteLine($"UserName: {domainEvent.Header.UserName}");
                             Console.WriteLine($"CreatedDate: {domainEvent.CreatedDate}");
+                            Console.WriteLine($"Type: {domainEvent.GetType().ToString()}");
                             Console.WriteLine($"AggregateRootId: {domainEvent.AggregateRootId}");
                             Console.WriteLine($"Version: {domainEvent.Version}");
-                            Console.WriteLine($"UserName: {domainEvent.UserName}");
-                            Console.WriteLine($"Type: {domainEvent.GetType().ToString()}");
                             Console.WriteLine();
                             Console.WriteLine();
 
@@ -97,11 +97,11 @@ namespace Jambo.ServiceBus.Kafka
             _consumer.Dispose();
         }
 
-        public async Task Publish(IEnumerable<DomainEvent> domainEvents, Guid correlationId)
+        public async Task Publish(IEnumerable<DomainEvent> domainEvents, Header header)
         {
             foreach (var domainEvent in domainEvents)
             {
-                domainEvent.CorrelationId = correlationId;
+                domainEvent.SetHeader(header);
                 await Publish(domainEvent);
             }
         }

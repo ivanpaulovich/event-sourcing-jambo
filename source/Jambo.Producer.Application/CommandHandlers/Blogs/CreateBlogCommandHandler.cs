@@ -23,7 +23,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
             blog.Start();
             blog.UpdateUrl(command.Url);
 
-            await bus.Publish(blog.GetEvents(), command.CorrelationId);
+            await bus.Publish(blog.GetEvents(), command.Header);
 
             return blog.Id;
         }

@@ -1,16 +1,24 @@
-﻿namespace Jambo.Domain.Model.Posts.Events
+﻿using System;
+
+namespace Jambo.Domain.Model.Posts.Events
 {
     public class PostEnabledDomainEvent : DomainEvent
     {
-        public PostEnabledDomainEvent()
+        public PostEnabledDomainEvent(Guid aggregateRootId, int version,
+            DateTime createdDate, Header header)
+            : base(aggregateRootId, version, createdDate, header)
         {
-
         }
 
-        public PostEnabledDomainEvent(AggregateRoot aggregateRoot)
-            : base(aggregateRoot)
+        public static PostEnabledDomainEvent Create(AggregateRoot aggregateRoot)
         {
+            if (aggregateRoot == null)
+                throw new ArgumentNullException("aggregateRoot");
 
+            PostEnabledDomainEvent domainEvent = new PostEnabledDomainEvent(
+                aggregateRoot.Id, aggregateRoot.Version, DateTime.UtcNow, null);
+
+            return domainEvent;
         }
     }
 }

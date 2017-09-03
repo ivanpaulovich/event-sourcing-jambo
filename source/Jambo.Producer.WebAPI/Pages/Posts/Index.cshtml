@@ -1,15 +1,16 @@
 ﻿@page
 @model IndexModel
 @using Microsoft.AspNetCore.Mvc.RazorPages
+@using System.Dynamic
 
 @functions {
     public class IndexModel : PageModel
     {
-        public readonly Jambo.Application.Queries.IBlogQueries _blogQueries;
-        public readonly Jambo.Application.Queries.IPostQueries _postQueries;
+        public readonly Jambo.Producer.Application.Queries.IBlogQueries _blogQueries;
+        public readonly Jambo.Producer.Application.Queries.IPostQueries _postQueries;
 
-        public IndexModel(Jambo.Application.Queries.IBlogQueries blogQueries,
-            Jambo.Application.Queries.IPostQueries postQueries)
+        public IndexModel(Jambo.Producer.Application.Queries.IBlogQueries blogQueries,
+            Jambo.Producer.Application.Queries.IPostQueries postQueries)
         {
             _blogQueries = blogQueries;
             _postQueries = postQueries;
@@ -28,14 +29,14 @@
 
 <div>
     <h1><a href="/">Blogs</a></h1>
-    <h2><a href="/Posts?blogId=@Model.Blog.Id">@Model.Blog.Url</a></h2>    
+    @*<h2><a href="/Posts?blogId=@Model.Blog._Id">@Model.Blog.Url</a></h2>*@    
 </div>
 
 <div>
     @foreach (dynamic post in Model.Posts)
     {
         <div>
-            <h3><a href="/Posts/Single?id=@post.Id">@post.Title</a></h3>
+            <h3><a href="/Posts/Single?id=@post._id">@post.title</a></h3>
             <p>@post.Content</p>
         </div>
     }

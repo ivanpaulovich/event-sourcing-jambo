@@ -27,7 +27,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
             Post post = await postReadOnlyRepository.GetPost(command.Id);
             post.Hide();
 
-            await bus.Publish(post.GetEvents(), command.CorrelationId);
+            await bus.Publish(post.GetEvents(), command.Header);
         }
     }
 }

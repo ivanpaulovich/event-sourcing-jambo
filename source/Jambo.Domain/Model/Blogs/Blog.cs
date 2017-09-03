@@ -26,7 +26,7 @@ namespace Jambo.Domain.Model.Blogs
 
         public void Start()
         {
-            Raise(new BlogCreatedDomainEvent(this));
+            Raise(BlogCreatedDomainEvent.Create(this));
         }
 
         public void UpdateUrl(string url)
@@ -36,7 +36,7 @@ namespace Jambo.Domain.Model.Blogs
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
 
-            Raise(new BlogUrlUpdatedDomainEvent(this, url));
+            Raise(BlogUrlUpdatedDomainEvent.Create(this, url));
         }
 
         public void Enable()
@@ -46,7 +46,7 @@ namespace Jambo.Domain.Model.Blogs
                 throw new BlogDomainException("The blog is already enabled.");
             }
 
-            Raise(new BlogEnabledDomainEvent(this));
+            Raise(BlogEnabledDomainEvent.Create(this));
         }
 
         public void Disable()
@@ -56,7 +56,7 @@ namespace Jambo.Domain.Model.Blogs
                 throw new BlogDomainException("The blog is already disabled.");
             }
 
-            Raise(new BlogDisabledDomainEvent(this));
+            Raise(BlogDisabledDomainEvent.Create(this));
         }
 
         protected void When(BlogCreatedDomainEvent @event)

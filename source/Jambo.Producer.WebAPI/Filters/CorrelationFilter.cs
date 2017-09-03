@@ -26,7 +26,9 @@ namespace Jambo.Producer.WebAPI.Filters
             else
                 correlationId = Guid.NewGuid();
 
-            command.CorrelationId = correlationId;
+            // TODO
+            // Capturar o login
+            command.Header = new Domain.Model.Header(correlationId, Guid.NewGuid().ToString()); 
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)

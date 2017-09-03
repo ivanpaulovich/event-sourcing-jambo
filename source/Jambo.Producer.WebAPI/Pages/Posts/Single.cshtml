@@ -1,15 +1,16 @@
 ﻿@page
 @model IndexModel
 @using Microsoft.AspNetCore.Mvc.RazorPages
+@using System.Dynamic
 
 @functions {
     public class IndexModel : PageModel
     {
-        public readonly Jambo.Application.Queries.IBlogQueries _blogQueries;
-        public readonly Jambo.Application.Queries.IPostQueries _postQueries;
+        public readonly Jambo.Producer.Application.Queries.IBlogQueries _blogQueries;
+        public readonly Jambo.Producer.Application.Queries.IPostQueries _postQueries;
 
-        public IndexModel(Jambo.Application.Queries.IBlogQueries blogQueries,
-            Jambo.Application.Queries.IPostQueries postQueries)
+        public IndexModel(Jambo.Producer.Application.Queries.IBlogQueries blogQueries,
+            Jambo.Producer.Application.Queries.IPostQueries postQueries)
         {
             _blogQueries = blogQueries;
             _postQueries = postQueries;

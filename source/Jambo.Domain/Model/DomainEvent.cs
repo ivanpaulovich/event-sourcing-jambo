@@ -4,24 +4,30 @@ using System;
 
 namespace Jambo.Domain.Model
 {
-    public abstract class DomainEvent : IRequest
+    public class DomainEvent : IDomainEvent
     {
-        public Guid AggregateRootId { get; set; }
-        public int Version { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public Guid CorrelationId { get; set; }
-        public string UserName { get; set; }
+        public Guid AggregateRootId { get; private set; }
+        public int Version { get; private set; }
+        public DateTime CreatedDate { get; private set; }
+        public Header Header { get; private set; }
 
-        public DomainEvent()
+        protected DomainEvent(Guid aggregateRootId, int version, DateTime createdDate, Header header)
         {
-
+            this.AggregateRootId = aggregateRootId;
+            this.Version = version;
+            this.CreatedDate = createdDate;
+            this.Header = header;
         }
 
-        public DomainEvent(AggregateRoot aggregateRoot)
+        public static DomainEvent Create(Guid aggregateRootId, int version, DateTime createdDate)
         {
-            AggregateRootId = aggregateRoot.Id;
-            Version = aggregateRoot.Version;
-            CreatedDate = DateTime.Now;
+            DomainEvent domainEvent = new DomainEvent(aggregateRootId, version, createdDate, null);
+            return domainEvent;
+        }
+
+        public void SetHeader(Header header)
+        {
+            this.Header = header;
         }
     }
 }

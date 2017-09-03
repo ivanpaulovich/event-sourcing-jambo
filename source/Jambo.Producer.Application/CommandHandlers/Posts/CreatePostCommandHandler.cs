@@ -37,7 +37,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
             post.Start(command.BlogId, blog.Version);            
             post.UpdateContent(command.Title, command.Content);
 
-            await bus.Publish(post.GetEvents(), command.CorrelationId);
+            await bus.Publish(post.GetEvents(), command.Header);
 
             return post.Id;
         }

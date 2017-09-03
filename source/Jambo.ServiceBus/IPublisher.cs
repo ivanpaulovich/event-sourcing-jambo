@@ -8,6 +8,6 @@ namespace Jambo.ServiceBus
     public interface IPublisher : IDisposable
     {
         Task Publish(DomainEvent domainEvent);
-        Task Publish(IEnumerable<DomainEvent> domainEvents, Guid correlationId);
+        Task Publish(IEnumerable<DomainEvent> domainEvents, Header header);
     }
 }

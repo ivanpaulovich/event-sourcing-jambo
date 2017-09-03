@@ -30,7 +30,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
             Post post = await postReadOnlyRepository.GetPost(message.Id);
             post.Publish();
 
-            await bus.Publish(post.GetEvents(), message.CorrelationId);
+            await bus.Publish(post.GetEvents(), message.Header);
         }
     }
 }

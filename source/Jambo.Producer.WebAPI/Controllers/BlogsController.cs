@@ -1,14 +1,8 @@
-﻿using Jambo.Producer.Application.Commands;
-using Jambo.Producer.Application.Commands.Blogs;
+﻿using Jambo.Producer.Application.Commands.Blogs;
 using Jambo.Producer.Application.Queries;
-using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Jambo.Producer.WebAPI.Controllers

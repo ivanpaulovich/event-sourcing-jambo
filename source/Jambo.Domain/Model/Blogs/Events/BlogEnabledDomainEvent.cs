@@ -1,15 +1,24 @@
-﻿namespace Jambo.Domain.Model.Blogs.Events
+﻿using System;
+
+namespace Jambo.Domain.Model.Blogs.Events
 {
     public class BlogEnabledDomainEvent : DomainEvent
     {
-        public BlogEnabledDomainEvent()
-        {
-
+        public BlogEnabledDomainEvent(Guid aggregateRootId, int version,
+            DateTime createdDate, Header header)
+            : base(aggregateRootId, version, createdDate, header)
+        { 
         }
 
-        public BlogEnabledDomainEvent(AggregateRoot aggregateRoot)
-            : base(aggregateRoot)
+        public static BlogEnabledDomainEvent Create(AggregateRoot aggregateRoot)
         {
+            if (aggregateRoot == null)
+                throw new ArgumentNullException("aggregateRoot");
+
+            BlogEnabledDomainEvent domainEvent = new BlogEnabledDomainEvent(
+                aggregateRoot.Id, aggregateRoot.Version, DateTime.UtcNow, null);
+
+            return domainEvent;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
             Blog blog = await blogReadOnlyRepository.GetBlog(command.Id);
             blog.Disable();
 
-            await bus.Publish(blog.GetEvents(), command.CorrelationId);
+            await bus.Publish(blog.GetEvents(), command.Header);
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using MongoDB.Driver;
-using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Model.Posts;
 using System.Dynamic;
+using System.Threading.Tasks;
 
 namespace Jambo.Producer.Application.Queries
 {
