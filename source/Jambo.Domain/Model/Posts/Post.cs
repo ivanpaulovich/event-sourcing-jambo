@@ -105,7 +105,7 @@ namespace Jambo.Domain.Model.Posts
             Raise(new CommentCreatedDomainEvent(this, comment.Id, comment.Message));
         }
 
-        public void When(CommentCreatedDomainEvent commentCreatedDomainEvent)
+        protected void When(CommentCreatedDomainEvent commentCreatedDomainEvent)
         {
             Comments = Comments ?? new List<Comment>();
             Comment comment = new Comment(commentCreatedDomainEvent.Message);
@@ -113,35 +113,35 @@ namespace Jambo.Domain.Model.Posts
             Comments.Add(comment);
         }
 
-        public void When(PostCreatedDomainEvent @event)
+        protected void When(PostCreatedDomainEvent @event)
         {
             Id = @event.AggregateRootId;
             BlogId = @event.BlogId;
             Enabled = true;
         }
 
-        public void When(PostContentUpdatedDomainEvent @event)
+        protected void When(PostContentUpdatedDomainEvent @event)
         {
             Title = @event.Title;
             Content = @event.Content;
         }
 
-        public void When(PostDisabledDomainEvent @event)
+        protected void When(PostDisabledDomainEvent @event)
         {
             Enabled = false;
         }
 
-        public void When(PostEnabledDomainEvent @event)
+        protected void When(PostEnabledDomainEvent @event)
         {
             Enabled = true;
         }
 
-        public void When(PostHiddenDomainEvent @event)
+        protected void When(PostHiddenDomainEvent @event)
         {
             Published = false;
         }
 
-        public void When(PostPublishedDomainEvent @event)
+        protected void When(PostPublishedDomainEvent @event)
         {
             Published = true;
         }

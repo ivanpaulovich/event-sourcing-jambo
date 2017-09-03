@@ -54,28 +54,28 @@ namespace Jambo.Domain.Model.Blogs
             Raise(new BlogDisabledDomainEvent(this));
         }
 
-        public void When(BlogCreatedDomainEvent @event)
+        protected void When(BlogCreatedDomainEvent @event)
         {
             Id = @event.AggregateRootId;
             Enabled = true;
         }
 
-        public void When(BlogUrlUpdatedDomainEvent @event)
+        protected void When(BlogUrlUpdatedDomainEvent @event)
         {
             Url = @event.Url;
         }
 
-        public void When(BlogDisabledDomainEvent @event)
+        protected void When(BlogDisabledDomainEvent @event)
         {
             Enabled = false;
         }
 
-        public void When(BlogEnabledDomainEvent @event)
+        protected void When(BlogEnabledDomainEvent @event)
         {
             Enabled = true;
         }
 
-        public void When(PostCreatedDomainEvent @event)
+        protected void When(PostCreatedDomainEvent @event)
         {
             Rating += 1;
         }
