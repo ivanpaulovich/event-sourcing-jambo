@@ -66,10 +66,10 @@ namespace Jambo.ServiceBus.Kafka
                             Console.WriteLine($"CorrelationId: {domainEvent.Header.CorrelationId}");
                             Console.WriteLine($"UserName: {domainEvent.Header.UserName}");
                             Console.WriteLine($"CreatedDate: {domainEvent.CreatedDate}");
-                            Console.WriteLine($"Type: {domainEvent.GetType().ToString()}");
+                            Console.WriteLine($"Type: {msg.Key}");
                             Console.WriteLine($"AggregateRootId: {domainEvent.AggregateRootId}");
                             Console.WriteLine($"Version: {domainEvent.Version}");
-                            Console.WriteLine();
+                            Console.WriteLine($"Raw: {msg.Value}");
                             Console.WriteLine();
 
                             mediator.Send(domainEvent).Wait();

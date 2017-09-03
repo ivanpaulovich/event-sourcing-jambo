@@ -4,16 +4,16 @@ namespace Jambo.Domain.Model.Blogs.Events
 {
     public class BlogUrlUpdatedDomainEvent : DomainEvent
     {
-        public string Url { get; private set; }
+        public Url Url { get; private set; }
 
         public BlogUrlUpdatedDomainEvent(Guid aggregateRootId, int version,
-            DateTime createdDate, string url, Header header)
+            DateTime createdDate, Url url, Header header)
             : base(aggregateRootId, version, createdDate, header)
         {
             Url = url;
         }
 
-        public static BlogUrlUpdatedDomainEvent Create(AggregateRoot aggregateRoot, string url)
+        public static BlogUrlUpdatedDomainEvent Create(AggregateRoot aggregateRoot, Url url)
         {
             if (aggregateRoot == null)
                 throw new ArgumentNullException("aggregateRoot");

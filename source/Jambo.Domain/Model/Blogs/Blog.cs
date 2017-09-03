@@ -6,7 +6,7 @@ namespace Jambo.Domain.Model.Blogs
 {
     public class Blog : AggregateRoot
     {
-        private string url;
+        private Url url;
         private int rating;
         private bool enabled;
 
@@ -29,7 +29,7 @@ namespace Jambo.Domain.Model.Blogs
             Raise(BlogCreatedDomainEvent.Create(this));
         }
 
-        public void UpdateUrl(string url)
+        public void UpdateUrl(Url url)
         {
             if (enabled == false)
             {

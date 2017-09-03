@@ -21,7 +21,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
         {
             Blog blog = Blog.Create();
             blog.Start();
-            blog.UpdateUrl(command.Url);
+            blog.UpdateUrl(Url.Create(command.Url));
 
             await bus.Publish(blog.GetEvents(), command.Header);
 

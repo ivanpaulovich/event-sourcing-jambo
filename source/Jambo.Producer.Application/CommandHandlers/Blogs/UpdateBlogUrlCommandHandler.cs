@@ -25,7 +25,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Blogs
         public async Task Handle(UpdateBlogUrlCommand command)
         {
             Blog blog = await blogReadOnlyRepository.GetBlog(command.Id);
-            blog.UpdateUrl(command.Url);
+            blog.UpdateUrl(Url.Create(command.Url));
 
             await bus.Publish(blog.GetEvents(), command.Header);
         }
