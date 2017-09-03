@@ -52,9 +52,6 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpPatch("Enable")]
         public async Task<IActionResult> Enable([FromBody]EnableBlogCommand command)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             await mediator.Send(command);
             return (IActionResult)Ok();
         }

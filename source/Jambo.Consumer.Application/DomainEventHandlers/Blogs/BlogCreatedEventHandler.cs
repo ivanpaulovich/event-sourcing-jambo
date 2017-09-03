@@ -21,7 +21,7 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Blogs
         }
         public void Handle(BlogCreatedDomainEvent domainEvent)
         {
-            Blog blog = new Blog();
+            Blog blog = Blog.Create();
             blog.Apply(domainEvent);
             blogWriteOnlyRepository.AddBlog(blog).Wait();
         }

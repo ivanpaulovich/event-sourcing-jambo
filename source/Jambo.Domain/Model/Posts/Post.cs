@@ -14,7 +14,7 @@ namespace Jambo.Domain.Model.Posts
         public bool Published { get; private set; }
         public List<Comment> Comments { get; private set; }
 
-        public Post()
+        private Post()
         {
             Register<PostCreatedDomainEvent>(When);
             Register<PostDisabledDomainEvent>(When);
@@ -23,6 +23,11 @@ namespace Jambo.Domain.Model.Posts
             Register<PostContentUpdatedDomainEvent>(When);
             Register<PostPublishedDomainEvent>(When);
             Register<CommentCreatedDomainEvent>(When);
+        }
+
+        public static Post Create()
+        {
+            return new Post();
         }
 
         public void Start(Guid blogId, int blogVersion)

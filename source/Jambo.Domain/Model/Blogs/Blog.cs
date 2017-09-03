@@ -10,13 +10,18 @@ namespace Jambo.Domain.Model.Blogs
         public int Rating { get; private set; }
         public bool Enabled { get; private set; }
 
-        public Blog()
+        private Blog()
         {
             Register<BlogCreatedDomainEvent>(When);
             Register<BlogUrlUpdatedDomainEvent>(When);
             Register<BlogEnabledDomainEvent>(When);
             Register<BlogDisabledDomainEvent>(When);
             Register<PostCreatedDomainEvent>(When);
+        }
+
+        public static Blog Create()
+        {
+            return new Blog();
         }
 
         public void Start()

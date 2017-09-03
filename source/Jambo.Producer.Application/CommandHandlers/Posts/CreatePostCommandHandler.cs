@@ -33,7 +33,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
         {
             Blog blog = await blogReadOnlyRepository.GetBlog(command.BlogId);
 
-            Post post = new Post();
+            Post post = Post.Create();
             post.Start(command.BlogId, blog.Version);            
             post.UpdateContent(command.Title, command.Content);
 

@@ -14,9 +14,10 @@ namespace Jambo.Producer.WebAPI.Filters
     {
         public void OnException(ExceptionContext context)
         {
-            if (context.Exception.GetType() == typeof(BlogDomainException))
+            BlogDomainException blogDomainException = context.Exception as BlogDomainException;
+            if (blogDomainException != null)
             {
-                string json = JsonConvert.SerializeObject(context.Exception.Message);
+                string json = JsonConvert.SerializeObject(blogDomainException.BusinessMessage);
 
                 context.Result = new BadRequestObjectResult(json);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
