@@ -7,12 +7,20 @@ namespace Jambo.Domain.Model.Posts
 {
     public class Post : AggregateRoot
     {
-        public string Title { get; private set; }
-        public string Content { get; private set; }
-        public Guid BlogId { get; private set; }
-        public bool Enabled { get; private set; }
-        public bool Published { get; private set; }
-        public List<Comment> Comments { get; private set; }
+        private string title;
+        private string content;
+        private Guid blogId;
+        private bool enabled;
+        private bool published;
+        private List<Comment> comments;
+
+        public Guid BlogId
+        {
+            get
+            {
+                return blogId;
+            }
+        }
 
         private Post()
         {
@@ -37,7 +45,7 @@ namespace Jambo.Domain.Model.Posts
 
         public void Disable()
         {
-            if (Enabled == false)
+            if (enabled == false)
             {
                 throw new BlogDomainException("The post is already disabled.");
             }
@@ -47,12 +55,12 @@ namespace Jambo.Domain.Model.Posts
 
         public void Hide()
         {
-            if (Enabled == false)
+            if (enabled == false)
             {
                 throw new BlogDomainException("The post is disabled. Enable this before making any changes.");
             }
 
-            if (Published == false)
+            if (published == false)
             {
                 throw new BlogDomainException("The post is already hidden.");
             }
@@ -62,7 +70,7 @@ namespace Jambo.Domain.Model.Posts
 
         public void Enable()
         {
-            if (Enabled == true)
+            if (enabled == true)
             {
                 throw new BlogDomainException("The post is already enabled.");
             }
@@ -72,7 +80,7 @@ namespace Jambo.Domain.Model.Posts
 
         public void UpdateContent(string title, string content)
         {
-            if (Enabled == false)
+            if (enabled == false)
             {
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
@@ -82,12 +90,12 @@ namespace Jambo.Domain.Model.Posts
 
         public void Publish()
         {
-            if (Enabled == false)
+            if (enabled == false)
             {
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
 
-            if (Published == true)
+            if (published == true)
             {
                 throw new BlogDomainException("The post is already published.");
             }
@@ -97,12 +105,12 @@ namespace Jambo.Domain.Model.Posts
 
         public void Comment(Comment comment)
         {
-            if (Enabled == false)
+            if (enabled == false)
             {
                 throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
             }
 
-            if (Published == true)
+            if (published == true)
             {
                 throw new BlogDomainException("The post is already hidden.");
             }
@@ -112,43 +120,43 @@ namespace Jambo.Domain.Model.Posts
 
         protected void When(CommentCreatedDomainEvent commentCreatedDomainEvent)
         {
-            Comments = Comments ?? new List<Comment>();
+            comments = comments ?? new List<Comment>();
             Comment comment = new Comment(commentCreatedDomainEvent.Message);
 
-            Comments.Add(comment);
+            comments.Add(comment);
         }
 
         protected void When(PostCreatedDomainEvent @event)
         {
             Id = @event.AggregateRootId;
-            BlogId = @event.BlogId;
-            Enabled = true;
+            blogId = @event.BlogId;
+            enabled = true;
         }
 
         protected void When(PostContentUpdatedDomainEvent @event)
         {
-            Title = @event.Title;
-            Content = @event.Content;
+            title = @event.Title;
+            content = @event.Content;
         }
 
         protected void When(PostDisabledDomainEvent @event)
         {
-            Enabled = false;
+            enabled = false;
         }
 
         protected void When(PostEnabledDomainEvent @event)
         {
-            Enabled = true;
+            enabled = true;
         }
 
         protected void When(PostHiddenDomainEvent @event)
         {
-            Published = false;
+            published = false;
         }
 
         protected void When(PostPublishedDomainEvent @event)
         {
-            Published = true;
+            published = true;
         }
     }
 }

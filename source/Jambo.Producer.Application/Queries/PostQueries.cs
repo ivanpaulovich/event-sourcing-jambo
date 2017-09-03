@@ -3,6 +3,7 @@ using Jambo.Domain.Model.Posts;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,19 +12,19 @@ namespace Jambo.Producer.Application.Queries
     public class PostQueries : IPostQueries
     {
         private readonly IMongoDatabase database;
-        public IMongoCollection<Blog> Blogs
+        public IMongoCollection<ExpandoObject> Blogs
         {
             get
             {
-                return database.GetCollection<Blog>("Blogs");
+                return database.GetCollection<ExpandoObject>("Blogs");
             }
         }
 
-        public IMongoCollection<Post> Posts
+        public IMongoCollection<ExpandoObject> Posts
         {
             get
             {
-                return database.GetCollection<Post>("Posts");
+                return database.GetCollection<ExpandoObject>("Posts");
             }
         }
 
@@ -33,14 +34,14 @@ namespace Jambo.Producer.Application.Queries
             this.database = mongoClient.GetDatabase(database);
         }
 
-        public async Task<dynamic> GetPostAsync(Guid id)
+        public async Task<ExpandoObject> GetPostAsync(Guid id)
         {
-            return await Posts.Find(e => e.Id == id).SingleAsync();
+            return await Posts.Find(Builders<ExpandoObject>.Filter.Eq("_id", id)).SingleAsync();
         }
 
-        public async Task<IEnumerable<dynamic>> GetPostsAsync(Guid blogId)
+        public async Task<IEnumerable<ExpandoObject>> GetPostsAsync(Guid blogId)
         {
-            return await Posts.Find(e => e.BlogId == blogId).ToListAsync();
+            return await Posts.Find(Builders<ExpandoObject>.Filter.Eq("blogid", blogId)).ToListAsync();
         }
     }
 }

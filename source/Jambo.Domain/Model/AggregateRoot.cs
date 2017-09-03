@@ -3,13 +3,17 @@ using System.Collections.Generic;
 
 namespace Jambo.Domain.Model
 {
-    public abstract class AggregateRoot : IEntity
+    public abstract class AggregateRoot : Entity
     {
         private readonly Dictionary<Type, Action<object>> handlers = new Dictionary<Type, Action<object>>();
-        private readonly List<DomainEvent> events = new List<DomainEvent>();
+        private readonly List<DomainEvent> domainEvents = new List<DomainEvent>();
+        
+        public int Version { get; private set; }
 
-        public Guid Id { get; protected set; }
-        public int Version { get; protected set; } = 0;
+        public AggregateRoot()
+        {
+            Version = 0;
+        }
 
         protected void Register<T>(Action<T> when)
         {
@@ -18,14 +22,14 @@ namespace Jambo.Domain.Model
 
         protected void Raise(DomainEvent domainEvent)
         {
-            events.Add(domainEvent);
+            domainEvents.Add(domainEvent);
             handlers[domainEvent.GetType()](domainEvent);
             Version++;
         }
 
         public IReadOnlyCollection<DomainEvent> GetEvents()
         {
-            return events;
+            return domainEvents;
         }
 
         public void Apply(DomainEvent domainEvent)

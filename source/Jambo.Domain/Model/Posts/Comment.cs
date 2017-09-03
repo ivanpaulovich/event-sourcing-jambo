@@ -4,10 +4,17 @@ using System.Text;
 
 namespace Jambo.Domain.Model.Posts
 {
-    public class Comment : IEntity
+    public class Comment : Entity
     {
-        public Guid Id { get; private set; }
-        public string Message { get; private set; }
+        private string message;
+
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+        }
 
         private Comment()
         {
@@ -16,8 +23,7 @@ namespace Jambo.Domain.Model.Posts
 
         public Comment(string message)
         {
-            Id = Guid.NewGuid();
-            Message = message;
+            this.message = message;
         }
     }
 }

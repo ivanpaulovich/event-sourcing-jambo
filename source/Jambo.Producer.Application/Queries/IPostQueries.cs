@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -7,8 +8,8 @@ namespace Jambo.Producer.Application.Queries
 {
     public interface IPostQueries
     {
-        Task<dynamic> GetPostAsync(Guid id);
+        Task<ExpandoObject> GetPostAsync(Guid id);
 
-        Task<IEnumerable<dynamic>> GetPostsAsync(Guid blogId);
+        Task<IEnumerable<ExpandoObject>> GetPostsAsync(Guid blogId);
     }
 }

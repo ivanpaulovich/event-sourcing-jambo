@@ -4,25 +4,26 @@ using System.Collections.Generic;
 using MongoDB.Driver;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
+using System.Dynamic;
 
 namespace Jambo.Producer.Application.Queries
 {
     public class BlogQueries : IBlogQueries
     {
         private readonly IMongoDatabase database;
-        public IMongoCollection<Blog> Blogs
+        public IMongoCollection<ExpandoObject> Blogs
         {
             get
             {
-                return database.GetCollection<Blog>("Blogs");
+                return database.GetCollection<ExpandoObject>("Blogs");
             }
         }
 
-        public IMongoCollection<Post> Posts
+        public IMongoCollection<ExpandoObject> Posts
         {
             get
             {
-                return database.GetCollection<Post>("Posts");
+                return database.GetCollection<ExpandoObject>("Posts");
             }
         }
 
@@ -32,14 +33,14 @@ namespace Jambo.Producer.Application.Queries
             this.database = mongoClient.GetDatabase(database);
         }
 
-        public async Task<IEnumerable<dynamic>> GetBlogsAsync()
+        public async Task<IEnumerable<ExpandoObject>> GetBlogsAsync()
         {
             return await Blogs.Find(e => true).ToListAsync();
         }
 
-        public async Task<dynamic> GetBlogAsync(Guid id)
+        public async Task<ExpandoObject> GetBlogAsync(Guid id)
         {
-            return await Blogs.Find(e => e.Id == id).SingleAsync();
+            return await Blogs.Find(Builders<ExpandoObject>.Filter.Eq("_id", id)).SingleAsync();
         }
     }
 }

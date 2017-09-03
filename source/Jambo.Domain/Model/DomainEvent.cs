@@ -19,11 +19,7 @@ namespace Jambo.Domain.Model
 
         public DomainEvent(AggregateRoot aggregateRoot)
         {
-            if (aggregateRoot.Id == Guid.Empty)
-                AggregateRootId = Guid.NewGuid();
-            else
-                AggregateRootId = aggregateRoot.Id;
-
+            AggregateRootId = aggregateRoot.Id;
             Version = aggregateRoot.Version;
             CreatedDate = DateTime.Now;
         }
