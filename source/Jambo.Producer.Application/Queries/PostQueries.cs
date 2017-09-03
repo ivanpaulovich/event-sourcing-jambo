@@ -12,13 +12,6 @@ namespace Jambo.Producer.Application.Queries
     public class PostQueries : IPostQueries
     {
         private readonly IMongoDatabase database;
-        public IMongoCollection<ExpandoObject> Blogs
-        {
-            get
-            {
-                return database.GetCollection<ExpandoObject>("Blogs");
-            }
-        }
 
         public IMongoCollection<ExpandoObject> Posts
         {

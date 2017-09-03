@@ -63,6 +63,15 @@ namespace Jambo.ServiceBus.Kafka
                             Type eventType = Type.GetType(msg.Key);
                             DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
 
+                            Console.WriteLine($"CorrelationId: {domainEvent.CorrelationId}");
+                            Console.WriteLine($"CreatedDate: {domainEvent.CreatedDate}");
+                            Console.WriteLine($"AggregateRootId: {domainEvent.AggregateRootId}");
+                            Console.WriteLine($"Version: {domainEvent.Version}");
+                            Console.WriteLine($"UserName: {domainEvent.UserName}");
+                            Console.WriteLine($"Type: {domainEvent.GetType().ToString()}");
+                            Console.WriteLine();
+                            Console.WriteLine();
+
                             mediator.Send(domainEvent).Wait();
                         }
                         catch (BlogDomainException ex)

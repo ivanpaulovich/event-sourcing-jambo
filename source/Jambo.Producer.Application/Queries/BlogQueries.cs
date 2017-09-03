@@ -19,14 +19,6 @@ namespace Jambo.Producer.Application.Queries
             }
         }
 
-        public IMongoCollection<ExpandoObject> Posts
-        {
-            get
-            {
-                return database.GetCollection<ExpandoObject>("Posts");
-            }
-        }
-
         public BlogQueries(string connectionString, string database)
         {
             MongoClient mongoClient = new MongoClient(connectionString);

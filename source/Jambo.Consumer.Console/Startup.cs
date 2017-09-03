@@ -57,8 +57,8 @@ namespace Jambo.Consumer.Console
 
             while (true)
             {
-                Thread.Sleep(1000 * 60);
                 System.Console.WriteLine(DateTime.Now.ToString());
+                Thread.Sleep(1000 * 60);
             }
         }
     }
