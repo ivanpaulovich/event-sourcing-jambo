@@ -5,37 +5,32 @@ namespace Jambo.Domain.Model
 {
     public abstract class AggregateRoot : IEntity
     {
-        private readonly Dictionary<Type, Action<object>> _handlers = new Dictionary<Type, Action<object>>();
-        private readonly List<DomainEvent> _events = new List<DomainEvent>();
+        private readonly Dictionary<Type, Action<object>> handlers = new Dictionary<Type, Action<object>>();
+        private readonly List<DomainEvent> events = new List<DomainEvent>();
 
         public Guid Id { get; protected set; }
         public int Version { get; protected set; } = 0;
 
         protected void Register<T>(Action<T> when)
         {
-            _handlers.Add(typeof(T), e => when((T)e));
+            handlers.Add(typeof(T), e => when((T)e));
         }
 
-        protected void Raise(DomainEvent _event)
+        protected void Raise(DomainEvent domainEvent)
         {
-            _events.Add(_event);
-            _handlers[_event.GetType()](_event);
+            events.Add(domainEvent);
+            handlers[domainEvent.GetType()](domainEvent);
             Version++;
         }
 
         public IReadOnlyCollection<DomainEvent> GetEvents()
         {
-            return _events;
+            return events;
         }
 
-        void ClearEvents()
+        public void Apply(DomainEvent domainEvent)
         {
-            _events.Clear();
-        }
-
-        public void Apply(DomainEvent _event)
-        {
-            _handlers[_event.GetType()](_event);
+            handlers[domainEvent.GetType()](domainEvent);
             Version++;
         }
     }
