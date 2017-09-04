@@ -34,7 +34,7 @@ namespace Jambo.Consumer.Application.DomainEventHandlers.Posts
         {
             Blog blog = blogReadOnlyRepository.GetBlog(domainEvent.BlogId).Result;
 
-            if (blog.Version != domainEvent.Version)
+            if (blog.Version != blog.Version)
                 throw new TransactionConflictException(blog, domainEvent);
 
             Post post = Post.Create();

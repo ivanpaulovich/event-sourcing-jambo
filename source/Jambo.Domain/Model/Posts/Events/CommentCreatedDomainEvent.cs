@@ -5,10 +5,10 @@ namespace Jambo.Domain.Model.Posts.Events
     public class CommentCreatedDomainEvent : DomainEvent
     {
         public Guid CommentId { get; private set; }
-        public string Message { get; private set; }
+        public Content Message { get; private set; }
 
         public CommentCreatedDomainEvent(Guid aggregateRootId, int version,
-            DateTime createdDate, Header header, Guid commentId, string message)
+            DateTime createdDate, Header header, Guid commentId, Content message)
             : base(aggregateRootId, version, createdDate, header)
         {
             CommentId = commentId;
@@ -16,7 +16,7 @@ namespace Jambo.Domain.Model.Posts.Events
         }
 
         public static CommentCreatedDomainEvent Create(AggregateRoot aggregateRoot,
-            Guid commentId, string message)
+            Guid commentId, Content message)
         {
             if (aggregateRoot == null)
                 throw new ArgumentNullException("aggregateRoot");

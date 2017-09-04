@@ -28,7 +28,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
         public async Task Handle(UpdatePostContentCommand message)
         {
             Post post = await postReadOnlyRepository.GetPost(message.Id);
-            post.UpdateContent(message.Title, message.Content);
+            post.UpdateContent(Title.Create(message.Title), Content.Create(message.Content));
 
             await bus.Publish(post.GetEvents(), message.Header);
         }

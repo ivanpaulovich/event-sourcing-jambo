@@ -4,11 +4,11 @@ namespace Jambo.Domain.Model.Posts.Events
 {
     public class PostContentUpdatedDomainEvent : DomainEvent
     {
-        public string Title { get; private set; }
-        public string Content { get; private set; }
+        public Title Title { get; private set; }
+        public Content Content { get; private set; }
 
         public PostContentUpdatedDomainEvent(Guid aggregateRootId, int version,
-            DateTime createdDate, Header header, string title, string content)
+            DateTime createdDate, Header header, Title title, Content content)
             : base(aggregateRootId, version, createdDate, header)
         {
             Title = title;
@@ -16,7 +16,7 @@ namespace Jambo.Domain.Model.Posts.Events
         }
 
         public static PostContentUpdatedDomainEvent Create(AggregateRoot aggregateRoot,
-            string title, string content)
+            Title title, Content content)
         {
             if (aggregateRoot == null)
                 throw new ArgumentNullException("aggregateRoot");

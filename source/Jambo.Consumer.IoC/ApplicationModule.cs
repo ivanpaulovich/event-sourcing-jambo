@@ -21,7 +21,10 @@ namespace Jambo.Consumer.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new MongoContext(connectionString, database))
+            MongoContext mongoContext = new MongoContext(connectionString, database);
+            mongoContext.DatabaseReset(database);
+
+            builder.Register(c => mongoContext)
                 .As<MongoContext>().SingleInstance();
 
             builder.RegisterType<BlogReadOnlyRepository>()

@@ -6,9 +6,9 @@ namespace Jambo.Domain.Model.Posts
 {
     public class Comment : Entity
     {
-        private string message;
+        private Content message;
 
-        public string Message
+        public Content Message
         {
             get
             {
@@ -21,7 +21,7 @@ namespace Jambo.Domain.Model.Posts
 
         }
 
-        public Comment(string message)
+        public Comment(Content message)
         {
             this.message = message;
         }

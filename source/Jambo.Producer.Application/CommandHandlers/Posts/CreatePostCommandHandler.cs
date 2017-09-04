@@ -35,7 +35,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
 
             Post post = Post.Create();
             post.Start(command.BlogId, blog.Version);            
-            post.UpdateContent(command.Title, command.Content);
+            post.UpdateContent(Title.Create(command.Title), Content.Create(command.Content));
 
             await bus.Publish(post.GetEvents(), command.Header);
 

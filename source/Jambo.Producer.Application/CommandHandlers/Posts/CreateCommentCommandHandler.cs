@@ -31,7 +31,7 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
         {
             Post post = await postReadOnlyRepository.GetPost(command.PostId);
 
-            Comment comment = new Comment(command.Comment);
+            Comment comment = new Comment(Content.Create(command.Comment));
             post.Comment(comment);
 
             await bus.Publish(post.GetEvents(), command.Header);

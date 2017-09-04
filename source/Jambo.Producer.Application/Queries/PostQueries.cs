@@ -34,7 +34,7 @@ namespace Jambo.Producer.Application.Queries
 
         public async Task<IEnumerable<ExpandoObject>> GetPostsAsync(Guid blogId)
         {
-            return await Posts.Find(Builders<ExpandoObject>.Filter.Eq("blogid", blogId)).ToListAsync();
+            return await Posts.Find(Builders<ExpandoObject>.Filter.Eq("blogId", blogId)).ToListAsync();
         }
     }
 }

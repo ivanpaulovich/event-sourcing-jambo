@@ -8,14 +8,19 @@ namespace Jambo.Infrastructure
 {
     public class MongoContext
     {
+        private readonly MongoClient mongoClient;
         private readonly IMongoDatabase database;
 
-        public MongoContext(string connectionString, string database)
+        public MongoContext(string connectionString, string databaseName)
         {
-            MongoClient mongoClient = new MongoClient(connectionString);
-            mongoClient.DropDatabase(database);
-            this.database = mongoClient.GetDatabase(database);
+            this.mongoClient = new MongoClient(connectionString);
+            this.database = mongoClient.GetDatabase(databaseName);
             Map();
+        }
+
+        public void DatabaseReset(string databaseName)
+        {
+            mongoClient.DropDatabase(databaseName);
         }
 
         public IMongoCollection<Blog> Blogs

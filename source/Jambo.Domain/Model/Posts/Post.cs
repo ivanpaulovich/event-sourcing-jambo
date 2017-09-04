@@ -7,8 +7,8 @@ namespace Jambo.Domain.Model.Posts
 {
     public class Post : AggregateRoot
     {
-        private string title;
-        private string content;
+        private Title title;
+        private Content content;
         private Guid blogId;
         private bool enabled;
         private bool published;
@@ -78,7 +78,7 @@ namespace Jambo.Domain.Model.Posts
             Raise(PostEnabledDomainEvent.Create(this));
         }
 
-        public void UpdateContent(string title, string content)
+        public void UpdateContent(Title title, Content content)
         {
             if (enabled == false)
             {
