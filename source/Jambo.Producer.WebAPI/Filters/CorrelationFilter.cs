@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Jambo.Producer.WebAPI.Filters
@@ -26,9 +28,10 @@ namespace Jambo.Producer.WebAPI.Filters
             else
                 correlationId = Guid.NewGuid();
 
-            // TODO
-            // Capturar o login
-            command.Header = new Domain.Model.Header(correlationId, Guid.NewGuid().ToString()); 
+
+            string userName = (context.HttpContext.User.Identity as ClaimsIdentity).Claims.Where(e => e.Type == ClaimTypes.NameIdentifier).FirstOrDefault().Value.ToString();
+
+            command.Header = new Domain.Model.Header(correlationId, userName); 
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)
