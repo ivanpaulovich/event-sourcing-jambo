@@ -1,21 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MediatR;
-using Jambo.Producer.Application.Commands.Blogs;
-using Autofac;
-using Jambo.Producer.IoC;
-using Autofac.Extensions.DependencyInjection;
-using System.Reflection;
-using Jambo.Producer.WebAPI.Filters;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Swashbuckle.AspNetCore.Swagger;
+using Jambo.Auth.Application.Auth;
 
-namespace Jambo.Producer.WebAPI
+namespace Jambo.Auth.WebAPI
 {
     public class Startup
     {
@@ -26,43 +24,26 @@ namespace Jambo.Producer.WebAPI
 
         public IConfiguration Configuration { get; }
 
-        IServiceProvider serviceProvider;
-
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddMvc(options =>
-            {
-                options.Filters.Add(typeof(DomainExceptionFilter));
-                options.Filters.Add(typeof(ValidateModelAttribute));
-                options.Filters.Add(typeof(CorrelationFilter));
-            });
-
-            services.AddMediatR(typeof(CreateBlogCommand).GetTypeInfo().Assembly);
+            services.AddMvc();
 
             services.AddSwaggerGen(options =>
             {
-                options.AddSecurityDefinition(
-                    "Bearer",
-                    new ApiKeyScheme()
-                    {
-                        In = "header",
-                        Description = "Please insert JWT with Bearer into field",
-                        Name = "Authorization",
-                        Type = "apiKey"
-                    });
-
                 options.DescribeAllEnumsAsStrings();
-
                 options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
                 {
-                    Title = "Blogging HTTP API",
+                    Title = "Auth API",
                     Version = "v1",
-                    Description = "The Blogging Service HTTP API",
+                    Description = "The Auth API",
                     TermsOfService = "Terms Of Service"
                 });
             });
+
+            services.AddScoped(
+                s => new Config(Configuration.GetSection("Security").GetValue<string>("SecretKey"),
+                 Configuration.GetSection("Security").GetValue<string>("Issuer")));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -78,21 +59,6 @@ namespace Jambo.Producer.WebAPI
                                 Configuration.GetSection("Security").GetValue<string>("SecretKey")))
                     };
                 });
-
-            ContainerBuilder container = new ContainerBuilder();
-            container.Populate(services);
-
-            container.RegisterModule(new ApplicationModule(
-                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
-
-            container.RegisterModule(new BusModule(
-                Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
-
-            serviceProvider = new AutofacServiceProvider(container.Build());
-
-            return serviceProvider;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -102,8 +68,6 @@ namespace Jambo.Producer.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseAuthentication();
 
             app.UseMvc();
 

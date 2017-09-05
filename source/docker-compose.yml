@@ -36,3 +36,8 @@ services:
         - 9092:9092
     environment:
       - ADV_HOST=10.0.75.1
+  jambo.auth.webapi:
+    image: jambo.auth.webapi
+    build:
+      context: ./Jambo.Auth.WebAPI
+      dockerfile: Dockerfile

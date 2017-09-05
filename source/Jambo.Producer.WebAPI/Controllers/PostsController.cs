@@ -1,6 +1,7 @@
 ﻿using Jambo.Producer.Application.Commands.Posts;
 using Jambo.Producer.Application.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Jambo.Producer.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     public class PostsController : Controller
     {
