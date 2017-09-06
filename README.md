@@ -17,6 +17,13 @@ IMAGEM 2
 * Auth
 IMAGEM 3
 
+#### Por onde começar?
+1. Execute o projeto AverbacaoOnline.Auth.WebAPI e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
+2. Execute o projeto AverbacaoOnline.Consumer.Console e garante que ele *contínua em execução*.
+3. Execute o projeto AverbacaoOnline.Producer.WebAPI e clique no botão Authorization (topo direito da página).
+  - Digite "bearer + 'valor do token'" e clique em fechar.
+  - Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
+
 #### Requisitos
 
 * [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
