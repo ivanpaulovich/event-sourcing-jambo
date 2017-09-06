@@ -1,11 +1,14 @@
 Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing.
 
+#### Domínio
+Imagem do Domínio
+
 #### Aplicações desta Solução
 * Producer: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
   
 * Consumer: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.
   
-* Auth: Web API Gera tokens de autenticação para acesso ao Jambo.Producer.WebAPI.
+* Auth: Web API Gera tokens de autenticação para acesso ao WebAPI.
 
 #### Demo
 
