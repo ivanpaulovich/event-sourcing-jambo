@@ -8,15 +8,6 @@ Imagem do Domínio
 * Consumer: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
 * Auth: Web API que gera tokens de autenticação para acesso ao WebAPI.
 
-#### Demo
-
-* Producer
-IMAGEM 1
-* Consumer
-IMAGEM 2
-* Auth
-IMAGEM 3
-
 #### Por onde começar?
 Se os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos) estiverem atendidos basta apertar `F5` no projeto `docker-compose` e as três aplicações são executadas.
 Ou se você preferir pode chamar uma a uma conforme os passos abaixo:
@@ -36,6 +27,15 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 
 4. Visualize suas modificações
 ![Queries](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer03.PNG)
+
+#### Demo
+*Em breve...*
+
+#### Próximos passos?
+1. Publicar os containers no Azure.
+2. Criar um CI/CD para atualizar os containers a cada commit.
+3. Criar testes de unidade, testes automatizados.
+4. Consumir serviços externos.
 
 #### Requisitos
 
