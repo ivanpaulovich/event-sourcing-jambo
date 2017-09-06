@@ -18,7 +18,7 @@ IMAGEM 2
 IMAGEM 3
 
 #### Por onde começar?
-Se os requisitos estiverem atendidos basta apertar `F5` no projeto `docker-compose` e as três aplicações são executadas.
+Se os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos) estiverem atendidos basta apertar `F5` no projeto `docker-compose` e as três aplicações são executadas.
 Ou se você preferir pode chamar uma a uma conforme os passos abaixo:
 
 1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
