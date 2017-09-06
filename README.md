@@ -49,6 +49,7 @@ Obrigado aos amigos que me estimularam a criar este projeto e estão sempre cont
 * [Vinicius Baldotto](https://github.com/Baldotto)
 * [André Paulovich](https://github.com/andrepaulovich)
 * André Mendes
+
 Obrigado de verdade!
 
 #### Deixe o seu feedback
