@@ -8,7 +8,7 @@ Imagem do Domínio
   
 * Consumer: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.
   
-* Auth: Web API Gera tokens de autenticação para acesso ao WebAPI.
+* Auth: Web API que gera tokens de autenticação para acesso ao WebAPI.
 
 #### Demo
 
