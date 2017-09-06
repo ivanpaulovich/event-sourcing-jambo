@@ -1,2 +1,7 @@
-# jambo
-DDD and SOLID practices and concepts applied with .NET Core
+# Jambo
+Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing.
+
+# Requisitos
+
+# Demo
+
