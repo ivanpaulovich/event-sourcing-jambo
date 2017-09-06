@@ -43,3 +43,13 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 * [.NET SDK 2.0](https://www.microsoft.com/net/download/core)
 * [Docker](https://docs.docker.com/docker-for-windows/install/) (Opcional)
 * [Robomongo](https://robomongo.org/) (Opcional)
+
+#### Agradecimentos
+Obrigado aos amigos que me estimularam a criar este projeto e estão sempre contribuindo e dando feedback.
+* [Vinicius Baldotto](https://github.com/Baldotto)
+* [André Paulovich](https://github.com/andrepaulovich)
+* André Mendes
+Obrigado de verdade!
+
+#### Deixe o seu feedback
+Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues). 
