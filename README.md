@@ -18,10 +18,14 @@ IMAGEM 2
 IMAGEM 3
 
 #### Por onde começar?
-1. Execute o projeto Jambo.Auth.WebAPI e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
-2. Execute o projeto Jambo.Consumer.Console e garante que ele *contínua em execução*.
-3. Execute o projeto Jambo.Producer.WebAPI e clique no botão Authorization (topo direito da página).
-   1. Digite "bearer + 'valor do token'" e clique em fechar.
+Se os requisitos estiverem atendidos basta apertar `F5` no projeto `docker-compose` e as três aplicações são executadas.
+Ou se você preferir pode chamar uma a uma conforme os passos abaixo:
+
+1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
+2. Execute o projeto **Jambo.Consumer.Console** e garante que ele **contínua em execução**.
+3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
+   1. Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
+   
    2. Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 
 #### Requisitos
