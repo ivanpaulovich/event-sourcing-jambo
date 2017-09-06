@@ -26,9 +26,9 @@ Ou se você preferir pode chamar uma a uma conforme os passos abaixo:
 ![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth1.PNG)
 
 3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
-   1. Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
+Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
 ![Autorizando](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer.PNG)
-   2. Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
+Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 ![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer02.PNG)
 
 2. Execute o projeto **Jambo.Consumer.Console** e garante que ele **contínua em execução**.
