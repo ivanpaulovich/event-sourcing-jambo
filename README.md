@@ -1,7 +1,7 @@
 Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS.
 
 #### Domínio
-*Em breve...*
+![Domain](https://github.com/ivanpaulovich/jambo/blob/master/images/Domain.png)
 
 #### Aplicações desta Solução
 * **Producer**: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
