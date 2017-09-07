@@ -4,9 +4,9 @@ Projeto de referência em Domain-Driven-Design com implementação de Aggregates
 *Em breve...*
 
 #### Aplicações desta Solução
-* Producer: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
-* Consumer: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
-* Auth: Web API que gera tokens de autenticação para acesso ao WebAPI.
+* **Producer**: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
+* **Consumer**: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
+* **Auth**: Web API que gera tokens de autenticação para acesso ao WebAPI.
 
 #### Por onde começar?
 Há duas formas de iniciar a solução. 
