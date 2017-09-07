@@ -21,6 +21,8 @@ A partir daí basta acessar:
 * Auth em http://localhost:32775/swagger/
 * Producer em http://localhost:32776/swagger/
 
+Leia o [o jeito não tão fácil](https://github.com/ivanpaulovich/jambo/#2-o-jeito-não-tão-fácil) para entender como criar um Token no Auth API para consumir os serviços do Producer API via swagger.
+
 ##### 2. O jeito não tão fácil
 
 A outra opção é inicializar aplicação por aplicação, seguindo o seguintes passos:
