@@ -18,8 +18,8 @@ Resolver os [pré-requisitos](https://github.com/ivanpaulovich/jambo/#prerequisi
 ![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Docker-PS.PNG)
 
 A partir daí basta acessar:
-* Auth em http://localhost:32775
-* Producer em http://localhost:32776
+* Auth em http://localhost:32775/swagger/
+* Producer em http://localhost:32776/swagger/
 
 ##### 2. O jeito não tão fácil
 
