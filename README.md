@@ -1,7 +1,7 @@
 Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS.
 
 #### Domínio
-Imagem do Domínio
+*Em breve...*
 
 #### Aplicações desta Solução
 * Producer: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
@@ -9,8 +9,15 @@ Imagem do Domínio
 * Auth: Web API que gera tokens de autenticação para acesso ao WebAPI.
 
 #### Por onde começar?
-Se os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos) estiverem atendidos basta apertar `F5` no projeto `docker-compose` e as três aplicações são executadas.
-Ou se você preferir pode chamar uma a uma conforme os passos abaixo:
+Há duas formas de iniciar as três aplicações. O jeito fácil que é resolver os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
+
+[Docker PS](https://github.com/ivanpaulovich/jambo/#requisitos) 
+
+A partir daí basta acessar:
+* Auth em http://localhost:32775
+* Producer em http://localhost:32776
+
+A outra opção é inicializar aplicação por aplicação, seguindo o seguintes passos:
 
 1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
 ![Auth](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth.PNG)
@@ -53,4 +60,8 @@ Obrigado aos amigos que me estimularam a criar este projeto e estão sempre cont
 Obrigado de verdade!
 
 #### Deixe o seu feedback
-Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues). 
+Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues).
+
+#### Histórico de Versões
+* 12/set/2017:
+*Em breve...*
