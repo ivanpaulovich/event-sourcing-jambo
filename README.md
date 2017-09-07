@@ -9,13 +9,19 @@ Projeto de referência em Domain-Driven-Design com implementação de Aggregates
 * Auth: Web API que gera tokens de autenticação para acesso ao WebAPI.
 
 #### Por onde começar?
-Há duas formas de iniciar as três aplicações. O jeito fácil que é resolver os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
+Há duas formas de iniciar a solução. 
+
+##### 1. O jeito fácil
+
+Resolver os [pré-requisitos](https://github.com/ivanpaulovich/jambo/#prerequisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no seu terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
 
 ![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Docker-PS.PNG)
 
 A partir daí basta acessar:
 * Auth em http://localhost:32775
 * Producer em http://localhost:32776
+
+##### 2. O jeito não tão fácil
 
 A outra opção é inicializar aplicação por aplicação, seguindo o seguintes passos:
 
@@ -44,7 +50,7 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 3. Criar testes de unidade, testes automatizados.
 4. Consumir serviços externos.
 
-#### Requisitos
+#### Pré-requisitos
 
 * [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
 * [.NET SDK 2.0](https://www.microsoft.com/net/download/core)
