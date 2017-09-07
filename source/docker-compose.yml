@@ -1,8 +1,13 @@
 version: '3'
 
 services:
+  jambo.auth.webapi:
+    image: ivanpaulovich/jambo:auth.webapi
+    build:
+      context: ./Jambo.Auth.WebAPI
+      dockerfile: Dockerfile
   jambo.producer.webapi:
-    image: jambo.producer.webapi
+    image: ivanpaulovich/jambo:producer.webapi
     build:
       context: ./Jambo.Producer.WebAPI
       dockerfile: Dockerfile
@@ -13,7 +18,7 @@ services:
     environment:
       - ASPNETCORE_URLS=http://*:80
   jambo.consumer.console:
-    image: jambo.consumer.console
+    image: ivanpaulovich/jambo:consumer.console
     build:
       context: ./Jambo.Consumer.Console
       dockerfile: Dockerfile
@@ -36,8 +41,3 @@ services:
         - 9092:9092
     environment:
       - ADV_HOST=10.0.75.1
-  jambo.auth.webapi:
-    image: jambo.auth.webapi
-    build:
-      context: ./Jambo.Auth.WebAPI
-      dockerfile: Dockerfile
