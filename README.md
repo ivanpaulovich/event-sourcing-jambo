@@ -11,7 +11,7 @@ Projeto de referência em Domain-Driven-Design com implementação de Aggregates
 #### Por onde começar?
 Há duas formas de iniciar as três aplicações. O jeito fácil que é resolver os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
 
-[Docker PS](https://github.com/ivanpaulovich/jambo/#requisitos) 
+![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Docker-PS.PNG)
 
 A partir daí basta acessar:
 * Auth em http://localhost:32775
