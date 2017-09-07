@@ -1,16 +1,31 @@
 Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS.
 
 #### Domínio
-Imagem do Domínio
+![Domain](https://github.com/ivanpaulovich/jambo/blob/master/images/Domain.png)
 
 #### Aplicações desta Solução
-* Producer: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
-* Consumer: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
-* Auth: Web API que gera tokens de autenticação para acesso ao WebAPI.
+* **Producer**: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
+* **Consumer**: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
+* **Auth**: Web API que gera tokens de autenticação para acesso ao WebAPI.
 
 #### Por onde começar?
-Se os [requisitos](https://github.com/ivanpaulovich/jambo/#requisitos) estiverem atendidos basta apertar `F5` no projeto `docker-compose` e as três aplicações são executadas.
-Ou se você preferir pode chamar uma a uma conforme os passos abaixo:
+Há duas formas de iniciar a solução. 
+
+##### 1. O jeito fácil
+
+Resolver os [pré-requisitos](https://github.com/ivanpaulovich/jambo/#prerequisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no seu terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
+
+![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Docker-PS.PNG)
+
+A partir daí basta acessar:
+* Auth em http://localhost:32775/swagger/
+* Producer em http://localhost:32776/swagger/
+
+Leia o [o jeito não tão fácil](https://github.com/ivanpaulovich/jambo/#2-o-jeito-não-tão-fácil) para entender como criar um Token no Auth API para consumir os serviços do Producer API via swagger.
+
+##### 2. O jeito não tão fácil
+
+A outra opção é inicializar aplicação por aplicação, seguindo o seguintes passos:
 
 1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
 ![Auth](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth.PNG)
@@ -37,7 +52,7 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 3. Criar testes de unidade, testes automatizados.
 4. Consumir serviços externos.
 
-#### Requisitos
+#### Pré-requisitos
 
 * [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
 * [.NET SDK 2.0](https://www.microsoft.com/net/download/core)
@@ -53,4 +68,8 @@ Obrigado aos amigos que me estimularam a criar este projeto e estão sempre cont
 Obrigado de verdade!
 
 #### Deixe o seu feedback
-Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues). 
+Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues).
+
+#### Histórico de Versões
+* 12/set/2017:
+*Em breve...*
