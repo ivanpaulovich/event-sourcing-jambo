@@ -32,6 +32,7 @@ A outra opção é inicializar aplicação por aplicação, seguindo o seguintes
 ![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth1.PNG)
 
 3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
+
 Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
 ![Autorizando](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer.PNG)
 Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
@@ -51,6 +52,8 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 2. Criar um CI/CD para atualizar os containers a cada commit.
 3. Criar testes de unidade, testes automatizados.
 4. Consumir serviços externos.
+5. Implementação alternativa de barramento: Azure Event Hubs
+6. Implementação alternativa de snapshot: Azure Cosmos DB
 
 #### Pré-requisitos
 
