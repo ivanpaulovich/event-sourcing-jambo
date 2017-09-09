@@ -1,4 +1,4 @@
-Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS + Optimistic Concurrency. É uma solução em .NET que utiliza de Event Sourcing como auditoria da modificação de conteúdo e como fonte da verdade dos dados, foi criado um banco MongoDB para disponibilizar o 'último estado processado' das mensagens e como ferramenta auxiliar um microsserviço de autenticação.
+Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS + Optimistic Concurrency. É uma solução em .NET Core/Standard que utiliza a técnica de Event Sourcing como ferramenta auditoria das modificações conteúdo. Os eventos registrados são fonte dos dados e para facilitar as consultas foi criado um banco de dados MongoDB com o 'último estado processado' dos eventos. Há um microsserviço auxiliar de autenticação.
 
 #### Domínio
 ![Domain](https://github.com/ivanpaulovich/jambo/blob/master/images/Domain.png)
