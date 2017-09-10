@@ -28,7 +28,9 @@ Leia o [o jeito não tão fácil](https://github.com/ivanpaulovich/jambo/#2-o-je
 A outra opção é inicializar aplicação por aplicação, seguindo o seguintes passos:
 
 1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
+
 ![Auth](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth.PNG)
+
 ![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth1.PNG)
 
 3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
@@ -39,9 +41,11 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 ![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer02.PNG)
 
 2. Execute o projeto **Jambo.Consumer.Console** e garante que ele **contínua em execução**.
+
 ![Comsumer em execução](https://github.com/ivanpaulovich/jambo/blob/master/images/Consumer.PNG)
 
 4. Visualize suas modificações
+
 ![Queries](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer03.PNG)
 
 #### Demo
