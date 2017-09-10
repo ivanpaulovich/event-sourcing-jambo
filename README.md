@@ -1,9 +1,9 @@
-Projeto de referência em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS.
+Neste projeto experimental em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS + Optimistic Concurrency a técnica de Event Sourcing é usada como ferramenta de auditoria das modificações do conteúdo do Blog. A fonte dos dados são os Domain Events registrados no Kafka, para permitir consultas de alta performance, foi criado um banco de dados MongoDB com o 'último estado já processado dos eventos'. Há um microsserviço auxiliar de autenticação. Tudo isso foi implementado em .NET Core/Standard compatível com Docker! Divirta-se!
 
-#### Domínio
+#### O Domínio
 ![Domain](https://github.com/ivanpaulovich/jambo/blob/master/images/Domain.png)
 
-#### Aplicações desta Solução
+#### As Aplicações desta Solução
 * **Producer**: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
 * **Consumer**: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
 * **Auth**: Web API que gera tokens de autenticação para acesso ao WebAPI.
@@ -32,6 +32,7 @@ A outra opção é inicializar aplicação por aplicação, seguindo o seguintes
 ![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth1.PNG)
 
 3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
+
 Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
 ![Autorizando](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer.PNG)
 Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
@@ -51,6 +52,8 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 2. Criar um CI/CD para atualizar os containers a cada commit.
 3. Criar testes de unidade, testes automatizados.
 4. Consumir serviços externos.
+5. Implementação alternativa de barramento: Azure Event Hubs
+6. Implementação alternativa de snapshot: Azure Cosmos DB
 
 #### Pré-requisitos
 
@@ -71,5 +74,5 @@ Obrigado de verdade!
 Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues).
 
 #### Histórico de Versões
-* 12/set/2017:
-*Em breve...*
+* 10/set/2017:
+[![release](https://img.shields.io/github/release/ivanpaulovich/nixy.svg?style=flat-square)](https://github.com/ivanpaulovich/jambo/releases/latest)
