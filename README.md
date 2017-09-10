@@ -49,8 +49,8 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 ![Queries](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer03.PNG)
 
 #### Demo
-* **Auth API**: http://40.86.182.137:7070/swagger/.
-* **Producer**: http://40.86.182.137:7080/swagger/.
+* **Auth API**: http://jambo.westus.cloudapp.azure.com:7070/swagger/.
+* **Producer**: http://jambo.westus.cloudapp.azure.com:7080/swagger/.
 * **Consumer**: Executa em background neste servidor.
 
 #### Próximos passos?
