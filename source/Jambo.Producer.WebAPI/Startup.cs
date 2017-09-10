@@ -103,7 +103,10 @@ namespace Jambo.Producer.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseAuthentication();
+            if (env.IsProduction())
+            {
+                app.UseAuthentication();
+            }
 
             app.UseMvc();
 
