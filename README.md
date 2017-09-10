@@ -74,5 +74,5 @@ Obrigado de verdade!
 Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues).
 
 #### Histórico de Versões
-* 12/set/2017:
-*Em breve...*
+* 10/set/2017:
+[![release](https://img.shields.io/github/release/ivanpaulovich/nixy.svg?style=flat-square)](https://github.com/ivanpaulovich/jambo/releases/latest)
