@@ -60,6 +60,7 @@ Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
 4. Consumir serviços externos.
 5. Implementação alternativa de barramento: Azure Event Hubs
 6. Implementação alternativa de snapshot: Azure Cosmos DB
+7. Implementar um HealthCheck
 
 #### Pré-requisitos
 
