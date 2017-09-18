@@ -1,31 +1,42 @@
-version: '3'
+version: '2'
 
 services:
   jambo.auth.webapi:
     image: ivanpaulovich/jambo:auth.webapi
-    build:
-      context: ./Jambo.Auth.WebAPI
-      dockerfile: Dockerfile
+    links:
+      - "mongodb:mongo"
+    depends_on:
+      - mongodb
+    ports:
+        - 7070:80
   jambo.producer.webapi:
     image: ivanpaulovich/jambo:producer.webapi
-    build:
-      context: ./Jambo.Producer.WebAPI
-      dockerfile: Dockerfile
+    ports:
+        - 7080:80
     links:
       - "mongodb:mongo"
     depends_on:
       - mongodb
+      - kafka
     environment:
       - ASPNETCORE_URLS=http://*:80
+      - ServiceBus__ConnectionString=kafka:9092
+      - ServiceBus__Topic=jambov32
+      - MongoDB__ConnectionString=mongodb://mongodb:27017
+      - MongoDB__Database=jambov32
   jambo.consumer.console:
     image: ivanpaulovich/jambo:consumer.console
-    build:
-      context: ./Jambo.Consumer.Console
-      dockerfile: Dockerfile
     links:
       - "mongodb:mongo"
     depends_on:
       - mongodb
+      - kafka
+    environment:
+      - ASPNETCORE_URLS=http://*:80
+      - ServiceBus__ConnectionString=kafka:9092
+      - ServiceBus__Topic=jambov32
+      - MongoDB__ConnectionString=mongodb://mongodb:27017
+      - MongoDB__Database=jambov32
   mongodb:
     image: mongo
     container_name: "mongodb"
@@ -40,4 +51,4 @@ services:
         - 9581-9585:9581-9585
         - 9092:9092
     environment:
-      - ADV_HOST=10.0.75.1
+      - ADV_HOST=kafka
