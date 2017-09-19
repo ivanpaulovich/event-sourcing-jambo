@@ -8,24 +8,24 @@ using Jambo.ServiceBus;
 
 namespace Jambo.Producer.Application.CommandHandlers.Blogs
 {
-    public class CreatePostCommandHandler : IAsyncRequestHandler<CreateBlogCommand, Guid>
+public class CreatePostCommandHandler : IAsyncRequestHandler<CreateBlogCommand, Guid>
+{
+    private readonly IPublisher bus;
+
+    public CreatePostCommandHandler(IPublisher bus)
     {
-        private readonly IPublisher bus;
-
-        public CreatePostCommandHandler(IPublisher bus)
-        {
-            this.bus = bus ?? throw new ArgumentNullException(nameof(bus));
-        }
-
-        public async Task<Guid> Handle(CreateBlogCommand command)
-        {
-            Blog blog = Blog.Create();
-            blog.Start();
-            blog.UpdateUrl(Url.Create(command.Url));
-
-            await bus.Publish(blog.GetEvents(), command.Header);
-
-            return blog.Id;
-        }
+        this.bus = bus ?? throw new ArgumentNullException(nameof(bus));
     }
+
+    public async Task<Guid> Handle(CreateBlogCommand command)
+    {
+        Blog blog = Blog.Create();
+        blog.Start();
+        blog.UpdateUrl(Url.Create(command.Url));
+
+        await bus.Publish(blog.GetEvents(), command.Header);
+
+        return blog.Id;
+    }
+}
 }

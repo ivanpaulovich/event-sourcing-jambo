@@ -34,3 +34,4 @@ namespace Jambo.Producer.Application.CommandHandlers.Posts
         }
     }
 }
+

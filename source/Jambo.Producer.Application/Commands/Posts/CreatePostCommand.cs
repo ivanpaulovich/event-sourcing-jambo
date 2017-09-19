@@ -8,17 +8,12 @@ namespace Jambo.Producer.Application.Commands.Posts
     [DataContract]
     public class CreatePostCommand : CommandBase, IRequest<Guid>
     {
-        [Required]
         [DataMember]
         public Guid BlogId { get; private set; }
 
-        [StringLength(100, MinimumLength = 10)]
-        [Required]
         [DataMember]
         public string Title { get; private set; }
 
-        [StringLength(100, MinimumLength = 10)]
-        [Required]
         [DataMember]
         public string Content { get; private set; }
 

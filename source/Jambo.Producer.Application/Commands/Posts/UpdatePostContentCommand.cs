@@ -9,17 +9,12 @@ namespace Jambo.Producer.Application.Commands.Posts
     [DataContract]
     public class UpdatePostContentCommand : CommandBase, IRequest
     {
-        [Required]
         [DataMember]
         public Guid Id { get; private set; }
 
-        [StringLength(100, MinimumLength = 10)]
-        [Required]
         [DataMember]
         public string Title { get; private set; }
 
-        [StringLength(100, MinimumLength = 10)]
-        [Required]
         [DataMember]
         public string Content { get; private set; }
 
