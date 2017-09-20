@@ -44,21 +44,6 @@ namespace Jambo.Auth.WebAPI
             services.AddScoped(
                 s => new Config(Configuration.GetSection("Security").GetValue<string>("SecretKey"),
                  Configuration.GetSection("Security").GetValue<string>("Issuer")));
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.SaveToken = true;
-                    options.RequireHttpsMetadata = false;
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidIssuer = Configuration.GetSection("Security").GetValue<string>("Issuer"),
-                        ValidAudience = Configuration.GetSection("Security").GetValue<string>("Issuer"),
-                        IssuerSigningKey = new SymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes(
-                                Configuration.GetSection("Security").GetValue<string>("SecretKey")))
-                    };
-                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

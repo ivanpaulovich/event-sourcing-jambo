@@ -42,7 +42,7 @@ namespace Jambo.Auth.WebAPI.Controllers
                 config.Issuer,
                 config.Issuer,
                 GetTokenClaims(user),
-                expires: DateTime.UtcNow.AddMinutes(30),
+                expires: DateTime.UtcNow.AddDays(1),
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.SecretKey)),
                     SecurityAlgorithms.HmacSha256)

@@ -6,6 +6,8 @@ services:
     build:
       context: ./Jambo.Auth.WebAPI
       dockerfile: Dockerfile
+    ports:
+        - 7070:80
   jambo.producer.webapi:
     image: ivanpaulovich/jambo:producer.webapi
     build:
@@ -15,8 +17,11 @@ services:
       - "mongodb:mongo"
     depends_on:
       - mongodb
+      - kafka
     environment:
       - ASPNETCORE_URLS=http://*:80
+    ports:
+        - 7080:80
   jambo.consumer.console:
     image: ivanpaulovich/jambo:consumer.console
     build:
@@ -26,6 +31,7 @@ services:
       - "mongodb:mongo"
     depends_on:
       - mongodb
+      - kafka
   mongodb:
     image: mongo
     container_name: "mongodb"
