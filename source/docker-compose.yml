@@ -6,8 +6,6 @@ services:
     build:
       context: ./Jambo.Auth.WebAPI
       dockerfile: Dockerfile
-    ports:
-        - 7070:80
   jambo.producer.webapi:
     image: ivanpaulovich/jambo:producer.webapi
     build:
@@ -20,8 +18,10 @@ services:
       - kafka
     environment:
       - ASPNETCORE_URLS=http://*:80
-    ports:
-        - 7080:80
+      - ServiceBus__ConnectionString=kafka:9092
+      - ServiceBus__Topic=jambov32
+      - MongoDB__ConnectionString=mongodb://mongodb:27017
+      - MongoDB__Database=jambov32
   jambo.consumer.console:
     image: ivanpaulovich/jambo:consumer.console
     build:
@@ -32,18 +32,23 @@ services:
     depends_on:
       - mongodb
       - kafka
+    environment:
+      - ASPNETCORE_URLS=http://*:80
+      - ServiceBus__ConnectionString=kafka:9092
+      - ServiceBus__Topic=jambov32
+      - MongoDB__ConnectionString=mongodb://mongodb:27017
+      - MongoDB__Database=jambov32
   mongodb:
     image: mongo
-    container_name: "mongodb"
     ports:
-        - 27017:27017
+        - 27017
   kafka:
     image: landoop/fast-data-dev:latest
     ports:
-        - 2181:2181
-        - 3030:3030
-        - 8081-8083:8081-8083
-        - 9581-9585:9581-9585
-        - 9092:9092
+        - 2181
+        - 3030
+        - 8081-8083
+        - 9581-9585
+        - 9092
     environment:
-      - ADV_HOST=10.0.75.1
+      - ADV_HOST=kafka
