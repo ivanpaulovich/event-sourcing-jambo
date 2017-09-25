@@ -27,6 +27,11 @@ namespace Jambo.Auth.WebAPI.Controllers
         [HttpPost]
         public IActionResult Token([FromBody] LoginCommand loginCommand)
         {
+            //
+            // TODO: Implementar uma verificação 
+            // se loginCommand.Username e loginCommand.Password são válidos.
+            //
+
             var token = GetJwtSecurityToken(loginCommand.Username);
 
             return Ok(new

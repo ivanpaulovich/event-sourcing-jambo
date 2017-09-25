@@ -10,13 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="Confluent.Kafka" Version="0.11.0" NoWarn="NU1701" />
-    <PackageReference Include="MediatR" Version="3.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-    <ProjectReference Include="..\Jambo.ServiceBus\Jambo.ServiceBus.csproj" />
-  </ItemGroup>
+  </ItemGroup>  
 
 </Project>
