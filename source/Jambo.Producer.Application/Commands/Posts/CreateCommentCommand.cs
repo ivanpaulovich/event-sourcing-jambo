@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using System.Runtime.Serialization;
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace Jambo.Producer.Application.Commands.Posts
 {

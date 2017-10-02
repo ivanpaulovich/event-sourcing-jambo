@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace Jambo.Producer.Application.Commands.Blogs

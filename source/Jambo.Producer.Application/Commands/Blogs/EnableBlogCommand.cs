@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 using Jambo.Producer.Application.Commands;
-using System.ComponentModel.DataAnnotations;
 
 namespace Jambo.Producer.Application.Commands.Blogs
 {
