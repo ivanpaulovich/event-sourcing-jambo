@@ -2,7 +2,6 @@
 using System.Runtime.Serialization;
 using Jambo.Producer.Application.Commands;
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace Jambo.Producer.Application.Commands.Blogs
 {
