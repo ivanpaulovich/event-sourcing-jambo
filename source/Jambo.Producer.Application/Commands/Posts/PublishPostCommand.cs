@@ -9,7 +9,6 @@ namespace Jambo.Producer.Application.Commands.Posts
     [DataContract]
     public class PublishPostCommand : CommandBase, IRequest
     {
-        [Required]
         [DataMember]
         public Guid Id { get; private set; }
 

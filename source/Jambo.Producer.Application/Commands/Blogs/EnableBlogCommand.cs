@@ -11,7 +11,6 @@ namespace Jambo.Producer.Application.Commands.Blogs
     [DataContract]
     public class EnableBlogCommand : CommandBase, IRequest
     {
-        [Required]
         [DataMember]
         public Guid Id { get; private set; }
 
