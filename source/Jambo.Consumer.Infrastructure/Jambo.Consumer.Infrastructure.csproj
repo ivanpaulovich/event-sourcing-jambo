@@ -32,7 +32,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jambo.Consumer.Application\Jambo.Consumer.Application.csproj" />
-    <ProjectReference Include="..\Jambo.Consumer.Console\Jambo.Consumer.UI.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
   </ItemGroup>
 

@@ -11,8 +11,6 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumer", "Consumer", "{33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Producer.UI", "Jambo.Producer.WebAPI\Jambo.Producer.UI.csproj", "{67E56643-CE8F-4892-8614-64C34DF43BD2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Consumer.UI", "Jambo.Consumer.Console\Jambo.Consumer.UI.csproj", "{3C12BE49-8411-432E-8489-3ADE75AAC5B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Consumer.Application", "Jambo.Consumer.Application\Jambo.Consumer.Application.csproj", "{601F90B1-4BE4-462E-8595-AAAA49B80405}"
@@ -35,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Producer.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Consumer.Infrastructure", "Jambo.Consumer.Infrastructure\Jambo.Consumer.Infrastructure.csproj", "{645C9138-DA59-48C8-A15E-D720874DD148}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Producer.UI", "Jambo.Producer.UI\Jambo.Producer.UI.csproj", "{2A775BCB-3811-48E6-B617-0CB1DC5EFF14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,10 +49,6 @@ Global
 		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D86C75F8-4DFF-4A5D-AC97-30A84C4704A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67E56643-CE8F-4892-8614-64C34DF43BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67E56643-CE8F-4892-8614-64C34DF43BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67E56643-CE8F-4892-8614-64C34DF43BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67E56643-CE8F-4892-8614-64C34DF43BD2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C12BE49-8411-432E-8489-3ADE75AAC5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3C12BE49-8411-432E-8489-3ADE75AAC5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C12BE49-8411-432E-8489-3ADE75AAC5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,12 +85,15 @@ Global
 		{645C9138-DA59-48C8-A15E-D720874DD148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{645C9138-DA59-48C8-A15E-D720874DD148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{645C9138-DA59-48C8-A15E-D720874DD148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A775BCB-3811-48E6-B617-0CB1DC5EFF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A775BCB-3811-48E6-B617-0CB1DC5EFF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A775BCB-3811-48E6-B617-0CB1DC5EFF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A775BCB-3811-48E6-B617-0CB1DC5EFF14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{67E56643-CE8F-4892-8614-64C34DF43BD2} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
 		{3C12BE49-8411-432E-8489-3ADE75AAC5B6} = {33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}
 		{601F90B1-4BE4-462E-8595-AAAA49B80405} = {33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}
 		{9E73933B-2008-4D46-A92C-CC8D79A53CF7} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
@@ -104,6 +103,7 @@ Global
 		{D772C4CD-9739-4857-95AB-799CE93B01C8} = {76E371C7-60D9-4E60-8990-1A31347721C6}
 		{6327FB91-C89F-4C49-A14D-C7CA4D36CF04} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
 		{645C9138-DA59-48C8-A15E-D720874DD148} = {33D03AC5-2B35-4743-AFFD-F9A6CFB1D2C2}
+		{2A775BCB-3811-48E6-B617-0CB1DC5EFF14} = {066BF611-6FB7-43D0-8D6E-67346A9BC779}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54AE4BA0-6081-4892-A9B9-3F8D15D994C8}
