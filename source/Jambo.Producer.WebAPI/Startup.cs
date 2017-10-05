@@ -5,17 +5,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using Jambo.Producer.Application.Commands.Blogs;
-using Autofac;
-using Jambo.Producer.IoC;
-using Autofac.Extensions.DependencyInjection;
 using System.Reflection;
-using Jambo.Producer.WebAPI.Filters;
+using Jambo.Producer.UI.Filters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Jambo.Producer.WebAPI
+namespace Jambo.Producer.UI
 {
     public class Startup
     {
@@ -23,13 +20,11 @@ namespace Jambo.Producer.WebAPI
         {
             Configuration = configuration;
         }
-
+        
         public IConfiguration Configuration { get; }
 
-        IServiceProvider serviceProvider;
-
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
             services.AddMvc(options =>
@@ -78,21 +73,6 @@ namespace Jambo.Producer.WebAPI
                                 Configuration.GetSection("Security").GetValue<string>("SecretKey")))
                     };
                 });
-
-            ContainerBuilder container = new ContainerBuilder();
-            container.Populate(services);
-
-            container.RegisterModule(new ApplicationModule(
-                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
-
-            container.RegisterModule(new BusModule(
-                Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
-
-            serviceProvider = new AutofacServiceProvider(container.Build());
-
-            return serviceProvider;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

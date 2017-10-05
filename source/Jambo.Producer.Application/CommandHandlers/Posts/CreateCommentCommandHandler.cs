@@ -1,7 +1,7 @@
 ﻿using Jambo.Producer.Application.Commands.Posts;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
-using Jambo.ServiceBus;
+using Jambo.Domain.ServiceBus;
 using MediatR;
 using System;
 using System.Threading.Tasks;

@@ -4,7 +4,7 @@ using Jambo.Domain.Model.Blogs;
 using MediatR;
 using System;
 using System.Threading.Tasks;
-using Jambo.ServiceBus;
+using Jambo.Domain.ServiceBus;
 
 namespace Jambo.Producer.Application.CommandHandlers.Blogs
 {

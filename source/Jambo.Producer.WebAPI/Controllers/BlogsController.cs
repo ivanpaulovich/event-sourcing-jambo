@@ -1,21 +1,21 @@
-﻿using Jambo.Producer.Application.Commands.Blogs;
-using Jambo.Producer.Application.Queries;
+﻿using Jambo.Domain.Model.Blogs;
+using Jambo.Producer.Application.Commands.Blogs;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace Jambo.Producer.WebAPI.Controllers
+namespace Jambo.Producer.UI.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
     public class BlogsController : Controller
     {
         private readonly IMediator mediator;
-        private readonly IBlogQueries blogQueries;
+        private readonly IBlogReadOnlyRepository blogQueries;
 
-        public BlogsController(IMediator mediator, IBlogQueries blogQueries)
+        public BlogsController(IMediator mediator, IBlogReadOnlyRepository blogQueries)
         {
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             this.blogQueries = blogQueries ?? throw new ArgumentNullException(nameof(blogQueries));
@@ -24,7 +24,7 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var blogs = await blogQueries.GetBlogsAsync();
+            var blogs = await blogQueries.GetAllBlogs();
 
             return Ok(blogs);
         }
@@ -32,7 +32,7 @@ namespace Jambo.Producer.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetBlog")]
         public async Task<IActionResult> Get(Guid id)
         {
-            var blog = await blogQueries.GetBlogAsync(id);
+            var blog = await blogQueries.GetBlog(id);
 
             return Ok(blog);
         }

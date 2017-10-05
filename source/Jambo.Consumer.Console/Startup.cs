@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using Jambo.ServiceBus;
 using Newtonsoft.Json;
 using MediatR;
 using System.Reflection;
 using Autofac;
 using Microsoft.Extensions.DependencyInjection;
 using Autofac.Extensions.DependencyInjection;
-using Jambo.Consumer.IoC;
 using System.Threading;
+using Jambo.Domain.ServiceBus;
 using Jambo.Consumer.Application.DomainEventHandlers.Blogs;
-using Jambo.Domain.Model;
+using Autofac.Core;
 
-namespace Jambo.Consumer.Console
+namespace Jambo.Consumer.UI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IEnumerable<IModule> modules)
         {
             Configuration = configuration;
+            _modules = modules;
         }
 
+        private IEnumerable<IModule> _modules;
         public IConfiguration Configuration { get; }
 
         IServiceProvider serviceProvider;
@@ -35,13 +36,10 @@ namespace Jambo.Consumer.Console
             ContainerBuilder container = new ContainerBuilder();
             container.Populate(services);
 
-            container.RegisterModule(new ApplicationModule(
-                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
-
-            container.RegisterModule(new BusModule(
-                Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
+            foreach (var module in _modules)
+            {
+                container.RegisterModule(module);
+            }
 
             serviceProvider = new AutofacServiceProvider(container.Build());
 

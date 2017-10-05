@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace Jambo.Producer.WebAPI.Filters
+namespace Jambo.Producer.UI.Filters
 {
     public class CorrelationFilter : ActionFilterAttribute
     {

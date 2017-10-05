@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Jambo.Producer.WebAPI.Filters
+namespace Jambo.Producer.UI.Filters
 {
     public class ValidateModelAttribute : ActionFilterAttribute
     {
