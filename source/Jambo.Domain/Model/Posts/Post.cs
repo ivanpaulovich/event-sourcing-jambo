@@ -47,7 +47,7 @@ namespace Jambo.Domain.Model.Posts
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The post is already disabled.");
+                throw new DomainException("The post is already disabled.");
             }
 
             Raise(PostDisabledDomainEvent.Create(this));
@@ -57,12 +57,12 @@ namespace Jambo.Domain.Model.Posts
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The post is disabled. Enable this before making any changes.");
+                throw new DomainException("The post is disabled. Enable this before making any changes.");
             }
 
             if (published == false)
             {
-                throw new BlogDomainException("The post is already hidden.");
+                throw new DomainException("The post is already hidden.");
             }
 
             Raise(PostHiddenDomainEvent.Create(this));
@@ -72,7 +72,7 @@ namespace Jambo.Domain.Model.Posts
         {
             if (enabled == true)
             {
-                throw new BlogDomainException("The post is already enabled.");
+                throw new DomainException("The post is already enabled.");
             }
 
             Raise(PostEnabledDomainEvent.Create(this));
@@ -82,7 +82,7 @@ namespace Jambo.Domain.Model.Posts
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+                throw new DomainException("The blog is disabled. Enable this before making any changes.");
             }
 
             Raise(PostContentUpdatedDomainEvent.Create(this, title, content));
@@ -92,12 +92,12 @@ namespace Jambo.Domain.Model.Posts
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+                throw new DomainException("The blog is disabled. Enable this before making any changes.");
             }
 
             if (published == true)
             {
-                throw new BlogDomainException("The post is already published.");
+                throw new DomainException("The post is already published.");
             }
 
             Raise(PostPublishedDomainEvent.Create(this));
@@ -107,12 +107,12 @@ namespace Jambo.Domain.Model.Posts
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+                throw new DomainException("The blog is disabled. Enable this before making any changes.");
             }
 
             if (published == true)
             {
-                throw new BlogDomainException("The post is already hidden.");
+                throw new DomainException("The post is already hidden.");
             }
 
             Raise(CommentCreatedDomainEvent.Create(this, comment.Id, comment.Message));

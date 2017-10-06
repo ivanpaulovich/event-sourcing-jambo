@@ -1,10 +1,10 @@
 ﻿namespace Jambo.Domain.Exceptions
 {
-    public class BlogDomainException : JamboException
+    public class DomainException : JamboException
     {
         public string BusinessMessage { get; set; }
 
-        public BlogDomainException(string businessMessage)
+        public DomainException(string businessMessage)
         {
             BusinessMessage = businessMessage;
         }

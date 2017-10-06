@@ -33,7 +33,7 @@ namespace Jambo.Domain.Model.Blogs
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The blog is disabled. Enable this before making any changes.");
+                throw new DomainException("The blog is disabled. Enable this before making any changes.");
             }
 
             Raise(BlogUrlUpdatedDomainEvent.Create(this, url));
@@ -43,7 +43,7 @@ namespace Jambo.Domain.Model.Blogs
         {
             if (enabled == true)
             {
-                throw new BlogDomainException("The blog is already enabled.");
+                throw new DomainException("The blog is already enabled.");
             }
 
             Raise(BlogEnabledDomainEvent.Create(this));
@@ -53,7 +53,7 @@ namespace Jambo.Domain.Model.Blogs
         {
             if (enabled == false)
             {
-                throw new BlogDomainException("The blog is already disabled.");
+                throw new DomainException("The blog is already disabled.");
             }
 
             Raise(BlogDisabledDomainEvent.Create(this));

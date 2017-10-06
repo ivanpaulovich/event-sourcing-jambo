@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Jambo.Auth.Application.Auth
+﻿namespace Jambo.Auth.UI
 {
     public class Config
     {

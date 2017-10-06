@@ -63,7 +63,7 @@ namespace Jambo.Consumer.Infrastructure.ServiceBus
 
                             mediator.Send(domainEvent).Wait();
                         }
-                        catch (BlogDomainException ex)
+                        catch (DomainException ex)
                         {
                             Console.WriteLine(ex.BusinessMessage);
                         }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Auth.WebAPI", "Jambo.Auth.WebAPI\Jambo.Auth.WebAPI.csproj", "{E50840C2-6EC5-44CC-9A9B-E777980C8562}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Auth.Application", "Jambo.Auth.Application\Jambo.Auth.Application.csproj", "{CADA8CE3-F53F-46FE-80B1-F898AEC640E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jambo.Auth.IoC", "Jambo.Auth.IoC\Jambo.Auth.IoC.csproj", "{D772C4CD-9739-4857-95AB-799CE93B01C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Auth.Infrastructure", "Jambo.Auth.Infrastructure\Jambo.Auth.Infrastructure.csproj", "{D91971DB-5A62-4BB5-B310-6BF4E9C8596F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jambo.Auth.UI", "Jambo.Auth.UI\Jambo.Auth.UI.csproj", "{4BECC370-4749-48C2-82FF-47ADE3BE0FAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E50840C2-6EC5-44CC-9A9B-E777980C8562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E50840C2-6EC5-44CC-9A9B-E777980C8562}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E50840C2-6EC5-44CC-9A9B-E777980C8562}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E50840C2-6EC5-44CC-9A9B-E777980C8562}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CADA8CE3-F53F-46FE-80B1-F898AEC640E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CADA8CE3-F53F-46FE-80B1-F898AEC640E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CADA8CE3-F53F-46FE-80B1-F898AEC640E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CADA8CE3-F53F-46FE-80B1-F898AEC640E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D772C4CD-9739-4857-95AB-799CE93B01C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D772C4CD-9739-4857-95AB-799CE93B01C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D772C4CD-9739-4857-95AB-799CE93B01C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D772C4CD-9739-4857-95AB-799CE93B01C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91971DB-5A62-4BB5-B310-6BF4E9C8596F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91971DB-5A62-4BB5-B310-6BF4E9C8596F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91971DB-5A62-4BB5-B310-6BF4E9C8596F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91971DB-5A62-4BB5-B310-6BF4E9C8596F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BECC370-4749-48C2-82FF-47ADE3BE0FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BECC370-4749-48C2-82FF-47ADE3BE0FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BECC370-4749-48C2-82FF-47ADE3BE0FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BECC370-4749-48C2-82FF-47ADE3BE0FAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

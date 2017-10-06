@@ -20,7 +20,7 @@ namespace Jambo.Consumer.Infrastructure.DataAccess
 
         public void DatabaseReset(string databaseName)
         {
-           // mongoClient.DropDatabase(databaseName);
+           mongoClient.DropDatabase(databaseName);
         }
 
         public IMongoCollection<Blog> Blogs

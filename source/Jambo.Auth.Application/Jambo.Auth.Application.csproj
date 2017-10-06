@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mediatr" Version="3.0.1" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+    <Compile Remove="CommandHandlers\**" />
+    <EmbeddedResource Remove="CommandHandlers\**" />
+    <None Remove="CommandHandlers\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
+    <PackageReference Include="Mediatr" Version="3.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
   </ItemGroup>
 
 </Project>
