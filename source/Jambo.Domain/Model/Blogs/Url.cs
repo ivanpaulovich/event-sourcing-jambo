@@ -10,7 +10,7 @@ namespace Jambo.Domain.Model.Blogs
         public Url(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
-                throw new BlogDomainException("The url field is required");
+                throw new DomainException("The url field is required");
 
             this.Text = text;
         }

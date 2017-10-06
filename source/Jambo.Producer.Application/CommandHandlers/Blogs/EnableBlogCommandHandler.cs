@@ -3,7 +3,7 @@ using System;
 using System.Threading.Tasks;
 using Jambo.Producer.Application.Commands.Blogs;
 using Jambo.Domain.Model.Blogs;
-using Jambo.ServiceBus;
+using Jambo.Domain.ServiceBus;
 
 namespace Jambo.Producer.Application.CommandHandlers.Blogs
 {

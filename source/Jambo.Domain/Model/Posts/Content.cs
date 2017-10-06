@@ -12,7 +12,7 @@ namespace Jambo.Domain.Model.Posts
         public Content(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
-                throw new BlogDomainException("The content field is required");
+                throw new DomainException("The content field is required");
 
             this.Text = text;
         }

@@ -6,13 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="3.0.1" />
-    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
-    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-    <ProjectReference Include="..\Jambo.ServiceBus\Jambo.ServiceBus.csproj" />
   </ItemGroup>
   
 </Project>

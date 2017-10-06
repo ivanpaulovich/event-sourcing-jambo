@@ -1,9 +1,9 @@
 ﻿using Jambo.Producer.Application.Commands.Posts;
 using Jambo.Domain.Model.Posts;
-using Jambo.ServiceBus;
 using MediatR;
 using System;
 using System.Threading.Tasks;
+using Jambo.Domain.ServiceBus;
 
 namespace Jambo.Producer.Application.CommandHandlers.Posts
 {

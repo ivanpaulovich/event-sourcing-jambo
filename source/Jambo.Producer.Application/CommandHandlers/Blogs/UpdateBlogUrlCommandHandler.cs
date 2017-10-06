@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Jambo.Producer.Application.Commands.Blogs;
-using Jambo.ServiceBus;
+using Jambo.Domain.ServiceBus;
 using Jambo.Domain.Model.Blogs;
 
 namespace Jambo.Producer.Application.CommandHandlers.Blogs
