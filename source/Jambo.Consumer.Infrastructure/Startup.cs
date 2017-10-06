@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Jambo.Consumer.Application.DomainEventHandlers.Blogs;
 using Jambo.Consumer.Infrastructure.Modules;
 using Jambo.Domain.ServiceBus;
@@ -22,27 +23,37 @@ namespace Jambo.Consumer.Infrastructure
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        IServiceProvider serviceProvider;
+
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMediatR(typeof(BlogCreatedEventHandler).GetTypeInfo().Assembly);
-        }
 
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            builder.RegisterModule(new ApplicationModule(
+            ContainerBuilder container = new ContainerBuilder();
+            container.Populate(services);
+
+            container.RegisterModule(new ApplicationModule(
                 Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
                 Configuration.GetSection("MongoDB").GetValue<string>("Database")));
 
-            builder.RegisterModule(new BusModule(
+            container.RegisterModule(new BusModule(
                 Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
                 Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
+
+            //container.RegisterModule(new MediatRModule());
+
+            serviceProvider = new AutofacServiceProvider(container.Build());
+
+            return serviceProvider;
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
-            ISubscriber subscriber, IMediator mediator)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.Run(async context =>
             {
+                ISubscriber subscriber = serviceProvider.GetService<ISubscriber>();
+                IMediator mediator = serviceProvider.GetService<IMediator>();
+
                 subscriber.Listen(mediator);
 
                 while (true)

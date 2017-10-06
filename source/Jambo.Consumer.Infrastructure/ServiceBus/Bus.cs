@@ -17,14 +17,14 @@ namespace Jambo.Consumer.Infrastructure.ServiceBus
         public readonly string brokerList;
         public readonly string topic;
 
-        private readonly Consumer<string, string> _consumer;
+        private readonly Consumer<string, string> consumer;
 
         public Bus(string brokerList, string topic)
         {
             this.brokerList = brokerList;
             this.topic = topic;
 
-            _consumer = new Consumer<string, string>(
+            consumer = new Consumer<string, string>(
                 new Dictionary<string, object>()
                 {
                     { "group.id", "consumer" },
@@ -36,7 +36,7 @@ namespace Jambo.Consumer.Infrastructure.ServiceBus
         {
             Task.Run(() =>
             {
-                _consumer.Assign(new List<TopicPartitionOffset>
+                consumer.Assign(new List<TopicPartitionOffset>
                 {
                     new TopicPartitionOffset(topic, 0, 0)
                 });
@@ -45,7 +45,7 @@ namespace Jambo.Consumer.Infrastructure.ServiceBus
                 {
                     Message<string, string> msg;
 
-                    if (_consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
+                    if (consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
                     {
                         try
                         {
@@ -82,7 +82,7 @@ namespace Jambo.Consumer.Infrastructure.ServiceBus
 
         public void Dispose()
         {
-            _consumer.Dispose();
+            consumer.Dispose();
         }
     }
 }

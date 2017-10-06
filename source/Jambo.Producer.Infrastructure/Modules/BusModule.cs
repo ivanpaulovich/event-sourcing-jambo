@@ -20,7 +20,7 @@ namespace Jambo.Producer.Infrastructure.Modules
             builder.RegisterType<Bus>()
                 .As<IPublisher>()
                 .WithParameter("brokerList", brokerList)
-                .WithParameter("topicName", topic)
+                .WithParameter("topic", topic)
                 .SingleInstance();
         }
     }

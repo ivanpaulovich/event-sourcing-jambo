@@ -1,8 +1,6 @@
 ﻿using Autofac;
-using Jambo.Producer.Application.Commands.Blogs;
 using Jambo.Producer.Infrastructure.Modules;
 using Jambo.Producer.UI.Filters;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
-using System.Reflection;
 using System.Text;
 
 namespace Jambo.Producer.Infrastructure
@@ -32,8 +29,6 @@ namespace Jambo.Producer.Infrastructure
                 options.Filters.Add(typeof(ValidateModelAttribute));
                 options.Filters.Add(typeof(CorrelationFilter));
             });
-
-            services.AddMediatR(typeof(CreateBlogCommand).GetTypeInfo().Assembly);
 
             services.AddSwaggerGen(options =>
             {
@@ -83,6 +78,8 @@ namespace Jambo.Producer.Infrastructure
             builder.RegisterModule(new BusModule(
                 Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
                 Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
+
+            builder.RegisterModule(new MediatRModule());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

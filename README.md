@@ -1,7 +1,7 @@
 Neste projeto experimental em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS + Optimistic Concurrency, a técnica de Event Sourcing é usada como ferramenta de auditoria das modificações do conteúdo do Blog. A fonte dos dados são os Domain Events registrados no Kafka e para permitir consultas de alta performance foi criado um banco de dados MongoDB com o 'último estado já processado dos eventos'. Há um microsserviço auxiliar de autenticação. Tudo isso foi implementado em .NET Core/Standard 2.0 compatível com Docker! Divirta-se!
 
 #### O Domínio
-![Domain](https://github.com/ivanpaulovich/jambo/blob/master/images/Domain.png)
+![Domain](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Domain.png)
 
 #### As Aplicações desta Solução
 * **Producer**: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
@@ -15,7 +15,7 @@ Há duas formas de iniciar a solução.
 
 Resolver os [pré-requisitos](https://github.com/ivanpaulovich/jambo/#prerequisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no seu terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
 
-![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Docker-PS.PNG)
+![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Docker-PS.PNG)
 
 A partir daí basta acessar:
 * Auth em http://localhost:32775/swagger/
@@ -29,24 +29,24 @@ A outra opção é inicializar aplicação por aplicação, seguindo o seguintes
 
 1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
 
-![Auth](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth.PNG)
+![Auth](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Auth.PNG)
 
-![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/images/Auth1.PNG)
+![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Auth1.PNG)
 
 3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
 
 Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
-![Autorizando](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer.PNG)
+![Autorizando](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Producer.PNG)
 Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
-![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer02.PNG)
+![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Producer02.PNG)
 
 2. Execute o projeto **Jambo.Consumer.Console** e garante que ele **contínua em execução**.
 
-![Comsumer em execução](https://github.com/ivanpaulovich/jambo/blob/master/images/Consumer.PNG)
+![Comsumer em execução](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Consumer.PNG)
 
 4. Visualize suas modificações
 
-![Queries](https://github.com/ivanpaulovich/jambo/blob/master/images/Producer03.PNG)
+![Queries](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Producer03.PNG)
 
 #### Demo
 * **Auth API**: http://jambo.westus.cloudapp.azure.com:7070/swagger/.
