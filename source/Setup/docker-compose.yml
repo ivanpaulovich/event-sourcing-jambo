@@ -1,0 +1,17 @@
+version: '3'
+
+services:  
+  mongodb:
+    image: mongo
+    ports:
+        - 27017
+  kafka:
+    image: landoop/fast-data-dev:latest
+    ports:
+        - 2181
+        - 3030
+        - 8081-8083
+        - 9581-9585
+        - 9092
+    environment:
+      - ADV_HOST=10.0.75.1

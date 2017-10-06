@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
     <ProjectReference Include="..\Jambo.Producer.UI\Jambo.Producer.UI.csproj" />
     <PackageReference Include="Autofac" Version="4.6.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />

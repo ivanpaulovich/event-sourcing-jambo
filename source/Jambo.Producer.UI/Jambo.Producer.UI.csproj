@@ -15,9 +15,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-    <ProjectReference Include="..\Jambo.Producer.Application\Jambo.Producer.Application.csproj" />
-  </ItemGroup>
-
 </Project>
