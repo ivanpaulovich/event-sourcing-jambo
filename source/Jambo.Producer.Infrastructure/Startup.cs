@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Autofac;
+using Jambo.Producer.Application.Commands.Blogs;
+using Jambo.Producer.Infrastructure.Modules;
+using Jambo.Producer.UI.Filters;
+using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MediatR;
-using Jambo.Producer.Application.Commands.Blogs;
-using System.Reflection;
-using Jambo.Producer.UI.Filters;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Reflection;
+using System.Text;
 
-namespace Jambo.Producer.UI
+namespace Jambo.Producer.Infrastructure
 {
     public class Startup
     {
@@ -23,10 +24,8 @@ namespace Jambo.Producer.UI
         
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(DomainExceptionFilter));
@@ -75,7 +74,17 @@ namespace Jambo.Producer.UI
                 });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new ApplicationModule(
+                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
+                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
+
+            builder.RegisterModule(new BusModule(
+                Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
+                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
+        }
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

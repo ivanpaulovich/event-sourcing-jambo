@@ -12,18 +12,21 @@ namespace Jambo.Producer.Infrastructure.Modules
     public class ApplicationModule : Module
     {
         public readonly string connectionString;
-        public readonly string database;
+        public readonly string databaseName;
 
-        public ApplicationModule(string connectionString, string database)
+        public ApplicationModule(string connectionString, string databaseName)
         {
             this.connectionString = connectionString;
-            this.database = database;
+            this.databaseName = databaseName;
         }
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new MongoContext(connectionString, database))
-                .As<MongoContext>().SingleInstance();
+            builder.RegisterType<MongoContext>()
+                .As<MongoContext>()
+                .WithParameter("connectionString", connectionString)
+                .WithParameter("databaseName", databaseName)
+                .SingleInstance();
 
             builder.RegisterType<BlogReadOnlyRepository>()
                 .As<IBlogReadOnlyRepository>()

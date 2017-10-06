@@ -1,7 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
@@ -10,35 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Dockerfile" CopyToPublishDirectory="Always" />
-    <Content Include="appsettings.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.6.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
     <PackageReference Include="MediatR" Version="3.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
     <PackageReference Include="Confluent.Kafka" Version="0.11.0" NoWarn="NU1701" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Jambo.Consumer.Application\Jambo.Consumer.Application.csproj" />
     <ProjectReference Include="..\Jambo.Domain\Jambo.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update=".dockerignore">
-      <DependentUpon>Dockerfile</DependentUpon>
-    </None>
   </ItemGroup>
 
 </Project>
