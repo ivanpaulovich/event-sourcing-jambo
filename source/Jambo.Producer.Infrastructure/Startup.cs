@@ -80,6 +80,10 @@ namespace Jambo.Producer.Infrastructure
                 Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
 
             builder.RegisterModule(new MediatRModule());
+
+            builder.RegisterModule(new QueriesModule(
+                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
+                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

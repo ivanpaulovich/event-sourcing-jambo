@@ -11,12 +11,12 @@ using Jambo.Producer.Infrastructure.Queries;
 
 namespace Jambo.Producer.Infrastructure.Modules
 {
-    public class ApplicationModule : Module
+    public class QueriesModule : Module
     {
         public readonly string connectionString;
         public readonly string databaseName;
 
-        public ApplicationModule(string connectionString, string databaseName)
+        public QueriesModule(string connectionString, string databaseName)
         {
             this.connectionString = connectionString;
             this.databaseName = databaseName;
@@ -24,19 +24,17 @@ namespace Jambo.Producer.Infrastructure.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<MongoContext>()
-                .As<MongoContext>()
+            builder.RegisterType<BlogQueries>()
+                .As<IBlogQueries>()
                 .WithParameter("connectionString", connectionString)
                 .WithParameter("databaseName", databaseName)
                 .SingleInstance();
 
-            builder.RegisterType<BlogReadOnlyRepository>()
-                .As<IBlogReadOnlyRepository>()
-                .InstancePerLifetimeScope();
-
-            builder.RegisterType<PostReadOnlyRepository>()
-                .As<IPostReadOnlyRepository>()
-                .InstancePerLifetimeScope();
+            builder.RegisterType<PostQueries>()
+                .As<IPostQueries>()
+                .WithParameter("connectionString", connectionString)
+                .WithParameter("databaseName", databaseName)
+                .SingleInstance();
         }
     }
 }
