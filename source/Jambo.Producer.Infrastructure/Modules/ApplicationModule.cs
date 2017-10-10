@@ -1,11 +1,13 @@
 ﻿using Autofac;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
+using Jambo.Producer.Application.Queries;
 using Jambo.Producer.Infrastructure;
 using Jambo.Producer.Infrastructure.DataAccess;
 using Jambo.Producer.Infrastructure.DataAccess.Repositories;
 using Jambo.Producer.Infrastructure.DataAccess.Repositories.Blogs;
 using Jambo.Producer.Infrastructure.DataAccess.Repositories.Posts;
+using Jambo.Producer.Infrastructure.Queries;
 
 namespace Jambo.Producer.Infrastructure.Modules
 {
@@ -35,6 +37,18 @@ namespace Jambo.Producer.Infrastructure.Modules
             builder.RegisterType<PostReadOnlyRepository>()
                 .As<IPostReadOnlyRepository>()
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<BlogQueries>()
+                .As<IBlogQueries>()
+                .WithParameter("connectionString", connectionString)
+                .WithParameter("databaseName", databaseName)
+                .SingleInstance();
+
+            builder.RegisterType<PostQueries>()
+                .As<IPostQueries>()
+                .WithParameter("connectionString", connectionString)
+                .WithParameter("databaseName", databaseName)
+                .SingleInstance();
         }
     }
 }

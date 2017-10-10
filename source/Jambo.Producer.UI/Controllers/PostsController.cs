@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Jambo.Domain.Model.Blogs;
 using Jambo.Domain.Model.Posts;
+using Jambo.Producer.Application.Queries;
 
 namespace Jambo.Producer.UI.Controllers
 {
@@ -14,9 +15,9 @@ namespace Jambo.Producer.UI.Controllers
     public class PostsController : Controller
     {
         private readonly IMediator mediator;
-        private readonly IPostReadOnlyRepository postQueries;
+        private readonly IPostQueries postQueries;
 
-        public PostsController(IMediator mediator, IPostReadOnlyRepository postQueries)
+        public PostsController(IMediator mediator, IPostQueries postQueries)
         {
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             this.postQueries = postQueries ?? throw new ArgumentNullException(nameof(postQueries));
@@ -25,7 +26,7 @@ namespace Jambo.Producer.UI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPosts(Guid blogId)
         {
-            var posts = await postQueries.GetBlogPosts(blogId);
+            var posts = await postQueries.GetPostsAsync(blogId);
 
             return Ok(posts);
         }
@@ -33,7 +34,7 @@ namespace Jambo.Producer.UI.Controllers
         [HttpGet("{id}", Name = "GetPost")]
         public async Task<IActionResult> Get(Guid id)
         {
-            var post = await postQueries.GetPost(id);
+            var post = await postQueries.GetPostAsync(id);
 
             return Ok(post);
         }
