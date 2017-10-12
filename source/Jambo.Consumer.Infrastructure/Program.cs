@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Autofac.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace Jambo.Consumer.Infrastructure
 {
@@ -8,14 +8,17 @@ namespace Jambo.Consumer.Infrastructure
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
-        }
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables();
 
-        public static IWebHost BuildWebHost(string[] args)
-        {
-            return WebHost.CreateDefaultBuilder(args)
-                    .UseStartup<Startup>()
-                    .Build();
+            IConfigurationRoot configuration = builder.Build();
+            IServiceCollection serviceCollection = new ServiceCollection();
+
+            Startup startup = new Startup(configuration);
+            startup.ConfigureServices(serviceCollection);
+            startup.Run();
         }
     }
 }

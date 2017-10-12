@@ -4,13 +4,11 @@ using Jambo.Consumer.Application.DomainEventHandlers.Blogs;
 using Jambo.Consumer.Infrastructure.Modules;
 using Jambo.Domain.ServiceBus;
 using MediatR;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Jambo.Consumer.Infrastructure
 {
@@ -40,28 +38,22 @@ namespace Jambo.Consumer.Infrastructure
                 Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
                 Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
 
-            //container.RegisterModule(new MediatRModule());
-
             serviceProvider = new AutofacServiceProvider(container.Build());
 
             return serviceProvider;
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Run()
         {
-            app.Run(async context =>
+            IMediator mediator = serviceProvider.GetService<IMediator>();
+            ISubscriber subscriber = serviceProvider.GetService<ISubscriber>();
+
+            subscriber.Listen(mediator);
+
+            while (true)
             {
-                ISubscriber subscriber = serviceProvider.GetService<ISubscriber>();
-                IMediator mediator = serviceProvider.GetService<IMediator>();
-
-                subscriber.Listen(mediator);
-
-                while (true)
-                {
-                    Console.WriteLine(DateTime.Now.ToString());
-                    await Task.Delay(1000);
-                }
-            });
+                Thread.Sleep(1000 * 60);
+            }
         }
     }
 }
