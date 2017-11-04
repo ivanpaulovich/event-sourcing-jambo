@@ -31,7 +31,7 @@ namespace Jambo.Auth.UI
             // se loginCommand.Username e loginCommand.Password são válidos.
             //
 
-            var token = GetJwtSecurityToken(loginCommand.Username);
+            var token = GetJwtSecurityToken(loginCommand);
 
             return Ok(new
             {
@@ -40,7 +40,7 @@ namespace Jambo.Auth.UI
             });
         }
 
-        private JwtSecurityToken GetJwtSecurityToken(string user)
+        private JwtSecurityToken GetJwtSecurityToken(LoginCommand user)
         {
             return new JwtSecurityToken(
                 config.Issuer,
@@ -53,12 +53,13 @@ namespace Jambo.Auth.UI
             );
         }
 
-        private static IEnumerable<Claim> GetTokenClaims(string user)
+        private static IEnumerable<Claim> GetTokenClaims(LoginCommand user)
         {
             return new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Sub, user)
+                new Claim(JwtRegisteredClaimNames.Jti, user.UserId.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserId.ToString()),
+                new Claim(ClaimTypes.GroupSid, user.SchoolId.ToString()),
             };
         }
     }
