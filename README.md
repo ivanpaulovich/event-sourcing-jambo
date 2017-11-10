@@ -1,6 +1,53 @@
-Neste projeto experimental em Domain-Driven-Design com implementação de Aggregates + Event Sourcing + CQRS + Optimistic Concurrency, a técnica de Event Sourcing é usada como ferramenta de auditoria das modificações do conteúdo do Blog. A fonte dos dados são os Domain Events registrados no Kafka e para permitir consultas de alta performance foi criado um banco de dados MongoDB com o 'último estado já processado dos eventos'. Há um microsserviço auxiliar de autenticação. Tudo isso foi implementado em .NET Core/Standard 2.0 compatível com Docker! Divirta-se!
+A solution for Account Balance based on a Event-Driven architecture with DDD and CQRS. The full solution contains three applications.
+* A Web API which receives Commands to produces Domain Events also receives Queries to return JSON. 
+* A Consumer App that reads the Event Stream and do a projection to a MongoDB database.
+* A Web API for authentication and JWT generation.
 
-#### O Domínio
+#### Requirements
+* [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
+* [.NET SDK 2.0](https://www.microsoft.com/net/download/core)
+* [Docker](https://docs.docker.com/docker-for-windows/install/)
+
+#### Environment setup
+
+*If you already have valid connections strings for Kafka and MongoDB you could skip this topic and go to the Running the applications topic.*
+
+* Run the `./up-kafka-mongodb.sh` script to run Kafka and MongoDB as Docker Containers. Please wait until the ~800mb download to be complete.
+
+```
+$ ./up-kafka-mongodb.sh
+Pulling mongodb (mongo:latest)...
+latest: Pulling from library/mongo
+Digest: sha256:2c55bcc870c269771aeade05fc3dd3657800540e0a48755876a1dc70db1e76d9
+Status: Downloaded newer image for mongo:latest
+Pulling kafka (spotify/kafka:latest)...
+latest: Pulling from spotify/kafka
+Digest: sha256:cf8f8f760b48a07fb99df24fab8201ec8b647634751e842b67103a25a388981b
+Status: Downloaded newer image for spotify/kafka:latest
+Creating setup_mongodb_1 ...
+Creating setup_kafka_1 ...
+Creating setup_mongodb_1
+Creating setup_mongodb_1 ... done
+```
+* Check if the data layer is ready with the following commands:
+
+```
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+mongo               latest              d22888af0ce0        17 hours ago        361MB
+spotify/kafka       latest              a9e0a5b8b15e        11 months ago       443MB
+```
+
+```
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                            NAMES
+32452776153f        spotify/kafka       "supervisord -n"         2 days ago          Up 2 days           0.0.0.0:2181->2181/tcp, 0.0.0.0:9092->9092/tcp   setup_kafka_1
+ba28cf144478        mongo               "docker-entrypoint..."   2 days ago          Up 2 days           0.0.0.0:27017->27017/tcp                         setup_mongodb_1
+```
+
+If Kafka is running good it will be working with the `10.0.75.1:9092` connection string and if MongoDB is running good it will be working at `mongodb://10.0.75.1:27017`.
+
+#### The Domain
 ![Domain](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Domain.png)
 
 #### As Aplicações desta Solução
