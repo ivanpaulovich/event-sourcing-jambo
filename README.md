@@ -1,4 +1,4 @@
-A solution for Account Balance based on a Event-Driven architecture with DDD and CQRS. The full solution contains three applications.
+A solution for Blogging based on a Event-Driven architecture with DDD and CQRS. The full solution contains three applications.
 * A Web API which receives Commands to produces Domain Events also receives Queries to return JSON. 
 * A Consumer App that reads the Event Stream and do a projection to a MongoDB database.
 * A Web API for authentication and JWT generation.
