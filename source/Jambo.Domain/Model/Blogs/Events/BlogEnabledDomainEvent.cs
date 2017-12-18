@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Jambo.Domain.Model.Blogs.Events
+﻿namespace Jambo.Domain.Model.Blogs.Events
 {
+    using System;
+
     public class BlogEnabledDomainEvent : DomainEvent
     {
         public BlogEnabledDomainEvent(Guid aggregateRootId, int version,

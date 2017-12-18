@@ -1,14 +1,14 @@
-﻿using Confluent.Kafka;
-using Confluent.Kafka.Serialization;
-using Jambo.Domain.Model;
-using Jambo.Domain.ServiceBus;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Jambo.Producer.Infrastructure.ServiceBus
+﻿namespace Jambo.Producer.Infrastructure.ServiceBus
 {
+    using Confluent.Kafka;
+    using Confluent.Kafka.Serialization;
+    using Jambo.Domain.Model;
+    using Jambo.Domain.ServiceBus;
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Bus : IPublisher
     {
         public readonly string brokerList;

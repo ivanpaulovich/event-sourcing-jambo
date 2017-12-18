@@ -1,12 +1,12 @@
-﻿using Autofac;
-using Autofac.Features.Variance;
-using Jambo.Producer.Application.Commands.Blogs;
-using MediatR;
-using System.Collections.Generic;
-using System.Reflection;
-
-namespace Jambo.Producer.Infrastructure.Modules
+﻿namespace Jambo.Producer.Infrastructure.Modules
 {
+    using Autofac;
+    using Autofac.Features.Variance;
+    using Jambo.Producer.Application.Commands.Blogs;
+    using MediatR;
+    using System.Collections.Generic;
+    using System.Reflection;
+
     public class MediatRModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)

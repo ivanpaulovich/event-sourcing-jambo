@@ -1,14 +1,14 @@
-﻿using Jambo.Producer.Application.Commands;
-using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-
-namespace Jambo.Producer.UI.Filters
+﻿namespace Jambo.Producer.UI.Filters
 {
+    using Jambo.Producer.Application.Commands;
+    using Microsoft.AspNetCore.Mvc.Filters;
+    using System;
+    using System.Collections.Generic;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+
     public class CorrelationFilter : ActionFilterAttribute
     {
         private Guid correlationId;
