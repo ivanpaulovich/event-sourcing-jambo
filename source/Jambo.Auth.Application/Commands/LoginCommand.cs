@@ -12,11 +12,11 @@ namespace Jambo.Auth.Application.Commands
     {
         [Required]
         [DataMember]
-        public string Username { get; private set; }
+        public Guid UserId { get; private set; }
 
         [Required]
         [DataMember]
-        public string Password { get; private set; }
+        public Guid SchoolId { get; private set; }
 
         public LoginCommand()
         {
