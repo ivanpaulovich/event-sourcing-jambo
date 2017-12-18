@@ -1,11 +1,11 @@
-﻿using Jambo.Domain.Model;
-using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Model.Posts;
-using MongoDB.Bson.Serialization;
-using MongoDB.Driver;
-
-namespace Jambo.Producer.Infrastructure.DataAccess
+﻿namespace Jambo.Producer.Infrastructure.DataAccess
 {
+    using Jambo.Domain.Model;
+    using Jambo.Domain.Model.Blogs;
+    using Jambo.Domain.Model.Posts;
+    using MongoDB.Bson.Serialization;
+    using MongoDB.Driver;
+
     public class MongoContext
     {
         private readonly MongoClient mongoClient;

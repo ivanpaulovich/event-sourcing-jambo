@@ -1,15 +1,15 @@
-﻿using Jambo.Producer.Application.Commands.Posts;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Model.Posts;
-using Jambo.Producer.Application.Queries;
-
-namespace Jambo.Producer.UI.Controllers
+﻿namespace Jambo.Producer.UI.Controllers
 {
+    using Jambo.Producer.Application.Commands.Posts;
+    using MediatR;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using System;
+    using System.Threading.Tasks;
+    using Jambo.Domain.Model.Blogs;
+    using Jambo.Domain.Model.Posts;
+    using Jambo.Producer.Application.Queries;
+
     [Authorize]
     [Route("api/[controller]")]
     public class PostsController : Controller

@@ -1,0 +1,31 @@
+﻿{
+  "defaultAssembly": "Jambo.Producer.Infrastructure",
+  "modules": [
+    {
+      "type": "Jambo.Producer.Infrastructure.Modules.ApplicationModule",
+      "properties": {
+        "ConnectionString": "mongodb://10.0.75.1:27017",
+        "DatabaseName": "jambov32"
+      }
+    },
+    {
+      "type": "Jambo.Producer.Infrastructure.Modules.QueriesModule",
+      "properties": {
+        "ConnectionString": "mongodb://10.0.75.1:27017",
+        "DatabaseName": "jambov32"
+      }
+    },
+    {
+      "type": "Jambo.Producer.Infrastructure.Modules.BusModule",
+      "properties": {
+        "BrokerList": "10.0.75.1:9092",
+        "Topic": "jambov32"
+      }
+    },
+    {
+      "type": "Jambo.Producer.Infrastructure.Modules.MediatRModule",
+      "properties": {
+      }
+    }
+  ]
+}

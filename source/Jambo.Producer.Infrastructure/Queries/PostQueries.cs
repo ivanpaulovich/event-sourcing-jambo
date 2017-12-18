@@ -1,13 +1,12 @@
-﻿using Jambo.Producer.Application.Queries;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Jambo.Producer.Infrastructure.Queries
+﻿namespace Jambo.Producer.Infrastructure.Queries
 {
+    using Jambo.Producer.Application.Queries;
+    using MongoDB.Driver;
+    using System;
+    using System.Collections.Generic;
+    using System.Dynamic;
+    using System.Threading.Tasks;
+
     public class PostQueries : IPostQueries
     {
         private readonly IMongoDatabase database;

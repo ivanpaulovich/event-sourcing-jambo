@@ -1,12 +1,11 @@
-﻿using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Model.Posts;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace Jambo.Producer.Infrastructure.DataAccess.Repositories.Posts
+﻿namespace Jambo.Producer.Infrastructure.DataAccess.Repositories.Posts
 {
+    using Jambo.Domain.Model.Posts;
+    using MongoDB.Driver;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public class PostReadOnlyRepository : IPostReadOnlyRepository
     {
         private readonly MongoContext _mongoContext;

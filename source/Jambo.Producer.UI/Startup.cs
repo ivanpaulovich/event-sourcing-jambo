@@ -1,17 +1,21 @@
-﻿using Autofac;
-using Jambo.Producer.Infrastructure.Modules;
-using Jambo.Producer.UI.Filters;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using Swashbuckle.AspNetCore.Swagger;
-using System.Text;
-
-namespace Jambo.Producer.Infrastructure
+﻿namespace Jambo.Producer.UI
 {
+    using Autofac;
+    using Autofac.Configuration;
+    using Jambo.Producer.UI.Filters;
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.IdentityModel.Tokens;
+    using Swashbuckle.AspNetCore.Swagger;
+    using System;
+    using System.IO;
+    using System.Linq;
+    using System.Runtime.Loader;
+    using System.Text;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -71,19 +75,18 @@ namespace Jambo.Producer.Infrastructure
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterModule(new ApplicationModule(
-                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
+            LoadInfrastructureAssemblies();
+            builder.RegisterModule(new ConfigurationModule(Configuration));
+        }
 
-            builder.RegisterModule(new BusModule(
-                Configuration.GetSection("ServiceBus").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("ServiceBus").GetValue<string>("Topic")));
+        private void LoadInfrastructureAssemblies()
+        {
+            string[] fileNames = Directory.EnumerateFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll", SearchOption.TopDirectoryOnly)
+                .Where(filePath => Path.GetFileName(filePath).StartsWith("Jambo.Producer.Infrastructure", StringComparison.OrdinalIgnoreCase))
+                .ToArray();
 
-            builder.RegisterModule(new MediatRModule());
-
-            builder.RegisterModule(new QueriesModule(
-                Configuration.GetSection("MongoDB").GetValue<string>("ConnectionString"),
-                Configuration.GetSection("MongoDB").GetValue<string>("Database")));
+            foreach (string file in fileNames)
+                AssemblyLoadContext.Default.LoadFromAssemblyPath(file);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

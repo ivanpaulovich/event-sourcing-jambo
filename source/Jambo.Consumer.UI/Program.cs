@@ -11,6 +11,7 @@
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("autofac.json")
                 .AddEnvironmentVariables();
 
             IConfigurationRoot configuration = builder.Build();

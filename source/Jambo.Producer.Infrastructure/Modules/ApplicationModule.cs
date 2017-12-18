@@ -1,33 +1,23 @@
-﻿using Autofac;
-using Jambo.Domain.Model.Blogs;
-using Jambo.Domain.Model.Posts;
-using Jambo.Producer.Application.Queries;
-using Jambo.Producer.Infrastructure;
-using Jambo.Producer.Infrastructure.DataAccess;
-using Jambo.Producer.Infrastructure.DataAccess.Repositories;
-using Jambo.Producer.Infrastructure.DataAccess.Repositories.Blogs;
-using Jambo.Producer.Infrastructure.DataAccess.Repositories.Posts;
-using Jambo.Producer.Infrastructure.Queries;
-
-namespace Jambo.Producer.Infrastructure.Modules
+﻿namespace Jambo.Producer.Infrastructure.Modules
 {
+    using Autofac;
+    using Jambo.Domain.Model.Blogs;
+    using Jambo.Domain.Model.Posts;
+    using Jambo.Producer.Infrastructure.DataAccess;
+    using Jambo.Producer.Infrastructure.DataAccess.Repositories.Blogs;
+    using Jambo.Producer.Infrastructure.DataAccess.Repositories.Posts;
+
     public class ApplicationModule : Module
     {
-        public readonly string connectionString;
-        public readonly string databaseName;
-
-        public ApplicationModule(string connectionString, string databaseName)
-        {
-            this.connectionString = connectionString;
-            this.databaseName = databaseName;
-        }
+        public string ConnectionString { get; set; }
+        public string DatabaseName { get; set; }
 
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<MongoContext>()
                 .As<MongoContext>()
-                .WithParameter("connectionString", connectionString)
-                .WithParameter("databaseName", databaseName)
+                .WithParameter("connectionString", ConnectionString)
+                .WithParameter("databaseName", DatabaseName)
                 .SingleInstance();
 
             builder.RegisterType<BlogReadOnlyRepository>()
