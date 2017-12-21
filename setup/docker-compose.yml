@@ -1,0 +1,15 @@
+version: '3'
+
+services:  
+  mongodb:
+    image: mongo
+    ports:
+        - 27017:27017
+  kafka:
+    image: spotify/kafka
+    ports:
+        - 2181:2181
+        - 9092:9092
+    environment:
+      - ADVERTISED_HOST=10.0.75.1
+      - ADVERTISED_PORT=9092

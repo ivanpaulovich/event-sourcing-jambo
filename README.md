@@ -1,7 +1,9 @@
 A solution for Blogging based on a Event-Driven architecture with DDD and CQRS. The full solution contains three applications.
-* A Web API which receives Commands to produces Domain Events also receives Queries to return JSON. 
-* A Consumer App that reads the Event Stream and do a projection to a MongoDB database.
+* A Producer Web API which receives Commands to produces Domain Events also receives Queries to return JSON. 
+* A Consumer Console App that reads the Event Stream and do a projection to a MongoDB database.
 * A Web API for authentication and JWT generation.
+
+[Blogging API Source Code on GitHub](https://github.com/ivanpaulovich/jambo)
 
 #### Requirements
 * [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
@@ -47,86 +49,75 @@ ba28cf144478        mongo               "docker-entrypoint..."   2 days ago     
 
 If Kafka is running good it will be working with the `10.0.75.1:9092` connection string and if MongoDB is running good it will be working at `mongodb://10.0.75.1:27017`.
 
-#### The Domain
-![Domain](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Domain.png)
+## Running the applications
 
-#### As Aplicações desta Solução
-* **Producer**: Web API que recebe os comandos de edição de conteúdo, produz Eventos de Domínio e publica as mensagens em um tópico no Kafka.
-* **Consumer**: Aplicativo Console que consome as mensagens do Kafka, deserializa em Eventos de Domínio e aplica nas agregações persistindo no MongoDB o novo estado.  
-* **Auth**: Web API que gera tokens de autenticação para acesso ao WebAPI.
+You have two options to run the three applications, one is by opening on Visual Studio 2017 and another is by dotnet core commands.
 
-#### Por onde começar?
-Há duas formas de iniciar a solução. 
+### Option 1 - Running with Visual Studio 2017
 
-##### 1. O jeito fácil
+Open the three solutions with three Visual Studio 2017 them run the following projects.
 
-Resolver os [pré-requisitos](https://github.com/ivanpaulovich/jambo/#prerequisitos), definir o projeto inicial como sendo o `docker-compose` e então apertar `Ctrl+F5` para executar todas as aplicações. Se tudo estiver correto, digite `docker ps` no seu terminal para verificar em quais portas cada aplicação está executando. Será algo assim:
+* `Jambo.Auth.UI`
+* `Jambo.Consumer.UI` 
+* `Jambo.Producer.UI`.
 
-![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Docker-PS.PNG)
+### Option 2 - Running with dotnet commands
 
-A partir daí basta acessar:
-* Auth em http://localhost:32775/swagger/
-* Producer em http://localhost:32776/swagger/
+#### How to run the Bearer Authencation API
 
-Leia o [o jeito não tão fácil](https://github.com/ivanpaulovich/jambo/#2-o-jeito-não-tão-fácil) para entender como criar um Token no Auth API para consumir os serviços do Producer API via swagger.
+1. Run the command `dotnet run` at `source\Auth\Jambo.Auth.UI` folder.
+```
+$ dotnet run
+Using launch settings from C:\git\jambo\source\Auth\Jambo.Auth.UI\Properties\launchSettings.json...
+Hosting environment: Development
+Content root path: C:\git\jambo\source\Auth\Jambo.Auth.UI
+Now listening on: http://localhost:16024
+Application started. Press Ctrl+C to shut down.
+```
+2. Navigate to the Swagger UI at (eg. http://localhost:16024/swagger).
+3. Post the following credentials:
+```
+{
+  "username": "ivanpaulovich",
+  "password": "mysecret"
+}
+```
+4. __Store the Bearer Token__ because you will need the token value later to log on Producer API.
+```
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhYzA4MmE3OS1lMWY3LTQ4MTktYmU1Mi1hOTQwMTBkM2VjZTciLCJzdWIiOiJzdHJpbmciLCJleHAiOjE1MTI0Nzg5ODgsImlzcyI6Imh0dHA6Ly9teWFjY291bnRhcGkiLCJhdWQiOiJodHRwOi8vbXlhY2NvdW50YXBpIn0.9YKGmKaptLBDcExHhPOQ3_j9TsdbkcRf8ZtvIkdq8Go",
+  "expiration": "2017-12-05T13:03:08Z"
+}
+```
+#### How to run the Consumer API
 
-##### 2. O jeito não tão fácil
+1. Run the command `dotnet run` at `source\Consumer\Jambo.Consumer.UI` folder 
 
-A outra opção é inicializar aplicação por aplicação, seguindo o seguintes passos:
+```
+$ dotnet run
+11/5/2017 11:17:20 AM Waiting for events..
+11/5/2017 11:18:20 AM Waiting for events..
+11/5/2017 11:19:20 AM Waiting for events..
+11/5/2017 11:20:20 AM Waiting for events..
+11/5/2017 11:21:20 AM Waiting for events..
+11/5/2017 11:22:20 AM Waiting for events..
+```
 
-1. Execute o projeto **Jambo.Auth.WebAPI** e chame o método *Account/Token* com qualquer usuário e senha. *Guarde este token*.
+3. __Attention:__ keep the Console App running for events processing.
 
-![Auth](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Auth.PNG)
+#### How to run the Producer API
 
-![Auth com Token](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Auth1.PNG)
+![Authorization](https://github.com/ivanpaulovich/jambo/blob/master/Producer.png)
 
-3. Execute o projeto **Jambo.Producer.WebAPI** e clique no botão *Authorization* (topo direito da página).
+1. Run the command `dotnet run` at the `source\Producer\Jambo.Producer.UI` folder.
 
-Digite `bearer + valor_do_token` e clique em fechar. Algo assim:
-![Autorizando](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Producer.PNG)
-Chame os métodos para manutenção dos dados do Blog, Posts e Comentários.
-![Enviando comandos](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Producer02.PNG)
+```
+$ dotnet run
+Using launch settings from C:\git\jambo\source\Producer\Jambo.Producer.UI\Properties\launchSettings.json...
+Hosting environment: Development
+Content root path: C:\git\jambo\source\Producer\Jambo.Producer.UI
+Now listening on: http://localhost:16959
+Application started. Press Ctrl+C to shut down.
+```
 
-2. Execute o projeto **Jambo.Consumer.Console** e garante que ele **contínua em execução**.
-
-![Comsumer em execução](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Consumer.PNG)
-
-4. Visualize suas modificações
-
-![Queries](https://github.com/ivanpaulovich/jambo/blob/master/docs/images/Producer03.PNG)
-
-#### Demo
-* **Auth API**: http://jambo.westus.cloudapp.azure.com:7070/swagger/.
-* **Producer**: http://jambo.westus.cloudapp.azure.com:7080/swagger/.
-* **Consumer**: Executa em background neste servidor.
-
-#### Próximos passos?
-1. Publicar os containers no Azure.
-2. Criar um CI/CD para atualizar os containers a cada commit.
-3. Criar testes de unidade, testes automatizados.
-4. Consumir serviços externos.
-5. Implementação alternativa de barramento: Azure Event Hubs
-6. Implementação alternativa de snapshot: Azure Cosmos DB
-7. Implementar um HealthCheck
-
-#### Pré-requisitos
-
-* [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
-* [.NET SDK 2.0](https://www.microsoft.com/net/download/core)
-* [Docker](https://docs.docker.com/docker-for-windows/install/) (Opcional)
-* [Robomongo](https://robomongo.org/) (Opcional)
-
-#### Agradecimentos
-Obrigado aos amigos que me estimularam a criar este projeto e estão sempre contribuindo e dando feedback.
-* [Vinicius Baldotto](https://github.com/Baldotto)
-* [André Paulovich](https://github.com/andrepaulovich)
-* André Mendes
-
-Obrigado de verdade!
-
-#### Deixe o seu feedback
-Agradeço todo comentário sobre o projeto. Envie  suas dúvidas e sugestões no [Fórum](https://github.com/ivanpaulovich/jambo/issues).
-
-#### Histórico de Versões
-* 10/set/2017:
-[![release](https://img.shields.io/github/release/ivanpaulovich/nixy.svg?style=flat-square)](https://github.com/ivanpaulovich/jambo/releases/latest)
+2. Navigate to the Swagger UI (eg. http://localhost:14398/swagger).
