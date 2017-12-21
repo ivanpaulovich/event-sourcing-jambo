@@ -3,7 +3,7 @@
     using MediatR;
     using System;
 
-    public interface ISubscriber : IDisposable
+    public interface ISubscriber
     {
         void Listen(IMediator mediator);
     }

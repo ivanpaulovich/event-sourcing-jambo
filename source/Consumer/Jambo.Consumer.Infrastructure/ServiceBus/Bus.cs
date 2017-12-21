@@ -10,79 +10,114 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using System.Threading.Tasks;
 
     public class Bus : ISubscriber
     {
         public readonly string brokerList;
         public readonly string topic;
 
-        private readonly Consumer<string, string> consumer;
+        private static Dictionary<string, object> constructConfig(string brokerList, bool enableAutoCommit) =>
+            new Dictionary<string, object>
+            {
+                { "group.id", "jambo-consumer" },
+                { "enable.auto.commit", enableAutoCommit },
+                { "auto.commit.interval.ms", 5000 },
+                { "statistics.interval.ms", 60000 },
+                { "bootstrap.servers", brokerList },
+                { "default.topic.config", new Dictionary<string, object>()
+                    {
+                        { "auto.offset.reset", "smallest" }
+                    }
+                }
+            };
 
         public Bus(string brokerList, string topic)
         {
             this.brokerList = brokerList;
             this.topic = topic;
-
-            consumer = new Consumer<string, string>(
-                new Dictionary<string, object>()
-                {
-                    { "group.id", "consumer" },
-                    { "bootstrap.servers", brokerList }
-                }, new StringDeserializer(Encoding.UTF8), new StringDeserializer(Encoding.UTF8));
         }
 
         public void Listen(IMediator mediator)
         {
-            Task.Run(() =>
+            using (var consumer = new Consumer<string, string>(constructConfig(brokerList, true), new StringDeserializer(Encoding.UTF8), new StringDeserializer(Encoding.UTF8)))
             {
-                consumer.Assign(new List<TopicPartitionOffset>
+                consumer.OnMessage += (_, msg)
+                    =>
                 {
-                    new TopicPartitionOffset(topic, 0, 0)
-                });
+                    Console.WriteLine($"Topic: {msg.Topic} Partition: {msg.Partition} Offset: {msg.Offset} {msg.Value}");
 
-                while (true)
-                {
-                    Message<string, string> msg;
-
-                    if (consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
+                    try
                     {
-                        try
-                        {
-                            Type eventType = Type.GetType(msg.Key);
-                            DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
-
-                            Console.WriteLine($"CorrelationId: {domainEvent.Header.CorrelationId}");
-                            Console.WriteLine($"UserName: {domainEvent.Header.UserName}");
-                            Console.WriteLine($"CreatedDate: {domainEvent.CreatedDate}");
-                            Console.WriteLine($"Type: {msg.Key}");
-                            Console.WriteLine($"AggregateRootId: {domainEvent.AggregateRootId}");
-                            Console.WriteLine($"Version: {domainEvent.Version}");
-                            Console.WriteLine($"Raw: {msg.Value}");
-                            Console.WriteLine();
-
-                            mediator.Send(domainEvent).Wait();
-                        }
-                        catch (DomainException ex)
-                        {
-                            Console.WriteLine(ex.BusinessMessage);
-                        }
-                        catch (TransactionConflictException ex)
-                        {
-                            Console.WriteLine(ex.AggregateRoot.ToString() + ex.DomainEvent.ToString());
-                        }
-                        catch (JamboException ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
+                        Type eventType = Type.GetType(msg.Key);
+                        DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
+                        mediator.Send(domainEvent).Wait();
                     }
-                }
-            });
-        }
+                    catch (DomainException ex)
+                    {
+                        Console.WriteLine(ex.BusinessMessage);
+                    }
+                    catch (TransactionConflictException ex)
+                    {
+                        Console.WriteLine(ex.DomainEvent.ToString());
+                    }
+                    catch (JamboException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                };
 
-        public void Dispose()
-        {
-            consumer.Dispose();
+                consumer.OnPartitionEOF += (_, end)
+                    => Console.WriteLine($"Reached end of topic {end.Topic} partition {end.Partition}, next message will be at offset {end.Offset}");
+
+                consumer.OnError += (_, error)
+                    => Console.WriteLine($"Error: {error}");
+
+                consumer.OnConsumeError += (_, msg)
+                    => Console.WriteLine($"Error consuming from topic/partition/offset {msg.Topic}/{msg.Partition}/{msg.Offset}: {msg.Error}");
+
+                consumer.OnOffsetsCommitted += (_, commit) =>
+                {
+                    Console.WriteLine($"[{string.Join(", ", commit.Offsets)}]");
+
+                    if (commit.Error)
+                    {
+                        Console.WriteLine($"Failed to commit offsets: {commit.Error}");
+                    }
+                    Console.WriteLine($"Successfully committed offsets: [{string.Join(", ", commit.Offsets)}]");
+                };
+
+                consumer.OnPartitionsAssigned += (_, partitions) =>
+                {
+                    Console.WriteLine($"Assigned partitions: [{string.Join(", ", partitions)}], member id: {consumer.MemberId}");
+                    consumer.Assign(partitions);
+                };
+
+                consumer.OnPartitionsRevoked += (_, partitions) =>
+                {
+                    Console.WriteLine($"Revoked partitions: [{string.Join(", ", partitions)}]");
+                    consumer.Unassign();
+                };
+
+                consumer.OnStatistics += (_, json)
+                    => Console.WriteLine($"Statistics: {json}");
+
+                consumer.Subscribe(this.topic);
+
+                Console.WriteLine($"Subscribed to: [{string.Join(", ", consumer.Subscription)}]");
+
+                var cancelled = false;
+                Console.CancelKeyPress += (_, e) =>
+                {
+                    e.Cancel = true; // prevent the process from terminating.
+                    cancelled = true;
+                };
+
+                Console.WriteLine("Ctrl-C to exit.");
+                while (!cancelled)
+                {
+                    consumer.Poll(TimeSpan.FromMilliseconds(100));
+                }
+            }
         }
     }
 }
