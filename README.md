@@ -1,20 +1,20 @@
-A solution for Blogging based on a Event-Driven architecture with DDD and CQRS. The full solution contains three applications.
-* A Producer Web API which receives Commands to produces Domain Events also receives Queries to return JSON. 
+A solution for Blogging based on a Event-Driven architecture with DDD and CQRS. The solution contains the following applications.
+* A Producer Web API which receives Commands to produce Domain Events. This one also receives Queries and returns JSON. 
 * A Consumer Console App that reads the Event Stream and do a projection to a MongoDB database.
 * A Web API for authentication and JWT generation.
 
-[Blogging API Source Code on GitHub](https://github.com/ivanpaulovich/jambo)
+[Checkout the Source Code on GitHub](https://github.com/ivanpaulovich/jambo)
 
 #### Requirements
 * [Visual Studio 2017 + Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
-* [.NET SDK 2.0](https://www.microsoft.com/net/download/core)
+* [.NET CORE SDK 2.0](https://www.microsoft.com/net/download/core)
 * [Docker](https://docs.docker.com/docker-for-windows/install/)
 
 #### Environment setup
 
-*If you already have valid connections strings for Kafka and MongoDB you could skip this topic and go to the Running the applications topic.*
+*If you already have valid connections for Kafka and MongoDB you could skip this step and go to Running the applications step.*
 
-* Run the `./up-kafka-mongodb.sh` script to run Kafka and MongoDB as Docker Containers. Please wait until the ~800mb download to be complete.
+* Run the `./up-kafka-mongodb.sh` bash script to run Kafka and MongoDB as Docker Containers. Please wait until the ~800mb download to be complete.
 
 ```
 $ ./up-kafka-mongodb.sh
@@ -47,18 +47,19 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ba28cf144478        mongo               "docker-entrypoint..."   2 days ago          Up 2 days           0.0.0.0:27017->27017/tcp                         setup_mongodb_1
 ```
 
-If Kafka is running good it will be working with the `10.0.75.1:9092` connection string and if MongoDB is running good it will be working at `mongodb://10.0.75.1:27017`.
+If Kafka is running well it will be working with the `10.0.75.1:9092` connection string.
+if MongoDB is running well it will be working at `mongodb://10.0.75.1:27017` connection string.
 
 ## Running the applications
 
-You have two options to run the three applications, one is by opening on Visual Studio 2017 and another is by dotnet core commands.
+You have two options to run the applications, one is by opening with Visual Studio 2017 and the other is by running dotnet core commands.
 
 ### Option 1 - Running with Visual Studio 2017
 
-Open the three solutions with three Visual Studio 2017 them run the following projects.
+Open the three solutions on three Visual Studios them run the following projects.
 
-* `Jambo.Auth.UI`
-* `Jambo.Consumer.UI` 
+* `Jambo.Auth.UI`.
+* `Jambo.Consumer.UI`. 
 * `Jambo.Producer.UI`.
 
 ### Option 2 - Running with dotnet commands
@@ -82,7 +83,7 @@ Application started. Press Ctrl+C to shut down.
   "password": "mysecret"
 }
 ```
-4. __Store the Bearer Token__ because you will need the token value later to log on Producer API.
+4. __Store the Bearer Token__ because you will need the token value to log on Producer API.
 ```
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhYzA4MmE3OS1lMWY3LTQ4MTktYmU1Mi1hOTQwMTBkM2VjZTciLCJzdWIiOiJzdHJpbmciLCJleHAiOjE1MTI0Nzg5ODgsImlzcyI6Imh0dHA6Ly9teWFjY291bnRhcGkiLCJhdWQiOiJodHRwOi8vbXlhY2NvdW50YXBpIn0.9YKGmKaptLBDcExHhPOQ3_j9TsdbkcRf8ZtvIkdq8Go",
