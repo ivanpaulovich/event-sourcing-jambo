@@ -1,19 +1,13 @@
 ﻿namespace Jambo.Consumer.Infrastructure
 {
     using Autofac;
+    using Autofac.Configuration;
     using Autofac.Extensions.DependencyInjection;
     using Jambo.Domain.ServiceBus;
     using MediatR;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using System;
-    using System.Reflection;
-    using System.Threading;
-    using System.IO;
-    using System.Linq;
-    using System.Runtime.Loader;
-    using Autofac.Configuration;
-    using Jambo.Consumer.Application.DomainEventHandlers.Blogs;
 
     public class Startup
     {
@@ -44,12 +38,6 @@
             ISubscriber subscriber = serviceProvider.GetService<ISubscriber>();
 
             subscriber.Listen(mediator);
-
-            while (true)
-            {
-                Console.WriteLine($"{DateTime.Now.ToString()} Waiting for events..");
-                Thread.Sleep(1000 * 60);
-            }
         }
     }
 }

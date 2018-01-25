@@ -41,31 +41,6 @@
         {
             using (var consumer = new Consumer<string, string>(constructConfig(brokerList, true), new StringDeserializer(Encoding.UTF8), new StringDeserializer(Encoding.UTF8)))
             {
-                consumer.OnMessage += (_, msg)
-                    =>
-                {
-                    Console.WriteLine($"Topic: {msg.Topic} Partition: {msg.Partition} Offset: {msg.Offset} {msg.Value}");
-
-                    try
-                    {
-                        Type eventType = Type.GetType(msg.Key);
-                        DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
-                        mediator.Send(domainEvent).Wait();
-                    }
-                    catch (DomainException ex)
-                    {
-                        Console.WriteLine(ex.BusinessMessage);
-                    }
-                    catch (TransactionConflictException ex)
-                    {
-                        Console.WriteLine(ex.DomainEvent.ToString());
-                    }
-                    catch (JamboException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                };
-
                 consumer.OnPartitionEOF += (_, end)
                     => Console.WriteLine($"Reached end of topic {end.Topic} partition {end.Partition}, next message will be at offset {end.Offset}");
 
@@ -115,7 +90,30 @@
                 Console.WriteLine("Ctrl-C to exit.");
                 while (!cancelled)
                 {
-                    consumer.Poll(TimeSpan.FromMilliseconds(100));
+                    Message<string, string> msg;
+                    if (consumer.Consume(out msg, TimeSpan.FromSeconds(1)))
+                    {
+                        Console.WriteLine($"Topic: {msg.Topic} Partition: {msg.Partition} Offset: {msg.Offset} {msg.Value}");
+
+                        try
+                        {
+                            Type eventType = Type.GetType(msg.Key);
+                            DomainEvent domainEvent = (DomainEvent)JsonConvert.DeserializeObject(msg.Value, eventType);
+                            mediator.Send(domainEvent).Wait();
+                        }
+                        catch (DomainException ex)
+                        {
+                            Console.WriteLine(ex.BusinessMessage);
+                        }
+                        catch (TransactionConflictException ex)
+                        {
+                            Console.WriteLine(ex.DomainEvent.ToString());
+                        }
+                        catch (JamboException ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                    }
                 }
             }
         }

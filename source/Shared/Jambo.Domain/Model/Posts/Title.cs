@@ -1,10 +1,5 @@
 ﻿namespace Jambo.Domain.Model.Posts
 {
-    using Jambo.Domain.Exceptions;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public class Title
     {
         public string Text { get; private set; }
@@ -12,7 +7,7 @@
         public Title(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
-                throw new DomainException("The title field is required");
+                throw new TitleShouldNotBeEmptyException("The 'Title' field is required");
 
             this.Text = text;
         }

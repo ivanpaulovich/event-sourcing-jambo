@@ -1,7 +1,5 @@
 ﻿namespace Jambo.Domain.Model.Posts
 {
-    using Jambo.Domain.Exceptions;
-
     public class Content
     {
         public string Text { get; private set; }
@@ -9,7 +7,7 @@
         public Content(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
-                throw new DomainException("The content field is required");
+                throw new ContentShouldNotBeEmptyException("The 'Content' field is required");
 
             this.Text = text;
         }
