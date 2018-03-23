@@ -1,4 +1,4 @@
-A solution for Blogging based on a Event-Driven architecture with DDD and CQRS. The solution contains the following applications.
+A solution based on a Event-Driven architecture with DDD and CQRS. The solution contains the following applications.
 * A Producer Web API which receives Commands to produce Domain Events. This one also receives Queries and returns JSON. 
 * A Consumer Console App that reads the Event Stream and do a projection to a MongoDB database.
 * A Web API for authentication and JWT generation.
